@@ -1,0 +1,31 @@
+normalize = <link rel="stylesheet" type="text/css" href="Normalize.css">
+
+viewport = <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+icon = <link rel="icon" href="" type="image/x-icon">
+
+charset = <meta name="charset" content="UTF-8">
+
+author = <meta name="author" content="">
+
+copyright = <meta name="copyright" content="">
+
+robots = <meta name="robots" content="">
+
+ <meta name="robots" content="index"/>
+<meta name="robots" content="follow"/>
+
+expires = <meta http-equiv="expires" content="">
+
+font awesome = <script src="https://kit.fontawesome.com/50f9a8590c.js" crossorigin="anonymous"></script>
+
+description = <meta name="description" content="">
+
+<meta http-equiv="expires" content="tiempo de expiración en segundos"/>
+
+<meta http-equiv="refresh" content="10; url=http://www.ionos.es/"/>
+
+
+      <meta name="theme-color" content="#29ddfd"> 
+      <meta name="msapplication-navbutton-color" content="#29ddfd"> 
+      <meta name="apple-mobile-web-app-status-bar-style" content="#29ddfd">

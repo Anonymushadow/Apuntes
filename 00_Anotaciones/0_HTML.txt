@@ -1,0 +1,166 @@
+------------------------------------------------------------------------------------------------------
+INFORMACION
+------------------------------------------------------------------------------------------------------
+Elemento: es cada cosa que se añade al documento html
+	a cada cosa que ves en una pagina como decir una imagen, un texto, un boton, etc se le llama elemento
+Etiqueta: es cada elemento
+	las etiquetas se crean poniendo su nombre entrer signos de mayor y menor
+	las etiquetas pueden tener una de cierre o pueden cerrarse en esa misma
+	para cerrar la etiqueta debe tener una barra diagonal "/"
+	<html> </html> --> cierra por separado
+	<img /> --> cierra en si misma
+
+html sirve para decirle a la pagina web que elementos tendra, por ejemplo si quiero que mi pagina tenga un texto, quiero quew mi pafina tenga una imagen, etc
+para decirle a HTML que quiero añadir un elemento a la pagina lo hago mediante las etiquetas
+  una etique es una palabra que indica que elemento se añadira a la pagina
+  las etiquetas se escriben entrer simbolos de mayor y menor -->  <etiqueta>
+  hay 2 tipos de etiquetas:
+    etiquetas que se cierran por separado: estas etiquetas se deben poner entre simbolo de mayor y menor y despues debes poner una exactamente igual pero   antes del nombre de la etiquetas una barra inclinada
+      <etiqueta> aca va el contenido que iria dentro del elemento </etiqueta>
+    etiquetas que se cierran en la misma: hay etiquetas que no contienen nada dentro, como por ejemplo una imagen, dentro de la imagen no hay elementos, en estos casos no hace falta poner la etiqueta de cierre, solo se le pone la barra inclinada al fiunal de la etiqueta
+      <etiqueta />
+Como se que etiqueta / elemento estoy añadiendo?: hay muchas etiquetas las cuales estan anotadas en la parte de palabras reservadas
+  ejemplos:
+    <img src="aca indicamos la imagen a usar" />
+    <p> aca indicamos el texto a mostrar </p>
+    <input type="text" placeholder=""/>
+
+Como creo una pagina web desde la nada misma?:
+  en este caso debes crear un archivo con la extencion .html, por lo general se le llama index.html
+  una vez creado el archivo o abris con el editor que utilices (visual studio code en este caso)
+  dentro se introduce la siguiente estructura:
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    
+  </body>
+  </html>
+
+  que significa todo esto?:
+  <!DOCTYPE html> --> la verdad ni idea, hasta donde sabia era para definir la version de html a usar pero despues averiguo bien
+  <html> --> aca estas inciiando la pagina web en si, todo lo que este a continuacion sera mostrado en la pagina web
+    lang="en" --> ento indica el idioma de la pagina, en es ingles (english), es seria español y asi, es sobretodo para los navegadores, a nosotros no nos afecta en el codigo en si
+  <head> --> todo lo que este dentro de esta etiqueta serian como las configuraicones de la pagina web
+  <meta> --> esta etiqueta funciona como configuracion de cosas especificas
+    charset="UTF-8" --> charset se usa para indicarle a la pagina web que simbolos vas a usar, UTF-8 son los simbolos usados en español, como decir acentos, la Ñ, etc cosa que en otros lenguajes comom en ingles no existen
+    name --> en este caso se utiliza para definir el tipo de configuracion que se realizara
+      viewport --> indica que se realizara una modificacion del tamaño de la pantalla
+        viewport es la pantalla que nosotros vemos 
+        al usar esta propiedad definimos que tan grande sera el viewport
+      content --> indica la cnfiguracion deel viewport a realizar
+        width=device-width --> indica que se va a ajustar al tamaño de la pantalla fisica (si la pantalla nuestra tiene 600px de largo el viewport sera igual a 600px)
+        initial-scale=1.0 --> indicamos que los elementos se veran de manera normal, podemos decirle que se vera el doble de grande o la mitad, etc
+    el meta viewport por lo general no se toca, solo se pone ahi y listo, no se suele usar otras configuraciones
+  <title> --> lo que este dentro de esta etiqueta sera lo que se vera en la pestaña del navegador
+  </title> --> con esta etiqueta indicamos que se cierra la etiqueta <title> (osea que acabamos de poner todo lo que se mostrara en la pestaña del navegador) 
+  </head> --> indicamos que acabamos de poner las configuraicones de la pagina
+  <body> --> lo que este dentro de esta etiqueta sera lo que veremos en la pagina, los elementos en si
+  </body> --> con esta etiqueta indicamos que ya no pondremos mas nada en la pagina web
+  </html> con esta etiqueta indicamos que la pagina web ya acaba ahi
+
+extra:
+  cada etiqueta puede tener una clase o un id, los cuales son nombres que se les asigna para despues encontrarlos mas facil
+    por ejemlo si tenes 5000 imaegenes y necesitan encontrar una especifica la podes encontrar por el id
+    Clase: las clases son nombres que se les otorga a las etiquetas y varias pueden tener el mismo nombre  
+        por ejemplo para las imagenes que van a mostrarse en la seccion de bebidas le ponemos una clase como decir "imagenes__bebidas" 
+        y las que se van a molostrar en la seccion de comidas les poenmos otra clase como decir "imagenes__comidas"
+        de este modo cuando querramos cambiar el tamaño (un ejempl, puede ser para cambiar lo que sea) de las imagenes
+        de comida solo debemos buscar aquellas con la clase "imagenes__comidas"
+    ID: es un identificador unico, funciona como una clase pero la diferencia es que no deben haber 2 id iguales
+        por ejemplo si tenemos 3 imagenes, cada una deberia tener su id para saber cual imagen es, por ejemplo
+        "imagen__1" "image__2" "imagen__3", no puede haber 2 imagen__2 xque estarias diciendo que son la misma imagen y por mas 
+        que la imagen en si sea igual son 2 diferentes
+        un ejemplo mas claro, un id funciona como un DNI, cada uno tiene su dni propio, no existen 2 iguales,
+        si hay dos personas totalmente iguales cada una tiene su propio dni de todos modos, un id funciona como
+        un dni para las etiquetas y las clases funcionan como un nombre para las etiquetas el cual puede ser 
+        el mismo que mi vecino o cualquier otra persona
+Tamaños de titulos:
+	hay 6 tamaños de titulos 
+		h1: el mas grande
+		h2: 
+		h3
+		h4
+		h5
+		h6: el mas chico
+	solo puede haber un h1 en el documento html (puede haber mas pero se pone uno por buenas practicas)
+
+
+------------------------------------------------------------------------------------------------------
+Palabras reservadas
+------------------------------------------------------------------------------------------------------
+<html></html> --> crear documento html
+<!DOCTYPE html> --> utilizar html 5
+<!-- --> --> crear comentarios
+<head></head> --> contenedor de las configuraciones del html
+<body></body> --> contenedor de los elementos del html
+<h1></h1> --> crear un titulo tamaño h1
+<h2></h2> --> crear un titulo tamaño h2
+<h3></h3> --> crear un titulo tamaño h3
+<h4></h4> --> crear un titulo tamaño h4
+<h5></h5> --> crear un titulo tamaño h5
+<h6></h6> --> crear un titulo tamaño h6
+<p></p> --> crear un texto comun
+<main></main> --> representar el contenido principal de una página web
+<div></div> --> agrupar y estructurar contenido
+<img /> --> añadir una imagen
+src="" --> especificar la ruta del elemento a añadir 
+alt="" --> texto alternativo que se mostrara si la imagen no carga
+<a></a> --> añadir un link
+href="" --> a donde va a dirigir el link al hacer click
+target="" --> indica en donde se abrira el link
+_black --> abrir el link en una pestaña nueva
+<section></section> --> sirve para separar el contenido dentro del main
+<ul></ul> --> crear una lista sin orden
+<li></li> --> añadir un elemento a la lista
+<figure></figure> --> agrupar multimedia con textos descriptivos
+<figcaption></figcaption> --> añadir descripcion mas detallada que el alt
+<em></em> --> agregar énfasis al texto y convertirlo a cursiva
+<ol></ol> --> añadir una lista ordenada
+<strong></strong> --> indica que un texto tiene mayor importancia 
+<form></form> --> añadir un formulario
+action="" --> indica a que ruta se enviara la informacion
+<input /> --> crea una barra donde el usuario ingresara los datos correspondientes
+type="" --> tipo de dato a recibir
+text --> texo simple
+mail --> mails
+password --> contraseñas
+placeholder="" --> mensaje que se eliminaraq al momento de escribir en el input
+name="" --> se asemeja a una variable que se envía al servidor cuando se envía un formulario
+required --> especifica que un campo debe ser completado si o si
+<button></button> --> añadir un boton
+type="" --> especificar el tipo de boton
+submit --> indica que es un boton para enviar el formulario
+button --> indica que es un boton simple sin nada de funcionalidades extra
+reset --> restablecer los campos de un formulario a sus valores iniciales
+checkout --> boton que se puede marcar o desmarcar sin imnportar los demas
+radio --> son botones los cuales solo pueden haber uno de estos marcados, los demas no
+file --> al clickearlo te permite añadir archivos
+value="" --> añade un texto dentro
+acept="" --> indica que tipo de archivos acepta
+multiple --> indica que pueden añadirse varios archivos de una vez
+<label></label> --> crear un texto descriptivo asociado a algun elemento del formulari ocomo el input
+for="" --> indica a que elemento esta asociado (debe llamarse igual que el id)
+id="" --> crea un nombre unico para un elemento
+class="" --> crea un nombre para un elmento pero este nombre puede ser usado por otros elementos tambien
+<fieldset></fieldset> --> agrupar y organizar elementos de formulario relacionados
+<legend></legend> --> proporciona una etiqueta descriptiva para el fieldset
+checked --> marca como seleccionada esa opcion
+<footer></footer> --> añadir un footer
+<title></title> --> añade un titulo a la pagina
+lang="" --> añadirle un idioma a la pagina
+en -> ingles
+es --> español
+<meta> --> añadir configuraciones
+charset="" --> especificar los simbolos, letras, etc que se peuden utilizar
+UTF-8 --> acepta letras en el alfabeto español
+<style></style> --> se utiliza para añadir estilos css dentro del mismo archivo html
+<link> --> se utiliza para indicarle al programa en que archivo externo se encuentran los estilos css
+
+
+

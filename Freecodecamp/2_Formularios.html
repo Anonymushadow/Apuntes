@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/users">
+        <input type="text" name="Nombre" placeholder="Nombre" required>
+        <input type="mail" name="Mail" placeholder="Mail" required>
+        <input type="password" name="Contraseña" placeholder="Password" required>
+        <button type="button">Boton simple</button>
+        <button type="reset">Reset</button>
+        
+        <label for="CB">Checkbox</label>
+        <input type="checkbox" id="CB" name="cursos" value="curso1"> Curso 1
+        
+        <label for="CB_2">Checkbox</label>
+        <input type="checkbox" id="CB_2" name="cursos" value="curso2"> Curso 2
+        
+        <label for="CB_3">Checkbox</label>
+        <input type="checkbox" id="CB_3" name="cursos" value="curso3"> Curso 3
+
+        <label for="IR">Input radio</label>
+        <input type="radio" id="IR" name="curso" value="curso1"> Curso 1
+
+        <label for="IR_2">Input radio</label>
+        <input type="radio" id="IR_2" name="curso" value="curso2" checked> Curso 2
+        
+        <label for="IR_3">Input radio</label>
+        <input type="radio" id="IR_3" name="curso" value="curso3"> Curso 3
+
+        <label for="fileInput">Archivo</label>
+        <input type="file" id="fileInput" accept=".jpg, .jpeg, .png, .pdf">
+        <label for="archivos">Archivos</label>
+        <input type="file" id="archivos" name="archivos" multiple>
+        <button type="submit">Submit</button>
+
+        <fieldset>
+            <legend>Preferencia de transporte:</legend>
+            <label><input type="radio" name="transporte" value="coche"> Coche</label>
+            <label><input type="radio" name="transporte" value="bicicleta"> Bicicleta</label>
+            <label><input type="radio" name="transporte" value="caminar"> Caminar</label>
+          </fieldset>
+    </form>
+    <footer></footer>
+</body>
+
+</html>
