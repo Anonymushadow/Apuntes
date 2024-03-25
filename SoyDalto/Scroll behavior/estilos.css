@@ -1,0 +1,11 @@
+/*
+scroll behavior = define como baja al tocar en un enlace que va dentro de la pagina
+auto = brusco
+smooth = suave
+
+ponerlo al body o al html
+*/
+
+html {
+	scroll-behavior: smooth;
+}

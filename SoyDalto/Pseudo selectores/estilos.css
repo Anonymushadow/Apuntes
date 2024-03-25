@@ -1,0 +1,179 @@
+div {
+	width: 200px;
+	height: 200px;
+	background: #000;
+	color: #fff;
+	margin: 20px;
+	font-size: 20px;
+	padding: 10px;
+}
+
+/*
+user selected = evita que la persona pueda seleccionar las letras
+*/
+.text {
+	user-select: none;
+}
+
+/*
+Hover = al pasafr el mouse por encima
+*/
+.hover:hover {
+	background-color: #482;
+}
+
+/*
+active = al presionar y mantener
+*/
+.active:active {
+	background-color: #009;
+}
+
+/* Coincide con cualquier checked/selected radio, checkbox, u option */
+.chek:checked {
+  margin-left: 25px;
+  border: 1px solid blue;
+}
+
+/* Selecciona cualquier <input> predeterminado */
+.def:default {
+  box-shadow: 0 0 2px 1px coral;
+}
+
+/* Selecciona cualquier elemento con texto de derecha a izquierda */
+.dir:dir(rtl) {
+  background-color: red;
+  color: #009;
+}
+
+.dir {
+	direction: rtl;
+}
+
+
+/* Selecciona cualquier <input> deshabilitado */
+.disabled input:disabled {
+  background: #ccc;
+}
+
+/* Selecciona cualquier <div> que no contenga contenido */
+.empty div:empty {
+  background: lime;
+}
+
+/* Selecciona cualquier <input> habilitado */
+.enable input:enabled {
+  color: blue;
+}
+
+/* Selecciona la primera página al imprimir */
+@page :first {
+  margin-left: 50%;
+  margin-top: 50%;
+}
+
+/* Selecciona el primer elemento entre sus hermanos */
+.first:first-child {
+  color: lime;
+}
+
+/* Selecciona cualquier <input> cuando se enfoca */
+.focus input:focus {
+  border: 5px solid red;
+}
+
+/* Selecciona cualquier <input>, pero solo cuando tiene un rango
+   especificado, y su valor está dentro de ese rango */
+.range input:in-range {
+  background-color: rgba(0, 255, 0, 0.25);
+}
+
+/* Selecciona cualquier <input> no válido */
+.invalid input:invalid {
+  background-color: pink;
+}
+
+/* Selecciona cualquier <p> en inglés (en) */
+.en p:lang(en) {
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+/* Selecciona cualquier <p> que sea el último elemento
+   de su tipo entre sus hermanos */
+p:last-of-type {
+  color: lime;
+}
+
+/* Selecciona cualquier elemento que NO sea...*/
+.not:not(p) {
+  color: blue;
+  overflow: scroll;
+}
+
+/* Selecciona cada cuarto elemento entre
+   cualquier grupo de hermanos */
+:nth-child(4n) {
+  color: lime;
+}
+
+/* Selecciona cada cuarto elementos <p> entre
+   cualquier grupo de hermanos, contando hacia
+   atrás desde el último */
+p:nth-last-of-type(4n) {
+  color: lime;
+}
+
+/* Selecciona cualquier <a> que ha sido visitado */
+a:visited {
+  color: green;
+}
+
+/* Selecciona cualquier <input> válido */
+input:valid {
+  background-color: powderblue;
+}
+
+/* Selecciona un elemento con una ID que coincida con el fragmento de la URL actual */
+:target {
+  border: 2px solid black;
+}
+
+/* Selects a scoped element */
+:scope {
+  background-color: yellow;
+}
+
+/* Selecciona cualquier <input> requerido */
+input:required {
+  border: 1px dashed red;
+}
+
+/* Selecciona cualquier elemento <input> que sea editable */
+:read-write;
+
+/* Selecciona cualquier <input> que está en modo de solo lectura */
+:read-only;
+
+/* Selecciona cualquier <input>, pero solo cuando tiene un
+   rango especificado, y su valor está fuera de ese rango */
+input:out-of-range {
+  background-color: rgba(255, 0, 0, 0.25);
+}
+
+/* Selecciona cualquier opción <input> */
+input:optional {
+  border: 1px dashed black;
+}
+
+/* Selecciona cada <p>, pero solo si es el único */
+/* elemento <p> dentro de su padre */
+p:only-of-type {
+  background-color: lime;
+}
+
+/* Selecciona cada <p>, pero solo si es el */
+/* único hijo de su padre */
+p:only-child {
+  background-color: lime;
+}
+

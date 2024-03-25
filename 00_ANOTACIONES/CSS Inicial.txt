@@ -1,0 +1,375 @@
+
+------------------------------------------------------------------------------------------------------
+0_INTRODUCCION
+------------------------------------------------------------------------------------------------------
+Archivo CSS: en este archivo le indicamos a la pagina como queremos que se vea cada elemento html 
+    .por ejemplo si queremos un texto de color rojo, si queremos que la foto sea mas chica, etc 
+
+Estructura:
+    .un archivo css se compone de selectores y estilos
+    .los electores se utiliza para seleccionar uno o varios elementos HTML de una página web
+
+Como indico donde esta mi archivos con estilos?: en el html podes añadir estilo de 3 maneras
+    1_Podes poner estilos css entre las etiquetas <style></style>
+    2_Podes poner una etiqueta <link> que indica donde se encuentra este archivo con estilos
+    3_Podes poner en la etiqueta html style="" y dentro de esto pones los estilos (estilos en linea)
+    .Como indico a que elemento deseo añadirle tales estilos?: esto se realiza mediante los Selectores
+        .Selectores: son nombres en css que se utilizan para seleccionar uno o varios elementos HTML en una página web
+        .Tipos de selectores:
+            1_Etiqueta: podemos indicar que etiquetas editar 
+                por ejemplo: 
+                    p {} --> aca definimos como se veran todos los elemntos p
+            2_Clase: podemos indicar como se veran todos los elemntos que tengan tal Clase
+                Por ejemplo: 
+                    .contenedores {} --> aca definimoscomo se veran todos los elementos con la clase contenedores
+                    para indicar que estamos seleccionando segun la clase ponemos un . antes de la clase 
+            3_Id: podemos indicar como se vera el elemento que tenga tal Id
+                Por ejemplo: 
+                    #imagePerfil {} --> aca definimoscomo se vera el elemento con el id imagePerfil 
+                    para indicar que seleccionamos segun el id ponemos un # antes del id
+        .Extra: a veces varios elementos deben compartir estilos pero no comparten la clase ni el id ni la etiqueta,
+        para estos casos podemos crear los estilos y llamar a cada elemnto que tendra ese estilo
+            por ejemplo:
+                
+                h1,
+                h2,
+                p {
+                    background-color: red;
+                    color: blue;
+                }
+
+            en este caso tanto los h1, como los h2 y los p tendran un fondo rojo con letra azul
+Especificidad: se trata de que tipo de selector, orden y estilo tiene mas importancia sobre otros
+    el orden y el tipo de estilos influyen en el resultado
+    Orden:
+        .CSS se ejecuta de arriba para abajo
+        .la linea 1 se ejecuta antes que la 2 y asi
+            .por ejemplo si en la linea 40 pongo que el texto tendra color rojo pero en la linea 41 le digo que
+            el texto tendra color azul primero se va a pintar el texto de rojo y despues se pintara de azul, 
+            provocando que nosotros lo veamos de color azul
+    Gerarquia de Especificidad (de menor a mayor):
+        1_pseudo-elementos y elementos
+        2_clases, Pseudoclases y atributos
+        3_ID
+        4_estilos en linea
+        5_ !important: podemos ponerle al estilo !important y eso significa que sin importar el tipo de selector ni la posicion, este sera el qeu se vera si o si    
+
+Metodología BEM: Se trata de a cada clase y id ponerle nombres descriptivos separador por dos guiones bajos
+    por ejemplo 
+        contenedor__imagen
+        header__info__redes
+        header__info__redes__iconos
+
+------------------------------------------------------------------------------------------------------
+1_UNIDADES
+------------------------------------------------------------------------------------------------------
+Unidades Relativas: dependen de la medida de otra cosa
+    em: Relativo al tamaño de fuente del elemento. 
+        1 em = tamaño del mismo estilo pero en el contenedor 
+        por defecto 1 em suele ser 16px 
+        por ejemplo: si un contenedor tiene 5px de tamaño de letra y a su contenido le decimos que su tamaño
+        de letra sera 2 em significa que sera igual a 10px (2 em seria en este caso 2 * 5px)
+    rem: Relativo al tamaño de fuente del elemento raíz (generalmente el tamaño de fuente del elemento <html>).
+    %: Porcentaje relativo al tamaño del elemento padre.
+
+Unidades Absolutas:
+    px: Píxeles, una unidad absoluta de tamaño.
+    cm: Centímetros.
+    mm: Milímetros.
+    in: Pulgadas.
+    pt: Puntos (1/72 de pulgada).
+    pc: Picas (12 puntos).
+
+Unidades de Vista:
+    vw: Porcentaje del ancho de la ventana gráfica.
+    vh: Porcentaje de la altura de la ventana gráfica.
+    vmin: El porcentaje del ancho o alto de la ventana, dependiendo de cuál sea el menor.
+    vmax: El porcentaje del ancho o alto de la ventana, dependiendo de cuál sea el mayor.
+
+porque usamos medidas relativas?: al adaptar la pagina a tamaños mas chicos o mas grandes, la letra debe adaptarse
+    por ejemplo si hacemos una pagina web para pc va a tener letra muy grande y si adaptamos la pagina a moviles
+    la letra se vera muy grande, para eso usamos las medidas relativas, estas se achican o agrandas respecto a otras cosas
+
+Viewport width vs Viewport height:
+    Viewport: es la pantalla entera
+    bordes que no se ve la pagina en si
+    Viewport width (vw): esto indica cuanto queremos que mida el elemento respecto al ancho del viewport
+        100vw: significa que mide exactamente lo mismo que el ancho del viewport
+    Viewport height (vh): esto indica cuanto queremos que mida el elemento respecto al alto del viewport
+        100vh: significa que mide exactamente lo mismo que el alto del viewport
+
+------------------------------------------------------------------------------------------------------
+2_TIPOGRAFIAS EXTERNAS
+------------------------------------------------------------------------------------------------------
+para importar tipografias externas podemos ir a google fonts y buscar ahi la tipografia deseada
+(google fonts es un ejemplo, hay varias paginas para eso)
+
+------------------------------------------------------------------------------------------------------
+3_ELIMINAR ESTILOS POR DEFECTO
+------------------------------------------------------------------------------------------------------
+Normalize:
+    .Normalize.css es un archivo CSS que se utiliza para establecer un conjunto consistente de estilos
+    iniciales en todos los navegadores
+    .Normalize.css no elimina todos los estilos por defecto, sino que establece reglas consistentes 
+    para que los estilos se vean igual o muy similares en todos los navegadores.
+
+Padding 0 y Margin 0:
+    .padding: 0; y margin: 0; son reglas CSS que establecen el relleno y el margen de todos los elementos 
+    en una página en 0. Esto elimina cualquier espacio en blanco por defecto alrededor de los elementos.
+    .Es común usar esto como parte de un "reset" o "normalización" de estilos para asegurarse de que no 
+    haya espacios no deseados entre elementos.
+
+Box-Sizing: Border-Box:
+    .box-sizing: border-box; es una propiedad CSS que controla cómo se calcula el tamaño total de un elemento, 
+    incluyendo su contenido, relleno y borde.
+    .Cuando se establece en border-box, el ancho y la altura del elemento incluyen el tamaño del relleno y 
+    el borde. Esto significa que si defines un elemento con un ancho de 100px y un padding de 10px, el 
+    contenido real del elemento tendrá un ancho de 80px (100px - 2 * 10px) en lugar de 100px.
+
+
+------------------------------------------------------------------------------------------------------
+4_CAJAS
+------------------------------------------------------------------------------------------------------
+Cajas en linea: son los elementos que adaptan a su contenido
+    por ejemplo si ponemos un teexto dentro de un elemeneto en line el elmento solo medida lo mismo
+    que mide el texto en si
+Cajas en bloque: son los elementos que se adaptan al tamaño de su contenedor
+    por ejemplo si ponemos dos elementos en bloque uno al lado del otro se van a 
+    poner uno abajo del otro debido a que ocupan todo el contenedor de ancho
+
+------------------------------------------------------------------------------------------------------
+5_PADDING Y MARGIN
+------------------------------------------------------------------------------------------------------
+Shorthands: un shorthand es una abreviacion de varias propiedades
+padding y margin son Shorthands
+    padding: se utiliza para definir el espacio entre cada borde del elemento y su contenido
+        por ejemplo: 
+            padding: 4px;  
+            indica que tendra 4px entre su contenido y su borde
+            padding: 4px 2px; 
+            indica que tendra 4px abajo y arriba pero tendra 2px a la derecha y a la izquierda
+        shorthand: padding es la abreviacion de padding-top + padding-right + padding-bottom + padding-left
+            tambien podemos poner paddin y una medida por cada lado
+                padding: 4px 13px 2px 10px;
+    margin: se utiliza para definir el espacio que habra entrer el elemento y cualquier otro elemento por fuera de este
+        por ejemplo: 
+            margin: 4px; 
+            indica que habran 4px al rededor del elemento donde no podra haber otro elemento
+            margin 3px 9px; 
+            indica que habran 3 pixeles arriba y abajo del elemento y 9 pixeles a la derecha e izquierda del elemento 
+        shorthand: margin es un shorthand de margin-top + margin-right + margin-bottom + margin-left
+            tambien podemos poner margin y una medida por cada lado
+                margin: 4px 3px 2px 1px;
+
+------------------------------------------------------------------------------------------------------
+5_WIDTH Y HEIGHT
+------------------------------------------------------------------------------------------------------
+Width: es el ancho del elemento
+Height: es el alto del elemento
+Porque hay min y max?: esto se debe a que cuando achicamos o agrandamos la pantalla a veces queremos que los
+elementos se adapten al tamaño 
+    por ejemplo a un contenedor le ponemos de ancho tiene 50%, asi a medida que se achica la pantalla
+este se achica al igual que cuando se agranda la pantalla 
+    pero a veces puede ser que el elemento se llega a agrandar demaciado o achicar demaciado asi que le ponemos un maximo de
+    tamaño y un minimo para que no sea muy chico ni muy grande pero que se adapte
+
+------------------------------------------------------------------------------------------------------
+6_BORDES
+------------------------------------------------------------------------------------------------------
+shorthand: es un shorthand de varias propiedades
+    border-width --> tamaño del borde
+    border-style --> estilo del borde
+    border-color --> color del borde
+border: 4px solid red;
+
+------------------------------------------------------------------------------------------------------
+8_BOX MODEL
+------------------------------------------------------------------------------------------------------
+¿Que es?: se trata de cómo se representan y se comportan los elementos HTML en una página web
+Hay 4 propiedades del box model:
+    content: es el contenido del elemento
+        para modificarlo usamos line-height
+    border: es el borde
+        para modificarlo usamos border
+    padding: es el especio entrer el contenido del elemento y sus bordes
+        para modificarlo usamos padding
+    margin: es el espacio entrer el elemento y otros elementos
+        para modificarlo usamos margin
+
+------------------------------------------------------------------------------------------------------
+8_SOMBRAS
+------------------------------------------------------------------------------------------------------
+box-shadow: 1px 2px 15px 0 #000;
+    tamaño en eje x
+    tamaño en eje Y
+    desenfoque
+    borde
+    color
+text-shadow: 1px 2px 7px #fff;
+    tamaño en eje x
+    tamaño en eje Y
+    desenfoque
+    color
+para añadir dos sombras o incrementar la intensidad ponemos , y añadimos otra sombra
+box-shadow: 1px 2px 17px 0 #000, 1px 2px 17px 0 #000;
+
+------------------------------------------------------------------------------------------------------
+9_OUTLINE
+------------------------------------------------------------------------------------------------------
+shorthand: es un shorthand de 
+    outline-width: tamaño del outline
+    outline-style: estilo del outline
+    outline-color: color deel outline
+.la diferencia entrer border y outline es que outline funciona como un resaltador, no ocupa un espacio
+.por que alañadirlo el elemento se ve mas grande?: esto es debido a que el outline no ocupa un espacio,
+en cambio es como un stiker que se pega encima de todo, los elementos de abajo no se van a mover porque 
+este ese outline ahi, en cambio el borde junto al border-box se añade y se hace parte del elemento en si
+
+------------------------------------------------------------------------------------------------------
+10_POSITION
+------------------------------------------------------------------------------------------------------
+position: se trata de como posicionar el elemnto, segun su posicion adquiere ciertas propiedades
+    el position afecta el flujo del html (orden en el cual añadimos los elementos)
+    el flujo de html afecta el como se ven los elementos, el elemento añadido ultimo esta por encima de los primeros
+    al posicionarlo obtiene 4 propiedades nuevas:
+        top: --> Define la distancia entre el borde superior del elemento y el borde superior del elemento contenedor
+        left: --> Define la distancia entre el borde izquierdo del elemento y el borde izquierdo del elemento contenedor
+        right: --> Define la distancia entre el borde derecho del elemento y el borde derecho del elemento contenedor
+        bottom: --> Define la distancia entre el borde inferior del elemento y el borde inferior del elemento contenedor
+static --> es un elemento comun, sin posicion
+relative --> el espacio del elemento se mantiene intacto, por ejemplo si le ponemos un top 500px, el elemento se va a mover hacia abajo
+pero el espacio donde estaba este va a estar vacio, y el elemento en si va a estar por encima de los otros elementos
+absolute --> es como el relative, pero la diferencia es que cuando se posiciona su espacio es ocupado por los demas elementos 
+que le rodean
+sticky --> se debe definir una posicion, el elemento sera estatico hasta que llegue a la posicion definida, al llegar ahi,
+el elemento se quedara fijo, lo que significa que  si la pagina se sigue moviendo el elemento se quedara en ese espacio 
+por encima de todo, como un stiker (mayormente usado para un navbar que al bajar se queda fijo en un lugar)
+fixed --> funciona como un stiker, se queda encima de todo, no ocupa un espacio y siempre esta en el mimso lugar
+(comunmente usado para las publicidades que aparecen abajo en la pantalla)
+
+------------------------------------------------------------------------------------------------------
+11_Z-INDEX
+------------------------------------------------------------------------------------------------------
+¿Que es?: se trata de definir la posicion en el eje Z
+con esta propiedad indicas que tan adelante o atras esta un elemento respecto a los demas
+por ejemplo el elemento 1 esta debajo del elemento 2 pero si le añadimos un z-index 1 al elemnto 1 ahora estara por encima
+solo funciona cuando la caja esta posicionada (osea tiene un pistion)
+Consejo: añadir z-index de 100 en 100, de 50 en 50, o a eleccion pero no de 1 en 1
+    por ejemplo: 
+        si tengo 20 elementos, y le añado un z index 1 al elemento 20, 2 al 19 y asi quedando el ultimo elemento abajo de todo y el
+        primero encima, si de repente deseo que el numero 5 este encima del 8 no puedo modificarlo con facilidad porque
+        los numeros del 1 al 20 los tengo ocupados, deberia cambiar todos, en cambio si voy de 100 en 100 puedo ponerle un z-index 
+        150 y ya estaria entre el 100 y el 200
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+------------------------------------------------------------------------------------------------------
+. --> dar estlios a una clase
+# --> dar estilos a un id
+/**/ --> añadir comentarios
+* --> con este selector representa a todo, define un estilo que afectara a cada elemento
+px --> pixeles
+% --> porciento
+vw --> viewport width (tamaño de la pantalla fisica en horizontal)
+vh --> viewport height (tamaño de la pantalla fisica en vertical)
+em --> Relativo al tamaño de fuente del elemento
+rem --> Relativo al tamaño de fuente del elemento raiz
+---------------------------PROPIEDADES DE TEXTO---------------------------
+font-size: --> tamaño de letra
+font-size: --> tipografia
+line-height: --> cuanto ocupa la letra de altura 
+font-weight: --> grosor de la letra
+normal --> comun
+color --> color de la letra
+---------------------------ELIMINAR ESTILOS POR DEFECTO---------------------------
+box-sizing: --> define como se calculara el tamaño de los elementos
+border-box --> indica que un elemento va a medir lo mismo con o sin bordes, estos no afectaran el tamaño total
+---------------------------Cajas--------------------------------------------------
+display: --> indica que modo de caja tendra 
+block --> indicar que se comoprtara como un elemento de bloque
+inline-block --> indicar que se comoprtara como un elemento de linea
+---------------------------Paddin y Margin--------------------------------------------------
+padding: --> definir el espacio entre el elemento y su contenido
+padding-top: --> definir el espacio entre el borde superior del elemento y su contenido
+padding-bottom: --> definir el espacio entre el borde inferior del elemento y su contenido
+padding-right: --> definir el espacio entre el borde derecho del elemento y su contenido
+padding-left: --> definir el espacio entre el borde izquierdo del elemento y su contenido
+margin: --> definir el espacio entre el elemento y cualquier otro
+margin-top: --> definir el espacio entre el borde superior del elemento y cualquier otro elemento
+margin-bottom: --> definir el espacio entre el borde inferior del elemento y cualquier otro elemento
+margin-right: --> definir el espacio entre el borde derecho del elemento y cualquier otro elemento
+margin-left: --> definir el espacio entre el borde izquierdo del elemento y cualquier otro elemento
+---------------------------Width y Height--------------------------------------------------
+height: --> definir el alto del elemetno
+min-height: --> definir el minimo de alto que tendra el elemento
+max-height: --> definir el maximo de alto que tendra el elemento
+width: --> definir el ancho del elemento
+min-width: --> definir el minimo de ancho que tendra un elemento
+max-width: --> definir el maximo de ancho que puede tener el elemento
+---------------------------Box Sizing--------------------------------------------------
+box-sizing: --> define como se calculara el tamaño de los elementos
+border-box --> indica que un elemento va a medir lo mismo con o sin bordes, estos no afectaran el tamaño total
+content-box --> el tamaño total de un elemento es su tamaño + los padding, bordes, etc
+
+
+---------------------------Border--------------------------------------------------
+border: --> shorthand para añadir bordes
+border-color: --> color del borde
+border-style: --> tipo de borde
+solid --> normal
+dashed --> punteado
+double --> borde doble
+inset --> mitad y mitad
+groove --> doble mitad y mitad
+border-top: --> borde superior
+border-bottom: --> borde inferior
+border-left: --> borde izquierdo
+border-right: --> borde derecho
+border-width: --> tamaño del borde
+border-radious: --> redondeo del borde
+
+---------------------------Sombras--------------------------------------------------
+box-shadow: --> añadir sombras a un elemento
+text-shadow: --> añadir sombra a un texto
+
+---------------------------Outline--------------------------------------------------
+outline: --> crear un borde que no ocupa espacio
+
+---------------------------Position--------------------------------------------------
+position: --> definir la posicion del elemento
+static --> normal
+relative --> se puede mover de lugar pero el espacio suyo queda vacio 
+absolute --> se puede mover de lugar y los demas elmeentos ocupan su espacio
+sticky --> se queda pegado en un lugar especifico al llegar alla
+fixed --> se queda pegado en un lugar especifico siempre
+
+---------------------------Z-Index--------------------------------------------------
+z.index: --> tirar para adelante
+
+
+
+
+
+

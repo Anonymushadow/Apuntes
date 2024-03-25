@@ -1,0 +1,71 @@
+
+/*
+display 
+block = ocupa toda la linea
+inline = ocupa solo el espacion que usa (mayormente es para textos)
+inline-block = es un block que podes modificar su tamaño
+table = se comporta como una tabla
+inline-table = se comporta como una tabla en linea
+list-item = se comporta como una lista
+table-cell = se comporta como una celda de tabla
+table-row =  se comporta como una fila de tabla
+table-column = se comporta como una columna de tabla
+grid =  se convierte en un grid container
+flex = se convierte en un flex container
+inline-flex = 
+inline-grid =
+
+
+las tablas estan en desuso
+*/
+
+.block{
+	display: block;
+}
+
+.inline{
+	display: inline;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.table{
+	display: table;
+}
+
+.inline-table{
+	display: inline-table;
+}
+.list-item{
+	display: list-item;
+}
+
+.table-cell{
+	display: table-cell;
+}
+
+.table-row{
+	display: table-row;
+}
+
+.table-column{
+	display: table-column;
+}
+
+.grid{
+	display: grid;
+}
+
+.flex{
+	display: flex;
+}
+
+.inline-flex{
+	display: inline-flex;
+}
+
+.inline-grid{
+	display: inline-grid;
+}

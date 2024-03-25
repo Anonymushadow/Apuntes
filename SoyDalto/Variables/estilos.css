@@ -1,0 +1,26 @@
+
+
+
+/*
+Variables
+globales = se puede usar desde cualquier elemento (se pone en contenedores raiz o padres)
+
+se crea con --
+se utiliza poniendo var(--nombre_De_variable)
+:root = es como seleccionar html
+*/
+
+
+:root {
+--verde: #4c5;
+--celeste: #489;
+--rojo: #500;
+--rosa: #907;
+}
+
+.variables {
+	color: var(--verde);
+	background-color: var(--celeste);
+	width: 500px;
+	height: 500px;
+}

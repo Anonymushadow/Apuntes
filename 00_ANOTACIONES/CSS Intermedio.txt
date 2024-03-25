@@ -1,0 +1,560 @@
+
+------------------------------------------------------------------------------------------------------
+0_DISPLAY
+------------------------------------------------------------------------------------------------------
+el display modificar el comportamiento de las cajas
+inline-block vs block:
+    a un inline-block ocupa una parte del renglon
+    block ocupa todo el renglon
+inline vs inline-block:
+    inline se adapta al contenido, si el contindo ocupa 60px entonces el elemnto es de 60px
+    inline-block se adapta al contenido pero se le puede dar un width y height personalizado
+inline por lo general se usa para textos
+
+
+
+------------------------------------------------------------------------------------------------------
+1_OVERFLOW
+------------------------------------------------------------------------------------------------------
+overflow: se trata de que hacer con el contenido que desborda del contenedor
+    por ejemplo si tengo un contenedor de 90px de alto pero el texto ocupa 200px de alto
+    el overflow decide que hacer
+hidden: con hidden el texto sobrante no se ve ni se se puede hacer nada
+auto: en caso de que se desborde el contenido se agrega un scroll al contenedor
+scroll: añade un scroll por mas que no sea necesario
+shorthand: overflow es un shorthand de overflow-y y overflow-x
+
+------------------------------------------------------------------------------------------------------
+2_FLOAT
+------------------------------------------------------------------------------------------------------
+recomendacion: usarlo para cuando tenemos una imagen con texto un texto suelto dentro contenedor
+    ejemplo <div>
+                <img src=""/>
+                texto suelto sin etiqueta p ni nada
+            </div>
+
+            img {
+                float: right;
+            }
+
+            esto hara que la imagen esta a la derecha y el texto rodee la imagen
+------------------------------------------------------------------------------------------------------
+3_PSEUDOELEMENTOS
+------------------------------------------------------------------------------------------------------
+son como una parte de un elemento en si
+para poner psudoelementos se pone el selector + :: + pseudoelemento
+ejemplo
+    .contenedor::first-line {
+
+    }
+
+::first-line:
+    funciona en los elementos block e inline block
+    sirve para cambiar la primera linea del elemento
+    por ejemplo:
+        si tengo un texto le puedo pintar la primera linea de azul y cuando la pantalla se achique o agrande
+        por mas que el texto se ponga en mas lineas o menos siempre la primera va a estar en azul
+
+::first-letter:
+    sirve para modificar la primera letra
+    por ejemplo podemos usarlo en un libro, donde cada capitulo tiene la primera letra grande y las demas chicas
+    funciona en los elementos block e inline block
+
+::placeholder:
+    sirve para modificar el placeholder
+    placeholder es el texto que aparece en los formularios dentro del input, que al escribir este desaparece,
+    no podemos seleccionarlo ni copiarlo ni nada, al clickear en el input se elimina  y al dejar vacio el input
+    aparece ese texto de nuevo
+
+::selection:
+    sirve para modificar los textos seleccionados
+    ¿A que me refiero?: cuando seleccionamos un texto por lo general este se vera con letra blanca y fondo azul
+    pero con el selection podemos cambiar y que se vea por ejemplo fondo negro y letra amarilla
+
+::after: 
+    se vuelve hijo del elemnto donde se le aplica
+    necesitan una propeidad content
+    son elementos inline
+    no existe en el dom, no es seleccionable y al inspeccionarlo no veremos un elemento html
+    sirve para añadir algo despues de un elemento
+
+::before:
+    se vuelve hijo del elemnto donde se le aplica
+    necesitan una propeidad content
+    son elementos inline
+    no existe en el dom, no es seleccionable y al inspeccionarlo no veremos un elemento html
+    sirve para añadir algo antes de un elemento 
+
+after y before:
+    content="": el content es que se añadira en el after o before, todo lo demas son los estilos de ese after
+    permiten agregar estilos y contenido adicional de manera puramente visual sin afectar la estructura HTML
+    por ejemplo los podemos usar para agregar un icono, una marca, o algún elemento decorativo
+
+    Ejemplo:
+        .titulo::before {
+            content: "✨";
+            margin-right: 5px;
+        }
+
+        esto añadira un ✨ antes del titulo:  ✨ titulo  
+
+        .titulo::after {
+            content: "✨";
+            margin-right: 5px;
+        }
+
+        esto añadira un ✨ despues del titulo: titulo ✨
+
+------------------------------------------------------------------------------------------------------
+4_PSEUDOCLASES
+------------------------------------------------------------------------------------------------------
+las pseudoclases son escuchas de eventos
+¿Que es un evento?: un evento es una accion que ocurre en la pagina
+¿Que es una escucha?: con una escucha se refiere a que detecta los eventos cuando ocurren
+ejemplo: si hago click en un elemento este es detectado por una pseudoclase y cuando eso ocurre se hace algo
+para usar pseudoclases se pone selecto + : + pseudoclase
+    .titulo:hover {}
+
+:hover: detecta cuando alguien pone el cursor encima deel elemento y cuando eso
+ocurre modifica el elemento pero cuando el cursor sale del elemento este se 
+vuelve a los estilos previos al hover
+    por ejemplo: 
+        .titulo {
+            color: red;
+        }
+
+        .titulo:hover {
+            color: yellow;
+        }
+
+        el titulo es rojo, cuando se pone el cursor encima se pone amarillo y cuando se quita el
+        cursor de encima del elemento se pone rojo de vuelta
+
+:link: sirve para ponerle estilos a los links que no hayan sido visitados
+
+:visited: sirve para ponerle estilos a los links que ya fueron visitado
+
+link vs visited:
+    por ejemlpo si tengo un link en mi pagina que aparece de color azul le podemos poner lo 
+    siguiente
+
+        a:link {
+            color: violet;
+        }
+
+        a:visited {
+            color: orange;
+        }
+
+        de este modo el link va a ser violeta pero cuando haga click en el y visite la pagina cambiara a naranja
+        y asi se quedara hasta que borremos los datos de navegacion y no detecte que ya haya sido visitado ese link
+
+:active: se trata de cuando presionamos el click sobre un elemento pero no lo soltamos, al soltarlo 
+deja de estar active
+
+:focus: se trata de cuando estas en un input
+    por ejemplo cuando en un formulario haces click en un input vas a ver que los borrdes por lo general
+    se remarcan y sabes en cual input estas posicionado, eso mismo detecta focus, en cual input estas
+    posicionado
+
+:lang(): es una funcion que se utiliza para modificar los estilos del texto que esta en un lenguaje especifico
+    ¿Que es una funcion?: una funcion es un codigo de programaicon que podemos usarlo con tan solo escribir su nombre
+    ¿Como se que lenguaje modifico y como se define?
+        .para modificar un lenguaje debemos pasarle el lenguaje entre los parentesis
+        .para definir si un texto esta en un lenguaje u otro debemos ponerlo en el html
+    Ejemplo:
+        en el archivo.html
+            <p lang="en">Hello, this is a text</p>
+            <p lang="es">Hola, esto es un texto</p>
+
+        en el archivo.css
+            p:lang("es") {
+                color: red;
+            }
+
+            p:lang("en") {
+                color: blue;
+            }
+
+        aca estamos definiendo que el primero p es en ingles (con lang="" definimos el lenguaje)
+        mientras que en el segundo p definimos que el lenguaje es español y en el css indicamos que
+        los textos en español tengan un color rojo y los textos en ingles un color azul
+
+:first-child: selecciona el 1er elemento de un contenedor
+
+:last-child: selecciona el ultimo elemento de un contenedor
+
+:nth-child(): selecciona un elemento especifico, le pasamos entre parentesis cual (osea el 3, el 2, etc)
+
+------------------------------------------------------------------------------------------------------
+5_OBJECT-FIT
+------------------------------------------------------------------------------------------------------
+esto se aplica a las imagenes
+¿Para que sirve?: sirve para cuando un contenedor contiene una imagen dentro y esta no es del mismo
+tamaño del contenedor, provocando que se quede mas chica que el contenedor o que se estire y se vea feo
+sirve para definir como se mostrara la imagen respecto al contenedor
+
+contain: sirve para cuando queremos que la imagen se adapte al contenedor, si el contendor es de
+500px por 500px y la imagen de 20px por 500px entonces la imagen va a quedarse asi y se vea lo demas 
+vacio
+
+cover: la imagen se acerca hasta que esta cubra todo el contenedor sin dejar espacio en blanco y el sobrante 
+se elimina
+
+
+------------------------------------------------------------------------------------------------------
+6_COLORES
+------------------------------------------------------------------------------------------------------
+¿Que tipo de color uso?, ¿RGB?, ¿Hexadecimal?, ¿nombre del color?: lo recomendable es usar rgb o exadecimal
+debido a que con el nombre del color dejamos que el navegador elija el color mientras que rgb y hex  son especificos
+ejemplo: si ponemos color: red indicamos que sea rojo pero en un navegador red puede ser rojo tirando a 
+rosa, en otrro tirando a negro, etc, mientras quesi por ejemplo decimos #f00, esto es u nrojo espcifico 
+y siempre sera igual en cualquier navegador
+
+------------------------------------------------------------------------------------------------------
+7_RESPONSIVE DESIGN
+------------------------------------------------------------------------------------------------------
+¿Que es?: se trata de adaptar una pagina web a varios tipos de resoluciones / pantallas / tamaños
+Mobile first: se trata de crear una pagina web para celulares y adaptar su tamaño al de una 
+computadora de escritorio (es lo mas recomendado)
+Desktop first: se trata de crear una pagina web para computadoras y adaptarlo a celulares
+Media Querys: son comandos de css que detectan cando una pantalla supera ciertos limites de 
+tamaño y al detectar esto cambia el diseño
+    ejemplo:
+        div {
+            width: 45%;
+            display: inline-block;
+        } 
+
+        @media only screen and(max-width: 800px;){
+            div {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        aca indicamos que cuando la pantalla sea menor a 800px los div tengan un width del 100%
+        y un display block 
+    
+    para que funcione el @media se edbe aladir en el html la etiqueta meta viewport en el head
+    para que este configure la pantalla de manera correcta
+Estructtua:
+    @media tipo_de_contenido operado (condicion){
+
+    }
+
+    tipo_de_contenido:
+        all
+        screen
+        print
+        speech
+    operador:
+        and
+            condicion and condicion and condicion ...
+        not
+        only
+        or
+    condicion:
+        width
+        height
+        orientation
+            landscape
+            portrait
+        min-width
+        max-width
+        min-height
+        max-height
+    
+------------------------------------------------------------------------------------------------------
+8_FLEXBOX
+------------------------------------------------------------------------------------------------------
+¿Que es?: es un tipo de display, un conjunto propiedades que se les añade a los elementos
+flex container: se trata del elemento que agrupara los elementos a los cuales deseamos posicionar
+flex items: son los elementos que seran posicionados
+main-axis: se trata del eje x
+    main start: seria como la parte negativa en un eje cartesiano
+    main end: seria como la parte positiva del eje cartesiano
+cross-axis: se trata del eje Y
+    cross start: seria la parte positiva del eje cartesiano
+    cross end: seria la parte negativa del eje cartesiano
+
+                cross start
+                    ||
+                    ||          
+                    ||          
+                    ||          
+                    ||          
+  main start --------------- main end
+                    ||          
+                    ||          
+                    ||          
+                    ||          
+                cross end
+
+direction: con el flex direction definimos como se alinearan los elementos
+    row: con row decimos que se pondran un elemento al aldo de otro (en el main axis)
+    column: con colmn cada elemento se pondra de abajo del otro (en el cross axis)
+
+Spaces:
+    space-between --> se trata de entre cada caja poner el mismo espacio pero estan pegadas
+    a la pared del contenedor
+
+    space-evenly --> es como el between pero a parte de tener el mismo espacio entre contenedores
+    tambien lo tienen entre un elemento y la pared
+
+    space-around --> al rededor de cada elemento añade una cantidad x de espacio, pero entre cada 
+    elemento estara el espacio de uno + el espacio del otro
+margin: con amrgin auto centra el elemento
+
+flex-grow: se trata de repartir el espacio total 
+    si se lo pongo a un contenedor va a repartir el espacio total entre cada caja agrandandola y 
+    achicandolas a todas por igual
+    si se lo ponemos a un elemnto le decis del espacio total cuanto tomara ese elemento
+        por ejmeplo si al div1 le pones un flex-grow:1; va a medir lo mas que pueda, pero si al div2
+        le pones un flex-grow:2; va a dividir el total deel espacio en 3, le va a dar 1 pedado al div1
+        y 2 pedazo al div2
+
+flex-shrink: se trata de cuando espacio cede cada caja al momento de no entrar
+    ejemplo: si tengo un div de 800px de width y tengo 3 cajas dentro de 300px ccada una no
+    alcanzza el espaico asi que el sobrante se reparte entre cada una y se le quita a cada una lo mismo 
+    pero con flex-shink decidimos que caja cede cuanto espacio, por defecto todas ceden 1
+
+
+
+------------------------------------------------------------------------------------------------------
+9_GRID
+------------------------------------------------------------------------------------------------------
+¿Que es?: es un display que ordena el contenido como si fuera una grilla (tabla)
+grid item: cada elemento dentro del grid container es un grid item
+grid cell: cada celda del grid container
+row: cada fila del grid container
+column: cada columna del grid container
+grid area: son un conjunto de celdas consecutivas que nosotros seleccionamos
+grid line: es cada linea, osea las lineas divisoras de celdas y las lineas que limitan el grid container
+grid implicito vs grid explicito:
+    implicito: se trata de elementos que no estamos programando pero estan ahi como
+    cuando creamos 10 elementos pero solo creamos 3 filas y los otros 7 elementos estan ahi
+    por fuera de las filas
+    explicito: se trata del contenido grid ya programado (ya ubicado)
+grid template rows y columns:
+    para definir la cantidad de filas o columnas ponemos la cantidad de pixeles que medira cada uno
+        grid-template-rows: 150px 150px 150px;
+        esto serian 3 filas de 150 px cada una
+medidas:
+    auto: 
+    fr: el espacio sobrante se le otorga a esa fila / columna
+span: sirve para no contar filas
+    grid-row: 1 / span 3;
+    aca la fila comienza en la linea 1 y ocupa 3 celdas
+repeat(): nos repite ciertas medidas 
+    grid-row: repeat(3, 150px); 
+    es lo mismo que poner 
+    grid-row: 150px 150px 150px;
+
+grid area: se trata de crear areas / conjuntos de celdas en base a nombres
+    ejemplo: 
+        grid-template-area:
+            "header header header"
+            "aside main main"
+            "aside main main"
+        
+        esto crearia una grilla de 3x3, donde las 3 celdas de arriba serian el header, las primeras 
+        celdas de la fila 2 y 3 serian aside y las otras del main
+        para definir cual es el aside, main, etc debemos ponerle a un elemento grid-area: nombre;
+        donde ahi le especificaremos cual area le pertenece
+
+        .header {
+            grid-area: header;
+        }
+
+        ahora las 3 primeras celdas le pertenecen a .header
+
+renombrar lineas: a veces el saber que linea es la linea 1, cual es la 3 y asi puede ser molest, para 
+esto podemos renombrarlas, poniendo de la siguiente manera
+    .contenedor {
+        display: grid;
+        grid-template-rows:
+            [f-line] 
+            150px
+            [s-line]
+            150px
+            [t-line]
+            150px
+            [f-line];
+    }
+
+    ahora tendra 3 filas pero la linea 1 se llamara f-line, la segunda s-line y asi, esto pued facilitar 
+    el uso de grid-row (tambien funciona en columnas)
+
+    grid-row: f-line / t-line;
+
+    indicamos que comienza en la primera linea y acaba en la 3ra
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+------------------------------------------------------------------------------------------------------
+----------------------------------------DISPLAY-------------------------------------------------------
+display: --> modificar el comportamiento de la caja
+block --> hacer que ocupe toda la fila
+inline --> hacer que se adapte a su contenido
+inline-block --> hacer que se adapte a su contenido pero se peuda modificar
+grid --> hacer que se comporte como uan grilla
+flex --> hacer qeu se comporte como una caja flexible
+----------------------------------------Overflow-------------------------------------------------------
+overflow: --> definir que hacemos con el sobrante
+overflow-y --> definir el scroll en vertical
+overflow-x --> definir el scroll en horizontal
+hidden --> que no se pueda hacer scroll
+auto --> que se ponga automaticamente la barra de scroll
+scroll --> por mas que no sea necesairo se añade la barra de scroll
+visible --> por defecto, que sobresalga
+----------------------------------------FLOAT----------------------------------------------------------
+float: --> hacia donde tirar el contenido
+left --> tirar hacia la izquiera
+right --> tirar hacia la derecha
+----------------------------------------PSEUDOELEMENTOS-------------------------------------------------------
+::first-line --> editar la primera linea del elemento
+::first-letter --> modificar la primera letra del elemento
+::before --> añadir algo ants del elemento
+::after --> añadir algo despues del elemento
+content --> que añadir al elemento
+::placeholder --> modificar el placeholder
+::selection --> modificar los estilos del texto seleccionado
+
+----------------------------------------PSEUDOCLASES-------------------------------------------------------
+:hover --> al poner el cursor encima del elemento
+:link --> detecta cuando un link no se visito
+:visited --> detecta cuando un link ya se visito
+:active --> al hacer click pero no soltarlo
+:focus --> al estar sobre un input
+:lang() --> modificar los estilos que estan en tal idioma
+en --> ingles
+es --> español
+:first-child --> el primer elemnto hijo
+:last-child --> el ultimo elemnto hijo
+:nth-child() --> un elemento hijo especifico
+
+----------------------------------------OBJECT FIT-------------------------------------------------------
+objet-fit: --> definir como se vera la imagen respecto al contenedor
+contain --> la imagen se achicara o agrandara hasta que se vea por completo 
+cover --> se agranda hasta cubrir todo el contenedor 
+none --> pone el tamaño de la imagen original
+scale-down --> se queda con la propiedad mas chica
+
+----------------------------------------OBJECT POSITION-------------------------------------------------------
+object-position: --> definir desde que lado se dibuja la imagen
+top --> mostrar de arriba hacia abajo
+bottom --> mostrar de abajo hacia arriba
+left --> mostrar de izquierda hacia derecha
+right --> mostrar de derecha hacia izquierda
+center --> mostrar desde el centro hacia los costados
+
+
+----------------------------------------CURSOR-------------------------------------------------------
+cursor: --> definir el cursor a mostrar en ese elemento
+pointer --> puntero
+copy -->  cursor con un punto de copiar
+progress --> cursor con rueda azul de cargando
+
+(buscar cursores x internet ya que son muchos)
+
+----------------------------------------COLORES-------------------------------------------------------
+# --> colores hexadecimales
+rgb() --> definir los colores rgb
+rgba() --> definir los colores rgba
+
+----------------------------------------RESPONSIVE-------------------------------------------------------
+@media --> indicar que detecte cuando la pantalla sea de tal resolucion
+all --> Se aplica a todos los dispositivos.
+screen --> Se aplica a dispositivos con pantalla (computadoras, tabletas, teléfonos, etc.).
+print --> Se aplica cuando se imprime la página.
+speech --> Se aplica a dispositivos de síntesis de voz.
+width --> Ancho de la ventana del navegador.
+height --> Altura de la ventana del navegador.
+orientation --> Orientación de la pantalla 
+landscape --> pantalla en horizontal
+portrait --> pantalla en vertical
+min-width -->  hasta un cierto minimo de ancho
+max-width --> hasta un cierto maximo de ancho
+min-height --> hasta un cierto minimo de alto
+max-height --> hasta un cierto maximo de alto
+and --> Combina múltiples condiciones. 
+only --> Evita que navegadores antiguos apliquen los estilos dentro del @media.
+not --> Niega la condición. Por ejemplo, @media not screen
+or --> o esta otra condicion
+
+
+----------------------------------------FLEXBOX-------------------------------------------------------
+flex-direction --> definir como se organizara todo
+row --> en forma de fila (una cosa al lado de la otra)
+row-reverse --> se ponen uno al lado del otro pero de derecha a izquierda
+column --> en forma de columna (una cosa debajo de otra)
+column-reverse --> se ponen uno encima deel otro (de abajo hacia arriba)
+justify-content --> alinear elementos en el main axis
+align-items --> alinear elementos en el cross axis
+align-content --> alinear elementos como en align items pero para varias lineas a la vez
+flex-end --> poner los elementos en el cross end o main end
+flex-start --> poner los elementos en el cross start o main start
+center --> poner los elementos centrados
+space-between --> que entre cada elemento haya el mismo espacio
+space-evenly --> que entre cada elemento haya el mismo espacio pero tambien entre el elemento y la pared del contenedor
+space-around --> que al rededor de cada elemento se añada tal cantidad de espacio
+flex-wrap --> definir si los elemtnos se pondran uno debajo del otro si no hay espacio o no
+wrap --> poner un elemento debajo del otro al no haber espacio suficiente para mostrar todos
+no-wrap --> no poner uno edbajo del otro, solo dejarlos
+wrap-reverse --> en vez de poner los elementos debnajo al no haber espacio los pone encima 
+flex-flow --> flex-direction + flex-wrap
+
+align-self --> alinear un solo elemnto del flex container (alineacion en cross axis)
+flex-grow --> repartir el espacio total entre cada elemento
+flex-basis --> es un width para el flexbox
+flex-shrink --> cuanto de espacio cede una caja al no entrar
+flex --> flex-grow + flex-shink + flex-basis
+order --> indica en que posicion se pondra el elemento respecto a los demas
+
+----------------------------------------GRID-------------------------------------------------------
+grid-template-rows --> cuantas filas tendra 
+grid-template-columns --> cuantas columans tendra
+grid-row-gap --> espacio entre cada fila
+grid-column-gap --> espacio entre cada columna
+gap --> grid-row-gap + grid-column-gap
+grid-row-start --> desde que linea vertical comienza
+grid-row-end --> hasta que linea vertical llega esa celda
+grid-column-start --> desde que linea horizontal comineza
+grid-column-end --> hasta que linea horizontal llega esa celda
+grid-colum --> desde que linea a que linea ocupa la celda en columnas
+grid-row --> desde que linea a que linea ocupa la celda en filas
+span --> cuantas filas / columnas ocupa
+repeat() --> repetir una medida especifica
+grid-auto-rows --> cuanto medidan de alto las filas implicitas
+grid-auto-columns --> cuanto medidan de ancho las columnas implicitas
+grid-auto-flow --> que hacer con el codigo implicito 
+row --> ponerlo como una fila
+column --> ponerlo como una columna
+dense --> en caso de que haya un hueco en medio de la grilla que se complete con la
+celda que entre 
+minmax() --> cuanto mide como minimo y cuanto como maximo
+min-content --> se adapta al contenido y muestra lo mas chico posible 
+max-content --> se adapta al contenido y muestra lo mas grande posible
+auto-fill --> si hay espacio añade una celda, si no hay espacio la manda a otra fila 
+auto-fit --> agranda los elementos para que ocupen el espacio y si entra otrta celda la añade
+align-items --> alinea las celdas en vertical
+justify-content --> alinea las celdas en horizontal
+align-content --> alinea las filas en vertical
+justify-content --> alinea las columnas en horizontal
+align-self --> alinear una celda sola en el eje Y
+justify-self --> alinear una celda sola en el eje X
+place-self --> aling-self + justify-self
+grid-template-areas --> crear un area en base a nombre
+grid-area --> definir que nombre de area tiene
+[] --> ponerle nombre a las lineas
+

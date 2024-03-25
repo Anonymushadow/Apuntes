@@ -1,0 +1,35 @@
+
+
+/*
+float = pone dos cosas una al lado de otra
+
+*/
+
+.float div{
+	float: right;
+	width: 50%;
+}
+
+.float__1{
+	background-color: #500;
+	color: #005;
+}
+
+.float__2{
+	background-color: #005;
+	color: #500;
+}
+
+.float__3{
+	width: 600px;
+	border: solid 3px #500;
+}
+
+.float__3 img{
+	float: right;
+}
+
+
+
+
+

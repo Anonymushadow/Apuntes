@@ -1,0 +1,99 @@
+
+/*
+animaciones
+@keyframes = define una animacion
+from = como comienza 
+to = como termina
+animation-name = asignarle un nombre a la animacion
+animation-duration = duracion de la animacions
+animation-timing-function = como se va a ejecutar la animacion
+animation-iteration-count = cuantas veces se repite la animacion
+animation-direction = define la direcion de la animacion
+normal = es normal
+reverse = va al revez
+alternate = va normal y despues al revez
+alternate-revez empieza desde el final hacia el comienzo y despues del cominzo al final
+
+animation-fill-mode = define como queda al finalizar
+none = termina en el inicio
+backwards = el elemento termina con los valores del primer fotograma
+fordward = se queda como termina
+both =  arranca con los valores de from o % 
+
+tambien se pueden poner porcentajes en vez de from y to
+*/
+
+.animacion {
+	height: 300px;
+	background-color: #987;
+	padding: 30px;
+}
+
+.caja2 {
+	background-color: #123;
+	height: 100px;
+	width: 100px;
+	margin: 30px;
+	animation-name: desplazarse;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
+}
+
+
+
+@keyframes desplazarse {
+	from {
+		background-color: #500;
+	}
+
+	to {
+		background-color: #478;
+	}
+}
+
+
+
+/*
+cubic bezier = es un valor de anmation y transition timing-function,
+define como se va a modificar el objeto
+
+*/
+
+
+.bezier {
+	height: 300px;
+	background-color: #787;
+	padding: 30px;
+}
+
+.caja3 {
+	background-color: #800;
+	height: 100px;
+	width: 100px;
+	margin: 30px;
+	animation-name: desplazarse;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: cubic-bezier1, 1.05, 0,-1.41);
+	/*
+	x1,y1,x2,y2
+	*/
+}
+
+
+
+@keyframes bezier {
+	from {
+		background-color: #400;
+	}
+
+	to {
+		background-color: #097;
+	}
+}
+
+
+

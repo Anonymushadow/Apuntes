@@ -1,0 +1,63 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*son cosas ante y despues que no se pueden seleccionar pero son objetos*/
+
+h2 {
+	text-align: center;
+}
+
+h2:before {
+	content: "$";
+}
+
+h2:after {
+	content: ".00";
+}
+
+/*para agregar un content vacio tenes que darle un display*/
+
+h3 {
+	text-align: center;
+	display: block;
+}
+
+h3:before {
+	content: "";
+	background: #900;
+}
+
+h3:after {
+	content: ".00";
+}
+
+
+
+
+
+.esfera {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	background-image: radial-gradient(farthest-corner at 0 0, #fff 0%, #008080 50%, #000 100%);
+	border-radius: 50%;
+}
+
+.esfera:after {
+	content: "";
+	display: block;
+	width: 150px;
+	height: 5px;
+	background: #000;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	border-radius: 50%;
+	box-shadow: 0 0 10px 10px #000;
+	opacity: .6;
+	z-index: -1;
+}

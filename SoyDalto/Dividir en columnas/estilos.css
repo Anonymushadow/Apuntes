@@ -1,0 +1,13 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.txt {
+	column-count: 3;
+	column-gap: 50px;
+	column-rule-width: 10px;
+	column-rule-color: #900;
+	column-rule-style: solid;
+}

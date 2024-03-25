@@ -1,0 +1,65 @@
+
+
+/*
+MEDIDAS
+deg = grados
+*/
+
+.px{
+	font-size: 10px;
+}
+
+.porcentaje{ 
+	font-size: 20%;
+}
+
+.em{
+	/*
+	Tamaño de letra del elemento padre
+	*/
+	font-size: 10em;
+}
+
+.rem{
+	/*
+	Tamaño de la letra del elemento raíz.
+	*/
+	font-size: 10rem;
+}
+
+.mm{
+	font-size: 10mm;
+}
+
+.pt{
+	font-size: 10pt;
+}
+
+.vw{
+	/*
+	1% del ancho de la ventana gráfica.
+	*/
+	font-size: 10vw;
+}
+
+.vh{
+	/*
+	1% de la altura de la ventana gráfica.
+	*/
+	font-size: 10vh;
+}
+
+.vmin{
+	/*
+	1% de la dimensión más pequeña de la ventana gráfica.
+	*/
+	font-size: 10vmin;
+}
+
+.vmax{
+	/*
+	1% de la dimensión más grande de la ventana gráfica.
+	*/
+	font-size: 10vmax;
+}
+

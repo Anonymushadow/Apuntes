@@ -1,0 +1,67 @@
+
+/*
+transition  = shorthand 
+property = propiedad a la que se le agrga la transicion
+duration = duracion de la transicion
+delay = cuanto tarda en ejecturar la transicion
+timing-function = como se ejecuta la transicion en el tiempo
+
+linear = va siempre a la misma velocidad
+ease = arranca con todo y termina despacio
+ease-in = arranca despacio y termina con todo
+ease-out = arranca fuerte y temina despacio (no tan rapido como ease)
+ease-in-out = arranca despacio, acelera y termina despacio
+
+
+
+intentar no usar "all" xque consume muchos recursos
+
+
+*/
+
+
+
+.transicion {
+	height: 800px;
+	background-color: #050;
+	padding: 30px;
+}
+
+.caja1 {
+	background-color: #800;
+	height: 100px;
+	width: 100px;
+	transition-property: background, transform;
+	transition-duration: 1s, 3s;
+	margin: 30px;
+
+}
+
+.transicion:hover > .caja1 {
+	transform: translate(500px);
+	background-color: #908;
+}
+
+.caja1:first-child {
+	transition-timing-function: linear;
+}
+
+.caja1:nth-child(2){
+	transition-timing-function: ease;
+}
+
+.caja1:nth-child(3){
+	transition-timing-function: ease-in;
+}
+
+.caja1:nth-child(4){
+	transition-timing-function: ease-out;
+}
+
+.caja1:last-child{
+	transition-timing-function: ease-in-out;
+}
+
+
+
+

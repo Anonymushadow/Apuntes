@@ -1,0 +1,11 @@
+/*
+direction = cambia la direccion 
+ltr = izquierda a derecha
+rtl = derecha a izquierda
+*/
+
+.txt {
+	background: #990;
+	width: 400px;
+	direction: rtl;
+}
