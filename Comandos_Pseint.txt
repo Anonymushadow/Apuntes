@@ -1,0 +1,47 @@
+----------------------------------------------------------------------------------------------
+COMANDOS
+----------------------------------------------------------------------------------------------
+--------------------------------------------------Entradas y Salidas--------------------------
+escribir --> escribir algo en pantalla 
+leer --> almacenar un dato que nos otorgara el usuario 
+Mostrar: Muestra el valor de una variable en pantalla
+--------------------------------------------------Variables-----------------------------------
+Definir --> Declara una variable
+Algoritmo --> Define el inicio del algoritmo
+FinAlgoritmo --> Marca el final del algoritmo
+--------------------------------------------------Comparaciones-------------------------------
+= --> asignar una valor a una variable 
+= --> verificar si dos datos son iguales
+<= --> verificar si un dato es menor o igual a otro  
+>= --> verificar si un dato es mayor o igual a otro
+< --> verificar si un dato es menor a otro 
+> --> verificar si un dato es mayor a otro 
+, --> escribir un texto junto a una variable 
+--------------------------------------------------Estructuras de Control----------------------
+Si  --> comienza una condicion
+Entonces --> si la condicion se cumple se hara lo siguiente
+SiNo --> si no se cumple la condicion se hara lo siguiente 
+FinSi --> acabar condiciones
+Mientras --> verifica que se repita cierta afirmacion
+Hacer --> en caso de que la verificaicon se cumpla hacer lo siguiente 
+FinMientras --> acabar verificacion de afirmacion 
+Repetir --> repetir ciertas acciones 
+HasteaQue --> definir limite de hasta que punto se ejecutara la accion del repetir 
+Para --> define una variable iteradora 
+Hasta --> define hasta que momento se ejecutara el bucle
+Paso --> indica de a cuantos pasos se avanzara al momento de acabar una ronda del bucle 
+FinPara --> indica el fin del bucle 
+--------------------------------------------------Operaciones Matematicas---------------------
++ --> Suma
+- --> Resta
+* --> Multiplicación
+/ --> División
+Mod --> Módulo (resto de la división)
+^ --> Potencia
+--------------------------------------------------Funciones-----------------------------------
+Funcion --> Define una función
+FinFuncion --> Marca el final de una función
+Devolver --> Devuelve un valor desde una función
+--------------------------------------------------Comentarios---------------------------------
+// -->Comentario de una línea
+/**/ --> Comentario de múltiples líneas

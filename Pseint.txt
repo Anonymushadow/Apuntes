@@ -1,0 +1,58 @@
+----------------------------------------------------------------------------------------------
+VARIABLES
+----------------------------------------------------------------------------------------------
+Variable: es un espacio en la pc la cual reservamos para poder almacenar informacion ahi dentro
+    para reservar ese espacio debemos asignarle un nombre a esta variables 
+
+----------------------------------------------------------------------------------------------
+CONDICIONALES
+----------------------------------------------------------------------------------------------
+Si entonces: se trata de verificar una afirmacion, en caso de ser verdadera se hara una accion 
+    Ejemplo:
+        Si edad >= 18 Entonces
+            Escribir "Eres mayor de edad"
+        FinSi
+SiNo: en caso de que la afirmacion sea falsa entonces se hara otra cosa
+    Ejemplo:
+        Si nota >= 70 Entonces
+            Escribir "Aprobado"
+        Sino    
+            Escribir "Reprobado"
+        FinSi
+
+----------------------------------------------------------------------------------------------
+BUCLES 
+----------------------------------------------------------------------------------------------
+Bucle: es algo que se ejecuta una y otra vez de manera repetida
+    un bucle puede ser infinito, tener cuidado
+Mientras Hacer: se trata de verificar cierta afirmacion y mientras esta no sea falsa se repetira una accion 
+    Ejemplo:
+        Contador = 1
+        Mientras Contador <= 5 Hacer
+            Escribir Contador
+            Contador = Contador + 1
+        FinMientras
+Repetir hasta que: se trata de repetir cierta accion para despues verificar si la afirmacion da verdadero o no 
+    Ejemplo:
+        Contador = 1
+        Repetir
+            Escribir Contador
+            Contador = Contador + 1
+        HastaQue Contador > 5
+Repetir VS Hacer: 
+    el Repetir hasta que, primero ejecuta la accion y despues verifica si cumple los requisitos
+    el Mientras hacer, primero verifica si cumple los requisitos y despues ejecuta la accion 
+Para hasta: repite una accion una cierta cantidad de veces  
+    Ejemplo:
+        Para i = 1 Hasta 5 Paso 1 Hacer
+            Escribir i
+        FinPara
+    Para i = 1 crea una variable llamada i y le asigna 1
+    Hasta 5 indica que mientras que i sea desigual a 5 entonces se repetira la accion 
+    paso 1 indica que sera de uno en uno, primero sera 1, despues 2, etc 
+    Hacer indica que se ejecutara, al acabar de ejecutar el codigo volvera a ejecutarse e i sera uno mas 
+
+----------------------------------------------------------------------------------------------
+FUNCIONES 
+----------------------------------------------------------------------------------------------
+Funcion: es una porcion de codigo que almacenaos como una variable para posteriormente reutilizarlo de manera rapida y facil con tan solo llamarlo mediante un nombre
