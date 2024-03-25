@@ -10,3 +10,6 @@ define la estructura y el contenido de una página web mediante una serie de ele
 
 ## 2_CSS
 CSS (Cascading Style Sheets) es un lenguaje utilizado para definir el estilo y la presentación visual de páginas web creadas con HTML. Permite controlar el diseño, el formato, los colores, las fuentes y otros aspectos visuales de los elementos HTML en una página web
+
+## 3_JavaScript
+JavaScript (JS) es un lenguaje de programación utilizado principalmente para crear interactividad en páginas web. Es un lenguaje de scripting del lado del cliente que se ejecuta en el navegador web del usuario y permite manipular el contenido HTML, modificar el estilo CSS, responder a eventos del usuario y realizar acciones dinámicas en una página web
