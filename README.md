@@ -7,3 +7,6 @@ pseint es un entorno de desarrollo y aprendizaje de algoritmos y programación. 
 ## 1_HTML
 HTML (HyperText Markup Language) es el lenguaje de marcado estándar utilizado para crear y diseñar páginas web.
 define la estructura y el contenido de una página web mediante una serie de elementos y etiquetas
+
+## 2_CSS
+CSS (Cascading Style Sheets) es un lenguaje utilizado para definir el estilo y la presentación visual de páginas web creadas con HTML. Permite controlar el diseño, el formato, los colores, las fuentes y otros aspectos visuales de los elementos HTML en una página web
