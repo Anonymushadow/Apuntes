@@ -1,0 +1,8 @@
+const nombre = Nahuel;
+const edad = 20;
+
+const name = "Nombre: " + nombre;
+const age = "Edad" + edad;
+
+console.log(`${name} \n ${age}`);
+);

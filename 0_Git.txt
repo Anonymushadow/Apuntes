@@ -1,0 +1,240 @@
+---------------------------------------------------------------------------------------------
+INTRODUCCION
+---------------------------------------------------------------------------------------------
+Git: es un software que permite tener diferentes versiones de una carpeta
+Publico: puede ser para cualquierp ersona, no necesariamente programacion
+Ventajas: 
+    permite trabajar en equipo
+    permite mantener un control de versiones de nuestros archivos
+Github: es una plataforma web utilizada para trabajr con git desde la nube
+    podemos guardar ahi mismo nuestros archivos 
+    podemos trabajar en equipo 
+    podemos recuperar versiones viejas de nuestro programa 
+
+---------------------------------------------------------------------------------------------
+GIT
+---------------------------------------------------------------------------------------------
+¿Que es?: es un sistema de control de versiones 
+Caracteristicas:
+    cada desarrollador tiene una copia completa del trabajo 
+    cada desarrollador tiene una copia de las versiones del proyecto
+    es muy seguro
+    es flexible ante modificaciones del proyecto 
+    contiene ramas 
+    podemos revertir cambios 
+    podemos ver quien realiza cada modificacion 
+Ramas: son como secciones donde cada desarrollador trabaja y hace sus cambios para finalmente unirlas todas en una unica con aquellas que sirven
+
+---------------------------------------------------------------------------------------------
+CONFIGURACIONES
+---------------------------------------------------------------------------------------------
+Configuraciones: primero debemos definir nuestro correo y nuestro alias
+    tipos de usuarios:
+        locales: cada repositorio tendra su propio usuario especifico  - prioridad mas alta
+        globales: la configuracion se aplica a todos los repositorios de ese usuario - prioridad media
+        sistema: las configuraciones se aplican a toda la computadora entera - prioridad mas baja
+    Configuraciones de usuario:
+        el mail debe ser el mismo que github 
+    Autoclrf: se trata de que en windows se necesita tener al final de cada linea \f\n pero en linux solo \n y si no configuramos esto va haber incompatiblidades al compartir arcvhivos de un sistema a otro
+        git config --global autocorelf true: para windows
+            al subir archivos los sube sin el \f (encargado de posicionar el cursor al comienzo de la nueva linea)
+            al descargar le añade al archivo los respectivos \f
+        git config --global autocorelf input: para linux 
+            al subir los archivos no les hace nada porque solo necesita que tengan \n para salto de linea 
+            al descargar va a descargarlo asi nomas ya que se supone que deben estar configurados bien al subirlos
+            
+---------------------------------------------------------------------------------------------
+REPOSITORIO
+---------------------------------------------------------------------------------------------
+¿Que es?: es un lugar donde podemos almacenar archivos y gestionarlos
+    un repositorio tiene areas
+Areas:
+    Directorio de trabajo: es nuestra carpeta donde tenemos nuestras cosas y trabajamos
+    Area de Preparacion: es un espacio donde guardamos los cambios que posteriormente guardaremos en el repositorio 
+        despues esta el area comitiada que es donde se añadieron las descripciones 
+    Repositorio: es una carpeta o espacio separado donde se almacenan los datos 
+Untraked files: son archivos que no sera subidos al repositorio
+Servidor: despues de subir al repositorio se pasa al servidor com github
+Eliminar: para eliminar un archivo del repositorio debemos eliminarlo de nuestro area de preparacion y subir los cambios 
+    de este modo subis un archivo eliminado pero se suben las ordenes de eliminar ese archivo 
+Restauracion: para restaurar un archivo lo restauramos desde el area de trabajo 
+    el archivo existe en el area de preparacion y cuando hacemos git restore lo restaura en el area de trabajo 
+Checkoput: al hacer git checkout de un archivo toma el archivo del area de preparacion y lo restaura sobreescribiendo la version que tenemos en nuestro area de trabajo 
+    en mi area de preparacion tengo archivo.txt que dentro tiene "Hola"
+    en mi area de trabajo elimino ese hola y pongo "Sobreescrito"
+    hago git checkout archivo.txt y ahora el archivo.txt del area de trabajo vuelve a tener "Hola" porque o restaure 
+Reset: la verdad no entendi la diferencia de checkout, como que obtiene en casos distintos pero no se entiende
+Renombrar archivos: para esto lo movemos al mismo directorio pero lo pegamos con nombre distinto 
+    despues hacemos un commit y git detectara el cambio de nombre 
+Status: con git status -s (--short) muestra una version mas simpel y facil de leer 
+    una m verde es que se modifico y se añadio con el git add 
+    una m roja es que se modifico pero no se añadio con el add 
+
+---------------------------------------------------------------------------------------------
+MODIFICAR Y DESHACER COMMITS
+---------------------------------------------------------------------------------------------
+Modificar: para poder modificar un commit podemos hacer 
+    git add como si estuvieramos por hacer otro commit 
+    en vez de poner git commit -m ponemos git --amend 
+    se nos abrira un archivo donde cambiaremos el nombre y se nos modificaran los archivos 
+    al modificar el commit cambia el hash, esto ocurre porque la modificacion es una sobreescritura, se crea uno nuevo y se reemplaza el ultimo
+Head: el head indica el commit en el que estamos posicionados
+Modificar anteriores: si deseamos modificar commits anteriores nos generara problemas debido a que los siguientes seran eliminados 
+Deshacer: para eliminar un commit debemos enviar el head a commits anteriores para eliminar los commits siguientes 
+    Soft: toma lo de los commits siguientes y lo envia al area de preparacion, sin borrar nada de lo actual, si existen esos archivos los sobreescribe 
+    Mixed: toma el ultimo commit y lo añade al area de preparacion sobreescribiendo lo que haya, osea que restaura el area de preparacion pero el area de trabajo queda intacta
+    Hard: elimina los commits siguientes y el contenido del commit al que nos movimos nos lo sobreescribe en nuestro area de trabajo 
+
+---------------------------------------------------------------------------------------------
+RAMAS
+---------------------------------------------------------------------------------------------
+Rama: cuando se crea una rama es como que se crea una copia dle proyecto para trabajar por separado
+    Master y Main: las ramas principales suelen ser Main o Master 
+    Las ramas son temporales, suelen usarse para pruebas
+Merge: se trata de unificar una rama con la principal
+    de estemodo lo que funciono podemos aplicarlo pero si fallo o lo que sea la eliminamos y no hacemos merge 
+Nomenclatura: los nombres de ramas suelen ser todo en minusculas separado por guines medios 
+    Ejemplo: rama-de-pruebas 
+    se llama kebab-case 
+Mover de rama: para mover de rama utilizar git switch porque git checkout no es creado para eeso especificamente 
+Eliminar: para eliminar debemos estar en otra rama
+    una vez cambiado de rama podemos eliminar con git branch -d nombre-de-rama (d = delete)
+Modificar rama:
+    Rama actual: git branch -m nuevo-nombre-de-rama 
+    Rama ajena: git branch -m nombre_actual_de_rama nuevo_nombre_de_rama 
+Advertencia: si creamos una rama se crea a partir de la rama actual, si la creo desde una subrama tendremos una sub subrama 
+Merge: 
+    para hacer merge primero nos posicionamos en la rama donde se añadiran los cambios de la otra rama 
+    despues hacemos un git merge con la rama de la cual deseamos traer los cambios 
+    fusionar en realidad es reemplazar el commit actual por el de la rama especificada 
+    si deseamos revertir la fusion debemos hacer git reset --hard hash_del_commit_previo_a_la_fusion 
+        con el reset --hard los commits siguen en la rama secundaria, no se elimina 
+        cada rama tiene su propio git log y git status 
+Merge Conficts: son conflictos que tenemos al intentar fusionar ramas, git no sabe como fusionar ramas y nos consulta a nosotros
+    cuando ocurren: ocurre cuando desde la rama A creo una rama B
+        en la rama B hago 3 commits 
+        en la rama A hago un comit extra despues de crear la rama B 
+        ahora intento fusionar la rama A y B, git no sabe que hacer porque A tiene cosas que B no y B tiene cosas que A no
+    Opciones de conflicto:
+        Accept Current Change: unir las ramas pero donde hay conflicto dejar los cambios de la rama actual 
+        Accept Incoming Change: unir las ramas y dejar los cambios realizados por la otra rama 
+        Accept Both Changes: unir las ramas dejando todos lo cambios, dejamos los cambios de la actual y le añadimos lo de la otra rama dejando una mezcla de todo (no reemplaza, añade)
+    Partes del conflicto:
+        Incoming: es el commit actual de la rama a fusionar 
+        Current: es el commit actual de la rama actual 
+        Result: es una demostracion del resultado actual 
+            si elejimos una opcion podremos ver como quedara
+            si no nos grusta podemos tocar remove current o remove incoming
+        para acceder a esto tocar resolve in merge editor 
+        para aceptar los cambios tocar complete merge 
+
+---------------------------------------------------------------------------------------------
+.GITIGNORE
+---------------------------------------------------------------------------------------------
+Gitignore: es un archivo el cual indica que cosas no deben subirse al repositorio 
+    esto es util para seguridad, por ejemplo si tenemos un archivo de contraseñas 
+    lo que este aca directamente no entran en el area de proceso
+Ignorar:
+    se debe crear un archivo llamado .gitignore
+    para ignorar archivos especificos debemos poner su nombre con su extencion dentro del .gitignore
+    para ignorar todos los archivos de un tipo como decir .jpg ponemos * 
+        Ejemplo: *.jpg --> ignora todos los .jpg 
+    para ignorar todos los archivos de un tipo menos uno hay que designorar despues de ignorar 
+        Ejemplo:
+            *.jpg --> ignoro todos los jpg 
+            !logo.jpg --> ahora no se subira ningun jpg excepto logo.jpg
+    para ignorar un directorio completo ponemos el nombre deel directorio y una barra 
+        Ejemplo: imagenes/ 
+    para ignorar aquellos que contengas tal palabra o letras ponemos con * 
+        Ejemplo: *copia.txt --> ignora los archivos que acaban en copia y tengan extension txt 
+    Para ignorar dentro de subdirectorios ponemos asi:
+        directorio/nombre_del_archivo.extension
+Global: es un gitignore que se aplicara a todos los proyectos git
+    debe llamarse .gitignore_global
+
+---------------------------------------------------------------------------------------------
+ALIAS
+---------------------------------------------------------------------------------------------
+alias: es como una variable donde podemos guardar comandos para llamarlos de manera mas sensilla
+    al guardar comandos debemos omitir el "git"
+
+---------------------------------------------------------------------------------------------
+REFLOG
+---------------------------------------------------------------------------------------------
+¿Que es?: es una herramienta para acceder a todos los commits donde paso el head 
+    permite recuperar commits eliminados 
+Recuperar commits: al eliminar un commit con reset hard podemos volver a hacer un reset hard poniendo el hash del commit a recuperar 
+    esto se debe a que al eliminar un commit en realidad solo eliminamos la referencia al commit 
+Reflog: si eliminamos una referencia de commit y perdimos el hash con git reflog podemos ver por todos los has que el head paso 
+
+---------------------------------------------------------------------------------------------
+GITHUB
+---------------------------------------------------------------------------------------------
+¿Que es?: es un repositorio remoto
+    es un repositorio en la nube, para poder acceder desde fuera de nuestro dispotivo
+    permite trabajar en equipo 
+    es un hosting de codigo 
+Readme.md: es un tipo de archivo que describe que hace el repositorio, como usarlo, etc 
+Forks: son las personas que hicieron copias de nuestro repositorio para usarlo 
+
+---------------------------------------------------------------------------------------------
+GIT + GITHUB  
+---------------------------------------------------------------------------------------------
+Clonar: se trata de traer el repositorio remoto a nuestro repositorio local (commit)
+Origin: hace referencia al repositorio remoto 
+Repositorio remoto: repositorio externo al local 
+Push: es subir los cambios al repositorio
+Pull: es traer los cambios del repositorio remoto al local 
+    hace git fetch y despues git merge 
+    trae los cambios 
+    despues los fusiona con nuestra rama 
+Fetch: trae los cambios de un repositorio remoto 
+    hay que hacer git fetch 
+    despues movernos a la rama de donde se hizo el cambio (origin/nombre_de_rama)
+Fork: clona repositorios ajenos en nuestra cuenta de github 
+    git clone toma un repositrio y lo pone en nuestra pc 
+    fork toma un repositorio y lo pone en nuestro github como un repositorio nuevo 
+Pull Request: se trata de realizar cambios en un repositorio ajeno y solicitarle al propietario que acepte los cambios en su repositorio remoto 
+Issues: se trata de tareas, las cuales podemos asignarlas a distintos usuarios 
+
+---------------------------------------------------------------------------------------------
+BUENAS PRACTICAS  
+---------------------------------------------------------------------------------------------
+Agrergar git ignore 
+Crear ramas con objetivos puntuales 
+Utilizar nombres descriptivos en las ramas 
+Utilizar kebab-case para nombres de ramas
+No trabajar en la rama principal 
+Hacer las pruebas antes de subirlas al repositorio 
+Revizar Branching Methods 
+Utilizar commits descriptivos 
+Hacer commits significativos y no porque si
+Mantener actualizado el repositorio 
+Utilizar tags 
+Mantener el historial limpio
+
+---------------------------------------------------------------------------------------------
+PROXIMOS PASOS 
+---------------------------------------------------------------------------------------------
+area de stash --> espacio a parte para almacenar codigo que esta en pausa para retomarlo mas tarde  
+    git stash 
+    git stash pop 
+cherry pick --> tomar un commit puntual y pasarlo a otra rama 
+milestones --> grupos de issues 
+tags --> marcadores que m,rcan puntos especificos 
+rebase -->  
+squash --> unificar varios commits en uno 
+submodulos --> añadir repositorios dentro de otros repositorios 
+hooks --> ejecuta scripts en puntos especificos como antes o despues de un push 
+bisect --> encontrar commits que introdujeron fallas 
+git flow 
+github flow
+
+
+
+
+
+
+
+
+

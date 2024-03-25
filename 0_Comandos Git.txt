@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------------------
+COMANDOS
+---------------------------------------------------------------------------------------------
+---------------------------------------------------Configuraciones--------------------------------------
+git config --global --> acceder a las configuraciones globales de git
+git config --sistem --> acceder a las configuraciones sistem de git
+git config --local --> acceder a las configuraciones locales de git 
+git config --tipo_de_alcance user.name "nombre_del_usuario"
+git config --tipo_de_alcance user.email "nombre_del_email"
+git config --list --> ver todas las configuraciones que ya estan configuradas 
+git config --global --list --> ver todas las configuraciones que ya estan configuradas a nivel global
+clear --> limpiar consola 
+git config --global core.editor "nombre_del_editor" --> especificar nuestro editor de codigo por defecto de git
+git config --global core.editor "code --wait" --> especificar que el editor de codigo es VSC y que se guarden los cambios al cerrarlo 
+git config --global color.ui true --> definir el color de nuestra interfaz
+git config --global core.autocrlf true --> permite que al guardar y descargar archivos todos tengan configuados el salto de linea y el retorno al comienzo de la liena en windows
+git config --global core.autocrlf input --> permite que al guardar y descargar archivos todos tengan configuados el salto de linea y el retorno al comienzo de la liena en linux 
+---------------------------------------------------Adds y Commits--------------------------------------
+git init --> crear un repositorio local 
+git add nombre_de_archivos --> seleccionar archivos para subirlos al area de preparacion 
+git add . --> subir todos los archivos y directorios de la carpeta actual al area de preparacion 
+git status --> mostrar informacion sobre nuestro directorio de trabajo y nuestro area de preparacion 
+git rm --cached nombre_de_archivos --> remover del area de preparacion 
+git commit -m "mensaje_descriptivo" --> guarda archivos en el repositorio con una descripcion breve
+git commit --> guarda los archivos en el repositorio pero antes abre un archivo para añadir una documentacion
+git commit -a --> guardar todos los archivos en el repositorio sin pasar por el area de preparacion
+---------------------------------------------------Restore y Checkout--------------------------------------
+rm nombre_archivo --> elimianr archivo 
+git restore nombre_del_archivo --> restaurar archivo eliminado 
+git checkout nombre_de_archivo --> restaura el contenido de un archivo 
+git reset --hard --> restaura el contenido de un archivo
+git mv nombre_archivo nuevo_nombre_archivo --> cambiar el nombre de un archivo 
+git status -s --> muestra una version simplificada del git status 
+---------------------------------------------------Git Diff--------------------------------------
+git show nombre_de_archivo --> ver contenido de un archivo comitiado 
+git diff --staged --> comparar los archivos comitiados con los del area de preparacion 
+git log --> ver los detalles de los commits (incluyendo el ID del commit)
+git log --oneline --> ver los detalles de los commits de manera mas simple  
+git config --global core.abbrev numero_de_caracteres --> especificamos cuantos numeros del ID nos mostrara con el git log --oneline 
+git diff numero_id numero_id --> compara dos commits distintos mediante su id 
+git diff --name-only numero_id numero_id --> ver que archivos cambiaron de un commit a otro 
+git diff --word-diff numero_id numero_id --> ver que lineas cambiaron de un commit a otro 
+---------------------------------------------------Modificar y Deshacer Commits--------------------------------------
+git commit --amend --> cargar el ultimo commit para modificarlo 
+git reset --soft hash_del_commit --> posicionar el Head en un commit especifico y los commits siguientes los envia al area de preparacion 
+git reset --mixed hash_del_commit --> borrar commits siguientes, dejando el actual en el area de preparacion pero sin tocar tu area de trabajo 
+git reset --hard hash_del_commit --> borrar los commits siguientes, junto a lo que tenia en elarea de preparacion y area de trabajo
+---------------------------------------------------Ramas--------------------------------------
+git branch --> ver las ramas disponibles
+git branch nombre_de_rama --> crear una rama 
+git checkout nombre_de_rama --> movernos a una rama 
+git switch nombre_de_rama --> movernos a una rama 
+git switch -c nombre_de_rama --> crear una rama y moverse a esa rama de una 
+git branch -d nombre_de_rama --> eliminar una rama 
+git branch -m nombre_de_rama nuevo_nombre_de_rama --> cambiar el nombre de una rama distinta a la actual
+git branch -m nuevo_nombre_de_rama --> cambiar el nombre de la rama actual 
+git merge nombre_de_rama --> fusionar una rama con la actual (reemplazar el commit actual por el de la rama especificada)
+git log --oneline --all --> ver los log de todas las ramas 
+git merge --continue --> acabar conflicto 
+git log --oneline --graph --> ver los detalles de los commits de manera grafica
+---------------------------------------------------Gitignore--------------------------------------
+git ls-tree -r --name-only hash_del_commit --> ver todos los archivos que tiene un commits especifico 
+git config --global core.excludefile direccion_del_gitignore_global --> incluir un .gitignore_global
+---------------------------------------------------Alias--------------------------------------
+git config --global alias.nombre_del_alias "comando" --> guardar un comando en uan variable / alias 
+---------------------------------------------------Reflog--------------------------------------
+git reflog --> ver un historial de por donde paso head 
+---------------------------------------------------GitHub--------------------------------------
+git clone direccion_del_repositorio --> clonar un repositorio  
+git push origin nombre_de_rama --> enviar los cambios al repositorio remoto a una rama especifica
+git pull origin nombre_de_rama --> traer los cambios del repositorio remoto a nuestro repositorio local y los fusiona con merge  
+git fetch --> traer los cambios del repositorio remoto a nuestro repositorio local
+git switch --detach origin/nombre_de_rama --> movernos a una rama del repositorio remoto 
+git remote add origin direccion_del_repositorio --> creamos un repositorio remoto y lo llamamos origin, el cual estara en la direccion especificada 
+git remote -v --> ver que podemos hacer en el repositorio remoto 
+git branch -M nombre_de_rama --> especificar la rama principal del repositorio remoto
+git push origin nombre_de_rama --> especificar la rama a donde haremos push pero cada vez que se haga push se pedira el origin 
+git push -u origin nombre_de_rama --> especificar la rama a donde haremos push por defecto 
+ 
+
