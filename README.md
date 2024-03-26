@@ -20,3 +20,6 @@ es un sistema de control de versiones distribuido diseñado para rastrear cambio
 
 ## 5_SQL
 SQL (Structured Query Language) es un lenguaje de programación diseñado para gestionar y manipular bases de datos relacionales. Es ampliamente utilizado en el desarrollo de aplicaciones web y de software para realizar consultas, insertar, actualizar y eliminar datos en bases de datos, así como para definir la estructura de las mismas
+
+## 6_Python
+es un lenguaje de programación de alto nivel, interpretado, multipropósito y con una sintaxis clara y legible. Se ha vuelto muy popular en diferentes áreas como desarrollo web, análisis de datos, inteligencia artificial, automatización, scripting, entre otros
