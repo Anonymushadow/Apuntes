@@ -1,0 +1,33 @@
+Variable Static = 
+_cuando estas dentro de una clase con varios objetos que tienen una variable en comun que tiene el mismo valor para todos se pone fuera del 
+constructor y se pone static, esto significa que ya esta creado y pueden usarlo todos sus objetos sin tener que guardarlo una ves por objeto
+_para acceder a este pones el nmbre del objeto + . + el nombre del atributo
+_Auto.descuento = 10; -> dentro del constructor
+_para acceder a un metodo static, pra llamarlo se tiene que llamar con la palabra static  ->  public static HacerAlgo();
+
+Constructor =
+_
+
+Private vs Protected = 
+_impedir que otra clase inserte cualquier cosa, para guardar se tiene que acceder a una funcion la cual puede verificar si esta bien o no
+
+UpCasting = 
+_convertir un objeto de x a z -> z = padre y x = hijo
+_Vehiculo a = new auto(); -> convierte el objeto a de auto a Vehiculo
+_Vehiculo b = new Vehiculo();
+_Vehiculo b = a(); -> a = objeto auto
+_generalizar para hacer lo mismo para muchas subclases, todos los vehiculos aceleran pero no todos tienen aire
+_a = especifico
+_v = general
+
+
+
+DownCasting = 
+_Vehiculo V = A; -> en la variable V (en la clase vehiculo) se guardo el objeto a (de la clase Auto); --->  upcasting
+_Auto A2 = (Auto) V; -> en A2 se guardo V conviertiendolo de vuelta a un objeto de clase Auto;
+_asegurarte siempre de convertir el objeto al mismo o bjeto -> V = auto, no hay qe guardarlo como moto xque tira error, no podes convertir un auto en una moto
+
+
+Polimorfismo = 
+_pueden haber metodos vueltos a escribir dentro de clases hererdadas pero con codigos diferentes
+_

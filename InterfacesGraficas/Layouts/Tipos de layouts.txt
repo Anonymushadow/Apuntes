@@ -1,0 +1,10 @@
+flow layout = pone todos los componentes en una linea, si no hay espacio crea una segunda fila, siempre hace la ventana lo mas chica posible, que ocupe el menor espacio posible
+
+
+Box Layout = ordenar vertical u horizontalmente los componentes
+
+Border Layout = se divide la pantalla en 5 y cada panel puede tener un layout distinto
+
+Grid Layout = es como display grid
+
+Grid Bag Layout = es como un display grid que cada elemento puede ocupar mas de un espacio
