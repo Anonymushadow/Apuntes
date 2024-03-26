@@ -1,0 +1,11 @@
+Pandas --> 
+Numpy -->
+Seaborn -->
+Matplotlib -->
+Tensorflow -->
+Selenium --> Automatizacion
+Tkinter --> Interfaz grafica
+pySerial --> Arduino
+Kivy --> Apps mobiles
+pyqrcode --> Codigo QR
+

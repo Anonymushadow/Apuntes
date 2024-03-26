@@ -1,0 +1,39 @@
+-----------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+-----------------------------------------------------------------------------------------------------------
+	r"" --> escribir expresion regular
+	.search() --> buscar la primera coincidencia y devolverla
+	.findall() --> buscar todas las coincidencias y devolverlas
+	flasg= --> ayudas o "comodines" 
+	.IGNORECASE --> ignorar mayusculas y minusculas (flag)
+	\d --> Buscar digitos del 0-9
+	\D --> Buscar todo menos digitos del 0-9
+	\w --> Buscar caracteres alfanumericos [A-Z a-z 0-9 _]
+	\W --> Buscar todo menos caracteres alfanumericos [A-Z a-z 0-9 _]
+	\s --> Buscar espacios en blanco
+	\S --> Buscar todo menos espacios en blanco
+	\n --> Buscar saltos en linea
+	. --> Buscar todo menos saltos en linea
+	\ --> Cancelar la funcionallidad de un caracter especial
+	^ --> Buscar el inicio de la linea
+	.M --> Buscar tanto en la primera linea como en las demas (flag)
+	$ --> Buscar el final de la linea
+	{} --> Buscar cierta cantidad junta
+	{ , } --> Buscar cierta cantidad junta con un rango
+	() --> Agrupar
+	[] --> Agrupar y buscar cada cosa por separada
+	| --> Buscar al menos una de las opciones
+	* --> Puede estar o puede no estar
+	.DOTALL --> Toma en cuenta los saltos en linea tambien (flag)
+	(?!) --> verifica que no ocurra lo siguiente... 
+	.sub() --> Buscar coincidencia y reemplazarla por otra cosa
+	- --> Rangos de caracteres
+	+ --> Debe existir al menos una vez
+	.match() --> Buscar coincidencia y devolverlo
+	? --> puede existir o no pero maximo una vez
+
+-----------------------------------------------------------------------------------------------------------
+RE
+-----------------------------------------------------------------------------------------------------------
+Que es?: es el modulo que utilizamos para trabajar con expresiones regulares
+	

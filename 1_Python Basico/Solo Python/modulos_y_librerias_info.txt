@@ -1,0 +1,18 @@
+#pip install --> instalar un paquete
+#sudo apt-get python-pip --> instalar pypi en linux
+'''
+desarrollo web 
+	.Django  --> pip install Django
+	.Flask --> pip install Flask
+Ciencia de datos 
+	.Tensorflow --> pip install tensorflow
+	.Matplotlib --> pip install matplotlib
+	.Pandas --> pip install pandas2
+	.Numpy --> pip install numpy
+Hacking etico 
+	.Scapy --> pip install scapy
+
+
+    modulo --> archivo.py que llamamos desde otro archivo
+    paquete --> coleccion de modulos
+'''

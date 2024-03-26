@@ -1,0 +1,36 @@
+-----------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+-----------------------------------------------------------------------------------------------------------
+	.read_csv() --> abrir archivo .csv
+	read_html() --> leer html de una pagina
+	
+
+
+-----------------------------------------------------------------------------------------------------------
+PANDAS
+-----------------------------------------------------------------------------------------------------------
+Que es?: una librerira para manejar archivos
+Instalar: py -m pip install pandas
+Comandos:
+	.read_csv --> leer archivo csv
+	df = dataframe = filas y columnas
+	names= --> definir  el nombre de cada columna
+	sort_values() --> ordenar valores
+	by="" --> segun que criterio
+	ascending= --> de menor a mayor?
+	.concat([]) --> concatenar dos tablas
+	.head() --> ver cantidad de filas desde el comienzo
+	tail() --> ver cantidad de filas dese el final
+	.shape --> ver cantidad de filas y columnas
+	.describe() --> datos estadisticos
+	loc[] --> aceder a un dato especifico con nombre
+	iloc[] --> acceder a un dato especifico con indice
+	.astype() --> cambiar tipo de dato del csv
+	str --> string
+	int --> entero
+	float --> decimal
+	inplace = --> 
+	.dropna() --> eliminar filas o columnas con datos faltantes
+	axis= --> columnas o filas? (filas = 0, columnas = 1)
+	.drop_duplicates() --> eliminar filas repetidas
+	.to_csv() --> guardar como csv

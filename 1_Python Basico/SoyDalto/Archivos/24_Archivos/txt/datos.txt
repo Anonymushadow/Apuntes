@@ -1,0 +1,5 @@
+Escrito con writeline
+esto tambien
+linea 3
+linea 4
+Escrito con Append

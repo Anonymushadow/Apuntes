@@ -1,0 +1,7 @@
+vectores --> serie
+dataframe --> tabla de una columna
+	.cada columna que no tiene la cantidad suficiente de datos se rellena con NAN
+matriz --> tiene todo el mismo tipo de datos
+tabla --> cada columna puede tener un tipo de numpy diferente(tipo de datos)
+
+escalar --> un numero solo

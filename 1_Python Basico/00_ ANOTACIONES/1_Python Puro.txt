@@ -1,0 +1,151 @@
+-----------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+-----------------------------------------------------------------------------------------------------------
+# --> Comentarios
+print() --> escribir en pantalla
+"" --> texto simple
+'' --> texto simple
+"""""" --> texto de varias lineas
+'''''' --> texto de varias lineas
++ --> sumar / concatenar
+f"{}" --> fstring (pasar a string)
+del --> eliminar una variable
+[] --> crear una lista de elemento modificables
+() --> crear lista de elemento no modificables
+{} --> crear un set, es como una tupla pero no tiene indices y no acepta datos repetidos
+- --> resta
+* --> multiplicar
+/ --> dividir
+% --> resto
+** --> potencia
+// --> division sin decimal
+type() --> devuelve el tipo de dato
+= --> asiganr
+== --> verificar igualda
+!= -- > verificar desigualdad
+< --> menor
+> --> mayor
+<= --> menor o igual
+>= --> mayor o igual
+if --> si se cumple tal condicion...
+else --> si no se cumple...
+elif --> si no se cumple la primera pero si esta segunda...
+& --> and
+| --> or
+not --> no
+list([]) --> crear una lista
+dir --> ver metodos disponibles del objeto
+.upeer --> convertir a mayuscula
+.lower --> convertir a minuscula
+.capitalize --> convertir todo a minuscula y la primera letra a mayuscula
+.find() --> buscar coincidencia y devolver indice (si no existe devuelve -1)
+.index() --> buscar coincidencia y devolver indice (si no existe tira error)
+.isanum() --> verifica si es un numero
+.isalpha() --> verifica si es una letra de la A a la Z
+.len() --> cuenta la cantidad de elementos o caracteres
+.startswith() --> verifica si comienza con tal cosa
+.endswith() --> verifica si acaba con tal cosa
+.replace() --> reemplaza un texto por otro
+.split() --> separa en lista donde hay tal cosa
+.append() --> añadir dato al final del array
+.insert() --> añadir dato en una posicion especifica
+.extends() --> añadir varios datos al final
+.pop() --> eliminar un elemento del array segun su indice
+.remove() --> eliminar un elemento del array segun su contenido
+.sort() --> ordenar de menor a mayor
+reverse= --> ¿ordenar de mayor a menor?
+.reverse --> invertir orden del contenido del array
+.clear() --> vaciar array
+.keys() --> ver las claves del diccionario
+.values() --> ver los valores del diccionario
+.get() --> obtener el valor de un key especifico
+.items() --> devuelve el diccionario como una lista
+.input() --> obtener dato del teclado
+int() --> convertir a entero
+float() --> convertir a flotante
+str() --> convertir a string
+tuple() --> crear una tupla
+set() --> crear un conjunto
+frozenset() --> crear un conjunto inmutable
+.issubset() --> verifica si es un subconjunto de otro
+.issuperset() --> verifica si es un superconjunto
+.isdisjoint() --> verifica que no tengan valores en comun
+dict() --> Crear diccionarios
+.fromkeys() --> crear diccionario con un valor fijo
+for --> Creamos un bucle for
+in --> especificamos en que lista se va a iterar
+zip() --> iterar en dos listas a la vez
+range() --> trabajar con un rango de numeros
+enumerate() --> enumerar los elementos
+while --> crear un bucle while
+continue --> saltear esa iteracion
+break --> acabar bucle
+max() --> buscar el mayor numero
+min() --> buscar el menor numero
+bool() --> verificar si al menos un elemento es True (True, letra o numero diferente de 0)
+all() --> verificar que todos sus elementos sean True (True, letra o numero diferente de 0)
+sum() --> sumar todos los elementos
+def --> crear una funcion
+return --> retornar datos
+: --> slicing
+.reader() --> leer csv
+try --> intentar ejecutar un codigo
+exception --> si falla hacer esto...
+finally --> al finalizar el try exception hacer...
+class --> crear una clase
+raise --> lanzar una excepcion
+
+
+-----------------------------------------------------------------------------------------------------------
+CONJUNTOS
+-----------------------------------------------------------------------------------------------------------
+Subconjunto --> conjunto de datos que pertenecen a un conjunto mayor 
+Superconjunto --> conjunto que contiene los datos del subconjunto y mas, osea un conjunto con conjuntos
+    ejemplo:
+        Conjunto1 = {2, 5, 4, 0, 9 , 55, 45, 23} --> Superconjunto
+        Conjunto2 = {9 , 55, 23} --> Subconjunto de conjunto1
+
+        si conjunto1 es un conjunto entonces conjunto2 es un subconjunto de conjunto1
+        si conjunto2 es un conjunto entonces conjunto1 es un superconjunto de conjunto2
+
+
+-----------------------------------------------------------------------------------------------------------
+DATOS COMPUESTOS
+-----------------------------------------------------------------------------------------------------------
+Listas --> Conjunto de datos modificables
+Tuplas --> son listas de datos no modificables ni ordenados,es mas optimo si es solo para leer
+Set --> conjunto de datos no modificable y no acepta datos repetidos, no los muestra
+Conjunto dentro de conjunto / conjunto congelado --> inmutable, no se puede modificar
+Diccionarios --> Json, objeto con key y values
+
+
+-----------------------------------------------------------------------------------------------------------
+DEFINICIONES E INFO.
+-----------------------------------------------------------------------------------------------------------
+Concatenar --> unir cadenas de texto
+Desempaquetado --> metodo de añadir datos a una variable
+    Ejemplo:    ------------------------------------------------------------
+                |   tupla = ("Nahuel", 22)                                  |
+                |    nombre, edad = tupla --> nombre = "Nahuel", edad = 22  |
+                -----------------------------------------------------------
+filter --> ejecuta una funcion en cada elemento existente en el array
+    Estructura: filter(función_de_filtro, secuencia_iterable)
+csv --> libreria para trabajar con csv
+Slicing --> se trata de seleccionar un  conjunto de datos mediante el ":"
+Para trabajar con csv se utiliza pandas
+para analisis de datos usar Jupyter
+las clases se crean en camelcase y con la primera letra en mayuscula
+
+
+-----------------------------------------------------------------------------------------------------------
+PAQUETES Y MODULOS
+-----------------------------------------------------------------------------------------------------------
+from Modulo_aritmetica import * --> importamos todo del modulo pero es mala practica
+#sys es un modulo built-in 
+Modulo builtin --> modulo que viene con python
+sys.builtin_module_name --> nos muestra los modulos dentro de sys
+para añadir una ruta de un modulo al path y acceder desde ahi --> usar path y poner doble linea diagonal no una
+    Ejemplo: sys.path.append("C:\\Users\\claud\\Desktop\\Python\\Dalto\\22_Enrutamiento\\modulos")
+import nombre_del_modulo_de_la_ruta --> importar modulo
+paquete = carpeta con muchos modulos
+para que python detecte si la carpeta es un paquete esta debe tener un archivo llamado __init__.py

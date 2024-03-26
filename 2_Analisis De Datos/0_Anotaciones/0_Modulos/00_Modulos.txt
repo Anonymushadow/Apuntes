@@ -1,0 +1,34 @@
+OS --> 
+Path --> 
+sys --> acceder a argumentos de línea de comandos, manejar rutas de búsqueda de módulos y más
+math --> Proporciona funciones matemáticas estándar, como trigonometría, exponenciación, logaritmos, funciones de redondeo, etc.
+datetime --> trabajar con fechas y horas, incluyendo formateo y manipulación de objetos de fecha y hora.
+random: Ofrece generación de números pseudoaleatorios y funciones relacionadas.
+requests: Se utiliza para realizar solicitudes HTTP a través de la web y manejar las respuestas.
+csv: Ayuda en la lectura y escritura de archivos CSV (Comma-Separated Values), que son comunes para el intercambio de datos tabulares.
+collections: Proporciona tipos de datos avanzados como defaultdict, Counter y namedtuple que son útiles en muchas situaciones.
+
+argparse: Facilita el análisis de argumentos de línea de comandos y opciones en scripts.
+
+logging: Proporciona un sistema de registro flexible y configurable para ayudar en la depuración y el seguimiento de la ejecución del programa.
+
+pickle: Permite la serialización y deserialización de objetos de Python, lo que facilita el almacenamiento y recuperación de datos.
+
+subprocess: Permite la ejecución de comandos en el sistema operativo desde un script de Python.
+
+
+
+
+
+pywhatkit --> buscar por wikipedia, google, youtube, etc
+pywhatkit --> enviar whatsapp, mails
+qrcode --> crear codigos QR
+pathlib -->
+email.message -->
+ssl
+smtplib
+
+pyqrcode --> crear QR
+camelot --> 
+cv2 --> leer QR
+

@@ -1,0 +1,97 @@
+-----------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+-----------------------------------------------------------------------------------------------------------
+class --> crear una clase
+raise --> lanzar una excepcion
+class --> crear una clase
+__init__() --> metodo constructor
+self --> hace referencia a si mismo (como el this)
+pass --> no hacer nada
+super() --> que heredamos de la clase padre?
+issubclass() --> es una subcalse / clase hija de esta otra clase?
+isinstance() --> es una instancia / objeto de esta otra clase?
+.mro() --> muestra el orden de mro
+@ --> crear un decorador
+@property --> especificamos que es un getter
+.setter --> indicamos que es un setter
+.deleter --> indicamos que es un deleter
+@abstractclassmethod --> creamos un metodo abstracto
+__str__() --> que mostrar en caso de ser llamado como cadena de texto
+__repr__() --> indicamos como es la representacion
+repr() --> ver la representacion de un objeto
+eval() --> evalúa el contenido del objeto (que debe ser una cadena de texto) como una expresión o instrucción Python y devuelve el resultado de dicha evaluación.
+__add__() --> definimos que sucede si sumamos objeetos de esta clase
+__sub__() --> definimos que sucede si restamos objeetos de esta clase
+__mul__() --> definimos que sucede si multiplicamos objeetos de esta clase
+__truediv__() --> definimos que sucede si dividimos objeetos de esta clase
+__floordiv__() --> definimos que sucede si dividimos objeetos de esta clase y eliminamos los decimales
+__mod__() --> definimos que sucede si sacamos el resto de objeetos de esta clase
+__pow__() --> definimos que sucede si elevamos objeetos de esta clase
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+POO
+-----------------------------------------------------------------------------------------------------------
+¿Que es?: se trata de utilizar objetos para mejorar nuestro codigo
+
+Objetos --> son elementos que simulan ser un objeto de la vida real
+Clases --> son como moldes donde cada objeto es construido a partir de ese molde
+atributos --> son las caracteristicas / propiedades / cualidades que tendra un objeto 
+atributos estaticos --> atributos que para todos los objetos son iguales
+crear una instancia de una clase --> crear un objeto
+atributos de instancia --> atributos que se definen al crear le objeto
+metodo --> funciones dentro de una clase, representa las acciones que peude ejecutar un objetos
+constructor --> es un metodo que se ejecutaa al crear un objeto con esa clase 
+metodos especiales --> son metodos que python busca 
+herencia --> una clase hija adquiere todos los atributos y metodos de la clase padre
+herencia simple --> una clase depende de una padre y esa padre tiene solo una hija
+herencia jerarquica --> una clase tiene muchas clases hijas
+herencia multiplia --> es cuando una clase hereda de varias clases
+MRO --> se trata del orden en que python busca atributos y metodos en las clases
+	.primero ejecuta la clase actual
+	.segundo la primera clase que hereda de la padre
+	.tercero la segunda que hereda de la clase padre
+	.asi sucecivamente
+	.si ninguna hereda despues va a la clase padre
+polimorfismo --> capacidad de un objeto de tomar diferentes formas o comportarse de diferentes maneras según el contexto en el que se utilice
+polimorfismo de herencia --> es cuando en ciertos lenguajes debes heredar de una misma clase para compartir metodos con nombres identicospero funciones diferentes
+polimorfismo de sobrecarga --> una clase tiene una misma metodo repetido pero segun la cantidad de parametros hace una u otra cosa
+encapsulamiento --> se trata de proteger metodos, variables, etc (private, public)
+	.publico --> se puede accede4r desde cualquier lugar
+	.protegido --> solo se puede acceder desde la misma clase o sus subclases
+	.privado o muy privado --> esta bloqueado
+getter --> metodo de acceso a atributo privados o muy privados (metodo dentro de la clase que obtiene su atributo privado)
+setters --> metodo de modificacion de atributos privados o muy privados (metodo dentro de la clase que modifica su atributo privado)
+deleter --> metodo para eliminar valores
+decoradores --> son funciones que agrega codigo antes o despues de una funcion
+	las funciones deben ejecutar una sola cosa
+	los decoradores se utilizan para validaciones por lo general
+abstraccion --> se trata de entrergarle al usuario una interfaz simple donde de fondo hay algo complejo
+	en un celular tocas el icono de whatsapp y se abre whatsapp, de fondo se ejecutan muchso comandos
+	es basicamente ocultar la complejidad interna de un programa
+clases abstractas --> una clase que no podemos instanciar, solo podemos heredar
+implementar un metodo --> definir como funciona
+metaclase --> es una clase que define como se comporta otra clase
+metodo abstracto --> metodo dentro de una clase abstracta el cual no tiene nada dentro, solo esta para heredar de este
+metodos especiales --> son metodos definidos por python (empiezan y acaban con dos guiones bajos)
+	__init__
+	__str__
+	__repr__
+sobrecarga de operadores --> 
+principio solid:
+	.hasta donde va a llegar nuestro programa? queremos que dure o no nos importa?
+	.mantenibilidad --> el codigo debe ser claro, limpio, ordenado 
+	.reusabilidad --> se deben poder reutilizar todos los modulos
+	.legibilidad --> debe ser facil y claro de leer, comentar, usar variables con nombres representativos
+	.extencible --> el software debe ser capacidad de extenderse sin necesidad de modificar el codigo
+
+	Srp (Single Responsability Principle) --> una clase debe tener una unica tarea 
+	Ocp (Open Closed Principle) --> se debe poder agregar funcionalidades nuevas ala clase sin cambiar su codigo 
+	Lsp (Liskov's Sustitution Principle) --> las clases deben poder utilizarse en todos los lados donde se utilizan sus subclases 
+	Isp (Interface Segregation Principle) --> no hay que obligar que un usuario haga uso de metodos inecesarios o imposibles 
+	Dip (Dependency Inversion Principle)
+												
+												

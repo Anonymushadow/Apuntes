@@ -1,0 +1,14 @@
+-----------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+-----------------------------------------------------------------------------------------------------------
+    .lineplot() --> grafico de lineas
+        Estructura: .lineplot(x="columna_a_usar_como_eje_X", y="columna_a_usar_como_eje_Y", data=datos_a_usar)
+    .barplot() --> grafico de barras
+    .scatterplot() --> diagrama de dispersion
+    .boxplot() --> grafico de bigotes
+
+-----------------------------------------------------------------------------------------------------------
+SEABORN
+-----------------------------------------------------------------------------------------------------------
+Que es?: es una librerira para crear graficos estadisticos
+Instalar: py -m pip install seaborn
