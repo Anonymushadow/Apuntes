@@ -1,0 +1,457 @@
+MYSQL
+
+1_prender xampp
+	.apache
+	.mysql
+2_abrir workbench con la conexion:
+	mi base:
+	hostname: 127.0.0.1
+	port: 3307
+	username: root
+	password: -
+	Default Schema: -
+3_seleccionar que base vas a usar
+	.USE nombre de base
+
+
+
+
+CREATE DATABASE --> crear una base de datos
+DROP DATABASE --> eliminar base de datos
+CREATE TABLE --> crear una tabla
+ALTER  TABLE --> modificar una tabla
+DROP TABLE --> eliminar una tabla
+
+SELECT --> buscar
+INSERT --> agregar
+UPDATE --> modificar
+DELETE --> eliminar
+
+
+
+
+
+CREATE DATABASE sistema_veterinaria; --> crear base de datos llamada sistema_veterinaria;
+DROP DATABASE IF EXISTS sistema_veterinaria; --> si la base sistema_veterinaria existe eliminarla
+
+aa-mm-dd-hh --> fecha
+
+
+---------------------------
+CREAR TABLA
+
+CREATE TABLE usuarios (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	nombre varchar(80) NOT NULL,
+	apellido varchar(80) NOT NULL,
+	fecha_nacimiento DATETIME NULL,
+	PRIMARY KEY (id)
+);
+
+1ra columna: se llama id, es un entero de hasta 11 digitos, no puede ser nulo y se autoincrementa en cada fila
+2da columna) se llama nombre, es un texto de hasta 80 digitos y no es nulo
+3ra columna) se llama apellido, es un texto de hasta 80 digitos y no es nulo
+4ta columna) se llama fecha_nacimiento, es una fecha y hora y puede ser nulo
+la clave primaria es la columna llamada id
+
+--------------------------------
+AGREGAR COLUMNAS
+
+ALTER TABLE usuarios ADD COLUMN telefono varchar(45) NULL;
+
+explicacion: 
+modificamos la tabla usuario para agregar una columna llamada telefono que es u varchar de hasta 45 digitos y puede ser nulo
+
+-------------------------------
+ELIMINAR COLUMNAS
+
+ALTER TABLE usuarios DROP IF EXISTS telefono;
+
+explicacion:
+modificamos la tabla usuarios para eliminar si es que existe la columna telefono
+
+------------------------------
+MODIFICAR COLUMNAS
+
+ALTER TABLE usuarios ALTER COLUMN telefono varchar(35) NULL;
+
+explicacion:
+modificamos la tabla usuarios para modificar la columna telefono, cambiandole la cantidad de digitos de 45 a 35
+
+-----------------------------
+AÑADIR DATOS A LA TABLA
+
+INSERT INTO usuarios(
+	nombre, apellido, fecha_nacimiento, telefono)
+VALUES("Lucas", "Moy", "1998-04-04 10:00:00", "1234123123");
+
+explicacion: 
+insertamos datos desntro de la tabla usuarios, en las columnas nombre, apellido, fecha_nacimiento y telefono agregamos los datos "Lucas", "Moy", "1998-04-04 10:00:00" y "1234123123", quedando
+
+id 	 nombre,   apellido   fecha_nacimiento        telefono
+1    "Lucas"   "Moy"      "1998-04-04 10:00:00"   "1234123123"
+
+-----------------------------------
+ELIMINAR DATOS DE UNA TABLA
+
+DELETE FROM usuarios WHERE id = "1";
+
+explicacion:
+elimina los datos de la tabla usuarios donde el id es igual a 1
+
+-----------------------------------
+BORRAR TODOS LOS DATOS DE LA BASE
+
+DELETE FROM usuarios;
+
+explicacion:
+de la tabla usuarios elimina todos los registros existente
+
+----------------------------------
+MODIFICAR UN DATO
+
+UPDATE usuarios SET nombre = "Pepe", apellido = "Angelini" where id = "1";
+
+explicacion:
+modifica la tabla usuarios, añade o sobreescribe los datos "pepe" en la columna nombre
+ y "Angelini" en la columna apellido donde el id es igual a 1
+
+---------------------------------
+MODIFICAR TODOS LOS DATOS 
+UPDATE usuarios SET nombre = "Pepe", apellido = "Angelini";
+
+explicacion:
+modifica la tabla usuarios, añade o sobreescribe los datos "pepe" en la columna nombre
+ y "Angelini" en la columna apellido en todas las filas existentes 
+
+---------------------------------
+BUSCAR Y MOSTRAR
+---------------------------------
+BUSCAR TODOS LOS USUARIOS
+
+SELECT * FROM usuarios;
+
+explicacion:
+selecciona todo de la tabla usuarios
+
+--------------------------------
+BUSCAR UN USUARIO ESPECIFICO
+
+SELECT * FROM usuarios WHERE id = "1";
+
+explicacion:
+selecciona todo de la tabla usuarios aquellos donde el id es igual a 1
+
+--------------------------------
+BUSCAR DATOS ESPECIFICOS DE USUARIOS ESPECIFICOS
+
+SELECT nombre, apellido FROM usuarios WHRE id = "1";
+
+explicacion:
+selecciona las columnas nombre y apellido de la tabla usuarios donde el id es igual a 1
+
+---------------------------------
+BUSCAR CON MAS DE UNA CONDICION
+
+SELECT * FROM usuarios WHERE id > "2" AND apellido = "Perez";
+
+explicacion:
+selecciona todo de la tabla usuarios donde el id es mayor a 2 y donde el apellido es Perez
+
+---------------------------------
+BUSCAR CON UNA CONDICION U OTRA
+
+SELECT * FROM usuarios WHERE id > "3" OR apellido = "Perez";
+
+explicacion:
+selecciona todo de la tabla usuarios donde el id es mayor a 3 o donde el apellido es Perez
+
+---------------------------------
+CONTAR CANTIDAD DE FILAS
+
+SELECT COUNT(*) FROM usuarios;
+
+explicacion:
+selecciona todo de usuarios y lo cuenta
+
+---------------------------------
+CONTAR CANTIDAD DE FILAS CON CIERTOS DATOS
+
+SELECT COUNT(*) FROM usuarios WHERE id < 3;
+
+explicacion: 
+selecciona todo de usuarios y cuenta en cuantos el id es menor a 3
+
+---------------------------------
+CAMBIAR EL NOMBRE DE LA COLUMNA QUE SE CREA AL CONTAR
+
+SELECT COUNT(*) AS "Cantidad" FROM usuarios;
+
+explicacion:
+selecciona todo de usuarios, lo cuenta y lo agrega a una columna llamada Cantidad
+
+---------------------------------
+SELECCIONAR INFORMACION ESPECIFICA CUANDO NO SABES COMO COMIENZA
+
+SELECT * FROM usuarios WHERE nombre LIKE "%ton";
+
+explicacion:
+selecciona todo de usuarios donde el nombre comineza con algo y termina con ton
+
+---------------------------------
+SELECCIONAR INFORMACION ESPECIFICA CUANDO NO SABES COMO TERMINA
+
+SELECT * FROM usuarios WHERE nombre LIKE "Ra%";
+
+explicacion:
+selecciona todo de usuarios donde el nombre empieza por Ra y termina o algo mas
+
+---------------------------------
+SELECCIONAR INFORMACION QUE CONTIENE CIERTOS DATOS
+
+SELECT * FROM usuarios WHERE nombre LIKE "%at%";
+
+explicacion:
+selecciona todo de la tabla usuarios donde el nombre contiene at
+
+---------------------------------
+RELACIONAR TABLAS
+
+CREATE TABLE publicaciones(
+	id int(11) NOT NULL AUTO_INCREMENT,
+	autor_id int(11) NOT NULL,
+    titulo varchar(80) NOT NULL,
+    texto TEXT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (autor_id) REFERENCES usuarios (id)
+    );
+
+explicacione:
+creamos una tabla llamada publicaciones, donde tiene como columnas id que es un entero de hasta 11 digitos, autor_id que es un int de hasta 11 digitos, titulo que es un texto de hasta 80 caracteres y texto que es un texto, definimos al id como la clave primaria, indicamos que autor_id es la clave foranea (la columna la cual va a estar conectada a otra tabla) e indicamos la tabla y la columna a la que hace referencia (osea a que columna de que tabla esta conectada la clave foranea)
+
+---------------------------------
+CONSULTAS A MULTIPLES TABLAS
+
+SELECT p.*, CONCAT(u.nombre,  "", u.apellido) AS "autor" FROM publicaciones p, usuarios u WHERE p.autor_id = u.id;
+
+explicacion:
+selecciona la tabla p (publicacoines, mas adelate declaramos publicaciones como p pero al estar dentro del mismo codigo no genera problemas por mas que se utilice antes de referenciarlo), entra en esta tabla y selecciona todo, concatenamos (unimos) el nombre del usuario con el apellido del usuario, le agregamos un espacio en el medio para que no salga todo pegado y guardamos esta combinacion dentro de una tabla llamada autor para luego mostrarla,  de la tabla publicaciones (la abreviamos a p para despues no reescribir el nombre completo) y de la tabla usuarios (la abreviamos a u para despues no reescribir el nombre completo) donde el autor_id de publicaciones sea igual a id de usuarios los unimos
+
+---------------------------------
+VER SOLO LAS COLUMNAS DESEADAS DE LAS DOS COLUMNAS
+
+SELECT p.id, p.titulo, p.texto, CONCAT(u.nombre,  " ", u.apellido) AS "autor" FROM publicaciones p, usuarios u WHERE p.autor_id = u.id;
+
+explicacion: 
+en vez de seleccionar todo solo lecciona lo deseado
+
+---------------------------------
+las claves foraneas sirven para no tener que verificar con where ya que esto es lento
+
+
+---------------------------------
+INNER JOIN
+
+SELECT p.id, p.titulo, p.texto, CONCAT(u.nombre,  " ", u.apellido) AS "autor" FROM publicaciones p INNER JOIN usuarios u ON p.autor_id = u.id;
+
+explicacion:
+selecciona de la tabla publicaciones el id, el titulo y el texto, une el nombre con un espacio con el apellido guardando este cambio como autor, une la tabla publicaciones con la tabla usuarios donde el autor_id es igual al id
+_muestra los datos que coinciden en ambas tablas
+
+---------------------------------
+LEFT JOIN 1
+
+SELECT p.*, FROM publicaciones p LEFT JOIN usuarios u ON p.autor_id = u.id;
+
+explicacion:
+selecciona todo de la tabla publicaciones une la tabla publicaciones con la tabla usuarios donde el autor_id es igual al id, para mostrar esos datos coincidentes y los datos de la tabla A
+_muestra los datos de la tabla A tanto los que comparte con la tabla B como los que no comparte
+
+---------------------------------
+LEFT JOIN 2
+
+SELECT p.*, FROM publicaciones p LEFT JOIN usuarios u ON p.autor_id = u.id WHERE u IS NULL;
+
+explicacion:
+selecciona todo de la tabla publicaciones une la tabla publicaciones con la tabla usuarios donde el autor_id es igual al id, para mostrar descartarlos y los datos de la tabla A que no estan en la B
+_muestra los datos de la tabla A que no coinciden con la tabla B
+
+---------------------------------
+RIGHT JOIN 1
+
+SELECT p.*, FROM publicaciones p RIGHT JOIN usuarios u ON p.autor_id = u.id;
+
+explicacion:
+selecciona todo de la tabla publicaciones une la tabla publicaciones con la tabla usuarios donde el autor_id es igual al id, para mostrar esos datos coincidentes y los datos de la tabla B
+_muestra los datos de la tabla B tanto los que comparte con la tabla A como los que no comparte
+
+---------------------------------
+RIGHT JOIN 2
+
+SELECT p.*, FROM publicaciones p RIGHT JOIN usuarios u ON p.autor_id = u.id WHERE p IS NULL;
+
+explicacion:
+selecciona todo de la tabla publicaciones une la tabla publicaciones con la tabla usuarios donde el autor_id es igual al id, para mostrar descartarlos y los datos de la tabla B que no estan en la A
+_muestra los datos de la tabla B que no coinciden con la tabla A
+
+---------------------------------
+FULL OUTER JOIN 1
+
+SELECT p.*, FROM publicaciones p FULL OUTER JOIN usuarios u ON p.autor_id = u.id;
+
+explicacion:
+selecciona todo de la tabla publicaciones, une la tabla publicaciones con la tabla usuarios donde el autor_id es igual al id y muestra todo
+_muestra todos los datos de la Tabla A y de la tabla B
+
+---------------------------------
+FULL OUTER JOIN 2
+
+SELECT p.*, FROM publicaciones p FULL OUTER JOIN usuarios u ON p.autor_id = u.id WHERE p IS NULL OR u IS NULL;
+
+explicacion:
+selecciona todo de la tabla publicaciones, une la tabla publicaciones con la tabla usuarios donde el autor_id es igual al id donde la tabla A o la tabla B no tenga ese dato (donde no comparten los datos)
+_muestra los datos que no estan en las dos tablas al mismo tiempo
+
+---------------------------------
+
+COUNT(*) --> cuenta la cantidad de filas
+
+MAX(puntaje) --> devuelve el puntaje maximo
+
+MIN(puntaje) --> devuelve el puntaje minimo
+
+AVG(puntaje) --> devuelve el puntaje promedio
+
+SUM(precio) --> devuelve una sumatoria de precios   (por ejemplo realiza varias compras y se registran por separado, con sum podes saber cuanto gasto en total)
+
+
+---------------------------------
+MOSTRAR MAXIMO VALOR
+
+SELECT MAX(precio) FROM productos
+
+explicacion: selecciona la columna precio de la tabla productos y devuelve el valor maximo
+
+---------------------------------
+MOSTRAR MINIMO VALOR
+
+SELECT MIN(precio) FROM productos
+
+explicacion: selecciona la columna precio de la tabla productos y devuelve el valor minimo
+
+---------------------------------
+MOSTRAR VALOR PROMEDIO
+
+SELECT AVG(precio) FROM productos
+
+explicacion: selecciona la columna precio de la tabla productos y devuelve el valor promedio
+
+---------------------------------
+MOSTRAR SUMA DE VALORES
+
+SELECT SUM(precio) FROM productos
+
+explicacion: selecciona la columna precio de la tabla productos y devuelve la suma de todos los valores
+
+---------------------------------
+SUBCONSULTAS
+
+SELECT * FROM publicaciones WHERE autor_id IN (
+	SELECT id FROM usuario
+);
+
+explicacion:
+selecciona todo de la tabla publicaciones, seleccionamos todos los id de la tabla usuario y devolvemos todos los resultados donde el auto_id coincida con un id de usuario
+_si el autor_id no existe en id no lo mostramos
+
+---------------------------------
+SUBCONSULTAS EJEMPLO 2
+
+SELECT * FROM publicaciones WHERE autor_id IN (
+	SELECT id FROM usuarios WHERE nombre LIKE "L%" 
+);	
+
+explicacion:
+selecciona todo de la tabla publicaciones, seleccionamos todos los id de la tabla usuario cuyo nombre comience con L y devolvemos todos los resultados donde el auto_id coincida con uno de estos id de usuario cuyo nombre empieza con L
+_devuelve solo usuarios cuyos nombres empiezan con L
+
+---------------------------------
+SUBCONSULTAS EJEMPLO 3
+
+SELECT * FROM publicaciones WHERE autor_id NOT IN (
+	SELECT id FROM usuarios WHERE nombre LIKE "L%" 
+);	
+
+explicacion:
+selecciona todo de la tabla publicaciones, seleccionamos todos los id de la tabla usuario cuyo nombre comience con L y devolvemos todos los resultados donde el auto_id no coincida con uno de estos id de usuario cuyo nombre empieza con L
+_devuelve solo usuarios cuyos nombres no empiezan con L
+
+---------------------------------
+CONCATENAR DOS CONSULTAS DISTINTAS
+
+SELECT * FROM usuarios WHERE nombre LIKE "%L"
+UNION
+SELECT * FROM usuarios WHERE nombre LIKE "%p";
+
+explicacion:
+selecciona todo de usuarios donde el nombre comienza por L, selecciona todo de usuarios donde el nombre comienza por p y une las dos consultas 
+
+---------------------------------
+EVITAR REPETICIONES
+
+SELECT * FROM usuarios GROUP BY apellido; 
+
+explicacion:
+selecciona todo de usuarios y separa por apellido
+_donde el apellido se repite se saltea
+
+---------------------------------
+EVITAR REPETICIONES 2
+
+#SELECT * FROM usuarios GROUP BY MONTH(fecha_nacimiento); 
+
+explicacion: selecciona todo de usuarios y lo agrupa segun el mes
+
+---------------------------------
+ORDENAR 1
+
+SELECT * FROM usuarios ORDER BY id DESC;
+
+explicacion: selecciona todo de usuarios y ordena segun el id de forma descendente
+
+---------------------------------
+ORDENAR 2
+
+SELECT * FROM usuarios ORDER BY id ASC;
+
+explicacion: selecciona todo de usuarios y ordena segun el id de forma ascendente
+
+---------------------------------
+AGRUPAR SEGUN EL MES
+
+SELECT COUNT(*), MONTH(fecha_nacimiento) FROM ususarios GROUP BY MONTH(fecha_nacimiento);
+
+explicacion:
+selecciona todo de usuarios, lo cuenta, selecciona el mes de fecha_nacimiento dejando de lado los que se repiten
+_muestra cuantos hay en cada mes
+
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+
+
+
+#VALOR MAXIMO
+#
+
+#VALOR MINIMO
+#SELECT MIN(precio) FROM productos
+
+#VALOR PROMEDIO
+#SELECT AVG(precio) FROM productos
+
+#SUMA
+#SELECT SUM(precio) FROM productos
+
+

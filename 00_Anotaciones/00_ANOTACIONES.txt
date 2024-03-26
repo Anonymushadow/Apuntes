@@ -1,0 +1,250 @@
+---------------------------------------------------------------
+SQL
+---------------------------------------------------------------
+Que es?: es un Lenguaje de consultas estructuradas
+Estandarizado: es estandarizado (lo aprendemos una vez y lo podemos usar en todos lados porque es estandar)
+Que podemos hacer con sql?: 
+    .Crear y administrar bases de datos
+    .Consultar datos
+    .Añadir restricciones y reglas
+    .Generar informes
+    .Analisis de datos 
+    .Añadir usuarios con sus respectivos permisos
+    .Analisar transacciones
+    .Analisar copias de seguridad
+    .Integrar con otras apps
+    .Limpieza de datos
+    .Otros
+
+
+---------------------------------------------------------------
+COMANDOS
+---------------------------------------------------------------
+CREATE DATABASE "nombre_de_la_base" --> creamos una base de datos
+CREATE TABLE "nombre_de_la_tabla" --> crear tabla
+INTEGER --> Entero (edad, cantidad de productos, etc)
+TEXT --> texto (nombre, apellido, etc)
+BLOB --> Datos binarios (fotos, archivos, videos, etc)
+REAL --> float (porcentajes, decimales, etc) 
+    .8 bits
+    .almacena menos informacion 
+    .es mas rapido
+NUMERIC --> matematicas precisas (pi, numeros enormes, etc) 
+    .no tiene restriccion 
+    .es mas lento
+DATE --> fechas
+DEFAULT "" --> valor por defecto
+SELECT --> seleccionar
+* --> todo
+FROM --> de 
+-- --> comentario de una linea
+/**/ --> comentario de varias lineas
+INSERT --> insertar datos 
+INTO  --> dentro de...
+VALUES() --> valores a añadir
+DELETE --> eliminar datos
+PRIMARY KEY() --> añadir una clave primarie
+AUTOINCREMENT --> auntoincrementar datos en cada registro
+AS --> cambiar el nombre de la columna temporalmente
+ORDER BY --> ordenar por la columna...
+ASC --> ascendente
+DESC --> descendente
+RANDOM() --> de forma aleatoria
+NULLS LAST --> poner los nulos al final
+NULLS FIRST --> poner los nulos primero
+DISTINCT --> seleccionar todos los registros de la columna y los repetidos solo una vez
+WHERE --> realizar un query donde se cumpla una condicion
+UPDATE ---> modificar datos
+OR --> si se cumple una u otra o ambas condiciones
+AND --> si se cumplen ambas condiciones
+() --> agrupar 
+NOT --> si no se cumple esa condicion
+BETWEEN --> si esta dentro de un rango
+LIKE --> verifica si algo es igual pero usando comodines
+% --> pueden haber letras 
+_ --> hay tantas letras como guiones 
+IS NULL --> Verifica si es nulo
+IS NOT NULL --> verifica si no es nulo
+IN --> verifica que se encuentre dentro de la tupla especificada
+NOT IN --> verifica que no se encuentre dentro de la tupla especificada
+COUNT() --> contar cuantos hay
+SUM() --> sumar los valores
+MIN() --> buscar valor minimo
+MAX() --> buscar valor maximo
+AVG() --> sacar promedio
+ROUND() --> redondear
+GROUP BY --> agrupar los que son iguales
+HAVING --> aplicar filtros a los grupos y funviones de agregaciones
+() --> subconsultas
+CROSS JOIN --> busca todas las posibles combinaciones entre la columna  A y la columna B
+LEFT JOIN --> muestra todos los datos de la tabla A y si hay datos de la B lo pone si no pone null
+RIGHT JOIN --> muestra todos los datos de la tabla B y si hay datos de la A lo pone si no pone null
+INNER JOIN --> unir dos tablas segun una condicion (mostrar las coincidencias)
+ON --> condicion por la que se unen (el where del join)
+UNION --> une dos consultas y devuelve las filas, si hay rapetidas las une
+UNION ALL --> une dos consultas y devuelve todas las filas sin importar si estan repetidas
+INDEX --> crea un indice primario (como una variable donde almacena la columa y despues no debe releer todo)
+FOREIGN KEY --> crear clave foranea
+REFERENCE --> a que tabla y columna hace referencia
+VIEW --> crear Vistas
+DROP --> eliminar
+IF EXISTS --> si existe
+BEGIN --> Iniciar transaccion
+COMMIT --> aplicar los cambios
+ROLLBACK --> volver atras
+
+
+
+
+
+
+---------------------------------------------------------------
+DIAGRAMA ER / ER CHEN
+---------------------------------------------------------------
+Entidad --> es como un objeto, es una representacion de algo (la tabla)
+Base de datos --> es donde se almacenan las entidades
+Atributos --> son las caracteristicas de la entidad
+    .Simples --> tienen datos unicos
+    .Compuestos --> tienen datos los cuales tienen subdatos
+        .casa tiene el atributo ambiente
+        .ambiente tiene otros atributos como tamaño, color, etc
+    .Multivalor --> tienen mas de un valor
+        .una casa tiene como atributo puerta pero hay mas de una puerta y cada una tiene sus atributos
+    .Derivados --> se pueden obtener mediante otros atributos
+        .antiguedad puede obtenerse si nos fijamos en la fecha de construccion
+        .ubicacion se puede obtener si nos fijamos en la direccion
+Key --> es un id, un identificador
+Notacion de Chen --> es una forma de representar entidades y sus relaciones
+    .una entidad se representa como una palabra dentro de un cuadrado
+    .los atributos de la entidad se representan como la palabra dentro de un obalo
+    .los atributos multivalor se representan como la palabra dentro de un doble obalo 
+    .los atributos derivados se representan con la palabra dentrro de un obajo punteado
+    .los key se representan como un atributo pero la palabra va subrayada
+
+---------------------------------------------------------------
+DEFINICIONES E INFO.
+---------------------------------------------------------------
+Tabla --> datos organizados en filas y columnas
+Campo --> nombre de la columna
+Registro --> fila
+Valor de campo --> contenido de una celda
+Identificador --> numero que tiene cada registro para diferenciarlo de las demas por mas que sean iguales
+Consulta / query --> pedir informacion a la base de datos 
+Primary key --> es un id, es unico
+Autoincrement --> significa que en cada uno aumenta
+Clave foranea --> columna la cual tiene numeros que hacen referencia al id de otra tabla
+Subconsultas --> consultas dentro de otra consulta (siempre son select, no puede modificar, solo obtener datos)
+    primer nivel --> subconsulta dentro de una consulta
+    segundo nivel --> subconsulta dentro de otra dentro de una consulta
+    etc
+Joins --> unir tablas y crear una nueva a partir de ese combo
+Cardinalidad --> se trara de la relacion que hay entre tablas
+    .uno a uno (1:1) --> una fila esta relacionada a una fila de la otra tabla 
+        .Un libro tiene solo un id y un id pertenece a solo un libro
+    .uno a muchos (1:n)--> una fila pertenece a una sola fila pero esta segunda puede pertenecer a muchos
+        .un autor puede escribir varios libros pero cada libro tiene solo un autor
+    .muchos a muchos (n:m) --> una fila pertenece a varias filas de otra tabla y al reez igual
+        .una persona puede leer varios libros y un libro peude ser leido por varias personas
+Normalizacion --> se trata de un proceso de mejora, optimizacion del sistema
+    .se divide en 5 niveles llamados forma normal
+    .Primera forma normal: consiste en garantzar que cada columna debe tener valores unicos, no deben ser listas, lo correcto es separar cada dato en columnas diferentes
+        .| ID | Cliente | Telefono y Mail|
+        .Telefono y Mail deben ser divididos en dos columnas diferentes
+    .Segunda forma normal: cada atributo que no sea un key debe depender de la primary key de la tabla
+        .| ID | Cliente | producto_Comprado | Color_Producto |
+        .el color del producto depende del producto y no del ID
+    .Tercera forma normal: lso atributos no deben depender de otros atributos que no sean claves primarias, no púeden haber ademas columnas que no puedan repetirse pero otras que si como empleado y ciudad
+        .| ID | Nombre | Departamento | Ciudad|
+        .el nombre no puede repetirse pero en cambio la ciudad y departamentos si
+    .Cuarta forma normal: cada tabla debe tener una primary key compuesta que tenga varias columnas y no una
+        .|ID_venta |	ID_producto | ID_tienda | Cantidad_vendida| 
+        .la tienda 1 puede tener la venta nro 22
+        .la tienda 2 puede tambien tener la venta nro 22 pero es diferente a la de la 1
+    .Quinta forma normal:  se trata de datos que estan en diferentes tablas cuando podrian estar en la misma
+        .| ID_producto | Producto | Tamaño |
+        .| ID_producto | Color |
+        .color podria estar en la otra tabla y tener una sola en vez de dos
+Indices --> busca mejorar la optimizacion de la base de datos mediante un orden
+    .Indices unicos:
+        .Primary Key: identifica cada fila como unica
+        .Indice ordinario: Almacena una columna en un tipo de variable para leerla mas rapido
+    .Indices no primarios:
+        .Foreign Key
+Views / Vistas --> son variables donde se almacena la tabla resultante de una consulta para no realizarla de nuevo
+Bloqueos --> es la forma de manejar varias consultad al mismo tiempo
+    .Shared lock / Bloqueo compártido --> nadie puede escribir pero pueden leer (se aplica al leer en la db)
+    .Reserved lock / Bloqueo reservado --> nadie puede escribir pero pueden leer (se aplica al escribir en la db)
+    .Exclusive lock / Bloqueo exclusivo --> nadie puede escribir ni leer (se aplica al escribir en la db)
+Transacciones --> es como una prueba, ejecutas una consulta y si te gusta la aplicas y si no te gusto el resultado lo regrsas atras
+Procedimiento almacenado --> conjunto de comandos que se guardan y utilizan para realizar acciones o tareas en la base de datos
+Funcion definida porle usuario --> funciones en sql
+
+
+DISTINCT --> verifica si dos cosas son desiguales, si lo son devuelve TRUE
+NOT --> Verifica que una condicion sea  False, si lo es devuelve True
+
+WHERE --> filtra los datos a usuar
+HAVING --> filtra los grupos ya creados
+
+
+
+---------------------------------------------------------------
+SQLite VS OTRAS DB
+---------------------------------------------------------------
+sqlite:
+	.1 solo archivo
+	.no apropiado para gran escala o anlto rendimiento
+	.ideal para prototipos
+Mysql:
+	.soporta varios conjntos de sql
+	.ideal para gran escala
+	.
+Postgre:
+	.soporta un conjunto de caracteristicas de sql
+	.tiene sus propias extenciones
+	.es ideal para apps web, proyectos empresariales y para escalar
+SQLServer:
+	.es de microsoft
+	.es pago
+	.soporta conjunto de sql
+	.incluye extenciones propias
+	.ideal para apps de gran escala
+
+CODIGO:
+	.Tablas
+		MYSQL: CREATE TABLE nombre_tabla (columa1, columna2 ...) ENGINE = InnoDB;
+		SQLite: CREATE TABLE nombre_tabla (columa1, columna2 ...);
+		SQLServer: CREATE TABLE nombre_tabla (columa1, columna2 ...);
+		PostGreSQL: CREATE TABLE nombre_tabla (columa1, columna2 ...);
+	.Primary Key
+		MYSQL: id INT NOT NULL AUTO_INCREMENT
+		SQLite:id INTEGER PRIMARY KEY AUTOINCREMENT 
+		SQLServer: id INT IDENTITY(1, 1) PRIMARY KEY
+		PostGreSQL: id SERIAL PRIMARY KEY
+
+	.FULL JOIN
+		MYSQL: UNION 
+		SQLite:  UNION 
+		SQLServer: FULL OUTER JOIN
+		PostGreSQL: FULL OUTER JOIN
+	.NOW (devuelve fecha actual)
+		MYSQL: SELECT NOW() 
+		SQLite: SELECT NOW()
+		SQLServer: SELECT GETDATE()
+		PostGreSQL: SELECT NOW()
+	.CEIL (redondear hacia arriba)
+		MYSQL: CEILING(num)
+		SQLite: CEIL(num)
+		SQLServer: CEILING(num)
+		PostGreSQL: CEIL(num)
+	.LIMIT
+		MYSQL: SELECT * FROM tabla LIMIT 5
+		SQLite: SELECT * FROM tabla LIMIT 5
+		SQLServer: SELECT TOP 5 * FROM tabla
+		PostGreSQL:SELECT * FROM tabla LIMIT 5
+	.OFFSET (saltear registros)
+		MYSQL: SELECT * FROM tabla LIMIT cantidad OFFSET inicio
+		SQLite: SELECT * FROM tabla LIMIT cantidad OFFSET cantidad
+		SQLServer: SELECT * FROM (SELECT * ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS RowNum FROM tabla) AS Resultado WHERE Resultado BETWEEN inicio + 1 AND inicio + cantidad;
+		PostGreSQL: SELECT * FROM tabla LIMIT cantidad OFFSET cantidad
+	
