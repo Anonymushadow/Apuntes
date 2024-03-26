@@ -14,3 +14,6 @@ CSS (Cascading Style Sheets) es un lenguaje utilizado para definir el estilo y l
 
 ## 3_JavaScript
 JavaScript (JS) es un lenguaje de programación utilizado principalmente para crear interactividad en páginas web. Es un lenguaje de scripting del lado del cliente que se ejecuta en el navegador web del usuario y permite manipular el contenido HTML, modificar el estilo CSS, responder a eventos del usuario y realizar acciones dinámicas en una página web
+
+## 4_GIT
+es un sistema de control de versiones distribuido diseñado para rastrear cambios en archivos y coordinar el trabajo entre múltiples personas en proyectos de desarrollo de software. Permite a los equipos de desarrollo colaborar de manera eficiente y mantener un historial completo de todos los cambios realizados en el código fuente de un proyecto
