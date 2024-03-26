@@ -1,0 +1,7 @@
+# Ignorar archivos STL y OBJ grandes (>50MB)
+*.stl
+*.obj
+
+# Permitir archivos STL y OBJ menores o iguales a 50MB
+!/*.stl(<50MB)
+!/*.obj(<50MB)

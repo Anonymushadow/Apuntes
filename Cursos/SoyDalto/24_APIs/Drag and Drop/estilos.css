@@ -1,0 +1,12 @@
+.cuadrado {
+	padding: 100px;
+	background-color: #ccc;
+	margin: 50px;
+}
+
+.circulo {
+	border-radius: 50%;
+	padding: 40px;
+	background-color: #f00;
+	display: inline-block;
+}

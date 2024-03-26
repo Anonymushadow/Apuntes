@@ -1,0 +1,70 @@
+*{
+	background-color: #000;
+	color: #fff;
+}
+
+form{
+
+	background-color: #500;
+	width: 86%;
+	margin: auto;
+	padding: 6px;
+}
+
+h1{
+	margin: 0%;
+	padding: 0%;
+	text-align: center;
+}
+
+input{
+	display: block;
+	width: 90%;
+	color: #fff;
+	background-color:transparent;
+	padding: 9px;
+	margin: 12px auto;
+	box-sizing: border-box;
+	border: none;
+	border-top: 2px solid #000;
+	outline: none;
+	transition: background 0.3s;
+}
+
+input::placeholder{
+	color: #000;
+	transition: color 0.3s;
+}
+
+#envio{
+	color: #500;
+	width: 45%;
+	margin: auto;
+	background-color: #000;
+}
+
+input:hover{
+	background: #000;
+}
+
+input:hover::placeholder{
+	color: #500;
+}
+
+
+#envio:hover{
+	background-color: #100;
+	color:  #fff;
+}
+
+.red{
+	color: #d29bfd;
+}
+
+.green{
+	color: #66ffff;
+}
+
+.info{
+	background-color: #500;
+}

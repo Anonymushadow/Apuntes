@@ -1,0 +1,29 @@
+threejs.org
+https://cdnjs.com/
+
+scene --> todo lo que se desea mostrar en pantalla se situa aca
+    .luces
+    .texturas
+    .elementos
+camera --> vista
+rendered --> es el lienzo que dibujara todo
+
+
+
+Camera:
+    .PerspectiveCamera(fov, aspect, near, far)
+        .fov --> ancho y alto de la vista
+        .aspect --> profundidad de la vista (width / height)
+        .near --> distancia entre camara y plano mas cercano
+        .far --> distancia entre la camara y el plano mas lejano
+    .OrtographicCamera(left, right, top, bottom, near, far) --> va a ser un rectangulo de profundidad
+        .left --> izquierda
+        .right --> derecha
+        .top --> arriba
+        .bottom --> abajo
+        .near --> distancia entre camara y plano mas cercano
+        .far --> distancia entre la camara y el plano mas lejano
+
+
+npx create-react-app nombreDeLaAppReact
+

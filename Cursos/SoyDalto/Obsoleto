@@ -1,0 +1,29 @@
+1) codigo obsoleto:
+_obsoleto
+_inutil 
+_no recomendado
+_bugs o fallos
+_esta por ser reemplazado
+_mejores formas de hacerlo
+
+2) efectos negativos de usar codigo obsoleto:
+_uso exesivo de recursos
+_codigo con bugs o fallos
+_codigo inecesariamente largo
+_SEO
+
+3) como verificar si es obsoleto?
+_1 de cada 3 paginas web usan librerias de js obsoletas
+_verificar si usa funciones, metodos, objetos o metodologia obsoletas
+_verificar en los sitios basados en estandares oficiales
+
+
+
+
+pulgar abajo = puede estar obsoleto  o no es recomendado
+tacho de basura = esta obsoleto definitivamente
+triangulo amarillo = no es estandar
+frasco azul = es experimental, funciona pero no es estandar y posiblemente se implemente
+
+4) detectar navegadores obsoletos:
+_

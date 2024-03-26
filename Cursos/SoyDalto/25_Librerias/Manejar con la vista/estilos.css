@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.contenedor {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	flex-wrap: wrap;
+}
+
+.AI, .AD, .DI, .DD {
+	border: 2px solid #000;
+	flex-grow: 1;
+	min-width: 50vw;
+}
+
+.AI:hover, .AD:hover, .DI:hover, .DD:hover {
+	background-color: #f00;
+}

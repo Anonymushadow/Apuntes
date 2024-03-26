@@ -1,0 +1,31 @@
+*{
+	color: #333;
+	font-family: sans-serif;
+}
+
+.formuladio-de-notas {
+	margin: 50px 18px;
+	text-align: center;
+	background-color: #26a;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+}
+
+h2 {
+	margin: 0;
+	flex-grow: 1;
+	color: #fff;
+}
+
+input {
+	width: 35px;
+	border: none;
+}
+
+input[type="button"] {
+	width: auto;
+	margin-left: 6px;
+	color: #48e;
+	background-color: #fff;
+}

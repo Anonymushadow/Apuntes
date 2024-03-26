@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+button {
+	padding: 9px;
+	background-color: #047;
+	color: #fff;
+	border: none;
+	margin: 20px auto;
+	display: block;
+}
+
+input {
+	width: 50%;
+	margin: 10px 25%;
+}
+
+.interfaz {
+	background: #047;
+	color: #fff;
+	padding: 30px;
+	font-size: 25px;
+	margin-top: 25px;
+	text-align: center;
+}
