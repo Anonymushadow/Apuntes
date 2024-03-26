@@ -17,3 +17,6 @@ JavaScript (JS) es un lenguaje de programación utilizado principalmente para cr
 
 ## 4_GIT
 es un sistema de control de versiones distribuido diseñado para rastrear cambios en archivos y coordinar el trabajo entre múltiples personas en proyectos de desarrollo de software. Permite a los equipos de desarrollo colaborar de manera eficiente y mantener un historial completo de todos los cambios realizados en el código fuente de un proyecto
+
+## 5_SQL
+SQL (Structured Query Language) es un lenguaje de programación diseñado para gestionar y manipular bases de datos relacionales. Es ampliamente utilizado en el desarrollo de aplicaciones web y de software para realizar consultas, insertar, actualizar y eliminar datos en bases de datos, así como para definir la estructura de las mismas
