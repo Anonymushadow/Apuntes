@@ -1,0 +1,11 @@
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\bin\Debug\Hola Mundo.exe.config
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\bin\Debug\Hola Mundo.exe
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\bin\Debug\Hola Mundo.pdb
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\bin\Debug\Hola Mundo.xml
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\obj\Debug\Hola Mundo.vbproj.AssemblyReference.cache
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\obj\Debug\Hola_Mundo.Resources.resources
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\obj\Debug\Hola Mundo.vbproj.GenerateResource.cache
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\obj\Debug\Hola Mundo.vbproj.CoreCompileInputs.cache
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\obj\Debug\Hola Mundo.exe
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\obj\Debug\Hola Mundo.xml
+E:\6_Visual Basic\Hola Mundo\Hola Mundo\obj\Debug\Hola Mundo.pdb

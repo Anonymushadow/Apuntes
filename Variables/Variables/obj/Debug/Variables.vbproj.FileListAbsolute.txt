@@ -1,0 +1,11 @@
+E:\6_Visual Basic\Variables\Variables\bin\Debug\Variables.exe.config
+E:\6_Visual Basic\Variables\Variables\bin\Debug\Variables.exe
+E:\6_Visual Basic\Variables\Variables\bin\Debug\Variables.pdb
+E:\6_Visual Basic\Variables\Variables\bin\Debug\Variables.xml
+E:\6_Visual Basic\Variables\Variables\obj\Debug\Variables.vbproj.AssemblyReference.cache
+E:\6_Visual Basic\Variables\Variables\obj\Debug\Variables.Resources.resources
+E:\6_Visual Basic\Variables\Variables\obj\Debug\Variables.vbproj.GenerateResource.cache
+E:\6_Visual Basic\Variables\Variables\obj\Debug\Variables.vbproj.CoreCompileInputs.cache
+E:\6_Visual Basic\Variables\Variables\obj\Debug\Variables.exe
+E:\6_Visual Basic\Variables\Variables\obj\Debug\Variables.xml
+E:\6_Visual Basic\Variables\Variables\obj\Debug\Variables.pdb

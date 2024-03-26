@@ -1,0 +1,11 @@
+E:\6_Visual Basic\Bucles\Bucles\bin\Debug\Bucles.exe.config
+E:\6_Visual Basic\Bucles\Bucles\bin\Debug\Bucles.exe
+E:\6_Visual Basic\Bucles\Bucles\bin\Debug\Bucles.pdb
+E:\6_Visual Basic\Bucles\Bucles\bin\Debug\Bucles.xml
+E:\6_Visual Basic\Bucles\Bucles\obj\Debug\Bucles.vbproj.AssemblyReference.cache
+E:\6_Visual Basic\Bucles\Bucles\obj\Debug\Bucles.Resources.resources
+E:\6_Visual Basic\Bucles\Bucles\obj\Debug\Bucles.vbproj.GenerateResource.cache
+E:\6_Visual Basic\Bucles\Bucles\obj\Debug\Bucles.vbproj.CoreCompileInputs.cache
+E:\6_Visual Basic\Bucles\Bucles\obj\Debug\Bucles.exe
+E:\6_Visual Basic\Bucles\Bucles\obj\Debug\Bucles.xml
+E:\6_Visual Basic\Bucles\Bucles\obj\Debug\Bucles.pdb

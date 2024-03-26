@@ -1,0 +1,11 @@
+E:\6_Visual Basic\Matrices\Matrices\obj\Debug\Matrices.vbproj.AssemblyReference.cache
+E:\6_Visual Basic\Matrices\Matrices\obj\Debug\Matrices.Resources.resources
+E:\6_Visual Basic\Matrices\Matrices\obj\Debug\Matrices.vbproj.GenerateResource.cache
+E:\6_Visual Basic\Matrices\Matrices\obj\Debug\Matrices.vbproj.CoreCompileInputs.cache
+E:\6_Visual Basic\Matrices\Matrices\bin\Debug\Matrices.exe.config
+E:\6_Visual Basic\Matrices\Matrices\bin\Debug\Matrices.exe
+E:\6_Visual Basic\Matrices\Matrices\bin\Debug\Matrices.pdb
+E:\6_Visual Basic\Matrices\Matrices\bin\Debug\Matrices.xml
+E:\6_Visual Basic\Matrices\Matrices\obj\Debug\Matrices.exe
+E:\6_Visual Basic\Matrices\Matrices\obj\Debug\Matrices.xml
+E:\6_Visual Basic\Matrices\Matrices\obj\Debug\Matrices.pdb

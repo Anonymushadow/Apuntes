@@ -1,0 +1,9 @@
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\bin\Debug\Funciones Parametros.exe
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\bin\Debug\Funciones Parametros.pdb
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\bin\Debug\Funciones Parametros.xml
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\obj\x86\Debug\WindowsApplication1.Form1.resources
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\obj\x86\Debug\WindowsApplication1.Resources.resources
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\obj\x86\Debug\Funciones Parametros.vbproj.GenerateResource.Cache
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\obj\x86\Debug\Funciones Parametros.exe
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\obj\x86\Debug\Funciones Parametros.xml
+E:\Lenguajes\6_Visual Basic\Funciones Parametros\Funciones Parametros\obj\x86\Debug\Funciones Parametros.pdb

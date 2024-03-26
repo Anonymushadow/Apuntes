@@ -1,0 +1,9 @@
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\bin\Debug\KeyPress.exe
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\bin\Debug\KeyPress.pdb
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\bin\Debug\KeyPress.xml
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\obj\x86\Debug\WindowsApplication1.Form1.resources
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\obj\x86\Debug\WindowsApplication1.Resources.resources
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\obj\x86\Debug\KeyPress.vbproj.GenerateResource.Cache
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\obj\x86\Debug\KeyPress.exe
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\obj\x86\Debug\KeyPress.xml
+E:\Lenguajes\6_Visual Basic\KeyPress\KeyPress\obj\x86\Debug\KeyPress.pdb

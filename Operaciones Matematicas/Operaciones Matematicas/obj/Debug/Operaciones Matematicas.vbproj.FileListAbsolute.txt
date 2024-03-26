@@ -1,0 +1,11 @@
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\bin\Debug\Operaciones Matematicas.exe.config
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\bin\Debug\Operaciones Matematicas.exe
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\bin\Debug\Operaciones Matematicas.pdb
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\bin\Debug\Operaciones Matematicas.xml
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\obj\Debug\Operaciones Matematicas.vbproj.AssemblyReference.cache
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\obj\Debug\Operaciones_Matematicas.Resources.resources
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\obj\Debug\Operaciones Matematicas.vbproj.GenerateResource.cache
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\obj\Debug\Operaciones Matematicas.vbproj.CoreCompileInputs.cache
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\obj\Debug\Operaciones Matematicas.exe
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\obj\Debug\Operaciones Matematicas.xml
+E:\6_Visual Basic\Operaciones Matematicas\Operaciones Matematicas\obj\Debug\Operaciones Matematicas.pdb

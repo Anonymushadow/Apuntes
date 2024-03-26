@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Guardar solo numeros", "Guardar solo numeros\Guardar solo numeros.vbproj", "{F63F3BA7-3593-4595-95E1-5EC067BAC581}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F63F3BA7-3593-4595-95E1-5EC067BAC581}.Debug|x86.ActiveCfg = Debug|x86
+		{F63F3BA7-3593-4595-95E1-5EC067BAC581}.Debug|x86.Build.0 = Debug|x86
+		{F63F3BA7-3593-4595-95E1-5EC067BAC581}.Release|x86.ActiveCfg = Release|x86
+		{F63F3BA7-3593-4595-95E1-5EC067BAC581}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

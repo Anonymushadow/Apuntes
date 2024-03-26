@@ -1,0 +1,18 @@
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\bin\Debug\Radio Button.exe
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\bin\Debug\Radio Button.pdb
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\bin\Debug\Radio Button.xml
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\WindowsApplication1.Form1.resources
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\WindowsApplication1.Resources.resources
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.vbproj.GenerateResource.Cache
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.exe
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.xml
+E:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.pdb
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.exe
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.xml
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.pdb
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\bin\Debug\Radio Button.exe
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\bin\Debug\Radio Button.pdb
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\bin\Debug\Radio Button.xml
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\WindowsApplication1.Form1.resources
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\WindowsApplication1.Resources.resources
+D:\Lenguajes\6_Visual Basic\Radio Button\Radio Button\obj\x86\Debug\Radio Button.vbproj.GenerateResource.Cache

@@ -1,0 +1,11 @@
+E:\6_Visual Basic\Arrays\Arrays\bin\Debug\Arrays.exe.config
+E:\6_Visual Basic\Arrays\Arrays\bin\Debug\Arrays.exe
+E:\6_Visual Basic\Arrays\Arrays\bin\Debug\Arrays.pdb
+E:\6_Visual Basic\Arrays\Arrays\bin\Debug\Arrays.xml
+E:\6_Visual Basic\Arrays\Arrays\obj\Debug\Arrays.vbproj.AssemblyReference.cache
+E:\6_Visual Basic\Arrays\Arrays\obj\Debug\Arrays.Resources.resources
+E:\6_Visual Basic\Arrays\Arrays\obj\Debug\Arrays.vbproj.GenerateResource.cache
+E:\6_Visual Basic\Arrays\Arrays\obj\Debug\Arrays.vbproj.CoreCompileInputs.cache
+E:\6_Visual Basic\Arrays\Arrays\obj\Debug\Arrays.exe
+E:\6_Visual Basic\Arrays\Arrays\obj\Debug\Arrays.xml
+E:\6_Visual Basic\Arrays\Arrays\obj\Debug\Arrays.pdb

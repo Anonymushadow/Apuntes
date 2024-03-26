@@ -1,0 +1,10 @@
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\bin\Debug\CRUD.exe
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\bin\Debug\CRUD.pdb
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\bin\Debug\CRUD.xml
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\obj\Debug\CRUD.vbprojResolveAssemblyReference.cache
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\obj\Debug\CRUD.Formulario_CRUD.resources
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\obj\Debug\CRUD.Resources.resources
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\obj\Debug\CRUD.vbproj.GenerateResource.Cache
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\obj\Debug\CRUD.exe
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\obj\Debug\CRUD.xml
+C:\Users\Nahuel\Desktop\Visual Basic\CRUD\CRUD\obj\Debug\CRUD.pdb

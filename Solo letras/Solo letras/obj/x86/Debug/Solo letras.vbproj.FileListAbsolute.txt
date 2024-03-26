@@ -1,0 +1,9 @@
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\bin\Debug\Solo letras.exe
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\bin\Debug\Solo letras.pdb
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\bin\Debug\Solo letras.xml
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\obj\x86\Debug\Solo_letras.Form1.resources
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\obj\x86\Debug\Solo_letras.Resources.resources
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\obj\x86\Debug\Solo letras.vbproj.GenerateResource.Cache
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\obj\x86\Debug\Solo letras.exe
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\obj\x86\Debug\Solo letras.xml
+C:\Users\Ceci\AppData\Local\Temporary Projects\Solo letras\obj\x86\Debug\Solo letras.pdb

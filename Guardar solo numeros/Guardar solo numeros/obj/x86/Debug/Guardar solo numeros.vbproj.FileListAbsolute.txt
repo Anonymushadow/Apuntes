@@ -1,0 +1,9 @@
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\obj\x86\Debug\WindowsApplication1.Form1.resources
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\obj\x86\Debug\WindowsApplication1.Resources.resources
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\obj\x86\Debug\Guardar solo numeros.vbproj.GenerateResource.Cache
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\bin\Debug\Guardar solo numeros.exe
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\bin\Debug\Guardar solo numeros.pdb
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\bin\Debug\Guardar solo numeros.xml
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\obj\x86\Debug\Guardar solo numeros.exe
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\obj\x86\Debug\Guardar solo numeros.xml
+E:\Lenguajes\6_Visual Basic\Guardar solo numeros\Guardar solo numeros\obj\x86\Debug\Guardar solo numeros.pdb

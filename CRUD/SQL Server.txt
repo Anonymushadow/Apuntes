@@ -1,0 +1,203 @@
+1_conectar la base de datos
+	.seguridad/ inicios de sesion/
+2_elegir el usuario a usar
+3_doble click y activar
+	.permisos Conceder
+	.inicio de sesion Habilitada
+	.General > poner una contraseña ---> 
+4_click derecho en inicio de sesion/ nuevo inicio de sesion/ 
+		.escribimos un nombre de usuario --> Anonymushadow
+		.click sobre autenticacion de sql server
+		.ponemos una contraseña  --> 8d89w4yc89r4v
+		.desactivar las opciones de abajo 
+		.roles de servidor/
+			. activar todo 
+		.estado/
+			.condeceder permisos de conexio
+			.habilitar inicio de sesion   
+			.aceptar
+5_cerrar sesion y conectar a la nuestra
+	autenticacion de sqlServer 
+CREAR BASE DE DATOS
+6_click derecho en bases de datos y crear nueva base de datos
+7_asignamos propietarios
+8_click en nuestra base de datos, click derecho en tablas y crear nueva tabla
+9_creamos las columnas
+10_asignamos la primary key
+11_añadir el auto_increment
+	.seleccionar la fila 
+	.ponerle int
+	.especificacion de identidad/ identidad/ si
+DISEÑAR FORMULARIO
+12_en
+----------------------
+btnForm escribir:  
+----------------------
+
+Close()
+
+
+----------------------
+TituloBG escribir:
+----------------------
+
+'variable para el eje x y eje y
+    Dim ex, ey As Integer
+    Dim Arrastre As Boolean
+
+    Private Sub TituloBG_MouseDown(sender As Object, e As MouseEventArgs) Handles TituloBG.MouseDown
+        'se toma el eje x de donde se esta presionando
+        ex = e.X
+        'se toma el eje y de donde se esta presionando
+        ey = e.Y
+        Arrastre = True
+    End Sub
+
+    Private Sub TituloBG_MouseMove(sender As Object, e As MouseEventArgs) Handles TituloBG.MouseMove
+        'si el arrastre esta activado...
+        If Arrastre Then
+            'modificamos la localizacion 
+            'generamos una nueva posicion dle formulario
+            'tomamos ka posicion del mouse en x, tomamos la posicion del form en x, tomamos la posicion de donde se hizo click en x y se resta todo
+            'tomamos ka posicion del mouse en y, tomamos la posicion del form en y, tomamos la posicion de donde se hizo click en y y se resta todo
+            Me.Location = Me.PointToScreen(New Point(Formulario_CRUD.MousePosition.X - Me.Location.X - ex, Formulario_CRUD.MousePosition.Y - Me.Location.Y - ey))
+        End If
+    End Sub
+
+    Private Sub TituloBG_MouseUp(sender As Object, e As MouseEventArgs) Handles TituloBG.MouseUp
+        'cambiamos Arrastre a falso para que no se pueda arrastrar
+        Arrastre = False
+    End Sub
+
+
+
+
+
+
+<a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by Freepik - Flaticon</a>
+
+
+
+EN LA BASE DE DATOS
+13_ir a nuestra base de datos, procedimientos, click derecho nuevo procedimiento almacenado
+escribir:
+
+CREAR
+-----------------------------------------------------------------------------
+CREATE PROCEDURE Insertar_Lector
+@idLector varchar(13),
+@Nombre varchar(50),
+@Telefono int,
+@Direccion varchar(100),
+@Observaciones varchar (100)
+AS
+IF EXISTS (SELECT id FROM Lectores WHERE id = @idLector)
+	RAISERROR('Este Numero de identidad esta repetido', 16,1)
+ELSE
+	INSERT INTO Lectores (id, nombre, telefono, direccion, observaciones) 
+	VALUES (@idLector, @Nombre, @Telefono, @Direccion, @Observaciones)
+
+-----------------------------------------------------------------------------
+
+
+MODIFICAR
+-----------------------------------------------------------------------------
+
+CREATE PROCEDURE Editar_Lector
+@idLector varchar(13),
+@Nombre varchar(50),
+@Telefono int,
+@Direccion varchar(100),
+@Observaciones varchar (100)
+AS
+UPDATE Lectores SET nombre = @Nombre, telefono = @Telefono, direccion = @Direccion, observaciones = @Observaciones
+WHERE id = @idLector
+
+-----------------------------------------------------------------------------
+
+ELIMINAR
+-----------------------------------------------------------------------------
+
+CREATE PROCEDURE Eliminar_Lector
+@idLector varchar(13)
+AS
+DELETE FROM Lectores WHERE id = @idLector
+
+-----------------------------------------------------------------------------
+
+LEER
+-----------------------------------------------------------------------------
+
+CREATE PROCEDURE Mostrar_Lector
+AS
+SELECT nombre AS [Nº de identidad],
+	   telefono AS [Telefono],
+	   direccion AS [Direccion],
+	   observaciones AS [Observasiones]
+FROM Lectores
+
+-----------------------------------------------------------------------------
+
+BUSCAR
+-----------------------------------------------------------------------------
+
+CREATE PROCEDURE Buscar_Lector
+@Busqueda varchar(50)
+AS
+SELECT nombre AS [Nº de identidad],
+	   telefono AS [Telefono],
+	   direccion AS [Direccion],
+	   observaciones AS [Observasiones]
+FROM Lectores WHERE id + nombre LIKE '%' + @Busqueda + '%'
+
+-----------------------------------------------------------------------------
+
+CONEXION EN FORMULARIO
+14_click derecho sobre el nombre de nuestro proyecto, gregar, nueva carpeta llamada conexion, dentro creamos un modulo
+15_importamos las librerias (por fuera del modulo)
+imports System.Data
+imports System.Data.SqlClient
+imports System.Configuration
+16_creamos la conexion
+Public conexion As New SqlConnection("Server=;Database=;User Id=;Password=")
+    Sub abrir_conexion()
+        If conexion.State = 0 Then
+            conexion.Open()
+        End If
+    End Sub
+    Sub Cerrar_conexion()
+        If conexion.State = 1 Then
+            conexion.Close()
+        End If
+    End Sub
+17_enlazarlo al formulario
+	formulario/click derecho/ver codigo fuente/ 
+	por fuera poner imports System.Data.SqlClient
+por dentro del formulario
+    Private Sub Formulario_CRUD_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Abrir_conexion()
+    End Sub
+
+CRUD
+18_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONEXION
+_creamos una carpeta llamada conexiones y dentro creamos un modulo
+_dentro de este modulo hacemos las importaciones

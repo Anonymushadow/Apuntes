@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Sumar Numeros", "Sumar Numeros\Sumar Numeros.vbproj", "{856500B3-8A40-477D-A557-6BB47BC60A84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{856500B3-8A40-477D-A557-6BB47BC60A84}.Debug|x86.ActiveCfg = Debug|x86
+		{856500B3-8A40-477D-A557-6BB47BC60A84}.Debug|x86.Build.0 = Debug|x86
+		{856500B3-8A40-477D-A557-6BB47BC60A84}.Release|x86.ActiveCfg = Release|x86
+		{856500B3-8A40-477D-A557-6BB47BC60A84}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

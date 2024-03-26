@@ -1,0 +1,11 @@
+E:\6_Visual Basic\Select Case\Select Case\bin\Debug\Select Case.exe.config
+E:\6_Visual Basic\Select Case\Select Case\bin\Debug\Select Case.exe
+E:\6_Visual Basic\Select Case\Select Case\bin\Debug\Select Case.pdb
+E:\6_Visual Basic\Select Case\Select Case\bin\Debug\Select Case.xml
+E:\6_Visual Basic\Select Case\Select Case\obj\Debug\Select Case.vbproj.AssemblyReference.cache
+E:\6_Visual Basic\Select Case\Select Case\obj\Debug\Select_Case.Resources.resources
+E:\6_Visual Basic\Select Case\Select Case\obj\Debug\Select Case.vbproj.GenerateResource.cache
+E:\6_Visual Basic\Select Case\Select Case\obj\Debug\Select Case.vbproj.CoreCompileInputs.cache
+E:\6_Visual Basic\Select Case\Select Case\obj\Debug\Select Case.exe
+E:\6_Visual Basic\Select Case\Select Case\obj\Debug\Select Case.xml
+E:\6_Visual Basic\Select Case\Select Case\obj\Debug\Select Case.pdb

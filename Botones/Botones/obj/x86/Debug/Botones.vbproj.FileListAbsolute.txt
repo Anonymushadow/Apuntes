@@ -1,0 +1,9 @@
+E:\Lenguajes\6_Visual Basic\Botones\Botones\bin\Debug\Botones.exe
+E:\Lenguajes\6_Visual Basic\Botones\Botones\bin\Debug\Botones.pdb
+E:\Lenguajes\6_Visual Basic\Botones\Botones\bin\Debug\Botones.xml
+E:\Lenguajes\6_Visual Basic\Botones\Botones\obj\x86\Debug\WindowsApplication1.Form1.resources
+E:\Lenguajes\6_Visual Basic\Botones\Botones\obj\x86\Debug\WindowsApplication1.Resources.resources
+E:\Lenguajes\6_Visual Basic\Botones\Botones\obj\x86\Debug\Botones.vbproj.GenerateResource.Cache
+E:\Lenguajes\6_Visual Basic\Botones\Botones\obj\x86\Debug\Botones.exe
+E:\Lenguajes\6_Visual Basic\Botones\Botones\obj\x86\Debug\Botones.xml
+E:\Lenguajes\6_Visual Basic\Botones\Botones\obj\x86\Debug\Botones.pdb
