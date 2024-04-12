@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layoutBankInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="95dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <LinearLayout
+                    android:layout_width="275dp"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textViewBankInstructions"
+                        android:layout_width="175dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:text="Paga fácil y seguro con"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewBankInstructions"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="3dp"
+                        app:srcCompat="@drawable/synap_logo_kashio" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layoutBcp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageBcp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_bcp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutIbk"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="0.3"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageIbk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_interbank" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layoutBbva"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="0.3"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageBbva"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_bbva" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutScotia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="0.3"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageScotia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_scotiabank" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layoutKasnet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="0.3"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageKasnet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_kasnet" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutInstructionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:background="#1A000000"
+                android:orientation="vertical"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/layoutMobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:alpha="1"
+                            android:background="#A6A6A6"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageMobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/synap_icon_mobile_active" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutWeb"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:alpha="0.3"
+                            android:background="#A6A6A6"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageWeb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/synap_icon_web_active" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutAgent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:alpha="0.3"
+                            android:background="#A6A6A6"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageAgent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/synap_icon_agent_active" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutBank"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:alpha="0.3"
+                            android:background="#A6A6A6"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageBank"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/synap_icon_bank_active" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textInstructionValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="vertical"
+                android:gravity="start">
+
+                <Button
+                    android:id="@+id/btnGoMain"
+                    android:layout_width="113dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:text="Regresar"
+                    android:textAllCaps="false"
+                    android:textColor="#96BC33"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="95dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <LinearLayout
+                    android:layout_width="275dp"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="175dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:text="Paga fácil y seguro con"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="3dp"
+                        app:srcCompat="@drawable/synap_logo_kashio" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutCompany"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#E2E2E2"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textCompanyTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="Empresa \n Recaudadora"
+                        android:textSize="11sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingTop="5dp"/>
+
+                    <TextView
+                        android:id="@+id/textCompanyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center_horizontal"
+                        android:text="KASHIO PERU \n S.A.C."
+                        android:textColor="#507EA2"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textServiceTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="Nombre \n del Servicio"
+                        android:textSize="11sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingTop="5dp"/>
+
+                    <TextView
+                        android:id="@+id/textServiceName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center_horizontal"
+                        android:text="KASHIO PERU \n SOLES"
+                        android:textColor="#507EA2"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="#5088BF"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textCodeTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:gravity="center_horizontal"
+                        android:text="Código de pago"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textCodeValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="0"
+                        android:gravity="center_horizontal"
+                        android:text="[code]"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/textAmountTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center_horizontal"
+                            android:text="Importe a pagar"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textAmountValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center_horizontal"
+                            android:text="[monto]"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/textExpireTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center_horizontal"
+                            android:text="Vence en"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textExpireValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center_horizontal"
+                            android:text="[expiration]"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textEmailTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_horizontal"
+                        android:text="Enviado al correo"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textEmailValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="0"
+                        android:gravity="center_horizontal"
+                        android:text="[correo]"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#E39550"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textInstructionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_horizontal"
+                    android:text="Paga en los siguientes bancos o agentes \n multibancarios KasNet"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.504"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingTop="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layoutBcpView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageBcpView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_bcp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutIbkView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageIbkView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_interbank" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layoutBbvaView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageBbvaView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_bbva" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutScotiaView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageScotiaView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_scotiabank" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layoutKasnetView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:alpha="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageKasnetView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/synap_logo_kasnet" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="vertical"
+                android:gravity="end|center">
+
+                <Button
+                    android:id="@+id/btnGoBankInstructions"
+                    android:layout_width="113dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:text="Ver instrucciones"
+                    android:textAllCaps="false"
+                    android:textColor="#96BC33"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal">
+
+    <Button
+        android:id="@+id/synapButton"
+        android:layout_width="432dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="12dp"
+        android:background="#3F51B5"
+        android:text="@string/pagar"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapForm" />
+
+    <Button
+        android:id="@+id/startPaymentButton"
+        android:layout_width="113dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#3F51B5"
+        android:text="@string/continuar_al_pago"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Nombre"
+        android:layout_width="166dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapLogo"
+        tools:ignore="LabelFor,MissingConstraints"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/EMail"
+        android:layout_width="166dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/e_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapLogo"
+        tools:ignore="LabelFor,MissingConstraints"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/DNI"
+        android:layout_width="166dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/dni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapLogo"
+        tools:ignore="LabelFor,MissingConstraints"
+        android:importantForAutofill="no" />
+
+    <FrameLayout
+        android:id="@+id/synapForm"
+        android:layout_width="360dp"
+        android:layout_height="201dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapLogo">
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/Cantidad"
+        android:layout_width="166dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/monto_a_pagar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapLogo"
+        tools:ignore="LabelFor,MissingConstraints"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/Apellido"
+        android:layout_width="166dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/apellido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapLogo"
+        tools:ignore="LabelFor,MissingConstraints"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/Telefono"
+        android:layout_width="166dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="@string/telefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synapLogo"
+        tools:ignore="LabelFor,MissingConstraints"
+        android:autofillHints="" />
+
+    <View
+        android:id="@+id/synapLogo"
+        android:layout_width="217dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/logo_e1632322877260"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="245dp"
+        android:layout_height="39dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/empresa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="83dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

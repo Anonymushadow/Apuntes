@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Layouts" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item><!--toolbar-->
+        <item name="colorPrimaryDark">@color/purple_700</item><!--barra del celular que se tira abajo-->
+        <item name="colorAccent">@color/teal_200</item><!-- selector y barra de inputs-->
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyActivityTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/teal_200</item>
+        <item name="editTextStyle">@style/MyInputTheme</item><!--MyInputThehe lo uso por defecto-->
+    </style>
+
+    <style name="MyInputTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">#ff0000</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>
