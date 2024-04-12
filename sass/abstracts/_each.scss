@@ -1,0 +1,9 @@
+$titles: 16, 20, 40, 5;
+
+/*para cada objeto asignamos una variable llamada size*/
+@each $size in $titles {
+    /*cuando un titulo tenga por ejemplo la clase title-16 va a tener 16px*/
+    .title-#{$size} {
+        font-size: $size * 1px;
+    }
+}

@@ -1,0 +1,30 @@
+%btn {
+    height: 40px;
+    min-width: 100px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    margin: 5px 0;
+    box-shadow: 2px 2px 6px 2px #000;
+    &:hove {
+        cursor: pointer;
+    }
+}
+
+.dsc-btn-{
+    &primary {
+        @extend %btn;
+        background-color: #00f;
+    }
+
+    &success {
+        @extend %btn;
+        background-color: #0f0;
+    }
+
+    &danger {
+        @extend %btn;
+        background-color: #f00;
+    }
+}

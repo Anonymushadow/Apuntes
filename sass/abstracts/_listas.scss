@@ -1,0 +1,35 @@
+@use "variables";
+
+$colors: variables.$primary, variables.$success, variables.$danger, variables.$warning;
+
+.btn-primary {
+    color: nth($colors, 1);
+    &:hover {
+        color: #fff;
+        background-color: nth($colors, 1);
+    }
+}
+
+.btn-success {
+    color: nth($colors, 2);
+    &:hover {
+        color: #fff;
+        background-color: nth($colors, 2);
+    }
+}
+
+.btn-danger {
+    color: nth($colors, 3);
+    &:hover {
+        color: #fff;
+        background-color: nth($colors, 3);
+    }
+}
+
+.btn-warning {
+    color: nth($colors, 4);
+    &:hover {
+        color: #fff;
+        background-color: nth($colors, 4);
+    }
+}

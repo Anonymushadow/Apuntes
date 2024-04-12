@@ -1,0 +1,15 @@
+@use "sass:math";
+
+@function scale($val, $max, $ratio: 1.5){
+    /*mientras el valor sea mayor al maximo se va a achivar, cuando sea menor o igual lo va a reetornar*/
+    @while $val > $max {
+        $val: math.div($val, $ratio);
+    }
+    @return $val;
+};
+
+.main__card {
+    height: 250px;
+    width: scale(250px, 230px);
+    background-color: aqua;
+}

@@ -1,0 +1,21 @@
+$color: #0f0;
+
+.btn {
+    color: darken($color: $color, $amount: 10);
+}
+
+.btn {
+    color: lighten($color: $color, $amount: 10);
+}
+
+.btn {
+    color: scale-color($color, $saturation: 10);
+}
+
+.btn {
+    color: scale-color($color, $lightness: 10);
+}
+
+.btn {
+    color: mix($color, #fff);
+}
