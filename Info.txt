@@ -1,8 +1,0 @@
-+ --> incrementar
-- --> disminuir
-< --> ir hacia atras
-> --> ir hacia adelante
-. --> imprimir en pantalla
-, --> input
-[ --> comenzaar bucle
-] --> acabar bucle
