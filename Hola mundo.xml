@@ -1,0 +1,6 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<saludos>
+    <frase>Hola Mundo</frase>
+    <frase>Como estas?</frase>
+    <frase>Buen dia</frase>
+</saludos>
