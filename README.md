@@ -36,6 +36,29 @@ es un lenguaje de programación desarrollado por JetBrains y es oficialmente com
 ## 10_XML
 es un lenguaje de marcado que se utiliza para almacenar y transmitir datos de manera legible tanto para humanos como para máquinas. Es un estándar de la World Wide Web Consortium (W3C) y se utiliza ampliamente para describir la estructura y contenido de documentos.
 
+## 11_Dart
 
+## 12_Flutter
 
+## 13_Jetpack Compose
+
+## 14_C
+
+## 15_CMD
+
+## 16_Bootstrap
+
+## 17_Sass
+
+## 18_Node Js
+
+## 19_React JS
+
+## 20_Redux Toolkit
+
+## 21_C#
+
+## 22_React Native
+
+## 23_Brainfuck
 
