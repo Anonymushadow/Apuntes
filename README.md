@@ -37,28 +37,43 @@ es un lenguaje de programación desarrollado por JetBrains y es oficialmente com
 es un lenguaje de marcado que se utiliza para almacenar y transmitir datos de manera legible tanto para humanos como para máquinas. Es un estándar de la World Wide Web Consortium (W3C) y se utiliza ampliamente para describir la estructura y contenido de documentos.
 
 ## 11_Dart
+Es un lenguaje de programación desarrollado por Google, conocido por su uso en Flutter para crear aplicaciones móviles y web.
 
 ## 12_Flutter
+Es un framework de desarrollo de aplicaciones móviles multiplataforma creado por Google, que utiliza el lenguaje Dart. Permite crear interfaces de usuario atractivas y fluidas
 
 ## 13_Jetpack Compose
+Es un conjunto de bibliotecas de Android desarrolladas por Google, diseñadas para simplificar y acelerar el desarrollo de aplicaciones nativas de Android mediante la creación de interfaces de usuario declarativas
 
 ## 14_C
+Es un lenguaje de programación de bajo nivel ampliamente utilizado para el desarrollo de sistemas operativos, aplicaciones de bajo nivel y software embebido
 
 ## 15_CMD
+Se refiere al intérprete de comandos de Windows (Command Prompt), utilizado para ejecutar comandos y scripts en sistemas Windows
 
 ## 16_Bootstrap
+Es un framework front-end de código abierto desarrollado por Twitter, que facilita la creación de interfaces web responsivas y atractivas utilizando HTML, CSS y JavaScript
 
 ## 17_Sass
+Es un preprocesador de CSS que extiende la funcionalidad de CSS permitiendo el uso de variables, mixins, anidamiento y más, para facilitar el desarrollo y mantenimiento de estilos en aplicaciones web
 
 ## 18_Node Js
+Es un entorno de ejecución de JavaScript del lado del servidor, que permite desarrollar aplicaciones web escalables y rápidas utilizando JavaScript en ambos lados, cliente y servidor
 
 ## 19_React JS
+Es una biblioteca de JavaScript desarrollada por Facebook para crear interfaces de usuario interactivas y dinámicas en aplicaciones web
 
 ## 20_Redux Toolkit
+Es una biblioteca de gestión del estado de aplicación para React, que facilita la gestión de datos complejos y el flujo de información en aplicaciones web
 
 ## 21_C#
+Es un lenguaje de programación desarrollado por Microsoft, orientado a objetos y ampliamente utilizado para el desarrollo de aplicaciones de escritorio, web y móviles en el entorno .NET
 
 ## 22_React Native
+Es un framework de desarrollo de aplicaciones móviles desarrollado por Facebook, que permite crear aplicaciones móviles multiplataforma utilizando JavaScript y React
 
 ## 23_Brainfuck
+Es un lenguaje de programación esotérico extremadamente minimalista y difícil de leer, diseñado para desafiar a los programadores y explorar conceptos de programación básicos
 
+## 24_Firebase
+Es una plataforma de desarrollo de aplicaciones móviles y web desarrollada por Google, que proporciona servicios en la nube como bases de datos, autenticación, almacenamiento de archivos y más, para facilitar el desarrollo y escalabilidad de aplicaciones
