@@ -1,0 +1,14 @@
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\bin\Debug\net6.0\15_Static.exe
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\bin\Debug\net6.0\15_Static.deps.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\bin\Debug\net6.0\15_Static.runtimeconfig.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\bin\Debug\net6.0\15_Static.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\bin\Debug\net6.0\15_Static.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\15_Static.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\15_Static.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\15_Static.AssemblyInfo.cs
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\15_Static.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\15_Static.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\refint\15_Static.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\15_Static.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\15_Static.genruntimeconfig.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\15_Static\obj\Debug\net6.0\ref\15_Static.dll

@@ -1,0 +1,153 @@
+----------------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+----------------------------------------------------------------------------------------------------------
+using --> importar namespaces
+// --> comentario de una linea
+/**/ --> comentario de varias lineas
+class --> definir una clase
+string --> definir una variable para guardar texto
+int --> definir una variable para almacenar numeros enteros
+char --> definir una variable para almacenar solo un caracter
+float --> definir variable para almacenar numero decimal
+decimal --> definir variable para almacenar numero decimal
+double --> definir variable para almacenar numero decimal
+f --> indicar que es un float
+m --> indicar que es un decimal
+d --> indicar que es un double
+Console --> interactuar con la consolo
+Console.WriteLine() --> escribir en la consola y añadir un salto de linea
+Console.Write() --> escribir en la consola
+Console.Read() --> lee solo un caracter del input
+Console.ReadLine() --> leer un input del usuario
+Console.Clear() --> limpiar la consola
+Console.ForegroundColor --> cambiar el color del texto
+Console.BackgroundColor --> cambiar el color del fondo del texto
+ConsoleColor --> definir el color
+Console.SetCursorPosition() --> establecer la posicion del cursor en la consola
+String --> trabajar con cadenas de texto
+.Length --> obtener la cantidad de caracteres de una cadena
+.ToUpper() --> convertir a mayusculas
+.ToLower() --> convertir a minusculas
+.Contains() --> verifica si contiene ciertos datos
+.IndexOf() --> devuelve la posicion donde se encuentra cierto dato
+.SubString() --> devuelve una cadena empezando desde el indice indicado
+\ --> introducir caracteres especiales como string
++ --> sumar / concatenar
+- --> restar
+* --> multiplicar
+/ --> dividir
+% --> resto
+-- --> disminuir uno
+++ --> aumentar uno
+Math --> utilizar operaciones matematicas avanzadas
+Math.Abs() --> obtener el valor absoluto
+Math.Pow() --> elevar
+Math.Sqrt() --> sacar raiz cuadrada
+Math.Max() --> devuelve el numero mas grande
+Math.Min() --> devuelve el numero mas chico
+Math.Round() --> redondear numero
+.ToString() --> convertir a string
+Convert --> convertir a un tipo de dato
+Convert.ToInt32() --> convertir a entero
+Convert.ToDouble() --> convertir a double
+int.Parse() --> convertir a numero
+[] --> crear un array
+new --> crear un tipo de dato nuevo
+static --> crear un metodo normal
+void --> indica que no devolvera nada
+class --> crear una nueva clase
+return --> retornar algo
+if --> en caso de que se cumpla una condicion hacer tal cosa
+else --> en caso de que no se cumpla hacer tal otra
+|| --> una u otra cosa
+&& --> ambas cosas
+! --> no, verifica que no sea asi
+< --> menor
+<= --> menor o igual
+> --> mayor
+>= --> mayor o igual
+= --> asignar
+== --> ¿es igual?
+switch --> crear un tipo de if multiple
+case --> indica en que caso se va a realizar cierta accion
+break --> indicar que ahi acaba las acciones relacionadas a esa opcion
+default --> ¿que hacemos si la opcion elegida no esta en la lista previamente creada?
+while --> crear un bucle que se repetira mientras una afirmacion sea cierta
+do --> ejecutar la accion antes de verificar 
+for --> repetimos un bucle mientras cierta comndicion no sea cumplida
+[,] --> creamos un array que contendra otros arrays dentro (un array 2d)
+try --> intetna ejecutar un codigo
+catch() --> en caso de que se produzca una excepcion hacer algo especifico y no detener el programa
+.Message --> mostrar el mensaje de la excepcion
+class --> definir una clase
+internal --> definir una clase de tipo internal
+private --> definir una clase de tipo private
+public --> definir una clase de tipo public
+static --> es un atributo que pertenece ala clase y poodemos poner nombre_de_la_clase.nombre_del_atributo_estatico
+: --> heredar de otra clase
+<> --> indica el tipo de datos que contendra cierto alamcenaje como una instancia
+partial --> crear una clase que está dividida en múltiples archivos
+[Required()] --> indica que cirtos datos deben ser introducidos, son requeridos
+ErrorMessage = "" --> en caso de que no este presente el dato requerido le enviaremos este mensaje de error
+? --> indica que puede contener valores nulos
+virtual --> indica que puede ser modificada posteriormente
+
+
+
+----------------------------------------------------------------------------------------------------------
+DATOS
+----------------------------------------------------------------------------------------------------------
+los archivos C# tienen la extension .cs
+namespaces: son como los modulos de node
+en C# se utilizan clases en vez de modulos
+Namespace VS clases:
+	namespace es como decir pages
+	clases es como decir components
+	un namespace esta conformado de varias clases
+C# trabaja todo sobre clases
+	el archivo tiene una clase principal y un metodo principal llamado main
+	el metodo main se ejecuta automaticamente (como un constructor)
+decimales:
+	float:
+		Tipo de dato de precisi�n simple.
+		Ocupa 4 bytes en la memoria.
+		Apropiado para representar n�meros con decimales en aplicaciones donde la precisi�n no es cr�tica, como gr�ficos de juegos.
+		Almacenamiento y procesamiento m�s eficiente que double y decimal, pero menos preciso.
+		Aproximadamente 7 d�gitos de precisi�n.
+	double:
+		Tipo de dato de precisi�n doble.
+		Ocupa 8 bytes en la memoria.
+		Ampliamente utilizado en la mayor�a de las aplicaciones y c�lculos cient�ficos.
+		Ofrece una mayor precisi�n que float.
+		Aproximadamente 15-16 d�gitos de precisi�n.
+	decimal:
+		Tipo de dato de alta precisi�n.
+		Ocupa 16 bytes en la memoria.
+		Utilizado cuando se requiere una precisi�n extrema, como en aplicaciones financieras y c�lculos cr�ticos.
+		Proporciona la mayor precisi�n entre los tres tipos.
+		Aproximadamente 28-29 d�gitos de precision.
+ToInt32 vs int.Parse:
+	ToInt32: si no se puede convertir a numero pone como predeterminado un valor 0
+	int.Parse: si no se puede convertir a numero lanza una excepcion
+el metodo main se ejecuta automaticamente al iniciar el programa
+excepciones --> es cuando un programa tiene un error que detiene su flujo 
+clases:
+	public: se puede acceder desde cualquier parte 
+	internal: Los miembros o clases marcados como internal son accesibles solo dentro del mismo ensamblado
+	private: solo podra accederse desde la misma clase	
+	protected: Los miembros marcados como protected son accesibles desde la misma clase y desde clases derivadas (subclases) que heredan de la clase que define el miembro protected
+	protected internal o internal protected: Este modificador combina las características de protected e internal. Un miembro marcado como protected internal es accesible desde el mismo ensamblado y desde clases derivadas (subclases) que heredan de la clase que define el miembro protected internal.
+	private protected: Este modificador combina las características de private e protected. Un miembro marcado como private protected es accesible solo desde el mismo ensamblado y solo desde clases derivadas (subclases) que heredan de la clase que define el miembro private protected.
+Getters --> es como un intermediario para obtener un valor privado
+Setters --> es como un intermediario para introducir un valor privado y poder hacer verificaciones
+static --> estatico significa que pertenece a la clase y no a los objetos instanciados
+metodo estatico --> es un metodo que solo pertenece  a la clase y no a sus objetos
+	por ejemplo Math.sqrt() aca no debemos hacer una instancia de Math, simplemente llamamos a su metodo
+clase estatica --> clase de la cual no podes crear instancias
+	por ejemplo no podes hacer mat = new Math() ya que es una clase estatica
+	herencia --> es cuando una clase toma los metodos y propiedades de otra clase padre
+
+----------------------------------------------------------------------------------------------------------
+NAMESPACES
+----------------------------------------------------------------------------------------------------------
+System --> clases y tipos escenciales para c#

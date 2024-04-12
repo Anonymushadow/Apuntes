@@ -1,0 +1,14 @@
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\bin\Debug\net6.0\3_Numbers.exe
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\bin\Debug\net6.0\3_Numbers.deps.json
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\bin\Debug\net6.0\3_Numbers.runtimeconfig.json
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\bin\Debug\net6.0\3_Numbers.dll
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\bin\Debug\net6.0\3_Numbers.pdb
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\3_Numbers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\3_Numbers.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\3_Numbers.AssemblyInfo.cs
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\3_Numbers.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\3_Numbers.dll
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\refint\3_Numbers.dll
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\3_Numbers.pdb
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\3_Numbers.genruntimeconfig.cache
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\3_Numbers\obj\Debug\net6.0\ref\3_Numbers.dll

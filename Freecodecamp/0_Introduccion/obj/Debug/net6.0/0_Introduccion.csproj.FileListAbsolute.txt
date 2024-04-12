@@ -1,0 +1,14 @@
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\0_Introduccion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\0_Introduccion.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\0_Introduccion.AssemblyInfo.cs
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\0_Introduccion.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\bin\Debug\net6.0\0_Introduccion.exe
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\bin\Debug\net6.0\0_Introduccion.deps.json
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\bin\Debug\net6.0\0_Introduccion.runtimeconfig.json
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\bin\Debug\net6.0\0_Introduccion.dll
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\bin\Debug\net6.0\0_Introduccion.pdb
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\0_Introduccion.dll
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\refint\0_Introduccion.dll
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\0_Introduccion.pdb
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\0_Introduccion.genruntimeconfig.cache
+C:\Users\claud\Desktop\Programacion 2023\c#\Freecodecamp\0_Introduccion\obj\Debug\net6.0\ref\0_Introduccion.dll

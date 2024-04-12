@@ -1,0 +1,14 @@
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\bin\Debug\net6.0\10_For.exe
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\bin\Debug\net6.0\10_For.deps.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\bin\Debug\net6.0\10_For.runtimeconfig.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\bin\Debug\net6.0\10_For.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\bin\Debug\net6.0\10_For.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\10_For.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\10_For.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\10_For.AssemblyInfo.cs
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\10_For.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\10_For.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\refint\10_For.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\10_For.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\10_For.genruntimeconfig.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\10_For\obj\Debug\net6.0\ref\10_For.dll

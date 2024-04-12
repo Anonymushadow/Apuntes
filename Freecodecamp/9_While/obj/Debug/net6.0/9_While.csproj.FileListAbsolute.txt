@@ -1,0 +1,14 @@
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\bin\Debug\net6.0\9_While.exe
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\bin\Debug\net6.0\9_While.deps.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\bin\Debug\net6.0\9_While.runtimeconfig.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\bin\Debug\net6.0\9_While.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\bin\Debug\net6.0\9_While.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\9_While.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\9_While.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\9_While.AssemblyInfo.cs
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\9_While.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\9_While.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\refint\9_While.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\9_While.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\9_While.genruntimeconfig.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\9_While\obj\Debug\net6.0\ref\9_While.dll

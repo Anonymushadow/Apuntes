@@ -1,0 +1,14 @@
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\bin\Debug\net6.0\16_Herencias.exe
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\bin\Debug\net6.0\16_Herencias.deps.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\bin\Debug\net6.0\16_Herencias.runtimeconfig.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\bin\Debug\net6.0\16_Herencias.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\bin\Debug\net6.0\16_Herencias.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\16_Herencias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\16_Herencias.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\16_Herencias.AssemblyInfo.cs
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\16_Herencias.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\16_Herencias.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\refint\16_Herencias.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\16_Herencias.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\16_Herencias.genruntimeconfig.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\16_Herencias\obj\Debug\net6.0\ref\16_Herencias.dll

@@ -1,0 +1,14 @@
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\bin\Debug\net6.0\11_Array2D.exe
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\bin\Debug\net6.0\11_Array2D.deps.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\bin\Debug\net6.0\11_Array2D.runtimeconfig.json
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\bin\Debug\net6.0\11_Array2D.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\bin\Debug\net6.0\11_Array2D.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\11_Array2D.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\11_Array2D.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\11_Array2D.AssemblyInfo.cs
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\11_Array2D.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\11_Array2D.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\refint\11_Array2D.dll
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\11_Array2D.pdb
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\11_Array2D.genruntimeconfig.cache
+C:\Users\claud\Desktop\Programacion 2023\C#\Freecodecamp\11_Array2D\obj\Debug\net6.0\ref\11_Array2D.dll
