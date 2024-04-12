@@ -77,3 +77,19 @@ Es un lenguaje de programación esotérico extremadamente minimalista y difícil
 
 ## 24_Firebase
 Es una plataforma de desarrollo de aplicaciones móviles y web desarrollada por Google, que proporciona servicios en la nube como bases de datos, autenticación, almacenamiento de archivos y más, para facilitar el desarrollo y escalabilidad de aplicaciones
+
+## 25_Typescript
+Es un lenguaje de programación desarrollado por Microsoft, que es una extensión de JavaScript. TypeScript agrega características como tipado estático, interfaces y otros elementos de programación orientada a objetos que facilitan el desarrollo de aplicaciones más robustas y mantenibles.
+
+## 26_ZSH
+Es un intérprete de comandos y un shell de Unix que es una mejora de la shell Bash estándar. ZSH incluye características avanzadas como autocompletado mejorado, gestión de plugins y temas, y una sintaxis más flexible para la escritura de scripts de shell
+
+## 27_C++
+Es un lenguaje de programación de propósito general y de alto rendimiento, ampliamente utilizado en el desarrollo de sistemas, juegos, aplicaciones de escritorio y software embebido
+
+## 28_Arduino
+Es una plataforma de hardware de código abierto utilizada para la creación de proyectos electrónicos interactivos
+ 
+## 29_Bash Scripting
+Se refiere a la escritura de scripts (programas pequeños) utilizando el shell Bash en sistemas Unix y Linux. Los scripts de Bash se utilizan para automatizar tareas, realizar operaciones de sistema y realizar secuencias de comandos complejas en un entorno de línea de comandos.
+
