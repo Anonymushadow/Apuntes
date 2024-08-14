@@ -1,0 +1,283 @@
+-------------------------------------------------------------------------------------------------
+CLASE 0
+-------------------------------------------------------------------------------------------------
+Temario:
+    Dia 1 - Primero pasos en python:
+        Primeras lineas de python 
+        Google colab 
+        Estructura de python 
+        Funciones y modulos
+    Dia 2 - Conociendo la industria e industria 4.0:
+        Automatizacion industrial 
+        Indrustria 4.0
+        Aplicaciones de la industria 4.0
+        Actualizar un sistema
+        Protocolos de comunicacion
+        Visualizacion de datos con python 
+        Analizis de datos con pandas
+    Dia 3 - Aplicaciones de la industria 4.0:
+        Aplicaciones de industria 4.0 
+        Vision artificial 
+        Deteccion avanzada con OpenCV
+        Proyecto final 
+        Examen
+
+-------------------------------------------------------------------------------------------------
+DIA 1 - INTRODUCCION A PYTHON
+-------------------------------------------------------------------------------------------------
+----------------------------Que es programar-----------------------------------------------------
+Programar: Darle instrucciones a algun dispositivo
+    Se trata de dividir una instruccion grande en varias chicas
+Algoritmo: Serie de instrucciones que le damos a una computadora para realizar una tarea 
+Funcion: Es un algoritmo que podemos ejecutar varias veces
+Codigo: Serie de instrucciones escritas en un lenguaje que la computadora entiende 
+Programa: Se puede componer de distintas funciones 
+Indentacion: Es un espacio que se le da a cada linea para definir su jerarquia de posicion
+Pseudocodigo: Es un programa creado en lenguaje humano para guiarnos 
+----------------------------Variables-----------------------------------------------------
+Variables: Son espacios en la memoria de la computadora donde puedo almacenar datos bajo un nombre en comun 
+Tipos de datos:
+    string: texto 
+    booleano: True o False (es un binario, si o no, 0 o 1, true o false)
+    int: numero entero (positivo o negativo)
+    Uint: numero positivo sin decimales
+    float: numero con decimales 
+    char: caracter suelto
+----------------------------Python-----------------------------------------------------
+Caracteristicas:
+    Es de 1991
+    Es facil de aprender
+    Contiene una amplia comunidad
+    Es escalable a proyectos grandes o chicos
+    Es multiplataforma (linux, windows, etc)
+    Constantemente se realizan mejoras 
+    Es facil de integrar con otrosl enguajes de programacion
+    Esta orientado a objetos
+    Sirve para una amplica gama de ramas
+Listas:
+    Son flexibles:
+        Pueden contener valores de distintos tipos de datos 
+        Pueden modificarse
+    Ejemplo: lista = [1, "uno", True]
+    Para acceder a un elemento ponemos el nopmbre de la lista y entre corchetes el numero de posicion del elemento
+        Ejemplo: 
+            lista[4] --> obtengo el 5to elemento de la lista (se cuenta desde 0)
+            lista[-1] --> se obtiene el ultimo elemento de la lista
+Diccionario (equivalente a json en js):
+    Es un dato con claves y valores 
+    Es como una lista con posiciones con nombres (similar pero no lo mismo)
+        Ejemplo: 
+            diccionario = {
+                "valor1": "contenido",
+                "valor2": "contenido",
+                "valor3": "contenido"
+            }
+    Podemos recuperar datos mediante palabras claves
+        Ejemplo:
+            diccionario["valor1"]
+Funcion: porcion de codigo que puede reutilizarse una y otra vez segun sea necesario
+    argumento:
+    parametro:
+Modulos / Bibliotecas:
+
+-------------------------------------------------------------------------------------------------
+DIA 2 - CONOCIENDO LA INDUSTRIA 4.0
+-------------------------------------------------------------------------------------------------
+----------------------------Equipos industriales-----------------------------------------------------
+PLC (Controlador Logico Programable): Es un dispositivo que se puede programar con el fin de automatizar tareas especificadas 
+    Esta fabricado para durar muchos años
+    Esta fabricado para entornos industriales
+    Existen cientos de fabriantes de plc 
+    Solo se puede programar en uno de 5 lenguajes de programacion preestablecidos segun una norma
+PLC vs Arduino:
+    PLC 
+        estan fabricados para entornos industriales 
+        son mas robustos
+        soportan altas temperaturas
+        tiene durabilidad extensa
+    Arduino 
+        Son faciles de programar  
+        son faciles de conseguir
+        son mas baratos
+        son sensibles / fragiles
+HMI (Interfaz Humano Maquina): es un oeprador que se utiliza para mostrar informacion de un proceso
+    Permite controlar y parametrizar cualqueir maquina 
+    Por lo general hay un HMI para cada maquina que se usa 
+    Se comunica facilemtne con los PLC 
+Sensores: Son cualqueir cosa que conectamos a los PLC y otorgan informacion sobre el entorno fisico
+    Temperatura, Electricidad, etc 
+    Se utiliza para monitoriar el sistema 
+    Hay muchos tipos de sensores
+Actuadores: Son sistemas que estan conectados y permiten ejercer acciones en base a condiciones fisicas
+    Por ejemplo un motor que detiene el proceso si la maquina se calienta
+    Trabaja en conjunto con los sensores 
+    El PLC es el encargado de dar las ordenes y manejar todo 
+Sistemas de Comunicaciones: Switches, Gateways, etc
+    son aparatos que permiten transmitir grandes datos de un punto a otro 
+SCADA/DCS: Son sistema de visualizacion 
+    Son superiores a los HDMI 
+    Sirven para monitorear una planta entera o sistemas completos
+    SCADA (Sistema de Control y Distribucion): Son para adquisicion y distribucion 
+        Monitorea y coordina diferentes sistemas y procesos, asegurando que todo funcione en conjunto
+    DCS (Sistema de Control Distribuido): Son para controles
+        Controla y optimiza el proceso para asegurar eficiencia, seguridad y calidad
+    Se comunican con gran cantidad de sistemas industriales 
+    Se utiliza mucho en plantas quimicas o plantas muy grandes con informacion demaciado grande 
+Protocolo de comunicacion: Lenguaje con el que las maquinas se van a comunicar entre si 
+    Permite que todas las maquinas se puedna comunicar entre si sin importar la marca ni modelo ni nada
+----------------------------Industria 4.0-----------------------------------------------------
+1° Revolucion Industrial: Introduccion de sistemas a vapor
+    Eliminaba el trabajo manual (Automatizacion)
+    La industria comenzo a crecer y producir mas 
+    Se Crearon las fabricas
+2° Revolucion Industrial: Sistemas electricos
+    Se produjo en maza 
+    Se produjo la produccion en serie 
+    Se mejoraron los transportes y comunicaciones
+    Se acelero todo
+3° Revolucion Industrial: Dispositivos electronicos
+    Se reemplazaban las grandes estructuras por otras mas compactas
+    Se utilizaron los PLC 
+    Avance en las telecomunicaciones 
+    Trajo la electronica dentro de las industrias 
+    Gran volumen de informaicon que se transporta
+4° Revolucion Industrial: Reorganizacion
+    Es mas un tipo de enfoque de como utilizar mejor la informacion que tenemos para generar mejores resultados
+    Datos estadisticos
+    IA
+    Robotica
+    Comunicaciones entre equipos
+    Se busca mejorar lo ya existente y aprovechar las nueuvas tecnologias
+Internet Industrial de la cosas (IOT): hacen de puentes entre las tecnologias que ya tenemos y las nuevas
+    Dispositivos Edge: son equipos como computadoras industriales 
+        permiten instalar sistemas operativos para integrar lenguajes de programacion modernos con protocolos mas anticuados
+    PLCs Open Source: Son PLCs donde podemos acceder a su sistema operativo para instalar apps 
+        Podemos integrar por ejemplo IA en una maquina 
+    Gateway IOT: Convierte protocolos de comunicacion convencionales en industria 4.0
+    Firewal Industral: Boquea trafico indeseado para porteger los dispositiovs conectados a la red 
+    Protocolos IOT 
+    Software especializado para crear apps 
+    Lenguajes de programacion para cerrar la brecha
+----------------------------Protocolos de comunicacion-----------------------------------------------------
+Protocolo: Son un conjunto de reglas que utilizan 2 o mas dispositivos para intercambiar informacion entre si 
+    "idioma"
+    orden
+    medio
+    etc
+MQTT: es para establecer una comunicacion con dispositivos con ancho de badna limitado o conexiones de red limitado 
+    Es liviano
+    Se usa mucho en domotica e IOT
+    Es confiable, se envia una y otra vez la info. hasta que llegue 
+    Podemos añadir o quitar equipos sin interrumpir el flujo
+    Es faicl de operar 
+    Es ligero y podemos enviar mucha data sin problemas de saturacion
+Mobdus: es para conectar todo tipo de equipos de la industria
+    Es para industria 
+    Casi todos los equipos usan mobdus 
+    Permite enviar comandos, ver analitifcas, etc 
+    Se utiliza para los PLCs
+    Tiene documentacion solida
+    Practicamente todos los dispositivos usas mobdus 
+    Es facil de establecer la comunicacion 
+    Es facil de diagnosticar 
+RJ45: Es el puerto / conector donde se conecta el cable ethernet
+LAN: Red de Area Local (una red de dispositivos sin acceso a internet)
+    Pueden haber mas de una LAN en una industria
+MAC: Es un tipo de identificador utilizado por el router para saber a que dispositivo entregarle la informacion  
+IP: Es un tipo de identificador que permite la comunicacion entre los distintos nodos de la red 
+    Dentro de una industria la IP se establece manualmente y es estatica 
+    Son 4 numeros separados por puntos (IPV4)
+    Por lo general es de /24 --> 255.255.255.0
+----------------------------Mobdus-----------------------------------------------------
+Mobdus:
+    consta de un cliente y un servidor 
+        Servidor: Almacena la informacion y la devuelve si la peticion es valida
+            Ejemplos:
+                PLC 
+                Variador de resistencia
+                etc
+            Cada uno tiene su info. organizada en tablas
+                Segun el numero de fila se puede segmentar en 4 partes imporrtantes:
+                    Coils: info referida a las salidas digitales de un PLC (de encendido o apagado / 0 o 1 / True o False)
+                    Inputs: info que llega al PLC de forma digital
+                        sensores 
+                        botones 
+                        etc 
+                    Input Registers: info de los sensores analogicos (que puedan medir mas de dos valores)
+                    Holding Resisters: contiene datos que pueden ser modificados por el cliente, como parametros
+        Cliente: Se conecta al servidor de uno a la vez y solicita informacion 
+            Ejemplo:
+                SCADA 
+                PLC
+                HDMI 
+                etc
+    Instalar: pip install pymodbus
+----------------------------MQTT-----------------------------------------------------
+MQTT:
+    Es muy util en sistemas de monitoreo
+    Consta minimo de 2 entidades:
+        Broker: Quien se encarga de gestionar todas las conexiones y se encarga de distribuir los datos a todas las conexiones 
+            Es responsable de almacenar y reenviar los mensajes a los clientes suscritos a esos temas
+        Cliente/s: Los clientes pueden ser dispositivos IoT, aplicaciones, servidores, etc
+            pueden publicar mesajes o suscribirse a ciertos temas:
+                Publicar: 
+                    enviar la informacion al broker
+                    le envia un valor y el topico al que esta asociado
+                    es como un log, anota los datos
+                Suscribirse: 
+                    Un cliente suscriptor se registra en el broker para recibir mensajes sobre un tema específico
+                    El cliente define a qué temas desea suscribirse
+                    
+    Topico: es la categoria o tema del sensor (categoria tempreatura, categoria presion, etc)
+    Instalar: pip install paho-mqtt
+
+-------------------------------------------------------------------------------------------------
+DIA 3 - APLICACIONES DE LA INDUSTRIA 4.0
+-------------------------------------------------------------------------------------------------
+Vision artificial: Rama de la IA que permite a las maquinas procesar e interpretar imagenes y videos
+    puede ayudar a automatizar tareas 
+    mejora procesos 
+    aumenta la eficiencia mediante el uso de camaras y algoritmos de procesamiento de imagenes 
+    Usos comunes:
+        Inspeccion de calidad 
+        Control de invenarios
+        Seguridad 
+        Automatizacion 
+        Agricultua
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+COMANDOS PYTHON
+-------------------------------------------------------------------------------------------------
+= --> Asignar un valor 
+type() --> Saber el tipo de dato 
+input() --> Pedir datos al usuario
+int() --> Convertir a int 
+float() --> Convertir a float
+print() --> Mostrar informacion por consola 
+# --> Comentarios
+max() --> Devuelve el valor máximo de una lista
+min() --> Nos da el valor mínimo de una lista
+sum() --> Suma todos los elementos de una lista
+len() --> Nos da la cantidad de elementos que tiene una lista
+lista.append() --> Agrega un elemento a la lista
+def --> crear una funcion 
+return --> retornar un dato 
+import --> importar un modulo o biblioteca 
+math --> biblioteca para utilizar formulas pmatematicas 
+mat.pi --> obtener el numero pi 
+** --> elevar
+* --> multiplicar 
++ --> sumar 
+- --> restar 
+/ --> restar 
+% --> sacar resto 
+
+
+----Palabras clave a tener en cuenta (con sus respectivas mayusculas)-----
+Dia 1: APLICA 
+Dia 2: TECNICAS
+Dia 3: INNOVADORAS

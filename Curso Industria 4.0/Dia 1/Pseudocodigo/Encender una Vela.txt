@@ -1,0 +1,25 @@
+Encender Vela (Suponiendo que es algun tipo de robot para justificar el tipo de movilidad):
+    1) Caminar hasta el mueble que tiene la vela 
+    2) Tomar el picaporte del cajon
+    3) Tirar suavemente del picaporte hacia atras hasta que el cajon salga lo suficiente para poder meter la mano
+    4) Tomar los fosforos
+    5) Sostener la caja de fosforos desde las dos caras mas grandes de tal caja 
+    6) Con la otra mano empujar con un dedo la subcaja que contiene dentro hasta que esta salga hasta su mitad
+    7) Tomar un fosforo de ahi dentro
+    8) Empujar la subcaja hacia adentro de la caja principal hasta que se oculte del todo
+    9) Apoyar la cabeza del fosforo en la lija que tiene la caja de fosforos
+    10) Sin ejercer mucha presion, deslizar el fosforo por la lija una unica vez de manera rapida de un punta A a un punto B
+    11) Repetir pasos 5 a 10 hasta que el fosforo se encienda y cada  vez que el fosforo no se encienda dejarlo encima de la mesa
+    12) Dejar la caja de fosforos encima de la mesa
+    13) Tomar la vela del cajon abierto
+    14) Poner la vela con el hilo mirando hacia arriba
+    15) Llevar el fosforo (de manera lenta para que no se apague) al hilo de la vela de manera que el fuero toque el hilo
+    16) Al encender el hilo separar el fosforo de la vela
+    17) Sacudir el fosforo hasta que se apague
+    18) Dejar el fosforo en la mesa
+    19) Sacar del cajon el plato
+    20) Sostener la vela encima del plato con la cara onda del plato hacia arriba
+    21) Girar la vela 90ª para que gotee cera sobre el plato
+    22) De manera contrrolada pero veloz poner la vela recta  con el fuego hacia arriba de neuvo y apoyarla sobre la vela derretida del plato
+    23) tomar el picaporte del cajon
+    24) Empujarlo suavemente hasta que cierre del todo
