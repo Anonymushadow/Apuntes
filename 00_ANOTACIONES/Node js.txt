@@ -1,0 +1,306 @@
+---------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+---------------------------------------------------------------------------------------------
+require() --> importar modulo
+module.exports --> exportamos todo lo que indicamos que se exporte
+Promise() --> crear una promesa
+.then() --> al acabar la promesa hacer...
+resolve --> en caso de que sea todo correcto retornar
+reject --> en caso de que haya un error retornar...
+.catch() --> en caso de ser rechazada hacer...
+async --> crear una funcion asincrona
+await --> esperar a que se realice la accion para continuar
+
+
+---------------------------------------------------------------------------------------------
+DEFINICIONES
+---------------------------------------------------------------------------------------------
+cliente --> es el dispositivo que hace las solicitudes
+servidor --> es la maquina que ejecuta la pagina en si y escucha las solicitudes
+frontend --> es el desarrollo de la parte visual de la pagina
+backend --> es el desarollo de la parte funcional, rutas, periticones, etc de la pagina desrollo del os servidores
+desarollador fullstack --> es el que desarrolla tanto frontend como backend
+protocolo --> son reglas que permiten que se comunique el cliente con el servidor (formato)
+    http --> es un tipo de protocolo para enviar datos al server o pedirlos
+        .metodos --> indica que tipo de accion se busca realizar (enviar datos, ver datos, etc)
+        .path --> donde esta el recurso que se desea modificar
+        .headers --> informacion extra para el servidor
+        .body --> informacion que se desea enviar (si es que se desea enviar datos)
+    https --> version mas segura y encriptada de http
+base de datos --> es un conjunto de datos estructurados donde sep ueden consultar
+paginas dinamicas --> paginas que pueden enviar distintas solicitudes
+paginas estaticas --> paginas que una vez descargada no necesitan interaccion, no se actualizaran
+modulos --> son codigos reutilizables que se deben importar
+importar --> traer un modulo a tu programa
+exportar --> compartir un modulo apra usarlo en otros
+modulos built-in --> modulos principales que vienen instalados con node
+    http
+    https
+    os
+    fs
+    path
+modulos incorporados --> modulos copartidos por terceros
+sincrono --> se ejecuta en el orden que se escriben y hasta nocompletar una liena no pasa a la siguiente
+asincono --> se ejecuta como en segundo plano evitando trabajar la pagina
+paquete --> una carpeta que contiene un archivo llamado package.json
+modulo --> es cualquier archivo o directorio que esta dentro de node_modules (carpeta de paquetes)
+dependencia --> es un paquete del cual depende otro paquete para funcionar correctamente
+package.json --> archivo json que contien informacion sobre el paquete 
+json --> es una forma de escribir y almacenar datos en formato de texto 
+devDependencies --> dependencias que solo se utilizaran en desarrollo
+package-lock.json --> archivo con datos de las versiones y dependencias que tiene tu proyecto
+evento --> es una accion que desencadena un proceso
+emitters --> es el objeto que emite el evento
+event handler / eventListener --> es el evento que se ejecuta
+promesa --> es un objeto que contiene el error o el resultado de una operacion asincrona
+fullfilled --> es cuando una operacion asincrona fue exitosa
+rejected --> es cuando una operacion asincrona fue rechazada, con errores
+callback --> funcion que se ejecuta al finalizar una operacion asincrona
+modelo cliente-servidor: se trata de como se conectan el cliente y el server
+    .cliente envia peticiones mediante un protocolo al servidor para enviar o pedir informacion
+    .el server escucha la peticion y le contesta devolviendole informacion o ejecutando alguna accion
+metodo http --> indica que es lo que quiere el cliente (enviar datos, modificar datos, leer datos, etc)
+    get --> obtener informacion
+    post --> crear datos nuevos
+    put --> modificar datos
+    delete --> eliminar datos
+response --> respuesta que devuelve el metodo http
+    codigo de estado --> la respuesta pero en formato de numero (404, 500, etc)
+    texto de estado --> respuesta en string
+    version http 
+    headers
+    body
+codigos de estado --> son datos numericos que indican si la peticion fue rechazada, exitosa, etc
+    100 - 199 --> respuestas informativas
+    200 - 299 --> respuestas satisfactorias
+        200 --> ok
+    300 - 399 --> redirecciones
+    400 - 499 --> errores en el cliente
+        400 --> el servidor no pudo interpretar la solicitud 
+        401 --> se necesita autenticarse para obtener una respuesta, necesitamos un permiso especial que no tenemos
+        403 --> el cliente no posee los permisos necesarios para ver el contenido
+        404 --> no se encontro el recurso
+    500 - 599 --> errores en el servidor
+        500 --> ocurrió un error en el servidor mientras procesaba la solicitud del cliente, pero el servidor no pudo identificar la causa específica del error
+        501 --> ese metodo no esta soportado por el servidor
+puerto --> es la ubicacion (vitual) del sistema operativo donde sep uede acceder a ciertos procesos que se estan ejecutando en el server (ocalhost:3000)
+url --> nos permite indicar la pagina web que queremos mostrar
+    http://www.freecodecamp.org/español/?q=15
+    protocolo://subdominio.dominio.dominio de nivel superior/path/parametros
+    subdominio --> informacion adicional ubicada al inicio del domino de la pagina, permite organizar y separar la informacion para disitntos propositos
+    dominio --> nombre de la pagina
+    dominio de nivel superior --> .com, .org, etc, indica pais
+    path --> caminos dentro de la pagina
+    parametros --> son datos que se envian mediante la url pero no son parte de esta en si
+    parametros query --> parametros utilizados para obtener contenido dinamico
+    clave --> nombre del parametros
+    valor --> contenido del parametro
+        ?q=15
+        ?clave=valor
+        ?clave=valor&clave=valor&...
+routing --> se trata de manejar las solicitudes del cliente mediante 2 cosas
+    metodo --> que solicitud se realiza? (get, post, etc)
+    ruta --> a donde se eejcuta el metodo (/, /about, /users, etc)
+CRUD --> operaciojnes utilizadas en bases de datos
+    Create (post) --> crear datos / añadir datos
+    Read (get) --> obtener datos / leer datos
+    Update (put) --> modificar datos
+    Delete (delete) --> eliminar datos
+API --> es un software que permite conectar dos softwares entre si
+Rest --> es untipo de arquitectura de softwares 
+restfullapi --> api basada en rest
+middleware --> un middleware es una función que se ejecuta durante el ciclo de procesamiento de una solicitud HTTP
+        como un conjunto de funciones que se ejecutan de manera secuencial y sincrónica
+routers --> son componentes que te permiten gestionar y organizar las rutas o URLs de tu aplicación de manera ordenada y modular
+
+
+    
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+NODE JS
+---------------------------------------------------------------------------------------------
+¿Que es?: software que permite ejecutar JavaScript en el lado del servidor o "backend". 
+instalar:
+utilizar:
+crear app:
+iniciar app: node nombre_del_archivo.js / npm start
+palabras reservada:
+
+    
+
+
+
+---------------------------------------------------------------------------------------------
+NODE JS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in para utilizar la consola
+palabras reservada:
+    .log() --> mostrar por consola
+    .warn() --> mostrar una advertencia
+    .error() --> mostrar un error
+    Error() --> crear un objeto error con descripcion de donde se genero el error 
+    .assert() --> realizar afirmaciones condicionales
+    .table() --> mostrar datos en forma de tabla
+
+
+---------------------------------------------------------------------------------------------
+NODE JS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in para inspeccionar y modificar el proceso de node
+palabras reservada:
+    .version --> ver la version instalada de node
+    .versions --> muestra la informacion del proceso
+    .versions.node --> muestra la version de node instalada
+    .versions.v8 --> muestra la version del motor de javascript
+    .env --> proporciona acceso a las variables de entorno del sistema operativo en el que se está ejecutando la aplicación Node.js
+    .env.USERDOMAIN --> ver el dominio del usuario
+    .env.USERNAME --> ver el nombre del usuario 
+    .USERPROFILE --> ver la ruta absoluita del usuario
+    .env.windir --> ver la ubicacion / directorio de windows
+    .env.LANG --> ver el idioma
+    .argv --> obtiene los parametros que son enviados por consola (node app.js 7 6)
+    .memoryUsage() --> nos da informacion sobre el uso de memoria
+
+
+---------------------------------------------------------------------------------------------
+OS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in para obtener informacion sobre el sistema operativo
+usarlo: require("os")
+palabras reservada:
+    .type() --> ver el sistema operativo que tenemos
+    .homedir --> ver el directorio del usuario principal
+    .uptime() --> ver cuanto tiempo estuvo ejecutandose el sistema operativo
+    .userInfo() --> nos da informacion sobre el usuario
+
+
+---------------------------------------------------------------------------------------------
+TIMERS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in para trabajar con operaciones asincronas
+palabras reservada:
+    setTimeOut() --> ejecuta una accion despues de un tiempo
+    setInterval() --> ejecuta una accion cada cierto tiempo
+    setImmediate() --> ejecuta una accion apenas acabe el codigo sincrono
+
+
+---------------------------------------------------------------------------------------------
+FS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in para trabajar con archivos
+usarlo: require("fs")
+palabras reservada:
+    Sync() --> convertir a sincrono
+    .readFile() --> leer archivo
+    "utf-8" --> tipo de codificacion
+    throw --> arroja un error y detiene el programa
+    .rename() --> renombrar / cambiar nombre de un archivo o carpeta
+    .appendFile() --> si existe el archivo le agrega contenido al final y si no existe lo crea
+    .writeFile() --> si existe el archivo reemplaza el contenido al final y si no existe lo crea
+    .unlink() --> eliminar archivo
+
+
+---------------------------------------------------------------------------------------------
+NPM
+---------------------------------------------------------------------------------------------
+¿Que es?: es un manejador de paquetes
+usarlo: 
+    npm init --> iniciar con datos personalilzados
+    npm init --yes --> iniciar con todos los datos por defecto
+
+
+
+---------------------------------------------------------------------------------------------
+EVENTS
+---------------------------------------------------------------------------------------------
+¿Que es?: es unmodulo utilizado para el manejo de eventos
+palabras reservada:
+    .on() -> al escuchar un evento...
+    .emmit() --> emitir un evento
+
+
+---------------------------------------------------------------------------------------------
+HTTP|
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo que nos permite crear un servidor que escuche las solicitudes
+utilizar: require("http")
+palabras reservadas:
+    .createServer() --> crear un servidor
+    .end() --> enviar una respuesta al server y acabar la respuesta
+    .listen() --> escuchar solicitudes en el puerto...
+    req.url --> obtenemos la url del request
+    req.method --> devuelve el tipo de peticion
+    req.headers --> vemos los headers de la peticion
+    req.statusCode --> devuelve el codigo de estado
+    res.setHeader() --> enviar una cabecera con informacion sobre la respuesta
+    method --> acceder al metodo de la peticion
+
+
+
+---------------------------------------------------------------------------------------------
+URL
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo para manejar las urls
+usar: new URL()
+palabras reservadas: 
+    URL() --> crear una url apartir de una cadena de texto
+    .href --> acceder a la url completa incluyendo parametros
+    .origin --> acceder a la pagina principal, sin subpaginas
+    .protocol --> acceder al protocolo (http, https, etc)
+    .username --> acceder al usuario registrado
+    .password --> acceder a la contraseña del usuario registrado
+    .host --> accede al dominio incluyendo el puerto
+    .hostName --> accede al dominio sin incluir el puerto
+    .port --> acceder al puerto
+    .pathname --> acceder a la subpagina
+    .searchParams --> acceder a los parametros
+        .get() --> obtener el valor de una clave/parametro especifica
+    .hash --> acceder a fragmentos dentro de una página web (lo que viene despues del #)
+    
+
+
+---------------------------------------------------------------------------------------------
+NODEMON 
+---------------------------------------------------------------------------------------------
+¿Que es?: es una herramienta util para reiniciar la app de node cuando detecta un cambio en los archivos
+instalar: npm install -g nodemon
+usar: nodemon nombre_de_la_app.js
+
+
+
+---------------------------------------------------------------------------------------------
+EXPRESS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un framework basado en node para manejar rutas mas facilemnte
+instalar: npm install express
+utilizar: require("express")
+palabras reservada:
+    express() --> crear una app express
+    .get() --> crear ruta para peticiones get
+    .post() --> crear ruta para peticiones post
+    .put() --> crear ruta para peticiones put
+    .delete() --> crear ruta para peticiones delete
+    .send() --> enviar una respuesta
+    : --> parametro
+    req.params --> obtener los parametros
+    res.status() --> indicar el statusCode  
+    .hasOwnProperty() --> verifica si en ese objeto existe una propiedad llamada de tal manera
+    * --> todas las rutas no definidas
+    .use() --> añadir un middleware
+    res.redirect() --> redirecciona a otra pagina
+    res.query --> accede al parametro query
+    .Router() --> crea un router
+    app.use(json()) --> permite que nuestra app pueda trabajar con datos json
+    next() --> indica que debe avanzar al siguiente middleware
+    .patch() --> modificar ciertos datos y no todos
+    Object.assign() --> reemplaza ciertos datos en vez de todos
+    
+
+
+

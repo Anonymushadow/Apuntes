@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS 
+---------------------------------------------------------------------------------------------
+require() --> importar modulos o archivos
+module.exports --> exportar un modulo
+ 
+
+---------------------------------------------------------------------------------------------
+NODE js
+---------------------------------------------------------------------------------------------
+¿Que es?: es una herramienta que te permite te permite usar JavaScript para manejar la computadora en el servidor web.
+instalar: 
+    visitar https://nodejs.org/
+    Descargar la versión LTS (Long Term Support) recomendada para la mayoría de los usuarios.
+    Ejecutar el archivo descargado y seguir las instrucciones del instalador.
+    Verifica la instalación en cmd (
+        node -v
+        npm -v
+    )
+iniciar: node nombre_del_archivo.js
+
+---------------------------------------------------------------------------------------------
+DEFINICIONES
+---------------------------------------------------------------------------------------------
+modulos --> Un módulo es básicamente un archivo JavaScript que contiene un conjunto de funciones, variables o clases que pueden ser reutilizadas en otras partes de una aplicación Node.js
+    cada archivo javascript se considera un modulo
+modulos integrados / modulos built-in / módulos incorporados --> son modulos que se pueden utilizar sin necesidad de instalar paquetes adicionales y vienen con node
+modulos de terceros --> modulos creados por otros usuarios 
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+---------------------------------------------------------------------------------------------
+__dirname --> devuelve la ruta del archivo actual
+__filename --> devuelve la ruta dela rchivo actual incluyendo el nombre del archivo
+module --> nos da informacion sobre nuestros archivos
+require --> nos permite importar los archivos separados
+process --> nos da informacion sobre la consola
+setTimeOut() --> ejecuta un codigo despues de un tiempo
+setInterval() --> ejecuta un codigo cada cierto tiempo
+
+
+---------------------------------------------------------------------------------------------
+DEFINICIONES
+---------------------------------------------------------------------------------------------
+objetos globales --> objetos que ya estan incluido / disponibles de node (como os, path, etc)
+
+
+
+---------------------------------------------------------------------------------------------
+NODE JS
+---------------------------------------------------------------------------------------------
+¿Que es?: software que permite ejecutar JavaScript en el lado del servidor o "backend". 
+instalar:
+utilizar:
+crear app:
+iniciar app: node nombre_del_archivo / npm start
+palabras reservada:
+    node --version --> ver la version de node instalada
+    node --> ejecutar REPL (node en consola)
+    process --> muestra informacion del sistema operativo
+    process.version --> muestra la version que tiene instalada de node
+    os.user.info --> muestra informacion del usuario del sistema
+    process.cwd() -->muestra la ubicacion de donde estamos (ruta)
+    CTRL + C 2 --> cerrar REPL
+    .save nombre --> crear archivo
+    .load nombre --> cargar archivo
+    
+
