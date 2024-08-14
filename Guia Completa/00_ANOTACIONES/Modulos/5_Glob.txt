@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------------------
+5_GLOB
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo utilizado para buscar archivos con ciertas caracteristicas
+utilizar: const glob = require('glob');
+palabras reservadas:
+    glob() --> Busca archivos y directorios que coincidan con el patrón especificado
+    * --> Coincide con cualquier número de caracteres en una parte del nombre del archivo o directorio
+    ** --> Coincide con todos los archivos y directorios recursivamente (en todos los subdirectorios y subsubdirectorios)
+    ? --> Coincide con un solo carácter en una parte del nombre del archivo o directorio.
+    ignore: --> ignorar ciertos directorios
+    signal: --> ejecuta una señal
+    AbortSignal --> aborta la accion 

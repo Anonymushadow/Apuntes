@@ -1,0 +1,893 @@
+---------------------------------------------------------------------------------------------
+00_PALABRAS ERSERVADAS
+---------------------------------------------------------------------------------------------
+export --> exportar valores desde un módulo
+export default --> exporta un valor como predeterminado del modulo, si lo importan sin comillas importan eso
+module.exports --> exportar datos de CommonJS
+require() --> importar modulos de CommonJS
+import() --> importar modulos de ES6
+require.cache --> accede a los modulos almacenados en cache
+require.resolve() --> busca en su sistema de módulos y devuelve la ruta completa al archivo
+delete --> eliminar un modulo del cache
+global. --> crear una variable global
+logger.error() --> registra errores
+error --> es un objeto que contiene informacion sobre un error
+throw --> lanza una excepcion para manejarla en el codigo
+.stack --> describe el punto del código en el que se creó una instancia del error
+.captureStackTrace() --> este método crea una propiedad .stack en obj que devuelve una cadena que representa el punto del código en el que se llamó a Error.captureStackTrace(obj)
+console.trace() --> se utiliza para mostrar el seguimiento que representa cómo terminó el código en un punto determinado
+new Promise() --> crea una promesa
+.then() --> indica que hacer al finalizar una promesa
+.catch() --> indica que hacer en caso de que lapromesa obtenga un error
+finally --> ejecuta una funcion al finalizar la promesa sin importar el resultado de esta
+.all() --> ejecuta un conjunto de promesas dentro de un array y devuelve una nueva donde verifica si todas se cumplen o si alguna falla 
+.race() --> ejecuta un conjunto de promesas dentro de un array y devuelve una nueva apenas una de estas se rechace o salga exitosa, no espera a las demas
+.allSettled() --> ejecuta un iterable de promesa y ejecuta respuestas para cada respuesta de cada promesa
+reject --> devuelve un reject
+resolve --> devuelve un resolve
+__dirname --> devuelve la ruta de trabajo actual
+__filename --> devuelve la ruta de trabajo actual pero tambien el archivo de trabajo actual
+
+
+
+
+---------------------------------------------------------------------------------------------
+0_INICIO
+---------------------------------------------------------------------------------------------
+¿Que es node?: es una herramienta que permite trabajar en el servidor con javascript
+¿por que usar node?:
+    .es mas facil de aprender si ya sabes javascript
+    .las apps de node son muy escalables y faciles de mantener
+    .es apto para apps web, de escritorio, de celulares, etc
+    .es util para apps en tiempo real
+    .tiene amplia comunidad
+node vs browser: ambos utilizan javascript pero el frontend utiliza el browser y no tiene acceso a otra info. node tien info sobre el server que lo ejecuta
+
+---------------------------------------------------------------------------------------------
+1_MODULOS
+---------------------------------------------------------------------------------------------
+modulos: se trata de separar el codigo en varios archivos js para mejorar el orden y escalabilidad
+    modulos propios: son modulos creados por uno mismo
+    modulos built-in: son modulos que ya vienen con node y no hace falta instalarlos ni nada
+    modulos de terceros: son modulos creados por otros desarrolladores
+CommonJs: es un sistema de módulos diseñado principalmente para su uso en entornos de servidor en el lado del servidor, como Node.js
+    se basan en la idea de que cada archivo JavaScript es un módulo independiente, y pueden exportar e importar funciones y objetos entre sí de manera modular
+    Se enfoca en cargar módulos de manera síncrona y es adecuado para aplicaciones en las que la velocidad de carga no es crítica.
+    utiliza module.exports o exports para exportar valores
+    los archivos .js y .cjs se tratan como modulos CommonJS
+    Los módulos CommonJS se cargan de manera síncrona, lo que significa que el programa espera a que se carguen todos los módulos antes de continuar la ejecución
+    CommonJS no admite importaciones y exportaciones dinámicas, lo que significa que las importaciones deben ser estáticas y no pueden ser calculadas o generadas en tiempo de ejecución.
+    Buenas practicas: 
+        utilizar module.exports en vez de exports unicamente
+        evitar exportar por defecto
+        evitar utilizar variables globales
+        utilizar nombres de variables, funciones, modulos, etc claros e intuitivos
+EcmaScript6: son un sistema de módulos diseñados principalmente para el navegador, pero también son compatibles con Node.js.
+    Se enfocan en la carga asíncrona y son ideales para aplicaciones web donde la velocidad de carga es esencial
+    utiliza import para importar módulos
+    utiliza export para exportar archivos
+    Los módulos ES6 se cargan de manera asíncrona, lo que permite una carga más eficiente de los módulos en aplicaciones web.
+    permite importaciones dinámicas, lo que significa que puedes calcular y cargar módulos en tiempo de ejecución utilizando la función import().
+    Buenas practicas:
+        utilizar extension .mjs
+        evitar exportar por defecto cosas grandes y poco entendibles
+        evitar usar var, utilizar const o let
+        evitar las variables globales
+        utilizar nombres de variables, funciones, modulos, etc claros e intuitivos
+        añadir la extencion del archivo al momento de importarlo
+require vs import:
+    al llamar a require estamos importando modulos con CommonJS
+    al llamar import estamos importando modulos con EcmaScript 6
+Cache: se trata de almacenar informacion dentro de la memoria de la pc para no reimportar a cada rato el modulo, solo buscarlo en la memoria
+    ahorra mucho tiempo
+    los modulos se guardan automaticamnete en cache
+Modulos built-in: son modulos que ya vienen incorporados con node
+    estos deben importarse con require
+    no hace falta instalarlos
+Modulo de terceros: son modulos que no vienen con node ni son creados por uno mismo
+    estos deben instalarse con npm
+variables globales: son variable accesibles desde cualquier parte del codigo, incluso desde otros modulos
+    en javascript se utiliza var nombre_de_la_variable
+    en node var funciona como una variable local y no se suele utilizar
+    en node para crear variables globales se pone global.nombre_de_la_variable
+    para hacer uso de la variable debe estar importandose algo de ese modulo
+    hay que usar global con moderacion porque despues puede traer problemas de funcionamiento y / o mantenimiento
+    es buena practica limitar las variables a uso local
+paquete: es una carpeta que contiene un conjunto de modulos
+dependencias: es cuando un modulo depende de otro para funionar  
+package.json: es un archivo que contiene informacion sobre las dependencias del proyecto
+
+
+---------------------------------------------------------------------------------------------
+2_NPM
+---------------------------------------------------------------------------------------------
+¿que es npm?: npm es un instalador de paquetes que viene isntalado con node
+    se trabaja con npm en la terminal
+    para inciar un proyecto se pone "npm init"
+    para comenzar un proyecto con los datos por defecto se pone "npm init --y" 
+    para instalar algun paquete se pone "npm install nombre_del_paquete"
+    para instalar algun paquete en versiones viejas de npm se pone "npm install nombre_del_paquete --save"
+    para instalar alguna version especifica de un paquete se pone "npm install nombre_del_paquete@version"
+    para instalar las dependencias se debe revisar si hay un package.json y si esta presente escribimos en la terminal "npm install" 
+    al instalar un paquete se creara un package-lock.json y un node_modules
+        package-lock.json: es un archivo que contiene informacion sobre los modulos instalados
+        node_modules: es una carpeta que contiene los modulos instalados
+    para instalar paquetes que solo sirven en produccion ponemos "npm install nombre_del_paquete -dev"
+    abreviaciones:
+        -s --> --save
+        -d --> --save-dev
+        i --> install
+    para actualizar paquetes pondemos  "npm update nombre_del_paquete"
+    para ejecutar tareas poner "npm nombre_de_la_tare"
+        el ejemplo mas comun es npm start para inciar el proyecto
+        estas tareas se configuran en el package.json
+    para eliminar un paquete se pone "npm uninstall nombre_del_paquete"
+    para eliminar un paquete de dependencias "npm uninstall nombre_del_paquete --save"
+    para eliminar un paquete de dependencias de desarrollo "npm uninstall nombre_del_paquete --save-d"
+npx: es una herramienta que viene a partir de npm 5.2 que permite ejecutar comandos de paquetes Node.js sin necesidad de tenerlos instalados en el path
+    para usar un paquete ponemos "npx nombre_del_paquete"
+    si el paquete existe lo inicia y si no te va a preguntar si deeseas que lo instale
+    path --> ruta de variables globales (todo lo que este en el path podra ser utilizado en toda la pc)
+npm vs npx:
+    npm necesita tener instalados los paquetes en el directorio o de forma global para iniciarlos
+    npx necesita que esten instalados pero si no lo estan te lo instala automaticamente en vez de arrojar errores
+    npm puede instalar, desinstalar, actualizar y utilizar paquetes
+    npx solo instala paquetes temporales, no permanentes
+    npm genstiona los paquetes
+    npx puede ejecutar comandos de paquetes 
+    npm siempre instala los paquetes en el node_modules 
+    npx al menos que le indiques lo contrario no guarda los paquetes en el node_modules
+instalacion local: un paquete local es un paquete que se puede acceder desde el mismo proyecto instalado
+    al instalar un paquete por defecto se pone local "npm install nombre_del_paquete"
+    al instalarlo creara una carpeta node_modules 
+instalacion global: un paquete es global cuando se puede acceder a el desde cualquier otro proyecto
+    para instalar de manera global ponemos "npm install -g nombre_del_paquete"
+scoped public packages: son paquetes creados por usuarios, ya sea uno mismo o terceros y pueden ser publicos o privados
+    para instalar paquetes scoped publico "npm install @scope/nombre_del_paquete"
+    para instalar paquetes scoped privados "npm install @scope/private-nombre_del_paquete"
+actualizaciones: algunos paquetes suelen actualizarse pero no en nuestro servidor asiq ue debemos hacerlo manualmente
+    para ver si hay actualizaciones disponibles ponemos "npm outdated"
+    si queremos actualizar todos los paquetes de una "npm update"
+    pero si deseamos actualizar un paquete especifico "npm update nombre_del_paquete"
+    para instalar la ultima version del paquete podemos poner "npm install nombre_del_paquete@latest"
+    para actualizar todos los paquetes globales "npm update -g"
+utilizar paquetes instalados: para utilizar paquetes instalados debemos importarlos con require
+crear paquetes y compartirlos:
+    1_ingresar a https://www.npmjs.com/signup y registrarse
+    2_en la terminal 
+        .escribir "npm adduser" o "npm login"
+        .crear una carpeta con "md nombre_de_la_carpeta"
+        .acceder a la carpeta y crear un package.json pero si existe solo lo actualiza "cd nombre_de_la_carpeta && echo. > package.json"
+        .en el package.json añadimos un nombre al paquete y una version
+            {
+                "name": "@nombre_de_organizacion_o_autor/nombre_de_la_carpeta",
+                "version": "version"
+            }
+        .para publicar un paquete ponemos "npm publish --access=public" o "npm publish --access=private"
+    Buenas practicas:
+        mantener las dependencias actualizadas
+        ejecutar npm audit para buscar y corregir vulnerabilidades conocidas en las dependencias del proyecto
+        firmar digitalmente el codigo para evitar alteraciones
+        utilizar https para almacenar o compartir el paquete
+        validar los usuarios
+        no utilizar datos sensibles
+        escribir el codigo de manera limpia
+        habilitar las politicas de seguridad de npm
+        proporcionar una documentacion clara y util en temas de seguridad y uso
+        contrrolar el acceso a tu paquete, limitarlo a personas que lo vayan a necesitar
+        realizar pruebas de seguridad
+        añadir manejo de errores
+
+
+---------------------------------------------------------------------------------------------
+3_ERRORES
+---------------------------------------------------------------------------------------------
+error handling: se trata del modo de manejar los errores que surgen en nuestro programa
+    tipos de errores:
+        operativos: son errores del entorno y no suelen ser culpa de los programadores
+        programador: son errores que se originan en el código fuente del programa y son responsabilidad directa del programador que escribió el código 
+    buenas practicas:
+        utilizar try catch
+        utilizar async y await
+        añadir un codigo de estado
+        utilizar middlewares
+        utilizar el uncaughtException
+        utilizar unhandledRejection para las promesas
+        utilizar objetos de error
+        utilizar logger.error() para almacenar / registrar errores ocurridos
+        utilizar pagina de 404 con mensaje descriptivo y redireccion
+objeto de error: es un objeto de node que contiene informacion sobre el error ocurrido
+Uncaught Exceptions: es un error o excepcion que no se ha manejado correctamente con un try catch
+excepcion: es un evento o condición anormal que ocurre durante la ejecución de un programa y que interrumpe el flujo normal de ejecución como dividir por cero
+error: es una condición que indica un problema grave o una falla en el programa que generalmente no se puede manejar de manera controlada
+Javascript Errors: son usados para advertirle al usuario que algo ha fallado durante la ejecucion:
+    tipos de errores de Javascript:
+        InternalError: se produce cuando hay un exceso de llamadas a funciones recursivas o cuando se crea una cadena larga de llamadas de función anidadas que agota la capacidad de la pila de llamadas del navegador o del entorno de ejecución de JavaScript 
+        RangeError: es cuando un numero sobrepasa su rango valido como ponerle 100 elementos a un array de 90 espacios
+        ReferenceError: ocurre cuenado deseamos acceder a una variable o funcion inexistente
+        SyntaxError: ocurre cuando hay palabras mal escritas 
+        TypeError: surge cuando utilizamos mal los tipos de datos como intentar pasar numeros a mayuscula
+        URIError: se produce cuando se intenta utilizar una cadena de texto que no cumple con las reglas y formatos específicos requeridos para representar un URI válido
+            URI: es una cadena de caracteres que se utiliza para identificar de manera única un recurso en la web
+errores del sistema: son errores o excepciones que ocurren en el sistema como intentar cargar archivos que no existen
+    tipos de system errors: 
+                EACCES - Permission denied: Se produce cuando se intenta acceder a un recurso para el cual no se tienen permisos adecuados
+                EADDRINUSE - Address already in use: Ocurre cuando se intenta abrir un servidor en un puerto que ya está en uso.
+                ECONNRESET - Connection reset by peer: Indica que la conexión TCP fue reiniciada por el otro extremo
+                EEXIST - File exists: Se produce al intentar crear un archivo o directorio que ya existe.
+                EISDIR - Is a directory: Sucede cuando se espera un archivo pero se encuentra un directorio.
+                EMFILE - Too many open files in system: Indica que se ha alcanzado el límite máximo de archivos abiertos en el sistema
+                ENOENT - No such file or directory: Se produce cuando se intenta acceder a un archivo o directorio que no existe
+                ENOTDIR - Not a directory: Ocurre cuando se espera un directorio pero se encuentra un archivo
+                ENOTEMPTY - Directory not empty: Indica que un directorio no se puede eliminar porque aún contiene archivos o subdirectorios
+                ENOTFOUND - DNS lookup failed: Sucede cuando no se puede resolver un nombre de dominio a una dirección IP.
+                EPERM - Operation not permitted: Se produce cuando se intenta realizar una operación que no está permitida por razones de seguridad.
+                EPIPE - Broken Pipe: Ocurre cuando se intenta escribir en un flujo (pipe) que ha sido cerrado por el proceso receptor
+                ETIMEDOUT - Operation timed out: Indica que una operación no se pudo completar dentro del tiempo permitido
+errores especificados por el usuario:
+    excepciones: podemos lanzar excepciones con throw 
+    Error-first callbacks: se trata de un formato de funciondes donde refciben un error y un resultado, en caso de que no haya error este se convierte en null y si no hya data esta se convierte en null
+    Promise rejections: son eventos que ocurren cuando una promesa es rechazada (cuando falla)
+    eventEmitters: es una clase proporcionada por Node.js que se utiliza para crear objetos que pueden emitir eventos o escucharlos
+    extender el objeto de error: para dar mas detalles del error pordemos extender de la clase error y asi proporcionar mensajes mas intuitivos
+    typescript: al utilizar typescript podemos prevenir errores de sintaxis y logica
+    parametros incorrectos: podemos lidiar con parámetros incorrectos definiendo su comportamiento, ya sea arrojando un error o devolviendo un valor especial, como nulo
+assertion errors: estas excepciones indican que algo en el código no está funcionando según lo esperado
+    utilizar el modulo built-in "assertion" 
+stack trace: seguimiento y registro de las llamadas de funciones que se han realizado en la ejecución de un programa. Cuando ocurre un error o una excepción en Node.js, el seguimiento de pila proporciona información sobre la secuencia de funciones que se llamaron antes de que ocurriera el error
+    La JVM muestra automáticamente un seguimiento de la pila para indicar que se ha producido un error durante la ejecución del programa.
+    maneras de imprimir el seguimiento de pila:
+        .error.stack
+        .captureStackTrace(obj)
+        try catch
+        console.trace()
+        process.on("unhandledRejection")
+depuracion: te permite ejecutar y analizar tu código paso a paso para encontrar errores o problemas en tu script
+    utilizar la deepuracion: node inspect nombre_del_archivo.js
+errores asincronos: son errores que pueden ocurrir en operaciones asíncronas en la programación
+    estos no pueden manejarse mediante try catch
+    se maneja mediante callbacks
+    se pueden usar promesas
+    la unica manera de usar try catch es mezclado con async await
+
+
+---------------------------------------------------------------------------------------------
+4_PROGRAMACION ASINCRONA
+---------------------------------------------------------------------------------------------
+¿que es programaciona sincrona?: se trata de ejecturar tareas que no bloqueen las demas, por lo que no hay que esperar a que una tarea se complete para iniciar la otra
+programacion sincrona vs asincrona:
+    sincrona:
+        .las tareas deben esperar a que la anterior acabe
+        .se ejecuta desde arriba hacia abajo
+    asincrona:
+        .las tareas no se bloqeuan entre si
+        .se ejecuta desde arriba hacia abajo pero peuden acabar en distinto orden
+algunas tareas que llevan tiempo:
+    peticiones http
+    getUserMedia()
+    seleccion de archivos por el usuario
+promesas: es un metodo que permite trabajar con manejo de datos asincronos como peticiones, lectura de archivos, etc
+    las pomesas obtienen como parametros un resolve y un reject
+    valores posibles:
+        pending: indica que la operacion esta pendiente
+        fulfilled: significa que la operacion se completo exitosamente
+        rejected: indica que la operacion no se completo debido a errores
+    promesa anidada: es una promesa que se ejecuta dentro de otra promesa
+Async/Await: es una sintaxis que permite convertir funciones normales a funciones asincronas y esperar a que ciertas ordenes se ejecuten para continuar
+    podemos crear promesas que devuelvan siempre reject o resolve
+        promise.resolve(x) --> siempre es resolve y devuelve x
+        promise.reject(x) --> siempre es reject y devuelve x
+    las funciones asyncronas devuelven promesas
+    para crear funciones asincronas se utiliza async delante de la funcion
+    para esperar a que una tarea se complete se pone await
+    await solo puede estar dentro de una funcion asincrona
+    no toda funcion asincrona tiene await 
+callback: es una funcion pasada como argumento dentro de otra para ejecutarse al finalizar una accion
+    los callbacks pueden ser sincronos o asincronos
+    los callbacks sincronos son ejecutados apenas se ejecuta la priemra funcion
+    los callbacks asincronos se ejecutan al obtener una respuesta de la primera funcion    
+setTimeOut: es una funcion que ejecuta una o varias acciones despues de un tiempo determinado
+    el this dentro del setTimeout funciona como un windows
+setInterval: es una funcion que se repite cada un determinado tiempo
+process.nextTick: Es una función que permite programar la ejecución de un callback para que se ejecute en la próxima iteración del ciclo de eventos, antes de continuar con cualquier otra tarea
+    no es parte del bucle de eventos de Node.js, como lo son las fases. En cambio se maneja de manera especial y se ejecuta después de que se haya completado la operación actual, independientemente de la fase actual del bucle de eventos.
+    Cuando usas process.nextTick() en una fase particular del ciclo de eventos, todas las devoluciones de llamada pasadas a process.nextTick() se resolverán antes de que el bucle de eventos continúe con la siguiente fase
+    si haces llamadas recursivas a process.nextTick() en una fase, puedes bloquear la transición del bucle de eventos a la siguiente fase, como la fase "poll."
+    puede llevar a situaciones en las que el rendimiento de tu aplicación se vea afectado negativamente
+
+ciclo de eventos: cómo Node.js maneja las operaciones asincrónicas y las interacciones con el sistema operativo.
+    los ciclos no son temporales, son como secciones de node que ejcutan su trabajo especifico apenas pueden o tienen la orden
+    se puede relacionar con trabajadores, cada ciclo es un trabajador y apenas tiene su material necesario comienza con su parte del trabajo sin importar cuanto avanzo el otro
+   ┌───────────────────────────┐
+┌─>│           timers          │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │     pending callbacks     │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │       idle, prepare       │
+│  └─────────────┬─────────────┘      ┌───────────────┐
+│  ┌─────────────┴─────────────┐      │   incoming:   │
+│  │           poll            │<─────┤  connections, │
+│  └─────────────┬─────────────┘      │   data, etc.  │
+│  ┌─────────────┴─────────────┐      └───────────────┘
+│  │           check           │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤      close callbacks      │
+   └───────────────────────────┘
+
+timers: esta fase ejecuta callbacks definidos por setTimeout() y setInterval().
+    Los temporizadores en Node.js permiten programar la ejecución de un callback después de un período de tiempo especificado
+    los temporizadores no garantizan una ejecución exacta en el tiempo especificado. En su lugar, ejecutarán el callback tan pronto como sea posible después de que haya transcurrido el tiempo especificado.
+    aunque programes un temporizador para ejecutarse después de un cierto umbral de tiempo (por ejemplo, 100 ms), la ejecución real puede retrasarse si otras operaciones asincrónicas están en curso en ese momento.
+
+pending callbacks: En esta fase, se ejecutan las funciones de entrada y salida de datos que necesitan una previa respuesta de timers
+
+idle, prepare: Estas fases son principalmente utilizadas internamente por Node.js y generalmente no se utilizan en la programación cotidiana. Son parte del funcionamiento interno del sistema.
+
+poll: En esta fase, Node.js espera la llegada de nuevos eventos de entrada/salida, como solicitudes de red o conexiones de sockets. También se ejecutan los callbacks relacionados con operaciones de I/O que están listas para ser procesadas. Node.js puede quedarse en esta fase si es necesario bloquearse para esperar eventos.
+    Esta fase también verifica si hay eventos pendientes en la cola de eventos y, si los encuentra, ejecuta los callbacks
+    durante la fase poll del ciclo de eventos, el sistema espera eventos de entrada/salida (I/O) como solicitudes de red, conexiones de sockets, etc. para manejarlos. Esto permite que Node.js realice operaciones asincrónicas de manera eficiente y no bloqueante.
+    para evitar que esta fase de sondeo (poll) se quede esperando indefinidamente sin procesar eventos, la biblioteca subyacente de Node.js tiene un límite estricto en la cantidad de tiempo que puede estar en la fase de sondeo antes de continuar con otras tareas.
+    ejecuta callbacks para algunas operaciones del sistema, como ciertos tipos de errores de TCP (Protocolo de Control de Transmisión). esta devolución de llamada se coloca en la cola para ejecutarse en la fase de "pending callbacks".
+    Durante la fase de poll, el event loop de Node.js calcula cuánto tiempo debe bloquear el programa y esperar por operaciones de entrada/salida 
+    Node.js decidirá cuánto tiempo debe estar disponible para recibir datos de entrada o enviar datos de salida, como leer archivos, hacer solicitudes a bases de datos, o recibir solicitudes HTTP, dependiendo de lo que se esté ejecutando en ese momento.
+    Una vez que Node.js ha calculado cuánto tiempo debe esperar por operaciones de I/O, comienza a procesar eventos que están en la cola de "poll." Esto incluye la ejecución de funciones callbacks que se han registrado previamente para manejar resultados de operaciones de I/O que han completado su tarea, como cuando se recibe una respuesta de una solicitud HTTP.
+    Cuando el event loop entra en la fase de poll, pueden ocurrir varias situaciones:
+        Si la cola de poll no está vacía, el event loop procesará sincrónicamente todos los eventos en la cola de poll hasta que la cola se vacíe o se alcance un límite máximo dependiente del sistema.
+        Si la cola de poll está vacía, dos cosas pueden suceder:
+            Si se han programado scripts para ejecutarse inmediatamente mediante setImmediate(), el event loop finalizará la fase de poll y pasará a la fase de check para ejecutar esos scripts programados.
+            Si no se han programado scripts para ejecutarse mediante setImmediate(), el event loop esperará a que se agreguen callbacks a la cola de poll y las ejecutará inmediatamente tan pronto como estén disponibles
+    Una vez que la cola de poll esté vacía, el event loop verificará si hay temporizadores que hayan alcanzado sus límites de tiempo. Si hay temporizadores listos para ejecutarse, el event loop volverá a la fase de timers para ejecutar las devoluciones de llamada de esos temporizadores.
+
+check: Aquí se ejecutan los callbacks programados con setImmediate(). Estas devoluciones de llamada se ejecutan después de que Node.js haya completado la fase de "poll" y antes de volver a comenzar el ciclo. Son útiles para realizar tareas inmediatas después de ciertas operaciones asincrónicas.
+    si tienes funciones callbacks programadas para ejecutarse de inmediato utilizando setImmediate(), estas se ejecutarán en la fase "check" tan pronto como la fase de "poll" esté inactiva.
+    Si se han programado callbacks con setImmediate() y la fase de "poll" se vuelve inactiva, el evento loop no esperará más por eventos de "poll". En su lugar, avanzará directamente a la fase de "check" para ejecutar los callbacks programadas con setImmediate()
+    las devoluciones de llamada de setImmediate() tienen prioridad sobre las operaciones de "poll" en situaciones donde ambas están programadas.
+
+close callbacks: En esta fase, se ejecutan los callbacks relacionados con el cierre de recursos, como cuando se cierra una conexión de socket. Por ejemplo, cuando una conexión de red se cierra, cualquier devolución de llamada asociada a ese evento se ejecutará en esta fase.
+    Cuando un socket o un evento se cierran abruptamente, por ejemplo, cuando se llama a la función socket.destroy(), Node.js emite un evento llamado close para notificar que la conexión se ha cerrado. Esta notificación se maneja en la fase de "close callbacks." Si la conexión se cierra de manera normal, el evento 'close' se emitirá mediante process.nextTick(), que es otra forma de programar tareas para ejecutarlas en el siguiente ciclo de eventos.
+    el ciclo de eventos en Node.js permite que las operaciones asincrónicas se manejen de manera eficiente y no bloqueante
+
+process.nectTick vs setImmediate:
+    process.nextTick(): Esta función dispara una tarea para ejecutarse inmediatamente en la misma fase del ciclo de eventos actual. En otras palabras, se ejecuta antes de que el ciclo de eventos avance a la siguiente fase.
+        Manejo de Errores y Limpieza de Recursos: Puedes usar process.nextTick() para manejar errores, limpiar recursos que ya no se necesitan o intentar nuevamente una solicitud antes de que el ciclo de eventos continúe.
+        Ejecución después del Desapilamiento de la Llamada: En ocasiones, es necesario permitir que una devolución de llamada se ejecute después de que la pila de llamadas (call stack) se haya desapilado pero antes de que el ciclo de eventos continúe. Esto puede ayudar a cumplir las expectativas del usuario en ciertas situaciones.
+
+    setImmediate(): setImmediate() programa una tarea para que se ejecute en la siguiente iteración o "tick" del ciclo de eventos, es decir, en la próxima fase después de la actual.
+        se recomienda que los desarrolladores utilicen setImmediate() en la mayoría de los casos porque es más fácil de entender y razonar
+        se ajusta mejor a la mayoría de los escenarios de programación asíncrona en Node.js y evita situaciones potencialmente confusas
+
+eventos: un evento es una accion que desencadena una funcion
+    en node los eventos se manejan mediante un modulo llamado events
+    un eventemitter es un emisor de eventos (algo que envia/ejecuta eventos)
+
+
+---------------------------------------------------------------------------------------------
+5_ARCHIVOS
+---------------------------------------------------------------------------------------------
+CLI: es una forma de interactuar con una computadora o software mediante comandos de texto ingresados en una terminal o ventana de línea de comando
+trabajar con archivos: en node podemos trabajar con archivos mediante el modulo built-in Filse System (fs)
+buffer: un buffer es un archivo con codigo binario
+ruta absoluta: especifica la ubicación completa de un archivo o directorio desde la raíz del sistema de archivos
+ruta relativa: especifica en relación con un directorio base o directorio de trabajo actual
+
+
+---------------------------------------------------------------------------------------------
+6_COMMAND LINE APLICATIONS (CLI)
+---------------------------------------------------------------------------------------------
+¿Que es?: son programas de software que se ejecutan desde el cmd
+variables de entorno: es una variable que en vez de almacenarse en el codigo en si se almacena en el server
+    Durante la inicialización de la aplicación, estas variables de entorno se cargan en un objeto llamado process.env y se accede a estas mediante el nombre
+Buenas practicas:
+    incluir las variables de entorno en un archivo llamado ".env" y excluirlo del repositorio de github
+    utilizar librerias como dotenv
+    evitar almacenar datos sensibles
+    crear un archivo llamado ".env.example" que incluya las variables de entorno requeridas y sus valores predeterminados para asi saber que datos se necesitan y como se deben añadir
+    validar las variables de entorno con manejo de errores
+    restringir las variables a quienes lo necesiten en caso de estar en la nube
+    evitar codificar valores sensibles directamente en tu código
+    en caso de cambiar datos revisar todo lo que afectaria ese cambio
+    crear copias de seguridad regulares
+    nunca hacer commit del archivo .env
+terminacion de procesos: a veces hay que acabar procesos de manera repentina y para eso hay que utilizar el modulo process para finalizarlos de manera correcta
+comand line args: se refiere a los argumentos que se pasan a un programa o comando cuando se ejecuta desde la línea de comandos de un sistema operativo
+flags: son comandos epeciales para ejecutar acciones especiales como decir "-d", por lo general se pone -letra
+Corriente estandar de salida: la forma en que los programas envían datos para que sean mostrados en la pantalla o consola del usuario
+descriptor de archivo: número que identifica de manera única un archivo o dispositivo abierto en un sistema operativo.
+prompts: es un tipo de pregunta específico, como una pregunta de selección múltiple, una pregunta de entrada de texto o cualquier otro tipo de interacción con el usuario.
+reinciar la app sin nodemon: node --watch nombre_de_la_app.js
+
+
+
+
+---------------------------------------------------------------------------------------------
+7_APIs
+---------------------------------------------------------------------------------------------
+¿Que es?: es un software utilizado para interconectar dos apps diferentes
+        las siglas significan Application Programming Interface (Interfaz de Programación de Aplicaciones)
+protocolos: conjunto de reglas a seguir para poder comunicarse el server con el cliente 
+JSON-RPC: es un protocolo de comunicación ligero y simple que permite a las aplicaciones enviar solicitudes y recibir respuestas en formato JSON a través de una red
+gRPC: es un sistema de llamada a procedimiento remoto de código abierto desarrollado por Google. Utiliza el Protocol Buffers como su lenguaje de interfaz, lo que permite la definición de servicios y mensajes con una sintaxis clara y eficiente. 
+tipos de apis:
+    SOAP APIs: es un protocolo de comunicación utilizado para definir y estructurar mensajes en formato XML
+        Utiliza XML para el formato de mensajes.
+        define reglas estrictas sobre cómo se deben enviar, recibir y procesar los mensajes. Esto incluye especificaciones detalladas sobre encabezados, envoltorios y codificación de datos.
+        proporciona mecanismos integrados para garantizar la seguridad y la confiabilidad de las comunicaciones. Esto incluye la capacidad de utilizar SSL/TLS para cifrar y autenticar las transmisiones y la posibilidad de implementar mecanismos avanzados de manejo de errores y reintentos
+        es un protocolo más antiguo y estructurado que se utiliza comúnmente en aplicaciones empresariales y en entornos donde se requiere una alta confiabilidad y seguridad en la comunicación.
+        Sigue una estructura rígida basada en especificaciones WSDL (Web Services Description Language).
+        Puede ser más pesado y menos eficiente que otros tipos de APIs debido a la estructura XML y el protocolo SOAP.
+    RPC APIs: permiten que un programa solicite la ejecución de una función o procedimiento en un servidor remoto como si se tratara de una llamada de función local. Esto se logra mediante la serialización y deserialización de datos y resultados
+        Enfoque en la llamada a procedimientos remotos.
+        Puede utilizar varios protocolos de transporte, como HTTP o TCP.
+        A menudo utiliza formatos de datos más compactos que SOAP.
+        utiliza gRPC o JSON-RPC
+        En lugar de acceder a un recurso como en una API REST, podrías utilizar una RPC API para invocar una función o método en el servidor remoto que realice este cálculo.
+    Websocket APIs: son un protocolo de comunicación bidireccional en tiempo real. Las APIs WebSocket permiten la comunicación interactiva y en tiempo real entre clientes y servidores, lo que es útil para aplicaciones que requieren actualizaciones constantes
+        Proporciona una conexión persistente y bidireccional
+        Se utiliza comúnmente en aplicaciones de chat en tiempo real, juegos en línea y notificaciones en tiempo real
+    REST APIs: se basan en el principio de que los recursos se representan mediante URLs
+        Utiliza URLs para identificar y acceder a recursos
+        El cliente envía solicitudes HTTP al servidor para acceder a recursos, y el servidor responde con los datos solicitados
+        Es ampliamente adoptado debido a su simplicidad y facilidad de uso.
+        Puede ser más eficiente y escalable en comparación con SOAP.
+        Cada solicitud del cliente al servidor debe contener toda la información necesaria para comprender y procesar la solicitud. El servidor no debe mantener información de estado sobre el cliente entre solicitudes
+        Las operaciones más comunes en una API REST son las relacionadas con las operaciones CRUD (Crear, Leer, Actualizar y Eliminar) en los recursos. Estas operaciones se mapean generalmente a los métodos HTTP (POST, GET, PUT, DELETE) para interactuar con los recursos
+        Los recursos son objetos o datos que se pueden acceder a través de una URL única, que se conoce como el identificador de recurso. Cada recurso se representa como una entidad con su propia URL.
+        Los datos intercambiados entre el cliente y el servidor generalmente se presentan en formatos comunes como JSON o XML
+        Los métodos HTTP se utilizan para indicar la acción que se debe realizar en un recurso determinado
+        Las respuestas del servidor incluyen códigos de estado HTTP para indicar el resultado de la solicitud
+        HATEOAS es un principio que sugiere que una API REST debe incluir en sus respuestas enlaces para redireccionar sin modificar la url manualmente
+        seguridad:
+            implementar sistema de autenticacion para asegurarte de que solo los usuarios autorizados puedan acceder a tu API
+            Utiliza HTTPS en lugar de HTTP para cifrar las comunicaciones entre el cliente y el servidor
+            cifrar los tokens en caso de usar jwt
+            limitar la cantidad de solicitudes que un usuario o una dirección IP puede hacer en un período de tiempo (para protegerse de ataques DDoS)
+            valida y sanitiza los datos de entrada para evitar ataques de inyección (como SQL Injection o Cross-Site Scripting).
+            Configura adecuadamente los encabezados CORS (Cross-Origin Resource Sharing) para controlar qué dominios pueden acceder a tu API desde el navegador
+            Lleva un registro de todas las solicitudes y respuestas, incluyendo información sobre errores. Esto te permitirá identificar y resolver problemas de seguridad más fácilmente
+            Mantén tu servidor y todas las bibliotecas y dependencias actualizadas para asegurarte de que estén protegidas contra las últimas vulnerabilidades conocidas
+            Si almacenas datos de usuario, como contraseñas, cifra esos datos adecuadamente y sigue las mejores prácticas de seguridad.
+            Realiza pruebas de seguridad regulares, como pruebas de penetración y análisis de vulnerabilidades, para identificar y solucionar posibles problemas de seguridad
+            documenta los procedimientos de seguridad que deben seguir.
+            En caso de errores, no proporcionar información detallada del servidor. Devuelve respuestas de error genéricas para evitar revelar información confidencial.
+web api: es un conjunto de reglas y protocolos que permite que diferentes aplicaciones o sistemas se comuniquen entre sí
+    permiten que las aplicaciones accedan y compartan datos o funcionalidades con otros sistemas a través de solicitudes HTTP (como GET, POST, PUT y DELETE) de manera estándar.
+    suelen seguir un conjunto de reglas y convenciones estándar para las solicitudes y respuestas HTTP
+    pueden requerir autenticación para garantizar que solo los usuarios autorizados tengan acceso a ciertos recursos o datos
+    pueden implementar medidas de seguridad para proteger la integridad de los datos.
+API integrations: es un software encargado de actualizar automaticamente la data entrer el server y el client
+clasificacion de apis:
+    privadas: Estas son internas para una empresa y solo se utilizan para conectar sistemas y datos dentro del negocio.
+    publicas: Están abiertas al público y pueden ser utilizadas por cualquier persona. Puede haber o no autorización y costos asociados con estos tipos de APIs.
+    de socios: Solo son accesibles para desarrolladores externos autorizados para ayudar en asociaciones comerciales entre empresas.
+    compuestas: Estas combinan dos o más APIs diferentes para abordar requisitos o comportamientos de sistemas complejos.
+API endpoint: es una URL que se utiliza para interactuar con la API y realizar una tarea específica, como obtener datos, enviar información o ejecutar una función en el servidor al que se conecta la API.
+    un ejemplo es /api/servicios/3234
+    son la forma en que los desarrolladores pueden interactuar con una API
+    Cada endpoint está diseñado para realizar una tarea específica
+    una API facilita que los desarrolladores comprendan cómo utilizarla y qué operaciones pueden realizar.
+pasos para crear una api:
+    1_Planificar la API: pensar en diferentes casos de uso de antemano y asegurarse de que la API cumpla con los estándares actuales de desarrollo de API.
+    2_Construir la API: crear prototipos de APIs utilizando código predefinido. Una vez que el prototipo se ha probado, los desarrolladores pueden personalizarlo según las especificaciones internas.
+    3_Probar la API: Las pruebas de API son similares a las pruebas de software y deben realizarse para evitar errores y defectos. Se pueden utilizar herramientas de prueba de API para evaluar la resistencia de la API frente a ataques cibernéticos.
+    4_Documentar la API: Las APIs bien documentadas que ofrecen una variedad de funciones y casos de uso tienden a ser más populares en una arquitectura orientada a servicios.
+    5_Promocionar la API: existen mercados de API donde los desarrolladores pueden comprar y vender otras APIs. Enumerar tu API puede permitirte monetizarla.
+API testing: es una práctica de prueba de software que se centra en probar las interfaces de programación de aplicaciones (API) de un sistema o aplicación. En lugar de probar la interfaz de usuario de una aplicación, el API testing se enfoca en las solicitudes y respuestas que se producen cuando diferentes componentes de software interactúan entre sí a través de una API.
+    Validación de datos: Verificar que los datos enviados y recibidos a través de la API sean precisos y cumplan con los requisitos de formato y contenido.
+    Manejo de errores: Probar cómo responde la API ante situaciones de error, como solicitudes incorrectas o datos faltantes, y asegurarse de que se manejen adecuadamente.
+    Seguridad: Evaluar la seguridad de la API para protegerla contra posibles vulnerabilidades y ataques cibernéticos.
+    Rendimiento: Medir el rendimiento de la API, incluido el tiempo de respuesta y la capacidad de manejar cargas de trabajo pesadas.
+    Compatibilidad: Asegurarse de que la API sea compatible con diferentes versiones de sistemas operativos, navegadores web u otras tecnologías con las que pueda interactuar.
+    Integración: Probar cómo la API se integra con otros sistemas y aplicaciones para garantizar una interoperabilidad sin problemas.
+Crear documentacion:
+    Descripción General: 
+        Proporciona una breve introducción a la API, explicando su propósito y función principal. 
+        Enumera los casos de uso típicos o escenarios en los que se puede utilizar la API.
+    Requisitos y Autenticación:
+        Especifica cualquier requisito previo necesario para utilizar la API, como autenticación, generación de claves API, etc.
+        Proporciona ejemplos claros de cómo autenticarse correctamente.
+    Rutas y Endpoints:
+        Enumera todas las rutas (URLs) disponibles en la API junto con sus descripciones.
+        Para cada ruta, describe los métodos HTTP permitidos (GET, POST, PUT, DELETE, etc.).
+        Proporciona ejemplos de solicitud y respuesta para cada endpoint.   
+    Parámetros y Datos de Solicitud:
+        Explica los parámetros que se pueden incluir en las solicitudes API (por ejemplo, parámetros de consulta, encabezados, cuerpo de la solicitud).
+        Indica si los parámetros son obligatorios o opcionales, y qué valores aceptan.
+    Respuestas y Formato de Datos:
+        Describe los diferentes códigos de estado HTTP que la API puede devolver (por ejemplo, 200 OK, 404 Not Found, 500 Internal Server Error).
+        Especifica el formato de los datos de respuesta (por ejemplo, JSON, XML) y proporciona ejemplos de datos de respuesta para cada endpoint.
+    Errores y Manejo de Errores:       
+        Documenta los posibles errores que los usuarios de la API pueden encontrar.
+        Explica cómo se deben manejar los errores y qué información adicional puede estar disponible en las respuestas de error.
+    Ejemplos de Uso:
+        Proporciona ejemplos completos de cómo realizar solicitudes API utilizando diferentes lenguajes de programación o herramientas.
+        Muestra casos de uso comunes para ilustrar cómo se puede utilizar la API en aplicaciones reales.
+    Versionamiento:
+        Si planeas lanzar futuras versiones de la API, explica cómo se manejará el versionamiento y cómo los usuarios pueden especificar la versión deseada.
+    Pruebas y Ejecución:
+        Proporciona información sobre cómo los desarrolladores pueden probar la API en un entorno controlado.
+        Si es posible, ofrece un entorno de pruebas o sandbox.
+    Referencias y Recursos Adicionales:
+        Incluye enlaces a cualquier recurso adicional, como guías de usuario detalladas, ejemplos de código, SDKs (kits de desarrollo de software) y enlaces a la comunidad de desarrolladores.
+    Formato de la Documentación:
+        Elije un formato adecuado para la documentación, como Markdown, HTML, o una plataforma de documentación específica como Swagger, Postman, o herramientas de generación de documentación como Swagger UI o SwaggerHub.
+    Mantenimiento y Actualización:
+        Asegúrate de mantener la documentación actualizada a medida que realices cambios en la API. La documentación desactualizada puede causar confusión y errores.
+API Gateway: Funciona como un enrutador que toma las solicitudes del cliente, las procesa y las dirige al servicio o la API correspondiente en función de la ruta o el endpoint solicitado.
+    El API Gateway puede enrutar solicitudes a diferentes servicios internos en función de la ruta, los encabezados u otros criterios. También puede realizar transformaciones en las solicitudes o respuestas según sea necesario.
+    Proporciona funciones de seguridad, como autenticación y autorización, para proteger las APIs internas de accesos no autorizados.
+    Permite gestionar múltiples versiones de APIs y asegura que las aplicaciones cliente se conecten a la versión correcta.
+    Distribuye el tráfico entre múltiples instancias de servicios backend para garantizar la escalabilidad y la disponibilidad.
+    Ofrece capacidades de monitoreo en tiempo real y generación de informes para ayudar en la solución de problemas y la toma de decisiones basadas en datos.
+    Puede almacenar en caché respuestas para reducir la carga en los servicios backend y mejorar la velocidad de respuesta.
+GraphQL: es un lenguaje de consulta para las API  y un entorno de tiempo de ejecución para ejecutar esas consultas en los datos existentes
+    es como un manejador de peticiones
+    En lugar de recibir una respuesta fija de un endpoint de API, como en REST, los clientes de GraphQL pueden especificar exactamente qué datos necesitan. Esto evita el problema de "sobrecarga de datos" en el que se reciben más datos de los necesarios.
+    En una API GraphQL, hay un solo punto de entrada para todas las solicitudes. Los clientes envían consultas GraphQL al servidor, y el servidor procesa esas consultas y devuelve los datos solicitados.
+    GraphQL utiliza un sistema de tipos y esquemas para definir cómo se estructuran los datos en una API. Esto facilita la comprensión de la estructura de los datos y permite a los clientes conocer qué tipos de datos pueden solicitar.
+    GraphQL simplifica la gestión de versiones de la API al permitir que los clientes soliciten solo los campos y tipos de datos que necesitan. Esto evita la necesidad de crear múltiples versiones de la API para diferentes casos de uso.
+    Las API GraphQL a menudo se documentan automáticamente, lo que facilita a los desarrolladores comprender cómo utilizar la API y qué datos están disponibles.
+modelo cliente-servidor: se trata de como se conectan el cliente y el server
+    .cliente envia peticiones mediante un protocolo al servidor para enviar o pedir informacion
+    .el server escucha la peticion y le contesta devolviendole informacion o ejecutando alguna accion
+metodo http: indica que es lo que quiere el cliente (enviar datos, modificar datos, leer datos, etc)
+    get: obtener informacion
+    post: crear datos nuevos
+    put: modificar datos
+    patch: modificar datos sin reemplazar
+    delete: eliminar datos
+response: respuesta que devuelve el metodo http
+codigos de estado --> son datos numericos que indican si la peticion fue rechazada, exitosa, etc
+    100 - 199: respuestas informativas
+    200 - 299: respuestas satisfactorias
+        200: ok
+    300 - 399: redirecciones
+    400 - 499: errores en el cliente
+        400: el servidor no pudo interpretar la solicitud 
+        401: se necesita autenticarse para obtener una respuesta, necesitamos un permiso especial que no tenemos
+        403: el cliente no posee los permisos necesarios para ver el contenido
+        404: no se encontro el recurso
+    500 - 599 --> errores en el servidor
+        500: ocurrió un error en el servidor mientras procesaba la solicitud del cliente, pero el servidor no pudo identificar la causa específica del error
+        501: ese metodo no esta soportado por el servidor
+puerto: es un número de identificación utilizado para dirigir los datos hacia una aplicación o servicio específico en un servidor
+url: nos permite indicar la pagina web que queremos mostrar
+    http://www.pagina.org/español/?q=15
+    protocolo://subdominio.dominio.dominio de nivel superior/path/parametros
+        protocolo: tipo de protocolo (http, https, etc)
+        subdominio: dividir un dominio en partes más pequeñas y específicas, lo que facilita la organización y la administración de sitios web y servicios en línea
+        dominio: nombre de la pagina
+        dominio de nivel superior: se utilizan para categorizar y organizar los nombres de dominio en Internet según su propósito o afiliación
+            .com: se asocia con sitios web comerciales, se pensó para empresas, pero ahora se usa ampliamente para una variedad de sitios web.
+            .org: se creó para organizaciones sin fines de lucro, pero en la actualidad se utiliza para una variedad de propósitos, incluidas organizaciones comerciales
+            .net: se diseñó para redes y proveedores de servicios de Internet, pero también se usa para sitios web relacionados con la tecnología y la red en general
+            .edu: Reservado para instituciones educativas, como universidades y escuelas
+            .gov: Exclusivo para sitios web gubernamentales de los Estados Unidos.
+            .ar: es para argentina, se utilizan para representar países o territorios específicos, y cada país tiene su propio ccTLD
+            .es: representa a España
+            .uk: representa a Reino Unido
+        path: caminos dentro de la pagina
+        parametro de ruta: son datos que se envian mediante la url pero no son parte de esta en si
+        parametros query: parametros utilizados para obtener contenido dinamico
+        clave: nombre del parametros
+        valor: contenido del parametro
+            ?clave=valor
+            ?clave=valor&clave=valor&...
+routing: se trata de manejar las solicitudes del cliente mediante 2 cosas
+    metodo --> que solicitud se realiza? (get, post, etc)
+    ruta --> a donde se ejcuta el metodo (/, /about, /users, etc)
+CRUD --> operaciojnes utilizadas en bases de datos
+    Create (post) --> crear datos / añadir datos
+    Read (get) --> obtener datos / leer datos
+    Update (put) --> modificar datos
+    Delete (delete) --> eliminar datos
+middleware --> un middleware es una función que se ejecuta durante el ciclo de procesamiento de una solicitud HTTP
+        como un conjunto de funciones que se ejecutan de manera secuencial y sincrónica
+routers --> son componentes que te permiten gestionar y organizar las rutas o URLs de tu aplicación de manera ordenada y modular
+HTTP vs Express:
+    Express:
+        Se utiliza para probar la funcionalidad de la interfaz de usuario de las aplicaciones móviles.
+        se centra en la interacción con la interfaz de usuario de una aplicación Android
+        Permite realizar acciones como hacer clic en botones, introducir texto y verificar elementos visuales en la pantalla
+        está dirigido a dispositivos móviles que ejecutan el sistema operativo Android
+        Se utiliza principalmente para realizar pruebas de interfaz de usuario automatizadas, como pruebas de aceptación y pruebas funcionales en aplicaciones Android
+        Se utiliza con Java o Kotlin para escribir pruebas de interfaz de usuario automatizadas para aplicaciones Android. Puedes utilizar el marco de pruebas Espresso dentro del entorno de desarrollo de Android Studio
+    HTTP:
+        Se utiliza para enviar solicitudes y recibir respuestas entre un cliente y un servidor web
+        se enfoca en la comunicación entre servidores y clientes web a través de solicitudes y respuestas
+        No se ocupa directamente de la interfaz de usuario
+        se utiliza para la comunicación entre cualquier cliente y servidor web, independientemente de la plataforma o dispositivo
+        se utiliza para probar la comunicación y la funcionalidad de los servidores web y las API
+        es un protocolo de comunicación que se utiliza en una variedad de contextos
+settings: configurar y establecer diversas opciones de configuración en la aplicación Express
+motor de plantilla: software que se utiliza para generar y renderizar contenido dinámico en páginas web
+sello de autenticación: es como un sello que se que se utiliza para confirmar que un usuario o una aplicación tiene permiso para acceder a ciertos recursos o realizar ciertas acciones
+    division del sello: 
+        Encabezado: Esta parte dice qué tipo de sello es (en este caso, un JWT) y cómo se creó. Es como el nombre del sello y cómo se hizo.
+        Cuerpo: Aquí es donde se coloca la información sobre quién es el usuario o qué puede hacer. Son como las instrucciones que se dan con el sello.
+        Firma: Es una firma digital que garantiza que el sello no se haya alterado desde que se creó. Es como un sello de seguridad que muestra que el sello es auténtico
+    un sello de autenticacion es como un contrato
+    La firma garantiza que el contenido del token no ha sido alterado durante la transmisión o por partes no autorizadas. Cuando un JWT se firma digitalmente con una clave secreta, cualquier cambio en el contenido del token invalida la firma, lo que permite detectar intentos de manipulación.
+    La firma también se utiliza para verificar la autenticidad del emisor del token. Esto significa que puedes confiar en que un JWT recibido proviene de una fuente confiable, siempre y cuando puedas verificar la firma con la misma clave secreta que se utilizó para firmar el token
+    Al firmar los JWT, evitas que terceros malintencionados creen tokens falsificados para acceder a recursos o funciones protegidas de tu aplicación. Solo las partes que tienen acceso a la clave secreta pueden generar tokens válidos
+    Un JWT generalmente tiene un tiempo de expiración (expira después de un cierto tiempo), lo que limita la ventana de oportunidad para cualquier posible atacante
+    Es importante transmitir los JWT sobre una conexión HTTPS segura para protegerlos durante la transmisión y prevenir ataques de intermediarios.
+token: basicamente el token es el objeto que tiene informacion sobre el logeo actual
+    datos que suelen almacenar los tokens:
+        Sub (subject): Este reclamo identifica al usuario o entidad a la que pertenece el token. Por ejemplo, podría ser el ID de usuario.
+        Iss (issuer): Este reclamo identifica al emisor del token, es decir, la entidad que lo generó.
+        Exp (expiration time): Indica la fecha y hora en la que el token expirará y ya no será válido. Esto es importante para la seguridad, ya que limita el tiempo durante el cual el token puede ser utilizado.
+        Iat (issued at): Indica la fecha y hora en la que se emitió el token.
+        Aud (audience): Especifica a quién está destinado el token. Puede ser útil cuando un token debe ser utilizado solo por una aplicación o servicio en particular.
+        Roles o permisos: Puedes incluir reclamos que describan los roles o permisos del usuario. Esto es importante para la autorización, ya que te permite determinar qué acciones puede realizar el usuario.
+        Otros datos de usuario: Puedes incluir cualquier otro dato relevante sobre el usuario, como su nombre, dirección de correo electrónico u otra información de perfil.
+estrategia: método específico que se utiliza para autenticar a un usuario en una aplicación web
+    determina qué datos se utilizarán para la autenticación y cómo se realizará la verificación
+    LocalStrategy: Esta estrategia se utiliza para autenticar a los usuarios utilizando un nombre de usuario y contraseña almacenados en la base de datos de la aplicación
+    JWTStrategy: Permite la autenticación basada en tokens JSON Web Token (JWT). Los usuarios pueden autenticarse proporcionando un token JWT válido
+    OAuthStrategy: Passport.js admite múltiples estrategias OAuth, como OAuth 1.0 y OAuth 2.0. Estas estrategias se utilizan para autenticar a los usuarios utilizando proveedores de servicios externos, como Google, Facebook o Twitter.
+    BearerStrategy: Esta estrategia permite la autenticación basada en tokens de portador (Bearer Tokens), comúnmente utilizada en aplicaciones de API REST.
+        tokens de portador:son un tipo de token de acceso utilizado en el contexto de la autenticación y autorización en aplicaciones web y servicios en línea. Estos tokens son utilizados para demostrar que el titular del token tiene permisos para acceder a un recurso específico o realizar una acción determinada.
+Bearer: tipo de token utilizado para identificar y autenticar a un usuario o entidad, indica cómo se debe utilizar el token
+callbackurl: es una ruta que se abrira al finalizar una autenticacion
+hash: es una representación irreversible de los datos originales, una clave transformada 
+    cada contraseña tiene un hash personal diferente, x mas que la clave sea igual a otra
+    para verificar si una clave coincide con la clave encriptada se convierte esta primera en hash y se compara con el hash almacenado
+salting: es un metodo de hash que añade una cadena al final de la clave para que el hash sea diferentee a todos los demas
+salt: es la cadena que se le añade al final a la clave para realizar el salting
+Cost Factor: son la cantidad de veces que se encripta la clave, cuantas mas veces mas seguro es
+rate limiting: se trata de limitar la cantidad de solicitudes que un cliente puede hacer a tu servidor durante un período de tiempo específico
+pool de conexiones:  una técnica que ayuda a mantener conexiones a la base de datos abiertas y disponibles para su reutilización
+    es como una variable que contiene la conexion evitando asi abrirla y cerrarla a cada rato
+
+---------------------------------------------------------------------------------------------
+8_TEMPLATES ENGINES
+---------------------------------------------------------------------------------------------
+¿Que es?: se trata de herramientas de software diseñadas para facilitarnos el manejo de 
+datos dinamicos en el html    
+ejemplos de template enginees en Node:
+    Nunjucks
+    Jade
+    Vash
+    EJS
+    Handlebars
+    HAML
+Caracteristicas:
+    Separación de Lógica y Presentación: Los motores de plantillas permiten separar la lógica del negocio (como la manipulación de datos en el lado del servidor) de la presentación (cómo se muestra la información al usuario). Esto mejora la legibilidad del código y facilita el mantenimiento.
+    Incorporación de Variables: Permite la incorporación de variables dentro de las plantillas. Estas variables se llenan con datos dinámicamente antes de que se envíe la página al navegador del usuario.
+    Estructuras de Control: Proporciona estructuras de control de flujo, como bucles y condicionales, para facilitar la iteración sobre conjuntos de datos y la toma de decisiones basada en condiciones.
+    Reutilización de Código: Facilita la reutilización de fragmentos de código HTML al dividir la interfaz de usuario en componentes o bloques reutilizables. Esto puede incluir encabezados, pies de página, barras laterales, etc.
+    Facilita la Generación Dinámica de Páginas: Permite la generación dinámica de contenido HTML en función de los datos proporcionados por la lógica del servidor. Esto es esencial en aplicaciones web dinámicas.
+
+---------------------------------------------------------------------------------------------
+9_BASES DE DATOS
+---------------------------------------------------------------------------------------------
+¿Que son?: es una estructura organizada de datos almacenada en un sistema informatico
+tabla: es un conjunto de datos dentro de una base ed datos
+    se suele dividir la base en varias tablas clasificatorias
+documentos: son como las tablas pero para bases de datos no relacionales
+relacion: es cuando dos tablas tienen una relacion entrer si y se busca unirlas
+    ejemplo: 
+        tenemos la tabla productos con el id, producto y idVendedor
+        tenemos la tabla vendedores con el id y el vendedor 
+        la relacion se ejecuta creando una tabla en comun al momento de obtener los datos
+        donde tendria el id, producto, y la tercera columna es el vendedor donde el idVendedor coincida con
+        el id de la tabla vendedores
+        ejemplo:
+            Tabla productos:    
+                id:1
+                producto: lapiz
+                idVendedor: 1
+                
+                id:2
+                producto: mochila
+                idVendedor: 2
+                
+                id:3
+                producto: hojas
+                idVendedor: 3
+                
+                id:4
+                producto: lapicera
+                idVendedor: 1
+                
+                id:5
+                producto: cuaderno
+                idVendedor: 3
+
+            Tabla vendedores:
+                
+                id:1
+                vendedor: Juan
+                
+                id:2
+                vendedor: Pablo
+                
+                id:3
+                vendedor: Luna
+
+            al momento de obtener los datos:
+                id  |  producto  |  vendedor
+                1   |  lapiz     |  Juan
+                2   |  mochila   |  Pablo
+                3   |  hojas     |  Luna
+                4   |  lapicera  |  Juan
+                4   |  cuaderno  |  Luna
+clave foranea: es la columna de una tabla que se utilizara para conectarse a otra tabla
+    en el ejemplo seria idVendedor
+clave primaria: es la columna con los ID 
+Base de datos relacional: son un tipo de base de datos 
+    son estructuradas: no pueden cambiar su esquema / forma
+    se suelen conectar las tablas entrer claves foraneas y  primarias
+    las consultas suelen involucrar joins (consultas a varias tablas a la vez uniendo los datos en una)
+Base de datos no relacional:
+    su estructura es mas flexible, puede ser modificada
+    no suelen tener claves foraneas
+    sus consultas no implican joins
+    se dividen en documentos en vez de tablas
+Relacionales VS No Relacionales:
+    Relacionales:
+        Utilizan tablas estructuradas con un esquema fijo.
+        Se definen relaciones entre tablas mediante claves foráneas.
+        Estructura rígida; todas las filas deben seguir el mismo formato.
+        Buena opción para consultas complejas que involucran varias tablas mediante operaciones JOIN.
+        Ejemplos: 
+            MySQL
+            PostgreSQL
+            Oracle
+        Ventajas:
+            Buenas para aplicaciones donde la integridad de datos y las relaciones son críticas.
+            Soporte para transacciones ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).
+        Desventajas:
+            Rigidez en la estructura de datos.
+            Escalabilidad vertical limitada
+        utilizar cuando Necesitas mantener integridad de datos y relaciones claras
+   
+    No Relacionales:
+        Utilizan estructuras más flexibles como documentos (JSON-like) o pares clave-valor. No requieren un esquema fijo.
+        Las relaciones suelen ser manejadas de manera menos estricta.
+        Estructura flexible; cada documento puede tener campos distintos
+        Suelen ser más eficientes para consultas específicas sobre documentos individuales.
+        Ejemplos:
+            MongoDB
+            Cassandra
+            CouchDB
+        utilizar cuando 
+            Necesitas flexibilidad en la estructura de datos
+            Esperas un alto volumen de lectura/escritura
+            La escalabilidad horizontal es crucial
+        Ventajas:
+            Mayor flexibilidad en la estructura de datos.
+            Escalabilidad horizontal eficiente.
+            Rendimiento optimizado para consultas específicas
+        Desventajas:
+            Menos soporte para transacciones ACID
+            Menos apropiadas para consultas complejas que involucren múltiples tablas
+
+---------------------------------------------------------------------------------------------
+10_TESTING
+---------------------------------------------------------------------------------------------
+¿Que es?: se trata de comprobar que nuestrro programa funcione como esperamos que lo haga
+pruebas unitarias: Las pruebas unitarias son pruebas a nivel de componentes individuales o módulos de código. Se centran en verificar que cada parte del software funcione correctamente de manera aislada.
+    Ventajas:
+        Identificación temprana de errores: Pueden detectar y corregir problemas en una etapa temprana del desarrollo.
+        Facilita el mantenimiento: Las pruebas unitarias facilitan la identificación y corrección de problemas en componentes específicos, lo que simplifica el mantenimiento del código.
+        Facilita la documentación: Al escribir pruebas unitarias, se proporciona documentación sobre cómo se supone que debe funcionar cada componente
+    Desventajas:
+        No garantiza la integración perfecta: Aunque una unidad funcione correctamente, no hay garantía de que todas las unidades funcionen correctamente juntas en un sistema completo.
+        Puede consumir tiempo: El desarrollo de pruebas unitarias puede llevar tiempo, especialmente en proyectos grandes.
+
+pruebas de integracion: Las pruebas de integración verifican que los diferentes componentes o módulos de un sistema funcionen correctamente cuando se integran.
+    Ventajas:
+        Garantiza la interoperabilidad: Asegura que las partes individuales del sistema funcionen correctamente cuando se combinan.
+        Detecta problemas de interfaz: Identifica problemas que pueden surgir debido a la interacción entre componentes.
+        Proporciona una visión más completa: Ofrece una perspectiva más completa del rendimiento del sistema que las pruebas unitarias.
+    Desventajas:    
+        Complejidad: Las pruebas de integración pueden ser más complejas de diseñar y ejecutar, especialmente en sistemas grandes y complejos.
+        Identificación tardía de errores: Algunos problemas pueden no ser evidentes hasta que se realicen pruebas de integración, lo que podría ocurrir más tarde en el ciclo de desarrollo. 
+
+---------------------------------------------------------------------------------------------
+11_LOGGING
+---------------------------------------------------------------------------------------------
+¿Que es?: se trata de una practica que implica recopilar y almacenar información relevante sobre el comportamiento de una aplicación. Esto puede incluir mensajes de error, advertencias, información sobre el estado de la aplicación y mensajes de depuración
+Propositos:
+    Registro de Errores: Almacenar mensajes detallados sobre errores críticos que ocurren durante la ejecución de la aplicación. Estos registros son esenciales para la resolución de problemas y el mantenimiento.
+    Advertencias: Registrar situaciones que no son errores críticos pero que podrían requerir atención, como condiciones inesperadas o eventos inusuales.
+    Información: Registrar mensajes informativos que brindan una visión general del estado y el rendimiento de la aplicación.
+    Depuración: Registrar mensajes específicos para ayudar en la depuración y el desarrollo. Estos registros son útiles para comprender el flujo de ejecución y para identificar posibles problemas durante el desarrollo.
+
+---------------------------------------------------------------------------------------------
+12_NODE THREADS
+---------------------------------------------------------------------------------------------
+¿Que es?: es una caracteristica de node que permite ejecutar tareas intensivas para el cpu por separado de la app principal
+    Están destinados a ejecutar código en paralelo en entornos de Node.js.
+    Permiten realizar operaciones intensivas en CPU sin bloquear el hilo principal de Node.js.
+    Cada worker tiene su propio contexto de ejecución de JavaScript y no comparte directamente la memoria con el hilo principal. La comunicación entre hilos se realiza mediante mensajes.
+¿Por que usarlo?: hay casos en los que una tarea es muy pesada para el cpu y hasta que no acaba detiene las peticiones del server dejando la pagina inutilizable
+¿No seria mejor usar promesas?: no, las promesas y async await son para las tareas que tardan en ejecutarse, pero no para las que le toma trabajo al cpu, el cpu se mantiene ocupado con el proceso blockeando todo
+
+---------------------------------------------------------------------------------------------
+13_PASARELAS DE PAGOS
+---------------------------------------------------------------------------------------------
+CORS: se trata de decirle al server que rutas tienen permitido realizar peticiones
+Order: productos porl os que se cobran (es como la cuenta)
+Capture order: cuando un usuario acepta el pago
+
+---------------------------------------------------------------------------------------------
+14_WEB SOCKETS
+---------------------------------------------------------------------------------------------
+HTTP: es un protocolo de envio de datos donde un cliente solicita informacion a un servidor y este le responde con data
+Polling: es una tecnica que consiste en solicitar data constante mente cada un periodo de tiempo especifico para obtener siempre las actualizaciones de tal data 
+    el problema es que siempre hay un retraso de la data, esta depende cada cuanto tiempo pedimos la informacion y en que punto de ese periodo esta se actualizo 
+    si yo pido la informacion cada 5 minutos pero la info. se actualizo a los 3 minutos entonces tuve 2 minutos de retraso 
+    tambien influye mucho la latencia, ping, etc 
+Web Socket: es un protocolo de envio de datos donde un cliente solicita informacion a un servidor y este le responde con data 
+    una vez que se realizo la primera peticion al server este puede enviar data de manera libre, sin necesidad de peticiones previas 
+    puede enviar data de manera espontanea 
+IO: es el servidor en el cual se esta utilizando Web Sockets
+Socket: es conexion establecida entre un cliente especifico y el servidor 
+    cada cliente tiene su socket al conectar
+
+COMPLETAR:
+    TEMPLATE ENGINEES --> VER OTROS A PARTE DE EJS
+    TESTING --> VER LIBRERIAS COMO JEST
+    NODE THREADS 
+        .
+        .
+        .
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+MODULOS 
+0_Process --> trabajar con el proceso de node
+1_Assertion --> verificar si ciertas condiciones son verdaderas o falsas y genera Assertion Errors si las condiciones no se cumplen
+2_Event --> manejar los eventos
+3_FS --> trabajar con archivos 
+4_Path --> manejar el enrutamiento de archiivos
+5_Glob --> buscar archivos con ciertas caracteristicas
+6_Globby --> buscar archivos con ciertas caracteristicas con una api mas moderna que glob
+7_FS-Extra --> agrega funcionalidades extra al modulo file system
+8_Chockidar --> monitorear archivos
+9_Yargs --> crear apps de lineas de comando (cli)
+10_Dotenv --> manejar las variables de entorno
+11_Commander --> crear CLIs
+12_Chalk --> permite añadir estilos a los textos en consola
+13_Figlet --> permite crear arte ASCII a partir de texto
+14_CLI-Progress --> crear barras de progreso en la consola
+15_Readline --> permite leer datos desde una secuencia de entrada línea por línea
+16_Prompt --> proporciona una interfaz de usuario más amigable y de nivel superior construida sobre el módulo readline
+17_Inquirer --> crear interfaces interactivas en la línea de comandos (CLI)
+18_HTTP --> crear servidores web y manejar peticiones HTTP
+19_Express --> crear servidores web y manejar solicitudes
+20_nodemon --> reinicia el servidor en cada cambio automaticamente
+21_Axios --> realizar peticiones http desde el server
+22_Unfetch --> realizar peticiones fetch optimizadas
+23_Got --> alternativa a axios y fetch
+24_JWT --> codificar información en un objeto JSON y firmarlo digitalmente
+25_Passport --> autenticacion de usuarios
+26_Bcrypt --> encriptar claves
+27_Jest --> realizar testings
+28_Mocha -->
+29_Cypress -->
+30_Child process
+31_
+32_
+33_CORS --> definir que dominios tiene permiso para conectarse
+
+express-rate-limit
+mysql2
+jwt
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+MIDDLEWARES
+1_Morgan --> registrar información sobre las solicitudes HTTP entrantes en tu aplicación
+2_
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+APIs
+1_Paypal --> pasarela de pagos de paypal
+2_Mercadopago --> pasarela de pagos de MP

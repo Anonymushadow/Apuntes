@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------------------------
+13_FIGLET
+---------------------------------------------------------------------------------------------
+¿Que es?: es un módulo de terceros que se utiliza para crear arte ascii
+instalar: npm install figlet
+utilizar: const figlet = require('figlet');
+palabras reservadas:
+    figlet() --> genera arte a partir de texto
+    figlet.textSync() --> genera arte a partir de texto pero de forma sincrona
+    figlet.fonts() --> permite obtener una lista de las fuentes disponibles que puedes usar con Figlet
+    figlet.defaults() --> permite establecer valores predeterminados para opciones de Figlet
+    figlet.metadata() --> proporciona información sobre la versión y los metadatos de la biblioteca Figlet
+    .version() --> ver la version de figlet
+    figlet.parseFont() --> utilizar fuentes personalizadas
+    figlet.preloadFonts()--> precargar todas las fuentes incorporadas y personalizadas en Figlet

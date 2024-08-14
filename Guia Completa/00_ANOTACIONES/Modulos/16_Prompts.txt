@@ -1,0 +1,19 @@
+---------------------------------------------------------------------------------------------
+17_PROMPTS
+---------------------------------------------------------------------------------------------
+¿Que es?: es una librería de terceros que proporciona una interfaz de usuario más amigable y de nivel superior construida sobre el módulo readline
+instalar: npm install --save prompts
+usar: const prompts = require('prompts');
+palabras reservadas:
+    prompts() --> crear una entrada de datos
+    type: --> tipo de dato que aceptara
+    name: --> nombre de la variable donde se almacenara la respuesta
+    message: --> texto que mostrara antes de recibir el input
+    initial: --> valor por defecto
+    
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------------------
+00_PROCESS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in que permite trabajar con el proceso de node
+palabras reservadas:
+    process.cwd() --> devuelve la ruta actual de trabajo
+    process.exit() --> finalizar un proceso (se le puede otorgar un numero como codigo de respuesta)
+    process.kill() --> enviar una señal a otro proceso identificado por su ID de proceso (PID), controlar procesos secundarios o en segundo plano desde tu aplicación Node.js
+                SIGTERM  --> terminar
+                SIGKILL  --> forzar la terminazion
+    process.on() --> sirve para capturar excepciones no capturadas
+    process.abort() --> forzar la finalizacion del proceso
+    process.argv --> acceder a los argumentos enviados mediante la linea de comandos al ejecutar node
+    Process.stdout -->  es un objeto que representa la corriente estándar de salida del proceso actual
+    Process.stdout.write() --> escribir por consola
+    data --> al recibir datos (input)
+    error --> al detectar un error
+    drain --> gestionar eventos de drenaje (cuando la escritura está lista para continuar)
+    process.stdin --> es un objeto que representa la corriente estándar de entrada del proceso actual
+    process.stdin.pause() --> pausar la lectura de stdin
+    process.stdin.resume() --> renaudar la lectura de stdin
+    process.stdin.end() --> acabar el cli
+    process.stdin.setDefaultEncoding() --> especificar la codificacion por defecto
+    Process.stdin.on() --> al detectar un evento
+    process.stdin.once() --> al detectar un evento va a ejecutar algo una unica vez
+    process.stdin.removeListener() --> eliminar el evento
+    process.stdin.pipe() --> para redirigir (enviar) los datos desde una corriente (stream) de lectura hacia una corriente de escritura
+    process.stdout.fd --> proporciona el descriptor de archivo
+    process.stderr --> es un objeto en Node.js que representa la corriente estándar de error (se usa como stdout)
+    process.throwDeprecation --> es una opción de configuración de Node.js que controla si se deben generar excepciones (errores) cuando se utilizan características o funciones consideradas obsoletas o en desuso en Node.js.
+    
+
+
+

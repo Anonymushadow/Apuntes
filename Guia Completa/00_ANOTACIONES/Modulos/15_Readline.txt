@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------
+14_CLI-PROGRESS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in que permite leer datos desde una secuencia de entrada línea por línea
+utilizar: const readline = require("readline");
+palabras reservadas:
+    createInterface() --> crea una interfaz de entrada y salida
+    input: indica mediante que interfaz se tomaran los datos
+    output: indica mediante que interfaz se enviaran los datos
+    question() --> mostrar un mensaje al usuario y esperar a que el usuario introduzca una respuesta
+    rl.close() --> cerrar la interfaz
+    rl.on() --> detectar eventos
+    line --> cuando el usuario presiona la tecla "Enter" después de ingresar una línea de texto
+    close --> detectar cuando se ceirra el readline con .close()
+    SIGINT --> cuando el usuario presiona Ctrl+C para interrumpir la aplicación
+    

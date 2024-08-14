@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------
+3_FILE SYSTEM 
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in utilizado para trabajar con archivos 
+utilizarlo:
+    const fs = require("fs") --> lo usamos normal
+    const fs = require("fs").promises --> lo importamos como una promesa  
+palabras reservadas:
+    fs.readFile() --> leer un archivo
+    fs.writeFile() --> sobreescribir un archivo
+    fs.appendFile() --> añadir al final sin sobreescribir
+    fs.unlink() --> eliminar archivo
+    fs.rename() --> renombrar archivo
+    fs.exists( ) --> verifica la existencia de un archivo
+    fs.mkdir() --> crea un directorio
+    fs.readdir() --> obtener una lista de archivos en un directorio específico

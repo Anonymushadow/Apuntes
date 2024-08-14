@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------------------------
+29_SOCKET.IO
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para realizar intercambio de informacion de manera constante con el servidor
+    muy usado en chats online y en notificaciones en tiempo real 
+instalar: npm install socket.io
+utilizar: 
+    const { Server } = require("socket.io");
+    const { createServer } = require("http");
+palabras reservadas:
+    SocketIO() --> configurar servidor para usar Socket.IO
+    io() --> iniciar uan conexcion desde el cliente 
+    io.on() --> al detectar un evento io hacer... 
+    io.on("connection", ()=> {}) --> al detectar una conexion...
+    socket.on("disconnect", ()=> {}) --> al detectar una desconexion...
+    socket.emit() --> emitir un evento
+    io.sockets.emit() --> enviar a todos los sockets
+    socket.broadcast.emit() --> enviar a todos los sockets menos al que ejecuto el evento 
+    io.to(socketId).emit() --> enviar un evento a un socket con un id especifico 
+    

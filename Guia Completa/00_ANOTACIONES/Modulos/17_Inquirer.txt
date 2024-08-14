@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------
+18_INQUIRER
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros que se utiliza para crear interfaces interactivas en la línea de comandos (CLI) y para realizar preguntas al usuario de manera estructurada
+instalar: npm install inquirer
+utilizar: const inquirer = require('inquirer');
+palabras reservadas:
+    inquirer.prompt() --> muestra un texto en pantalla y espera que el usuario responda para almacenar esa repsuesta en una variable
+    type: --> tipo de prompt
+    name: --> variable donde se almacenara la respuesta
+    message: --> mensaje a mostrar antes del input
+    inquirer.registerPrompt() --> registrar un nuevo tipo de prompt personalizado en Inquirer.js
+    inquirer.createPromptModule() --> crear un módulo personalizado
+    prompt.ui.process.subscribe() --> 
+    prompt.ui.rl.output.write() --> 
+

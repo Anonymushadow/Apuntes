@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------------------
+14_CLI-PROGRESS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros que permite crear barras de progreso (progress bars) personalizadas y detalladas para mostrar el avance de tareas en la línea de comandos
+instalar: npm install cli-progress --save
+utilizar: const cliProgress = require('cli-progress');
+palabras reservadas: 
+    new cliProgress.SingleBar() --> crear una barra de progreso
+    .start() --> inicia la barra de progreso con un valor total y un valor inicial
+    .update() --> actualizar la barra
+    .increment() --> incrementar el progreso de la barra
+    .stop() --> detener la barra de progreso
+    .setTotal() --> cambiar el total de la barra sin detenerla
+    .reset() --> resetear el progreso de la barra
+    .getPayload() --> obtener un objeto que contiene las tareas que se estan realizando
+    new cliProgress.MultiBar() --> crear varias barras
+    .create() --> añadir una barra
+    format: --> define el formato del mensaje de la barra de progreso que se mostrará en la consola
+    { bar } --> representar visualmente la barra de progreso
+    { percentage } --> muestra el porcentaje completado
+    { eta } --> muestra el tiempo estimado restante
+    { value } --> muestra el valor actual cargado
+    { total } --> muestra el porcentaje restante
+    barCompleteChar --> define el carácter que se utilizará para representar las partes completas de la barra de progreso
+    barIncompleteChar: --> define el carácter que se utilizará para representar las partes incompletas de la barra de progreso
+    hideCursor: --> ¿ocultar el cursor en la consola mientras se muestra la barra de progreso?
+    clearOnComplete: --> ¿borrar la barra de progreso una vez que se haya completado?
+    stopOnComplete: --> ¿detener la barra de progreso al llegar a 100%?
+    barsize: --> define la longitud total de la barra de progreso
+    fps: --> establece la velocidad de actualización de la barra de progreso
+    
+
+
+
+

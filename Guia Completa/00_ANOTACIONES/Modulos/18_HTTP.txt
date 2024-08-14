@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------------------
+18_HTTP
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo built-in utilizado para crear servidores web y manejar peticiones HTTP
+utilizar: const http = require("http");
+palabras reservadas:
+    http.createServer() --> crear un servidor
+    req.url --> obtener la url de la peticion
+    req.headers --> obtener el header de la peticion
+    res.writeHead() --> configura todos los encabezados en una sola llamada y puede sobrescribir encabezados previamente establecidos
+    Content-Type: --> tipo de datos que se envian
+    Content-Length --> indica la longitud en bytes del contenido que se envía en la respuesta
+    Location --> indicar al cliente la ubicación a la que debe redirigirse.
+    Cache-Control --> permite especificar si el contenido debe almacenarse en caché y durante cuánto tiempo.
+    Access-Control-Allow-Origin --> permitir que recursos de origen cruzado se carguen en una página web desde un dominio diferente.
+    res.write() --> enviar una respuesta pero sin acabarla
+    res.end() --> enviar una respuesta y finalizar la respuesta
+    req.method --> obtener el metodo de la peticion (get, post, put, delete, etc)
+    server.listen() --> iniciar la app en un puerto
+    server.close() --> cerrar el servidor
+    res.setHeader() --> configura un encabezado específico y permite configurar múltiples encabezados de forma individual sin afectar a otros encabezados.
+    req.on() --> escuchar eventos
+    request --> cuando se recibe una solicitud HTTP
+    listening --> cuando el servidor comienza a escuchar en el puerto especificado
+    close --> cuando el servidor se cierra utilizando el método .close()
+    data --> cuando se reciben datos en una solicitud
+    end --> cuando se completa la recepción de datos en una solicitud
+    req.pipe() --> redirigir la peticion como respuesta de algo
+    res.statusCode --> definir el estado de respuesta   
+    http.request() --> hacer una solicitud HTTP a través de Node.js
+    

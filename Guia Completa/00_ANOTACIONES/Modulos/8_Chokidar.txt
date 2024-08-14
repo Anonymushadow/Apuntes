@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------------------------
+8_CHOKIDAR
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros para monitorear archivos y en caso de suceder un evento con estos reaccionar
+instalarlo: npm install chokidar
+utilizarlo: const chokidar = require('chokidar');
+palabras reservadas:
+    chokidar.watch() --> vigilar una ruta o archivo
+    watcher.on() --> al oir un evento ejecutar una accion
+    add --> al ser añadido un archivo o ruta
+    change --> cuando un archivo existente en el directorio observado es modificado
+    unlink --> un archivo o directorio es eliminado en el directorio observado
+    addDir --> cuando se agrega un nuevo directorio en el directorio observado
+    unlinkDir --> cuando se elimina un directorio en el directorio observado
+    ready --> se activa una vez que Chokidar ha completado su inicialización y está listo para comenzar a observar archivos
+    error --> cuando se produce un error durante la observación de archivos
+    all --> cuando se ejecuta cualquier evento
+    watcher.unwatch() --> dejar de observar el archivo
+    watcher.close() --> cerrar el observador de rutas
+    watcher.getWatched() --> ver que archivos esta observando el watcher
+    watcher.add() --> añadir nuevas rutas a observar a un watcher ya creado
+    ignoreInitial: --> ¿ignorar apenas carga el programa?

@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------------------------
+21_AXIOS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para enviar peticiones desde el server
+instalar: npm install axios
+utilizar: const axios = require("axios");
+palabras reservadas:
+    axios.get() --> ejecutar peiticion get
+    axios.post() --> ejecutar peiticion post
+    axios.put() --> ejecutar peiticion put
+    axios.delete() --> ejecutar peiticion delete
+    axios() --> ejecutar peticion con detalles
+    axios.interceptors.request --> ejecutar antes de enviar la solicitud
+    config --> es un objeto que representa la configuración de la solicitud antes de que se envíe al servidor
+    url: --> La URL de la solicitud.
+    method: --> El método HTTP de la solicitud (por ejemplo, "GET", "POST", "PUT", "DELETE", etc.).
+    headers: --> Un objeto que contiene los encabezados de la solicitud. Puedes agregar o modificar encabezados en este objeto.
+    params: --> Parámetros de consulta (query parameters) que se adjuntarán a la URL en las solicitudes GET.
+    data: --> Los datos que se enviarán en el cuerpo de la solicitud en solicitudes POST, PUT y PATCH.
+    auth: --> Información de autenticación (como nombre de usuario y contraseña) que puede utilizarse en la solicitud.
+    timeout: --> El tiempo máximo que esperará Axios para recibir una respuesta antes de considerar que la solicitud ha fallado.
+    axios.interceptors.response --> ejecutar despues de recibir la respuesta

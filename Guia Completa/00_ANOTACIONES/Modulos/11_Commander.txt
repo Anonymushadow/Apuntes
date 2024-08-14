@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------------------------
+11_COMMANDER
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros que facilita el uso de la terminal para crear CLIs
+instalar: npm install commander
+usar: const { program } = require('commander');
+palabras reservadas:
+    program.version() --> definir una version
+    program.description() --> definir una descripcion
+    program.command() --> añadir un comando
+    program.action() --> definir la acción que se ejecutará cuando se llame a un comando específico
+    program.option() --> definir configuraciones del comando 
+        .option('<forma corta>, <forma larga> <argumento>', 'Descripción de la opción')
+        forma corta: abreviacion del comando
+        forma larga: comando completo
+        argumento: datos que se ingresaran
+    program.arguments() --> añadir opcion de argumentos
+    program.parse() --> analiza los argumentos (sin esta linea no se detectan los argumentos)
+    program.requiredOption() --> especificar una opcion obligatoria
+    program.parseAsync() --> analizar los argumentos de manera asincrona

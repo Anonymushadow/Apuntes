@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------
+1_ASSERTION
+---------------------------------------------------------------------------------------------
+descripcion: este modulo permite verificar si ciertas condiciones son verdaderas o falsas y genera Assertion Errors si las condiciones no se cumplen
+utilizarlo: const assert = require('assert');
+palabras reservadas:
+    assert.strictEqual() --> verifica si dos valores son estrictamente iguales
+    assert.notStrictEqual() --> verifica si dos valores son desiguales
+    assert.deepEqual() --> verifica si dos objetos tienen las mismas propiedades y valores (osea a nivel estructural)
+    assert.notDeepStrictEqual() --> verifica si dons objetos son estructuralmente desiguales 
+    assert.ok() --> verifica si un valor es true
+    assert.fail() --> lanzar un exception error

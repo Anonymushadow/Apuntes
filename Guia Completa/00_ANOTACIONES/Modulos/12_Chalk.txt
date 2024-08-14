@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------------------
+13_CHALK
+---------------------------------------------------------------------------------------------
+¿Que es?: es un módulo de terceros que se utiliza para dar formato y colorear el texto en la consola
+instalar: npm install chalk
+utilizar: import chalk from 'chalk';
+palabras reservadas:
+    chalk.red() --> añadir texto color rojo
+    chalk.black() --> añadir texto color negro
+    chalk.green() --> añadir texto color verde
+    chalk.yellow() --> añadir texto color amarillo
+    chalk.blue() --> añadir texto color azul
+    chalk.magenta() --> añadir texto color magenta
+    chalk.cyan() --> añadir texto color cyan
+    chalk.white() --> añadir texto color blanco
+    chalk.redBright() --> añadir texto color rojo brillante
+    chalk.greenBright() --> añadir texto color verde brillante
+    chalk.yellowBright() --> añadir texto color amarillo brillante
+    chalk.blueBright() --> añadir texto color azul brillante
+    chalk.magentaBright() --> añadir texto color magenta brillante
+    chalk.cyanBright() --> añadir texto color cyan brillante
+    chalk.whiteBright() --> añadir texto color blanco brillante
+    chalk.bgBlack() --> añadir un fondo color negro
+    chalk.bgRed() --> añadir un fondo color rojo
+    chalk.bgGreen() --> añadir un fondo color verde
+    chalk.bgYellow() --> añadir un fondo color amarillo
+    chalk.bgBlue() --> añadir un fondo color azul
+    chalk.bgMagenta() --> añadir un fondo color magenta
+    chalk.bgCyan() --> añadir texun fondoto color cyan
+    chalk.bgWhite() --> añadir un fondo color blanco
+    chalk.bgRedBright() --> añadir un fondo color rojo brillante
+    chalk.bgGreenBright() --> añadir un fondo color verde brillante
+    chalk.bgYellowBright() --> añadir texun fondoto color amarillo brillante
+    chalk.bgBlueBright() --> añadir un fondo color azul brillante
+    chalk.bgMagentaBright() --> añadir un fondo color magenta brilante 
+    chalk.bgCyanBright() --> añadir un fondo color cyan brillante
+    chalk.bgWhiteBright() --> añadir un fondo color blanco brillante
+    chalk.italic() --> añadir texto en italica
+    chalk.bold() --> añadir texto en nengrita
+    chalk.hex() --> añadir colores en hexadecimal
+    chelk.rgb() --> añadir colores en rgb
+    chalk.underline() --> añadir subrayado
+    chalk.strikethrough() --> añadir texto tachado
+    chalk.dim() --> añadir texto tenue (mas palido)

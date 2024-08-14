@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------------------------
+22_UNFETCH
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros que optimiza las peticiones fetch
+instalar: npm install unfetch
+utilizar: 
+    import unfetch from 'unfetch';
+    const unfetch = require("unfetch);
+palabras reservadas:
+    unfetch() --> realizar una peticion fetch
+    method: --> tipo de peticion
+    headers: --> cabecera de la peticion
+    body: -> cuerpo de la peticion
+    

@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------------------
+19_EXPRESS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros que se utiliza para simplificar el desarrollo de aplicaciones web y APIs
+instalar: npm install express
+utilizar: const express = require("express");
+palabras reservadas:
+    express() --> Crea una instancia de la aplicación Express
+    app.get() --> Maneja solicitudes HTTP GET en una ruta específica
+    app.post() --> Maneja solicitudes HTTP POST en una ruta específica
+    app.put() --> Maneja solicitudes HTTP PUT en una ruta específica
+    app.delete() --> Maneja solicitudes HTTP DELETE en una ruta específica
+    res.send() --> enviar una respuesta (y envia los encabezados de manera automatica)
+    res.status() --> indicar el statusCode  
+    * --> todas las rutas no definidas 
+    app.listen() --> iniciar el servidor en un puerto especifico
+    app.patch() --> Maneja solicitudes HTTP PATCH en una ruta específica
+    app.use() --> añadir un middleware
+    res.sendFile() --> responder con un archivo
+    root: --> ¿desde donde comienza a buscar el archivo?
+    res.json() --> responde con un json
+    res.sendStatus() --> responder con un codigo de estado
+    req.body --> ver el contenido que envio el cliente
+    express.text() --> configutar express para que acepte textos como cuerpos de la peticion
+    express.json() --> configutar express para que acepte objetos json como cuerpos de la peticion
+    express.urlencoded() --> configutar express para que acepte formularios como cuerpos de la peticion
+    extended: --> ¿permitir el análisis de datos más complejos como matrices y objetos anidados?
+    : --> parametro de la url
+    req.params --> obtener los parametros de la url (parametro obligatorio)
+    res.query --> accede al parametro query (parametro opcional)
+    app.all() --> para cualquier tipo de peticion
+    next() --> indica que debe avanzar al siguiente middleware y no acabar la respuesta con un send
+    res.redirect() --> redirecciona a otra pagina
+    app.set() --> configurar y establecer diversas opciones de configuración en la aplicación Express
+    case sensitive routing --> ¿las rutas deben respetar mayusculas y minusculas?
+    views --> indica que utilizaremos un motor de plantillas
+    view engine --> especifica que motor de plantillas utilizaremos
+    app.Router() --> crea un router
+    express.static() --> indicamos donde estan los archivos estaticos (html y css)
+    session() --> configuración de Express.js para el manejo de sesiones utilizando el middleware express-session
+    secret: --> cadena de texto que se utiliza para firmar la cookie de sesión.
+    resave: --> valor booleano que determina si se debe volver a guardar la sesión en el almacén de sesiones incluso si no ha habido cambios en la sesión durante la solicitud
+    saveUninitialized: --> ¿la sesión se guardará para las solicitudes en las que la sesión no haya sido modificada?
+    
+    
+    
+
+    
