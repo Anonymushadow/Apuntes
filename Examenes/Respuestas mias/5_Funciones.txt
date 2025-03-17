@@ -1,0 +1,134 @@
+1
+    a) 
+        void multiplicar(int num1, int num2){
+            int resultado = num1 * num2;
+            printf("El resultado de la multiplicacion es: %d", resultado);
+            return;
+        }
+
+        int main(){
+            multiplicar(4, 5);
+            return 0;
+        }
+    b) 
+        mostrarNumero(int numero) {
+            printf("El numero es %d", numero);
+            return;
+        }
+
+        int main(){
+            mostrarNumero(7);
+            return 0;
+        }
+
+2
+    a y b) (no me di cuenta y ya lo hice asi de una)
+        float dividir(int numero, int divisor) {
+            if(divisor == 0){
+                printf("No podemos manejar divisiones por 0");
+                return 0;
+            }
+
+            float resultado = numero / divisor;
+            return resultado;
+        }
+
+        int main() {
+            float dividido = dividir(10, 5);
+            printf("La division dio %.2f", dividido);
+            return 0;
+        }
+
+3
+    a) 
+        int contador = 0;
+
+        void incrementarContador() {
+            contador++:
+            return;
+        }    
+
+        int main() {
+            incrementarContador();
+            incrementarContador();
+            incrementarContador();
+            incrementarContador();
+
+            printf("El valor de contador es: %d", contador);
+            return 0;
+        }
+    b) 
+        int contarLlamadas(){
+            static int llamadas = 0;
+            contador++;
+            return llamadas;
+        }
+
+        int main() {
+            int llamadas;
+            llamadas = contarLlamadas();
+            llamadas = contarLlamadas();
+            llamadas = contarLlamadas();
+
+            printf("Se realizaron %d llamadas", llamadas);
+            return 0;
+        }
+
+4) 
+        int clacularCuadrado(int numero);
+
+        int main() {
+            int cuadrado = calcularCuadrado(6);
+            printf("El cuadrado es %d", cuadrado);
+            return 0;
+        }
+
+        int calcularCuadrado(int numero){
+            int resultado = numero * numero;
+            return resultado;
+        }
+    
+5)
+    a)  // ok, la verdad ni idea de como usar aca una recursiva, si fuera por mi con un for lo hago y ya, pero recursividad? ni idea de para que lo querria aca 
+        contador = 1;
+        int factorial(unsigned int numero) {
+            static resultado = 0;
+            
+            if(contador != numero) {
+                resultado += contador;
+                contador++;
+
+                factorial(numero);
+            }
+
+            return resultado;
+        }
+
+        int main(){
+            int factor = factorial(5);
+            printf("El resultado es %d", factor);
+
+            return 0;
+        }
+    b) 
+        int pedirContraseña() {
+            int clave;
+            printf("Introduzca su contraseña: \n");
+            int status = scanf("%d", clave);
+
+            if(status != 1) {
+                printf("La contraseña es numerica");
+                return 0;
+            }
+
+            if(clave != 1234) {
+                pedirContraseña();
+            }else{
+                printf("Acceso concedido");
+            }
+        }
+    
+
+NOTA: 9/10
+Tu comprensión de las funciones y el uso de parámetros, retorno, ámbito y recursividad es sólida. La 
+mayoría de los errores fueron menores y principalmente relacionados con la sintaxis o detalles específicos

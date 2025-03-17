@@ -1,0 +1,94 @@
+1
+    a) un array es como una variable donde podes guardar varios datos de un mismo tipo, se declara asi int notas[10];, aca cree un array tipo int con espacio para 10 notas 
+    b) 
+        un array unidimensional es un array donde todos los datos estan en una fila como [1, 2, 3, 4]
+        un array multidireccional es donde hay arrays dentro de arrays como [[1, 2, 3], [4, 5, 6], [7, 8, 9]],  (basicamente un array de arrays)
+
+2 
+    a) si creas un array y especificas su tamaño pero no lo completas sera compeltado con 0 que equivalen a un null 
+    b) numeros[2]
+
+3
+    a) 
+        int numeros[5] = {1, 2, 3, 4, 5}
+        int result = 0;
+        for(i = 0; i < 5; i++) {
+            result += numeros[i];
+        }
+        printf("El resultado es %d", result);
+    b) 
+        int numeros[5] = {1, 2, 3, 4, 5}
+        numeros[3] = 10;
+
+4a) matriz[1][2] 
+
+5
+    a) 
+        un array de caracteres seria un array donde cada elemento es un caracter 
+        un string es como un array de caracteres pero al final contiene un caracter especial que es \0 y permite el manejo del array como una cadena de texto 
+    b) \0
+
+6
+    a) strlen()
+        char nombre = "Pablo";
+        int res = strlen(nombre);
+        printf("El nombre tiene %zu letras", res);
+    b) strcpy (string copy) copia el contenido de un string dentro de otra variable tipo char (osea char de array de caracteres, osea string)
+
+7 
+    a) strcmp se usa para saber que texto ya sea en variable o suelto viene primero alfabeticamente aunque mayormente se usa para verificar si dos textos son iguales 
+        char nombre = "Nahuel";
+        int res = strcmp(nombre, "Nahuel"); 
+        // si res es 0 entonces nombre es "Nahuel"
+        // si res es < 0 es porque viene antes en el alfabeto 
+        // si res es > 0 es porque "Nahuel" viene primero alfabeticamente 
+    b) devuelve 0 
+
+8
+    a) 
+        char cad1[20];
+        char cad2[20];
+        int res;
+        printf("Introduzca su texto \n");
+        scanf("%s", cad1);
+        printf("Introduzca su texto \n");
+        scanf("%s", cad2);
+
+        res = strcmp(cad1, cad2);
+        
+        if(res < 0) {
+            printf("El primer texto viene primero \n");
+        }else if(res > 0){
+            printf("El segundo texto viene primero \n");
+        }else{
+            printf("Ambos textos son iguales \n");
+        }
+        // Omiti las verificaciones de que sea correcto lo ingresado porque es mucho en sentido de escribir y todo
+    b)  
+        char cadDestino[] = "Hola ";
+        char cadConcat[] = "Mundo";
+
+        strcat(cadDestino, cadConcat);
+
+        printf("El texto concatenado es %s", cadDestino);
+
+9
+    a) saludo[0] = 'H';
+    b) nada porque cambiarias la r de carlos por una r, osea que quedaria igual 
+
+10 
+    a) debido a que si no se colapsa y los restos (la verdad no se pero me supongo) quedan en el buffer provocando una inevitable saturacion con el tiempo 
+    b) intentar acceder a caractres inexistentes, manejarlo como tipo de dato erroneo, olvidar el \0 provocando que pierda su propiedad, etc 
+
+11 
+    a) 
+        ventajas: podes manejar textos, recibir informacion mas detallada, especifica, mas faclidad, etc 
+        desventajas: podria ser que si no sabes manipularlos podes crear problemas, ademas hay mas riesgo de mal optimizacion del espacio por no saber cuantos caracteres va a tener 
+    b) 
+        char saludo[] = "Hola Mundo";
+        for(i = 0; i < strlen(saludo); i++) {
+            printf("%s \n", saludo[i]); // aca tengo duda de si va %s o %c
+        } 
+
+NOTA: 9.9/10
+hubo un pequeño error en el 11b con el formato de impresión, pero fuera de eso, todo estuvo perfecto

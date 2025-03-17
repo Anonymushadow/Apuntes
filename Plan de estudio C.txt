@@ -1,0 +1,365 @@
+----------------------------------------------------------------------------------------------------
+NIVEL 1: FUNDAMENTOS DE C
+----------------------------------------------------------------------------------------------------
+Historia y Contexto de C:
+    Origen del lenguaje C.
+    Aplicaciones y uso actual.
+Entorno de Desarrollo:
+    Instalación de un compilador (GCC, Clang).
+    Uso de un IDE o editor de texto.
+    Compilación de un programa desde la linea de comandos
+    Linea de comandos: es una interfaz de texto especifico para trabajar con el sistema operativo de una manera no grafica
+        basicamente es manejar el sistema evitando su interfaz grafica 
+    Terminal: es una aplicacion que ejecuta una ventana que utilizamos para ejecutar lineas de comandos 
+    CMD: es la interfaz de linea de comandos que se utiliza en windows (entre otras se usa CMD)
+    PowerShell: es una interfaz de linea de comandos mas avanzada que el CMD con comandos nuevos
+    Consola: es una forma generica de llamar a una interfaz de linea de comandos como CMD, Powershell, etc
+Concepto de Compilación (Introducción):
+    ¿Qué es un compilador?
+    Cómo se compila un programa en C.
+Primer programa en C: "Hello, World!":
+    Estructura de un programa en C.
+    Declaraciones e instrucciones.
+    Comentarios en C.
+Sintaxis Básica:
+    Estructura del código.
+    Importancia de la sintaxis correcta.
+IDE Vs Editor de texto:
+    Editor de texto: Es una herramienta para escribir y editar texto
+        Ofrecen opciones basicas como cambiar el color, subrayar, etc 
+        Algunos permite la administracion de archivos 
+    IDE: Es un tipo de editor de texto enfocado al desarrollo de software 
+        Tiene las funciones basicames de muchos editores de texto 
+        Contiene compiladores incluidos para evitar compilar a "mano"
+        Contiene herramientas o marcas que permiten detectar fallas en el codigo y arreglarlas
+        Facilita la organizacion de proyectos y recursos 
+        Suelen integrar softwares para amnejod e versiones como GIT 
+        Pueden incluir interfaces graficas 
+
+----------------------------------------------------------------------------------------------------
+NIVEL 2: TIPO DE DATOS Y VARIABLES
+----------------------------------------------------------------------------------------------------
+Tipos de Datos Básicos:
+    int, float, double, char.
+    Tipos modificadores: signed, unsigned, short, long.
+    Tamaño y rango de tipos de datos (sizeof y límites de valores).
+Variables y Constantes:
+    Declaración e inicialización de variables.
+    Constantes: #define y const.
+    Variables globales vs. variables locales.
+    Convenciones de nombres de variables.
+Operadores:
+    Aritméticos, relacionales, lógicos.
+    Operadores de asignación.
+    Operadores de incremento y decremento (++, --).
+    Operador ternario ? :
+    Precedencia de operadores.
+    Operador bitwise
+
+----------------------------------------------------------------------------------------------------
+NIVEL 3: ENTRADA/SALIDA BASICA
+----------------------------------------------------------------------------------------------------
+Introducción a Entrada/Salida (I/O):
+    Concepto de Entrada/Salida en C.
+    Diferencia entre Entrada/Salida estándar y Entrada/Salida de archivos.
+Caracteres y Cadenas:
+    getchar y putchar:
+        Lectura y escritura de un solo carácter.
+        Diferencias con scanf y printf.
+    gets y puts:
+        Lectura y escritura de cadenas de caracteres.
+        Consideraciones de seguridad (gets vs. fgets).
+Funciones de Salida:
+    printf: Formateo y uso básico.
+    Uso de especificadores de formato (%d, %f, %c, %s, etc.).
+    Escapado de caracteres (\n, \t, etc.).
+    Impresión de variables de diferentes tipos.
+    Control de ancho, precisión, y alineación en la salida.
+    Ejemplos prácticos de uso.
+Funciones de Entrada:
+    scanf: Lectura de datos desde el usuario.
+    Uso de especificadores de formato.
+    Lectura de diferentes tipos de datos (int, float, char, etc.).
+    Consideraciones sobre el uso de scanf (problemas comunes como buffer overflow y cómo evitarlos).
+    Ejemplos prácticos de uso.
+
+----------------------------------------------------------------------------------------------------
+NIVEL 4: CONTROL DE FLUJO
+----------------------------------------------------------------------------------------------------
+Condicionales:
+    if, else, else if
+Bucles:
+    for, while, do-while
+    Control de bucles: break, continue
+Switch Case:
+    Uso del switch y case
+    Fall-through y default
+
+----------------------------------------------------------------------------------------------------
+NIVEL 5: FUNCIONES
+----------------------------------------------------------------------------------------------------
+Funciones Básicas:
+    Definición y llamada de funciones.
+    Paso de parámetros por valor.
+    Retorno de valores.
+Ámbito y Ciclo de Vida de Variables:
+    Variables locales y globales.
+    Variables estáticas.
+Prototipos de Función:
+    Declaración previa de funciones
+Recursividad:
+    Concepto y uso.
+
+----------------------------------------------------------------------------------------------------
+NIVEL 6: ARRAYS Y CADENAS DE CARACTERES
+----------------------------------------------------------------------------------------------------
+Arrays:
+    Declaración, inicialización y acceso.
+    Arrays multidimensionales.
+Cadenas de Caracteres:
+    Manejo básico de char arrays.
+    Manejo de cadenas de texto.
+    Funciones estándar (strlen, strcpy, strcmp).
+    Manipulacion de cadenas.
+
+----------------------------------------------------------------------------------------------------
+NIVEL 7: PUNTEROS Y GESTION DE MEMORIA
+----------------------------------------------------------------------------------------------------
+Concepto de Punteros:
+    Concepto de Punteros Básico
+    Declaración e inicialización.
+    Operadores & y *.
+    Uso de typedef
+    Casting (conversion de tipos)
+Memoria Dinámica:
+    Uso de malloc, calloc, realloc, free.
+    Gestión de memoria y fugas de memoria.
+Punteros y Arrays:
+    Relación entre punteros y arrays.
+    Aritmética de punteros.
+Avanzado:
+    Paso de arrays a funciones.
+    Técnicas de optimización de memoria
+Punteros y Funciones:
+    Paso de punteros a funciones.
+    Punteros a funciones.
+    funciones con punteros como parametros 
+
+----------------------------------------------------------------------------------------------------
+NIVEL 8: ESTRUCTURAS y UNIONES
+----------------------------------------------------------------------------------------------------
+Estructuras (struct):
+    Definición y uso.
+    Acceso a miembros de la estructura.
+    Arrays y punteros de estructuras.
+Uniones (union):
+    Definición y uso.
+    Diferencias entre estructuras y uniones.
+Enumeraciones (enum):
+    Definición y uso.
+    Enumeraciones como constantes simbólicas.
+
+----------------------------------------------------------------------------------------------------
+NIVEL 9: ESTRUCTURAS DE DATOS DINAMICOS
+----------------------------------------------------------------------------------------------------
+Listas Enlazadas:
+    Listas enlazadas simples.
+    Listas dobles.
+    Operaciones básicas (inserción, eliminación, búsqueda).
+Pilas y Colas:
+    Implementación de pilas y colas usando listas enlazadas.
+    Operaciones básicas (push, pop, enqueue, dequeue).
+Otras Estructuras de Datos Dinámicas:
+    Árboles binarios.
+    Árboles AVL.
+    Tablas hash.
+Manejo de colisiones:
+    Técnicas como encadenamiento y direccionamiento abierto
+    Recorridos en árboles: Recorridos enorden, preorden, postorden.
+Algoritmos y Técnicas:
+    Algoritmos de recorrido y manipulación de estructuras de datos.
+    Técnicas de optimización y eficiencia.
+
+----------------------------------------------------------------------------------------------------
+NIVEL 10: MANEJO DE STRINGS EN PROFUNDIDAD
+----------------------------------------------------------------------------------------------------
+Manipulación Avanzada de Cadenas:
+    Funciones de la Biblioteca de Cadenas:
+        strstr: Búsqueda de subcadenas.
+        strchr y strrchr: Búsqueda de caracteres en una cadena.
+        strspn y strcspn: Análisis de longitud de segmentos.
+        strtok: Tokenización de cadenas.
+        sprintf: Formateo y almacenamiento en una cadena.
+    Manejo de Cadenas Dinámicas:
+        Uso de malloc y free con cadenas: Cómo asignar y liberar memoria para cadenas dinámicas.
+        Redimensionamiento de cadenas: Uso de realloc para ajustar el tamaño de cadenas dinámicas.
+        Operaciones de Comparación Avanzada:
+        strncmp y strcasecmp: Comparaciones parciales y sin distinguir entre mayúsculas y minúsculas. 
+Procesamiento de Texto:
+    Manipulación de Texto Multilínea:
+        Cómo leer, almacenar y procesar texto que abarca varias líneas.
+        Uso de funciones como fgets para leer líneas de texto.
+    Análisis de Texto:
+        Expresiones Regulares: Introducción básica (aunque C no tiene soporte nativo, podrías mencionar librerías como regex.h para análisis avanzado).
+    Codificación y Decodificación de Texto:
+        Conversión entre diferentes formatos de texto (por ejemplo, de ASCII a UTF-8).
+Optimización de Cadenas:
+    Eficiencia de Memoria:
+        Técnicas para manejar grandes volúmenes de datos textuales de manera eficiente.
+        Consideraciones para la optimización de espacio y tiempo al manipular cadenas.
+    Algoritmos de Procesamiento de Texto:
+        Implementación de algoritmos comunes de búsqueda y manipulación de texto (por ejemplo, búsqueda de patrones, ordenación).
+funciones: 
+    funciones con strings como parametros  
+
+----------------------------------------------------------------------------------------------------
+NIVEL 11: LIBRERÍAS Y MODULARIDAD
+----------------------------------------------------------------------------------------------------
+Uso de Librerías Estándar:
+    #include y Preprocesador:
+        Introducción a la inclusión de archivos de encabezado (.h).
+        Explicación del preprocesador y cómo maneja las librerías.
+    Librerías Estándar:
+        <stdio.h>: Funciones de entrada/salida.
+        <stdlib.h>: Gestión de memoria, conversión de números, control de procesos.
+        <string.h>: Manipulación de cadenas.
+        <math.h>: Funciones matemáticas avanzadas.
+        <time.h>: Manejo de fechas y tiempos.
+Creación de Librerías Propias:
+    Archivos de Cabecera (.h):
+        Definición y declaración de funciones.
+        Uso de #ifndef, #define, y #endif para evitar múltiples inclusiones.
+    Archivos de Implementación (.c):
+        Organización del código en múltiples archivos.
+        Compilación de proyectos que utilizan múltiples archivos (gcc con múltiples .c y .h).
+        Variables externas
+Modularidad en Programas Grandes:
+    Separación de Concerns:
+        Organización del código en módulos independientes.
+        Beneficios de la modularidad en el mantenimiento y escalabilidad del código.
+    Uso de Librerías Externas:
+        Cómo integrar librerías de terceros en proyectos C.
+        Ejemplos de librerías populares
+        
+----------------------------------------------------------------------------------------------------
+NIVEL 12: ARCHIVOS Y ENTRADA/SALIDA
+----------------------------------------------------------------------------------------------------
+Entrada/Salida Estándar:
+    Funciones printf, scanf, getchar, putchar.
+    Redirección de entrada/salida.
+Apertura y Cierre de Archivos:
+        Introducción a las funciones fopen y fclose.
+        Modos de apertura de archivos (r, w, a, etc.).
+    Lectura y Escritura en Archivos:
+        Uso de fprintf y fscanf para trabajar con archivos.
+        Uso de fgetc, fputc, fgets, y fputs para manipular archivos a nivel de carácter y cadena.
+    Manejo de errores y EOF.
+    Archivos binarios vs. archivos de texto.
+
+----------------------------------------------------------------------------------------------------
+NIVEL 13: CONTROL DE FLUJO DE DATOS
+----------------------------------------------------------------------------------------------------
+Retornos de status: 
+    return 0 
+    return 1
+    return -1
+    otros
+System
+    pause 
+    cls 
+    clear 
+    otross
+Time
+    time_t 
+    time
+Exit
+    exit(0)
+    exit(1)
+
+----------------------------------------------------------------------------------------------------
+NIVEL 14: PUNTEROS A ESTRUCTURAS Y MEMORIA DINAMICA COMPLEJA
+----------------------------------------------------------------------------------------------------
+Punteros a Estructuras:
+    Definición y uso:
+        Cómo declarar punteros a estructuras.
+        Cómo asignar memoria dinámica para estructuras usando malloc y calloc.
+    Acceso a miembros a través de punteros:
+        Uso del operador -> para acceder a miembros de una estructura a través de un puntero.
+        Ejemplos prácticos de manipulación de estructuras mediante punteros.
+    Memoria Dinámica Compleja:
+        Asignación y liberación de memoria para estructuras:
+            Cómo manejar la asignación y liberación de memoria para estructuras complejas y arrays de estructuras.
+            Uso de realloc para redimensionar memoria asignada dinámicamente.
+        Memoria dinámica para arrays de estructuras:
+            Cómo crear y manejar arrays de estructuras con memoria dinámica.
+        Ejemplos prácticos y patrones comunes:
+            Ejemplos prácticos de cómo implementar y gestionar estructuras y punteros en aplicaciones complejas.
+            Patrones comunes para evitar fugas de memoria y errores en la gestión de memoria.
+        arrays dinamicos 
+
+----------------------------------------------------------------------------------------------------
+NIVEL 15: TEMAS AVANZADOS Y OPTIMIZACION
+----------------------------------------------------------------------------------------------------
+Macros y Preprocesador:
+    Definición y Uso de Macros:
+        Creación y uso de macros con #define.
+        Macros de parámetros y sus usos.
+    Directivas del Preprocesador:
+        #include: Inclusión de archivos.
+        #define: Definición de constantes y macros.
+        #ifdef, #ifndef, #endif: Directivas de condiciones de compilación.
+        #pragma: Directivas específicas del compilador.
+Optimización:
+    Técnicas de Optimización de Código:
+        Optimización de algoritmos y estructuras de datos.
+        Técnicas de optimización de bucles y funciones.
+    Gestión Eficiente de la Memoria:
+        Reducción del uso de memoria y técnicas de administración de memoria.
+    Compilación con Optimización:
+        Uso de opciones de optimización del compilador (-O2, -O3, -Os).
+        Evaluación del impacto de la optimización en el rendimiento y tamaño del código.
+Programación Concurrente:
+    Introducción a la Programación Concurrente en C:
+        Conceptos básicos de concurrencia y paralelismo.
+    Uso de Hilos:
+        Programación con hilos en Unix usando la biblioteca pthread.
+        Creación, gestión y sincronización de hilos.
+    Sincronización y Exclusión Mutua:
+        Uso de mutexes, semáforos, y variables de condición para sincronización entre hilos.
+Programación de Sistemas:
+    Manejo de Señales y Procesos:
+        Gestión de señales y señales asíncronas.
+        Creación y manejo de procesos.
+    Programación de Sockets:
+        Creación y uso de sockets para comunicación en red.
+        Protocolos y técnicas básicas de comunicación de red.
+    Interacción con el Sistema Operativo:
+        Llamadas al sistema y manejo de archivos y procesos a nivel del sistema.
+
+----------------------------------------------------------------------------------------------------
+NIVEL 16: COMPILACION Y ENLACE AVANZADO
+----------------------------------------------------------------------------------------------------
+Compilación Avanzada:
+    Fases de Compilación:
+        Análisis léxico, sintáctico y semántico.
+        Generación de código intermedio y código objeto.
+    Opciones de Compilación:
+        Configuración de opciones de compilación avanzadas.
+        Diagnóstico y depuración durante la compilación.
+Enlace Avanzado:
+    Enlace Estático y Dinámico:
+        Diferencias y usos de enlace estático y dinámico.
+        Creación y uso de bibliotecas estáticas y compartidas.
+    Resolución de Símbolos:
+        Proceso de resolución de símbolos y gestión de dependencias.
+    Archivos de Enlace y Resolución de Errores:
+        Análisis de errores de enlace y técnicas para su resolución.
+Optimización del Proceso de Enlace:
+    Optimización del Código Enlazado:
+        Técnicas para reducir el tamaño y mejorar el rendimiento del código enlazado.
+    Herramientas de Enlace:
+        Uso de herramientas de enlace avanzadas y opciones del enlazador.
+
+
+
+

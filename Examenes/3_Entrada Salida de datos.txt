@@ -1,0 +1,24 @@
+1. Conceptos Básicos de Entrada/Salida (I/O)
+    a. Explica la diferencia entre Entrada/Salida estándar y Entrada/Salida de archivos.
+    b. ¿Cuál es el propósito de un buffer en el contexto de Entrada/Salida?
+
+2. Caracteres y Cadenas
+    a. ¿Cuál es la función de getchar() y putchar()? Da un ejemplo de uso de cada uno.
+    b. ¿Cuál es la principal diferencia entre gets() y fgets()? ¿Por qué se recomienda fgets() en lugar de gets()?
+    c. ¿Qué hace puts() y cómo se diferencia de fputs()? Proporciona un ejemplo de uso para cada uno.
+
+3. Funciones de Salida
+    a. ¿Qué es un especificador de formato en printf? Menciona al menos tres especificadores y sus usos.
+    b. ¿Cómo se controla el ancho y la precisión en la salida de printf? Proporciona un ejemplo.
+    c. ¿Qué hacen los caracteres de escape como \n y \t en una cadena de salida? Proporciona un ejemplo de uso.
+
+4. Funciones de Entrada
+    a. Explica cómo funciona scanf() para leer datos del usuario. ¿Qué papel juega el operador & en este contexto?
+    b. ¿Por qué no se necesita el operador & cuando se usa scanf() para leer una cadena de caracteres?
+    c. Menciona al menos dos problemas comunes que pueden ocurrir al usar scanf() y cómo se pueden evitar.
+
+
+
+NOTA: 8.5/10
+Has entendido bien los conceptos del Nivel 3. Tienes claro cómo funcionan las funciones básicas de 
+entrada y salida, así como los problemas comunes y cómo evitarlos

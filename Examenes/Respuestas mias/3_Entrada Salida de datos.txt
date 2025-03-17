@@ -1,0 +1,42 @@
+1
+    a_ 
+        Entrada standar: se trata de la introduccion de daots por parte del usuario por el teclado
+        Entrada de archivo: es cuando se introduce un archivo con informacion y este es leido de manera "automatica" y no introducida de manera manual por teclado 
+        Salida estandar: se trata de cuando el programa muestra por pantalla informacion con el fin de comunicarse con el usuario
+        Salida de archivo: se trata de cuando el programa en vez de mostrarlo directo por pantalla lo escribe en un archivo como los logs
+    b_es un espacio en la memoria reservado con el fin de que cuando se intenta escribir o recibir datos, estos seran almacenados aca de manera temporal para su manejo mas optimo y sincronizado
+2
+    a_  
+        getchar recibe un caracter unico 
+            char c = getchar();
+        putchar muestra por pantalla un unico caracter 
+            putchar(c);
+    b_ 
+        gets permite que se introduzca una linea de texto, toma hasta el primer salto de linea y si no hay hasta que acabe el archivo 
+        fgets es como gets pero permite especificar el tamaño maimo que puede almacenar y el tipo de entrada como stdin 
+        se recomienda fgets porque gets esta obsoleto, ademas no tiene limite, si el texto es demaciado grande lo almacena igual jugando con los limites del buffer 
+    c_
+        puts muetra una linea de texto por pantalla y al final introduce un salto de linea 
+            puts("Este es un texto"); --> imprimira ese texto y despues un salto de linea  
+        fputs no introduce el salto de linea, pero en cambio permite especificar el tipo de salida como stdin   
+            puts("Este es un texto", stdin); --> imprimira el texto pero no habra salto de linea 
+        ademas ninguno permite la anidacion de texto con el contenido de variables como uno 
+3 
+    a_ es una palabra clave o caracter clave que permite especificar que tipo de dato se pondra en ese lugar, para posteriormente ser reemplazado por una variable de tal tipo de dato 
+        %i o %d --> sirve para imprimir numeros enteros junto a una cadena de texto printf("Mi edad es %d", edad);
+        %c --> imprimer un caracter unico junto a la cadena printf("Mi inicial es: %c", inicial);
+        %.nf --> sirve para mostrar un flotante y n cantidad de decimales printf("Te debo $%.2f", dinero);
+    b_
+        la presicion es con el flotante: printf("Presicion de 2 decimales: %.2f", numero);
+        el ancho con un numero entre corchetes: printf("Diex espacios minimo: [%10d]", numero)
+    c_
+        \n realiza un salto de linea printf("Introduzca su edad: \n");
+        \t realiza una tabulacion printf("Hola \t Bye"); (en realidad no sabria en que poner una tabulacion, por eos la puse ahi por poner)
+4_  
+    a_ scanf() recibe el input del usuario y lo almacena en una variable, el & sirve para que el scanf busque la direccion donde se ubica esa variable y poder enviar ahi la informacion 
+    b_ debido a que la cadena de caracteres en si es un array y los arrays ya tienen su ubicacion definida en su misma estructura 
+    c_ 
+        Puede haber problemas del buffer, por overflow, se puede solucionar con un simple presicion 
+            scanf("%9d", numero) --> solo tomara 9 numeros 
+        Puede haber problemas de lectura en si, no es una solucion pero puede manejarse con un if 
+            scanf("%c", caracter) == 1 ? printf("Continuamos") : printf("Alerta de error");  (obviamente ser pondria algo util como un if que haga algun tipo de alternativa oa lgo peor bueno, es para que se entienda)

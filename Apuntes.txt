@@ -1,0 +1,2400 @@
+----------------------------------------------------------------------------------------------------
+NIVEL 1: FUNDAMENTOS DE C
+----------------------------------------------------------------------------------------------------
+Historia: 
+    Creacion: Se creo en los años 70 por Dennis Ritchie con proposito general y del cual salen muchos de los lenguajes actuales 
+    Aplicacion y uso: Se usa para sistemas operativos, softwares de sistemas y programacion embebida
+    Embedido: algo que no pertenece ahi de un comienzo pero podes incorporarlo y unirlo como una libreria o un complemento
+Compilacion:
+    Compilador: es un programa que se encarga de traducir el codigo que escribimos en un lenguaje de programacion a uno que la maquian entienda (bianrio) 
+    Compilar: es la accion de traducir el lenguaje de programacion al lenguaje maquina 
+    Como compilamos?: dependiendo el software peude que lo incluya en un boton o peude que necesites escribir en una termina algun comando como "gcc archivo.c -0 programa"
+Entorno de desarrollo:
+    Instalacion de compiladores:
+        GCC: Compilador de GNU, comun en linux
+        Clang: Alternativa moderna, tambien popular en MacOS
+Sintaxis basica:
+    Orden: cuando escribimos codigo de C debemos escribir de arriba a abajo
+        si queremos usar un datos especifio este debio haber sido creado en lineas posteriores 
+        Ejemplo:
+            creoMiDatoAca;
+            usoElDatoYaCreado;
+    Instrucciones: cada linea o instruccion debe acabar con un punto y coma
+        instruccionARealizar;
+    Llaves: cuando veamos una instruccion seguida llaves significa que esa instruccion ejecutar lo que esta en las llaves 
+        cuando abrimos nuestro proyecto vemos algo llamado main(){} y ahi dentro de esas llaves deberemos escribir el programa 
+        Ejemplo:
+            void main() {
+                acaCreMiPrograma;
+            }
+    Comentarios: los comentarios son textos o apuntes que podemos añadir sin que se tomen en cuenta al compilar 
+        sirve para que uno mismo u otro que lea el codigo entienda lo que estamos haciend
+        para poner comentarios podemos hacerlo de dos modos
+            Comentarios de una linea: // Esto es un comentario 
+            Comentario de varias lineas: 
+                /*
+                Esto 
+                es
+                otro
+                comentario
+                */
+        Ejemplo de uso:
+            // Aca estoy creando un dato
+            int num = 0;
+            // Aca stoy mostrando el dato
+            printf("%d", num);
+    Identar: se trata de dar los espacios necesarios para que sea legible el codigo
+        no es obligatorio, pero se recomienda identar el codigo
+        cuando tenemos algo dentro de otra cosa se pone todo unos espacios mas adelante
+        Ejemplo:
+            Sin identar:
+                int num = 0;
+                if(num == 3){
+                printf("OK");
+                    }
+                else{
+                printf("Mal");
+                }
+
+                esto funciona pero no es legible mas alla de si entendemos el lenguaje 
+            Identado:
+                int num = 0;
+                if(num == 3) {
+                    printf("OK");
+                }else{
+                    printf("Mal");
+                }
+
+                esto es mas legible y se recomienda siempre identar, ademas en ciertos lenguajes es obligatorio
+
+----------------------------------------------------------------------------------------------------
+NIVEL 2: TIPO DE DATOS Y VARIABLES
+----------------------------------------------------------------------------------------------------
+Tipos de datos basicos:
+    int: representa numeros enteros 
+        Abarca de -2,147,483,648 a 2,147,483,647
+        Suele ocupar 4 bytes (32 bits) 
+    float: representa un numero con decimal
+        Abarca aproximadamente 7 digitos decimales
+        Suele ocupar 4 bytes (32 bits)
+    double: representa un numero con decimal pero mas preciso que el float
+        Abarca aproximadamente 15 digitos decimales 
+        Suele ocupar 8 bytes (64 bits)
+    char: representa un caracter 
+        Abarca del 0 al 127 (en ASCII)
+        Suele pesar 1 byte (8bits)
+    datos avanzados:
+        decimales: son numero del 0 - 9
+        hexadecimales: son numeros del 0 - 9 y letras de la A - F
+            se utiliza para compactar numeros 
+            Ejemplo: 255 es FF
+            en css tenemos #fff pero esto en el navegador se traduce a #ffffff osea a 3 pares de 255
+        octal: son digitos del 0 - 7 
+Modificadores: 
+    signed: permite que una variable int pueda tener datos positivos y negativos
+        es el valor predeterminado para int 
+    unsigned: evita que un int contenga valores negativos 
+    short: reduce el tamaño de un int para evitar que ocupe espacio inecesario
+        lo reduce a aproximadamente 2 bytes (16 bits)
+    long: aumenta el rango de valores aceptados por int 
+        aumenta a 4 bytes (32 bits) o 8 bytes (64 bits)
+Tamaño y Rango de tipos de datos:
+    sizeof: nos dice cuanto pesa en bytes un elemento como una variable o tipo de dato 
+    limites de valor: se trata de una libreria (un codigo que traemos de afuera) que nos otorga datos con la informacion sobre los valores minimos y maximos de cada tipo de dato 
+        util para verificar que los datos ingresados no sobrepasen los limites y evitar problemas de rendimiento y funcionalidad
+        CHAR_MIN: nos indica el valor minimo aceptado como char
+        CHAR_MAX: nos indica el valor maximo aceptado como char
+        INT_MIN: nos indica el valor minimo aceptado como int
+        INT_MAX: nos indica el valor maximo aceptado como int
+        LONG_MIN: nos indica el valor minimo aceptado como long
+        LONG_MAX: nos indica el valor maximo aceptado como long
+        FLOAT_MIN: nos indica el valor minimo aceptado como float
+        FLOAT_MAX: nos indica el valor maximo aceptado como float
+Variables:
+    Que es?: es un espacio en la memoria de la computadora que reservamos para almacenar datos
+        cada vez que reservamos un espacio debemos indicarle que tipo de dato se alamcenara ahi dentro 
+        las variables pueden tener datos y despues ser modificados o dejarlo vacio para llenarlo mas tarde
+        a cada variable se le pone un nombre para posteriormente poder acceder a esta mediante ese nombre 
+    Declaracion: se trata de definir que tipo de datos se almacenara y bajo que nombre lo almacenaremos
+        Como se hace?: se scribe el tipo de dato seguido del nombre de la variable 
+            int miNumero;
+            float areaTriangulo;
+    Inicializacion: se trata de poner el primer dato que tendra la variable 
+        podemos crear la variable y mas tarde inicializarla metiendole algun tipo de dato 
+            int edad;
+            edad = 10;
+        tambien podemos inicializarla apenas la declaramos
+            int edad = 10;
+        y podemos tambien definir varias variables de una 
+            int a, b, c;
+            a = 10;
+            b = 5;
+            c = 0;
+        podemos tambien definir y asignar varias de una
+            int a = 10, b = 5, c = 0; 
+Constantes: 
+    que es?: son espacios que se reservanen la memoria para almacenar datos 
+        a diferencia de una variable, estos una vez inicializados no pueden modificar su contenido
+        como se crean?: se debe poner const tipo_de_dato nombre_de_la_constante = contenido_a_guardar;
+            const int edad = 20;
+            const char letra = "A";
+        Const VS #Define: existen dos tipos de constantes, las const las #define
+            const: es una variable cuyo valor no cambia una vez que ha sido inicializado
+                requiere especificar un tipo de dato
+                ocupan espacio en la memoria como cualquier otra variable
+                los compiladores a menudo optimizan su almacenamiento
+            define: tambien conocido como macros, es una directiva del preprocesador utilizada para definir constantes
+                No se especifica un tipo de dato
+                no ocupa un espacio en el almacenamiento 
+                al momento de procesamiento (justo antes de comenzar la compilacion) se reemplaza cada vez que aparece "define algo" por su contenido 
+                    Ejemplo: 
+                        si tengo 
+                            #defin PI = 3,14;
+                            int pi = PI;
+                        entonces en el procesamiento convierte esto a int pi = 3,14; 
+Variables globales y locales:
+    Variables Globales: son variables que estan declaradas fuera de cualquier cosa que hagamos
+        estas variables permiten que sean usadas en cualqueir parte del codigo 
+        util para datos que queremos almacenar y usar libremente
+    Variables Locales: son variables definidas dentro de alguna funcion
+        estas variables solo estaran accesibles para tal funcion y subfunciones dentro de esta 
+        util para datos que no queremos que se puedan acceder tan libremente o datos que seran descartables
+Buenas practicas:
+    que es una buena practica?: son recomendaciones a seguir para nuestro codigo sea optimo 
+        dependiendo el contexto las malas practicas pueden traernos "penalizaciones"
+        malas practicas se le llama cuando no cumplimos alguna buena practica 
+    Nombres descriptivos: se recomienda utilizar nombres de variables que describan su contenido 
+        esto facilida su uso y manejo en codigos complejos y grandes 
+        Ejemplo erroneo: int a = 20;
+        Ejemplo correcto: int edad = 20;
+    Snake_case: se recomienda utilizar snake_case que es un tipo de sinaxis donde en vez de espacios ponemos guines bajos 
+        Ejemplo: int cantidad_maxima = 200;
+    Nombres de un caracter: se recomeinda evitar nombres de un solo caracter porque sera dificil de entenderlo a futuro 
+    Palabras reservadas: evitar utilizar palabras reservadas como nombre para variables 
+        Ejemplo erroneo: int int = 30;
+        Ejemplo corregido: int entero = 30;
+    Diferenciar variables locales y globales: se recomienda diferenciar las variables locales de globales para su uso mas comodo 
+        Ejemplo: 
+            char gcaracter = "X";
+            char caracter = "X";
+    Utilizar mayusculas para macros y para constantes: se recomienda esto para su mejor legibilidad ye vitar confusiones
+        Ejemplo:
+            const int PI = 3,14;
+            #define MAX_VALUE = 930;
+Operadores:
+    Operadores matematicos: son los utilizados para realizar cuentas matematicas 
+        suma: 2 + 3
+        resta: 10 - 5
+        multiplicacion: 3 * 9
+        division: 20 / 5
+        modulo: 30 % 9
+    Operadores racionales: se encargan de realizar verificaciones y devolver un 1 o 0 para representar un "correcto" o "incorrecto"
+        verificar igualdad: a == b
+        verificar desigualdad: a != b 
+        verificar si es mayor: a > b  
+        verificar si es menor: a < b  
+        verificar si es mayor o igual: a >= b  
+        verificar si es menor o igual: a >= b        
+    Operadores logicos: combinan operadores racionales para obtener una verificacion en conjunto
+        AND: verifica si dos o mas afirmaciones son correctas
+            a > b && b > c
+        OR: verifica que solo una verificacion sea correcta 
+            a > b || a == b 
+        NOT: invierte la respeusta de una verificacion 
+            !(a > b)
+            si a es mayor a b devolvera 0 (false, incorrecto)
+            si a es menor a b devolvera 1 (true, correcto)
+    Operadores de asignacion: se encargan de asignarle contenido a una variable
+        asignacion simple: a = 3;
+        asignacion con suma: a += 2
+            es lo mismo que decir a = a + 2
+        asignacion con resta: a -= 2
+            es lo mismo que decir a = a - 2
+        asignacion con multiplicacion: a *= 2
+            es lo mismo que decir a = a * 2
+        asignacion con division: a /= 2
+            es lo mismo que decir a = a / 2 
+    Operadores de incremento y decremento:
+        incrementar en 1 a una variable: a++ 
+            es lo mismo que hacer a = a + 1
+        decrementar en 1 a una variable: a-- 
+            es lo mismo que hacer a = a - 1
+    Operador ternario: se trata de un operador que permite realizar una verificacion y en base a si es verdadero o no revolver algo 
+        Ejemplo:
+            int edad = 17; 
+            char mayor_de_edad = edad >= 18 ? "S" : "N";
+        aca verifica si la afirmacion es verdadera, si lo es devuelve "S", si no "N"
+        como la afirmacion es falsa entonces mayor_de_edad ahora contiene "N"
+    Presedencia de operadores: se trata de en que orden se ejecutaran los operadores 
+        si estan divididos con parentesis se haran primero los parentesis 
+        si estan todos en un mismo nivel entonces se hara de izquierda a derecha
+        Ejemplo:
+            a > b || b > a && a < c
+                aca verificara si a es mayor a b, si no lo es entonces verificara que b sea mayor a y de ser asi verificara que a sea menor a c
+            (a > b || b > a) && (a < c)
+                aca verificara que a sea mayor a b o que b sea mayor a a, si alguno se cumple entonces verifica que tambien a sea maor a c 
+                puede verificar primero si a es mayor a c y depsues si es verdadero el otro parentesis 
+    Operador bitwise: estos son operadores logicos aplicados a los valores pasados a binarios 
+        bit: son la unidad mas baja de informacion, son 1 y 0 (lo que generalmente conocemos como binarios)
+        byte: son un conjunto de 8 bits 
+        AND: realiza una operacion and entre cada numero del binario A y del binario B y en base a esto devuelve uno nueuvo 
+            Ejemplo: 3 & 5
+                5: 00000101 
+                3: 00000011 
+                0 & 0 = 0
+                0 & 0 = 0 
+                0 & 0 = 0
+                0 & 0 = 0 
+                0 & 0 = 0
+                1 & 0 = 0
+                0 & 1 = 0
+                1 & 1 = 1
+                3 & 5 = 00000001
+        OR: realiza una operacion or entre cada numero del binario A y del binario B y en base a esto devuelve uno nueuvo 
+            Ejemplo: 3 | 5
+                5: 00000101 
+                3: 00000011 
+                0 | 0 = 0
+                0 | 0 = 0 
+                0 | 0 = 0
+                0 | 0 = 0 
+                0 | 0 = 0
+                1 | 0 = 1
+                0 | 1 = 1
+                1 | 1 = 1
+                3 | 5 = 00000111
+        XOR: realiza una operacion xor (ambos deben ser diferentes para ser true) entre cada numero del binario A y del binario B y en base a esto devuelve uno nuevo 
+            Ejemplo: 3 ^ 5
+                5: 00000101 
+                3: 00000011 
+                0 ^ 0 = 0
+                0 ^ 0 = 0 
+                0 ^ 0 = 0
+                0 ^ 0 = 0 
+                0 ^ 0 = 0
+                1 ^ 0 = 1
+                0 ^ 1 = 1
+                1 ^ 1 = 0
+                3 ^ 5 = 00000110
+        NOT: realiza una operacion not entre cada numero del binario A y del binario B y en base a esto devuelve uno nueuvo 
+            Ejemplo: ~3
+                3: 00000011 
+                ~3 = 11111100
+        <<: se trata de mover los binarios de un numero hacia la izquierda 
+            es equivalente a multiplicar por 2
+            se pasa el numero a binarios y se corre los binarios a la izquierda 
+            los que no entran en el conjunto de 8 bits se eliminan y los que faltan se compeltan con 0
+            Ejemplo: 3 << 1
+                3 = 00000011
+                   00000011
+                   000000110
+                    00000110
+        >>: se trata de mover los binarios de un numero a la derecha
+            es equivalente a dividir por 2
+            se pasa el numero a binario y se corre los binarios a la derecha
+            los que no entran en el conjunto de 8 bits se eliminan y los que faltan se completan con 0 
+            Ejemplo: 3 >> 1
+                3 = 00000011
+                     00000011
+                    000000011
+                    00000001
+                3 / 2 = 1 (sin resto) = 00000001
+           
+----------------------------------------------------------------------------------------------------
+NIVEL 3: ENTRADA/SALIDA BASICA
+----------------------------------------------------------------------------------------------------
+Introduccion a entradas y salidas (I/O):
+    Salida de datos estandars: se refiere a como el dispositivo se comunica con el usuario
+        Salida en consola: muestra datos en la pantalla
+        Salida a archivos: escribe la informacion en archivos que podremos guardar
+    Salida general: se trata de cualquier tipo de comunicacion del dispositivo con el exterior
+        Redes: enviar señales o mensajes a otros dispositivos por la red 
+        Dispositivos fisicos: encender luces, controlar motores, etc  
+    Entrada de datos estandars: se trata de como el programa recibe datos deel exterior 
+        Teclado: el mas comun es recibir informacion escrita por el teclado del mismo dispositivo 
+        Archivos: a veces se otorgan archivos con informacion el cual se abren y se extrae la informacion 
+    Entrada general: se trata de cualquier modo de recepcion de datos por parte del exterior 
+        Sensores: pueden ser sensores de temperatura, de red, etc 
+        Redes: son mensajes traidos de la red
+        Dispositivos fisicos: pueden ser mouse, teclado, camaras, etc 
+Buffer: es un espacio de la memoria destinado a almacenar datos temporales que estan en proceso de guardado o impresion
+    al momento de realizar entradas o salidas estas no ocurren de manera inmediata, los datos se almacenan primero en un búfer
+    sirve para optimizar los procesos de entrada y salida de datos 
+    Buffer overflow: es cuando se intenta almacenar mas datos de los que el buffer soporta 
+        esto provoca reescritura de ciertos datos y vulnerabilidades
+Caracteres y cadenas:
+    Getchar y Putchar:
+        Getchar: Lee un caracter del buffer (esta obsoleto y no recomendado)
+        Putchar: Escribe un caracter desde la entrada estandar seguido de un salto de linea 
+    Gets y Puts:
+        Gets: es una funcion que se encarga de recibir una linea de entrada hasta que se encentre un salto de linea o hasta el final del archivo 
+            esta obsoleto 
+            es inseguro debido a que no controla el tamaño pudiendo provocar daños y errores 
+            si no hay saltos de linea se tomara todo el archivo pudiendo ser algo demaciado grande 
+        Puts: es una funcion encargada de mostrar datos por pantalla 
+        Solucion a los problemas: en base a estos problemas se crearon dos alternativas
+            Fgets: es ta funcion puede tomar una linea de caracteres hasta el salto de linea o hasta el final del archivo 
+                este tiene la capacidad de especificar un limite de tamaño de entradas 
+                ademas especifica el tipo de entrada como stdin para standar input 
+            Fputs: es como el puts pero permite especificar el tipo de salida como stdout para standar output
+Funciones de salida:
+    Printf: es un comando utilizado para mostrar datos por pantalla 
+        permite mostrar texto y el contenido de variables de manera conjunta
+    Especificadores de datos: son caracteres que indican el tipo de dato que se busca mostrar por pantalla junto al texto 
+        %i o %d: permite mostrar el contenido de un int junto al texto mostrado
+        %f: permite mostrar el contenido de un float junto al texto mostrado
+        %f.numero_de_decimalesf: permite mostrar el contenido de un float con decimales especificos junto al texto mostrado
+        %c: permite mostrar el contenido de un char junto al texto mostrado
+        %s: permite mostrar el contenido de un conjunto de caracteres junto al texto mostrado
+        %x: permite mostrar el contenido de un numero hexadecimal (0xf...) junto al texto mostrado
+        cada especificador se reemplazara por la variable correspondiente al momento de ejecutar el codigo 
+        si ponemos texto con especificadores en el medio se reemplazaran sin afectar al resto 
+            Ejemplo: 
+                nombre = "Nahuel";
+                años = 21;
+                printf("Hola %s, Tenes %i años", nombre, años);
+                Hola Nahuel, Tenes 21 años
+    Escapado de caracteres: es la manera de escribir caracteres especiales que suelen estar reservados
+        \n: asi se esribe un salto de linea 
+        \t: asi se introduce una tabulacion 
+        \\: asi podemos escribir \ como texto 
+        \": asi podemos escribir comiilas dobles como parte del texto y no como apertura o cierre de tal
+    Impresion multiple: para imprimir varios valores de una podemos separarlos con comas 
+        printf("A: %i, B: %c, C: %f", a, b, c); --> imprime las tres variables en un mismo texto 
+            las variables peuden ser de diferente tipo de dato 
+    Control de ancho, presicion y alineacion de salida: se refiere a como manejar ciertos aspectos de las impresiones por pantalla 
+        Ancho: especifica el numero minimo de caracteres que se debe utilizar para imprimir por pantalla el contenido 
+            si hay menos caracteres de los especificados entonces se completa con espacios en blanco
+            Ejemplo: printf("Ancho de campo de 10: [%10d]\n", numero); 
+        Presicion: especifica cuantos digitos despues del punto decimal se deben incluir 
+            Ejemplo: 
+                printf("Se mostraran 2 decimales: %.2f", precio);
+                printf("Se mostraran los primeros 5 digitos: %.5s", texto);
+        Alineacion: especifica si el texto se alinea a la izquierda o derecha 
+            para alinear a la izquierda se utiliza -
+            Ejemplo: 
+                printf("Alineación a la derecha en un campo de 10: ["%10d"]", numero);
+                printf("Alineación a la izquierda en un campo de 10: ["%-10d"]", numero);
+Funciones de entrada: son funciones que permiten el ingreso de datos 
+    scanf(): permite el ingreso de datos por stdin y lo almacena en una variable 
+        para almacenar cualquier dato se necesita el tipo de dato y la variable
+    Especificadores:
+        scanf("%d", &numero): permite almacenar un entero introducido por el usuario 
+        scanf("%f", &numero): permite almacenar un flotante introducido por el usuario 
+        scanf("%lf", &numero): permite almacenar un double introducido por el usuario 
+        scanf("%c", &caracter): permite almacenar un caracter introducido por el usuario 
+        scanf("%s", texto): permite almacenar una cadena de texto introducida por el usuario (hasta el primer espacio) 
+    Buffer overlow: para evitar una sobrecarga del buffer, se debe poner limites de caracteres a introducir 
+        scanf("%9d", &numero) --> limita a 9 caracteres maximo
+    Control de errores:
+        scanf devuelve el número de elementos leídos correctamente 
+            Ejemplo de aplicacion: 
+                if (scanf("%d", &entero) != 1) {
+                   printf("Error al leer el entero.\n");
+                }
+
+----------------------------------------------------------------------------------------------------
+NIVEL 4: CONTROL DE FLUJO
+----------------------------------------------------------------------------------------------------
+condicional: son funciones que permiten verificar una afirmacion
+    si se cumple la afirmacion se realizara cierta o ciertas acciones
+    si no se cumple la afirmacion se realizara otra u otras acciones
+    Ejemplo:
+        if(a == 2) {
+            printf("El numero es 2");
+        }else{
+            printf("El numero no es 2");
+        }
+    Tambien se puede anidar (juntar) condicionales:
+        if(a > b){
+            ...
+        }else if(a == b){
+            ...
+        }else{
+            ...
+        }
+    El operador ternario es un tipo de condicional:
+        a < b ? printf("Es menos") : printf("No es menor");
+Bucles: son una prcion de codigo que se repite varias veces 
+    puede repetirse infinitamente si no se maneja bien y esto puede provocar problemas 
+    puede repetirse por cierta cantidad de pasos 
+    puede repetirse hasta que cierta condicion se cumpla 
+    puede repetirse por cierta cantidad de tiempo 
+    Bucle For: es un bucle que se repite mientras que una variable sea desigual a un valor especifico 
+        se crea dentro del mismo una variable mayormente llamada i y se inicializa
+        se especifica la condicion que debe cumplirse para continuar
+        se especifica como se ira modificando la variable
+        Ejemplo:
+            for(int i = 0; i < 10; i++){
+                printf("%d", i);
+            }
+            se inicia el bucle for 
+            se crea una variable llamada i (i por iterador) y se incializa en 0 (puede ser que incie en cualquier valor)
+            especificamos que el bucle se mantendra activo mientras i sea menor a 10
+            especificamos que cada vez que el bucle vuelve a comenzar a i se le añade 1 
+            mostramos i por pantalla para saber que hay en ese momento dentro de i 
+    Bucle while: es un bucle que se repite mientras la verificacion sea verdadera 
+        Ejemplo:
+            while(a > b){
+                printf("%d", a);
+                a--;
+            }
+    Bucle do-while: es como el bucle while pero en vez de corroborar la verificacion y despues hacer la tarea, primero hace la tarea y despues corrobora la verificacion 
+        Ejemplo:
+            do {
+                printf("%d", a);
+                a--:
+            }while(a > b);
+            aca primtero muetra a por pantalla, le resta 1 y verifica si sigue siendo mayor 
+            en el while comun primero verifica si es mayor, en caso de que si, muestra a por pantalla y le suma 1
+        podria ser util en un tipo de cobro, donde cada vez que realizas una accion se te cobra antes de que se realice, una vez correcta o incorrecta ya no es tu problema 
+Switch: es un tipo de condicional donde segun el valor de la variable puede realizar una serie de tareas especificas 
+    tiene varias opciones 
+    tiene una opcion en caso de que no coincida con ninguna
+    Ejemplo:
+        char user = 'a';
+        switch(edad) {
+            case 'a':
+                printf("Bienvenido Ariel\n");
+                break;
+            case 'n':
+                printf("Bienvenido Nahuel\n");
+                break;
+            case 'p':
+                printf("Bienvenido Pablo\n");
+                break;
+            case 'l':
+                printf("Bienvenida Luna\n");
+                break;
+            default:
+                printf("No tiene un usuario registrado\n");
+                break;
+        }
+        aca verifica que contiene user
+        si contiene 'a' muestra Bienvenido Ariel
+        si contiene 'n' mueustra Bienvenido Nahuel
+        si contiene 'p' mueustra Bienvenido Pablo
+        si contiene 'l' mueustra Bienvenida Luna 
+        si no contiene ninguno de los anteriores muestra No tiene un usuario registrado 
+        en cada case debe si o si ponerse un break, de lo contrario seguiria verificando el resto de cases hasta el final del swtich 
+    Fall-through: es un comportamiento de muchos lenguajes de programacion 
+        si no ponemos break, el switch verificara todos los cases por mas que ya se haya corroborado que uno es verdadero 
+        ese comportamiento de seguir es el Fall-through
+        con el break se soluciona facil 
+
+----------------------------------------------------------------------------------------------------
+NIVEL 5: FUNCIONES
+----------------------------------------------------------------------------------------------------
+funciones: son bloques de codigo que realizan ciertas tareas especificas 
+    estos bloques peuden usarse cuantas veces sea necesario sin reescribir todo 
+    Sintaxis:
+        se debe especificar que tipo de dato devolvera, el nombre de la funcion y ponerle parentesis 
+        Ejemplo:
+            void sumar() {
+                int resultado = 2 + 2;
+                printf("La suma es %d", resultado);
+            }
+        para hacer uso de este debe ponerse su nombre y abrir y cerrar parentesis 
+            sumar();
+            sumar();
+            sumar();
+            aca se ejecuto 3 veces la funcion sumar, osea que mostro 3 veces "La suma es 4"
+            cada vez que se llama a la funcion lo que se hace es basicamente realizar todo el codigo que indica la funcion, desde que abre sus llaves hasta que las cierra
+        ademas debe escribirse por fuera dela funcion main 
+            void sumar() {
+                // ...
+            }
+
+            int main() {
+                // aca ejecutamos la funcion sumar desde la funcion main
+                sumar(); 
+                return 0;
+            }
+    usos: 
+        se utiliza para tener mas orden en el codigo 
+        tambien facilita el trabajo al no tener que escribir varias veces lo mismo 
+        practicamente todo son funciones 
+    Funcion main: la funcion main es la funcion principal del programa 
+        es la que se ejecuta al iniciar el programa 
+        si esta no dice de ejecutar otra funcion, entonces esa otra no lo hara 
+        sin esta funcion no habria nada que ejecutar y posiblemente tiraria error 
+        Sintaxis: 
+            int main() {
+                // Todo lo que este aca se va a ejecutar al iniciar el programa
+                return 0; 
+            }
+    Parametros: son datos que podemos enviarle a la funcion para qe trabaje con estos 
+        para recibirlos se debe poner dentro de los parentesis de la declaracion de la funcion el tipo de dato y con que nombre se almacenara  
+        para enviar parametros se debe poner dentro de los parentesis de donde se llama a la funcion 
+        Ejemplo:   
+            void sumar(int a, int b) {
+                int resultado = a + b;
+                printf("El resutlado es %d", resultado);
+            }
+
+            int main() {
+                // Aca le enviamos los parametros
+                sumar(2, 3);
+                return 0;
+            }
+    Retorno: cuando decimos retornar nos referimos a que la funcion devuelve un valor que podemos almacenar 
+        al definir la funcion debemos indicar que retornara
+        int main(){}  --> indica que retornara un entero 
+        para retornar utilizamos la palabra return 
+        Ejemplo:
+            int sumar(int a, int b) {
+                int resultado = a + b;
+                return resultado;
+            }
+
+            int main() {
+                int respuesta = sumar(2, 10);
+                printf("La respeusta es %d", respuesta); // aca la repsuesta es a + b, osea 2 + 10 lo que es 12
+                
+                // aca retorna un indicador que no hay errores 0 = sin errores
+                return 0;
+            }
+        si no retornara nada se pone void 
+            void suma() {
+                int suma = 10 + 90;
+                printf("La suma es %d", suma);
+            }
+Ambito y ciclo de vida de las variables:
+    Variable global: se crea por fuera de las funciones y son accesibles desde cualquier funcion 
+        Ejemplo: 
+            int edad = 90;
+            int main(){
+                // Esto es posible debido a que la variable es global
+                edad = 8;
+                return 0;
+            }
+    Variable local: son variables creadas dentro de una funcion y estas no estan disponibles fuera de la misma 
+        podes crear una variable local y usarla en funciones dentro de esa funcion 
+        podes enviarla como parametro a otras funciones 
+        Ejemplo:
+            void mostrarData(){
+                // Esta variable solo estara disponible en mostrarData 
+                int edad;
+                edad  20;
+            }
+
+            int main(){
+                // Triara error porque aca no existe edad
+                edad = 90; 
+                return 0;
+            }
+    Variable estatica: es una variable que se crea dentro de una funcion y no se destruye 
+        al iniciar la funcion esta es creada y asignada o no 
+        al acabar la funcion no se pierden sus datos pero tampoco podremos acceder desde fuera de la funcion 
+        al volver a ejecutar la funcion esta variable no se vuelve a crear, conserva su ultimo valor y puede ser modificado 
+        esta variable se destruye al momento de acabar el programa 
+        Ejemplo:
+            void mostrar() {
+                static int num = 0;
+                num++;
+            }
+
+            int main(){
+                mostrar(); // aca num termina siendo 1
+                mostrar(); // aca num es 2
+                mostrar(); // num pasa a ser 3
+                num = 0; // aca hay un error porque num no existe fuera de mostrar()
+
+                return 0;
+            }
+Prototipos de funciones: se trata de definir las funciones antes de crear su codigo interno 
+    sirve para poder poner nuestras funciones de manera ordenada segun nueustros gustos personales pero evitando el "is not defined" 
+    soluciona el tema de que cuando llamamos a una funcion que no fue creada antes esta nos tira un "is not defined"
+    para esto se definen al comienzo en orden correcto, para despues crearlas en donde querramos
+    Ejemplo erroneo:
+        int cuenta() {
+            int resultado = suma(10, 2);
+            return resultado;
+        }
+
+        int main(){
+            cuenta();
+            return 0;
+        }
+
+        int suma(int a, int b) {
+            int resutlado = a + b;
+            return resultado;
+        };
+
+        Esto fallara porque main llama a cuenta y cuenta intenta llamar a suma, pero suma no existe todavia
+    Ejemplo correcto:
+        int suma(int a, int b);
+        int cuenta();
+
+        int cuenta() {
+            int resultado = suma(10, 2);
+            return resultado;
+        }
+
+        int main(){
+            cuenta();
+            return 0;
+        }
+
+        int suma(int a, int b) {
+            int resutlado = a + b;
+            return resultado;
+        };
+
+        Esto funcionara debido a que al comienzo definimos las dunciones y estas ya existen al momento de su uso sin importar donde esten completas 
+Funcion recursiva: es cuando una funcion se llama a si misma 
+    Ejemplo:
+        void contraseña(){
+            int clave;
+            printf("Introduczca su contraseña \n");
+            scanf("%d", clave);
+
+            if(clave == 22) {
+                printf("Bienvenido");
+                return;
+            }else{
+                contraseña();
+            }
+        }
+    Esta funcion pide una contraseña, si es correcta se detiene la funcion y deja que entres, pero si no es correcta se llama a si misma de nuevo volviendo a comenzar
+    ADVERTENCIA: cada llamada de la funcion se almacena en la pila de funcion (es como un buffer especifico para las funciones), por lo que llamarse muchas veces puede provocar una sobrecarga de pila 
+
+----------------------------------------------------------------------------------------------------
+NIVEL 6: ARRAYS Y CADENAS DE CARACTERES
+----------------------------------------------------------------------------------------------------
+Array: es un conjunto de elementos de un mismo tipo 
+    es como una variable que almacena varios datos 
+    es como una caja, en vez de almacenar un libro almacena varios libros 
+    Declaracion: para declarar se debe indicar entre corchetes cuantos elementos tendra 
+        int notas[5] --> esto es un array que contendra 5 elementos dentro del tipo int 
+    Inicializacion:  
+        En conjunto al definir: podemos introducir varios datos de una con llaves 
+            int notas[5] = {3, 8, 5, 4, 10}
+            aca completamos el array con los 5 valores de una al definirlo 
+        En partes al definir: podemos crear el array con ciertos datos y ciertos otros no 
+            int notas[5] = {1, 2}
+            aca creamos el array de 5 elementos pero solo completamos 2 espacios 
+        Sin especificar tamaño por escrito: podemos crear un array sin tamaño por escrito, adaptandose a lo que el metemos a la primera 
+            int notas[] = {2, 6, 1}
+            aca no especificamos el tamaño de notas pero notas ahora tiene 3 elementos 
+            es lo mismo que si hubieramos puesto int notas[3] = {2, 6, 1}
+        De a uno: se puede introducir un dato especifico indicando en el corchete que elemento se modificara 
+            int notas[3];
+            notas[0] = 10;
+            notas[1] = 90;
+            ahora el array notas contiene 10, 90
+            se comienza a contar desde cero 
+            el array[0] es el primer elemento del array 
+    Ver cuantos espacios tiene: para ver el tamaño del array podremos utilizar el sizeof
+        int notas[] = {4, 7, 5, 5, 10}
+        int resultado = sizeof(notas) / sizeof(notas[1]);
+        con sizeof(notas) vemos cuanto espacio ocupa notas 
+        con sizeof(notas[0]) vemos cuanto ocupa el 1er elemento 
+        al dividir el total por el primero sabremos cuantos elementos caben en el array 
+    Array bidireccion: es un array de arrays 
+        Ejemplo: int notas[5][2] = {
+            {1, 2},
+            {3, 4},
+            {5, 6}.
+            {7, 8},
+            {9, 0}
+        }
+        tambien llamado matriz
+        para modificar es como un array normal 
+            nota[0][1] = 9;
+            ahora seria {
+            {1, 9},
+            {3, 4},
+            {5, 6}.
+            {7, 8},
+            {9, 0}
+        }
+Cadenas de texto: son los textos comunes 
+    por ejemplo "Nahuel" es un string o cadena de texto 
+    un string es un array de caracteres 
+    el ultimo caracter es un \0 que indica el final del string 
+        "Hola" == 'H', 'o', 'l', 'a', '\0'
+        el caracter \0 no lo vemos, sirve para que c pueda realizar ciertas operaciones 
+    Ejemplo: 
+        char nombre[7] = "Nahuel";
+    para llamar a una variable de tipo string se debe poner %s 
+        printf("Hola %s", nombre);
+        no debe ponerse el & delante de la variable tipo string
+    Funciones standar:
+        strlen(): con esta funcion podemos saber cuantos caracteres contiene el string antes del \0
+            int caract = strlen(nombre);
+            printf("El nombre tiene %zu caracteres", caract);
+            %zu es para mostrar el resultado de un sizeof o de un strlen 
+        strcpy(): sirve para introducir / copiar un string de una variable a otra variable 
+            strcpy viene de String Copy
+            Ejemplo:
+                char nombre[6] = "Nahuel";
+                char nombre2[6];
+            
+                strcpy(nombre2, nombre);
+                // ahora nombre2 tiene "Nahuel" al igual que nombre
+        strcmp(): se utiliza para comparar dos strings y verificar cual viene antes en orden alfabetico
+            las mayusuclas y minusculas se diferencian
+            aunque se usa para saber el orden alfabetico su uso mas comun es para verificar si las cadenas son iguales 
+            strcmp viene de String Compare
+            Ejemplo orden: 
+                int result = strcmp(cadena1, cadena2);
+                si result es 0 es porque son iguales y ninguna viene antes que otra 
+                si result es menor a 0 significa que cadena1 viene antes 
+                si result es mayor a 0 significa que cadena2 viene antes 
+            Ejemplo mas usado:
+                int result = strcmp(clave, "hzf");
+                si clave es igual a "hzf" entonces devolvera un 0 y podremos tomarlo como un true 
+        strncpy(): copia N cantidad de caracteres de un string a otro 
+            al final no hay que olvidarse añadir el caracter \0
+            Ejemplo:
+                char a[10];
+                char b[20] = " Hola Mundo";
+                strncpy(a, b, 5);
+                // esto copia 5 caracteres de b a a
+                a[5] = '\0';
+        strcat(): sirve para unir 2 cadenas de texto es una 
+            cat biene de concatenar (unir)
+            strcat viene de String Concat
+            Ejemplo:
+                char saludo[20] = "Hola";
+                char saludo2[] = "mundo";
+                strcat(saludo, saludo2);
+                // ahora saludo es "Hola mundo"
+
+----------------------------------------------------------------------------------------------------
+NIVEL 7: PUNTEROS Y GESTION DE MEMORIA
+----------------------------------------------------------------------------------------------------
+Memoria: en un sistema, la memoria es como una grilla, donde cada cuadrado es un byte 
+    cada celda (byte) tiene una direccion unica 
+        las direcciones son una serie de numeros 
+        suelen ser representadas en formato hexadecimal (base 16)
+        Ejemplo:
+            0x23ff
+            0x0000
+Formato hexadecimal: es un modo de representar datos 
+    cada numero se representa utilizando 16 simbolos (A-F y 0-9)
+        0 = 0
+        1 = 1
+        2 = 2
+        3 = 3
+        4 = 4
+        5 = 5
+        6 = 6
+        7 = 7
+        8 = 8
+        9 = 9 
+        A = 10
+        B = 11
+        C = 12
+        D = 13
+        E = 14
+        f = 15
+    cada vez que se representa este hexadecimal se incluye un 0x al comienzo, de este modo se sabe que es hexadecimal 
+    Conversion: para convertir de hexadecimal a numero se utiliza una tabla similar a la de los binarios 
+        de derecha a izquierda se multiplica por 16
+        se completa los espacios con los valores especificados 
+        Tabla:
+            -----------------------------------------------------
+            |  1048576  |  65546  |  4096  |  256  |  16  |  1  |
+            -----------------------------------------------------
+            |     x     |    x    |    x   |   x   |  x   |  x  |
+            -----------------------------------------------------
+            x = valor hexadecimal despues del 0x
+        Ejemplo:
+            0x0A32E1
+            -----------------------------------------------------
+            |  1048576  |  65546  |  4096  |  256  |  16  |  1  |
+            -----------------------------------------------------
+            |     0     |    A    |    3   |   2   |  E   |  1  |
+            -----------------------------------------------------
+            0x0A32E1 = 0 + (65546 * 10) + (4096 * 3) + (256 * 2) + (16 * 14) + (1 * 1)
+            0x0A32E1 = 0 + 655460 + 12288 + 512 + 774144 + 1
+            0x0A32E1 = 1442405
+Puntero: es una variable que en vez de tener un dato dentro contiene la ubicacion de otra variable 
+    una variable comun almacena por ejemplo "A"
+    un puntero almacena el espacio donde esta esa variable con "A" dentro 
+    basicamente el puntero devuelve la direccion hexadecimal de donde comienza la variable 
+    si la variable ocupa mas de un byte (por ejemplo 10) solo devolvera el primer byte que ocupa, la primera celda de la grilla 
+    inicializacion: para inicializar un puntero usamos el *
+        int a; // variable 
+        int *a; // puntero 
+    almacenar: para obtener un puntero se necesita una variable de tal tipo y el & 
+        int *p;
+        p = &a; // almacena la direccion de la variable a
+        el & obtiene la direccion de la variable 
+        el *variable es el tipo de variable que puede almacenarlo
+    scanf: al usar el scanf con numeros siempre ponemos & porque de ese modo scanf sabe donde almacenar el dato recibido ya que le enviamos la ubicacion en la memoria
+        scanf("%d", &numero);
+        en casos de arrays y strings no hace falta el & debido a que cuando creamos el mismo, este ya funciona como un puntero 
+            scanf("%s", nombre);
+            nombre ya esta funcionando como un puntero al primer byte del array 
+        porque & en scanf y no en variables?: 
+            al crear una variable podemos modificarla solo asignandole datos 
+                int a = 10;
+                a = 30;
+                esto porque el compilador ya sabe que a esta ubicado en X lugar, ya que lo creo este mismo 
+            al intentar modificar una variable con scanf debemos usar &
+                scanf("%d", &a);
+                esto se debe a que scanf es una funcion de una libreria externa y no tiene acceso a nuestas variables ni a nuestro codigo en si 
+                scanf recibe como parametro a
+                los parametros son como copias del dato que se envia, podemos modificarlo, eliminarlo, etc y no pasara nada con el real, es una copia 
+                cuando le enviamos un puntero le enviamos la ubicacion real  de la variable, de este modo scanf en vez de modificar una copia va a la direccion que le enviamos y modifica los datos de ese lugar 
+    Conversion: si almacenamos un puntero en un int almacenamos el puntero en formato legible y no en hexadecimal 
+        long int p = &a; // esto por ejemplo almacena 27632
+        int *p = &a; // esto almacena por ejemplo 0x0443
+        no se recomienda hacer p = &a porque los putneros suelen ser demaciado grandes para una variable comun 
+        & y *:
+            Direccion: el & sirve para obtener la direccion de tal variable
+                &num;
+            dereferencia: se usa el * para acceder al contenido de un puntero almacenado 
+                int a = 10;
+                int *p = &a;
+                int b = *p; // entonces b = 10 porque *p muestra lo que contiene la ubicacion que almacena  
+            declaracion: se usa * para indicar que trabajamos con punteros 
+                int *p; 
+    typedef: sirve para modificar el nombre de un tipo de dato 
+        typedef short int shint; // con esto cambiamos el nombre de short int a shirt
+        shint a = 10; // ahora podemos usar shirt en vez de short int 
+        sirve para comodidad de uno 
+        tambien podemos seguir usando short int de igual manera, ahora hay dos maneras de llamarle 
+    Puntero vs Variable: en resumen una variable es un espacio en la memoria al cual le asignamos un nombre y el puntero es la ubicacion de de esa variable en el sistema 
+    Mostrar puntero: para mostrar un puntero utilizamos el %p
+        printf("%p", (void *)puntero); // (void *) se debe poner para converirlo a un dato generico, de este modo %p podra manejarlo sin importar si es numero, char, etc
+Conversion de datos: se trata de cambiar el tipo de dato de algun valor 
+    Conversion implicita: es cuando el mismo compilador realiza la conversion de manera automatica
+        int i = 10; // i es 10 
+        float b = i; // ahora b es 10.00
+        float x = 10.5; // x es 10.5 
+        int y = x; // y es 10
+    Conversion explicita (casting): es cuando debemos convertir los datos de manera manual 
+        se debe poner el tipo de dato al que se convertira entre parentesis 
+        int i = 10;
+        float x = (float)i;
+    Letra a ASCII: podemos obtener los valores ASCII de los caracteres 
+        char letra = 'A';
+        int Asc = (int)letra; // esto devuelve el ASCII de A
+    ASCII a Letra: podemos convertir un ASCII en caracter 
+        int num = 65;
+        char car = (char)num; // Obtenemos el caracter correspondiente a 65
+    Tipos de datos y Punteros: 
+        int *p = (int *)0x09334; // almacena el valor en entero (por ejemplo 8839)
+        void *a;
+        int *x = (int *)a; // convirtirlo a un puntero de tipo int
+        int *p;
+        float *x = (float *)p; // convierte el punero p a float 
+    Cadena a Int:
+        char str[] = "123";
+        int num = atoi(str); // ASCII To Int
+    Cadena a float:
+        char str = "123.5";
+        float num = atof(str); // ASCII To Float
+    Puntero a numero:
+        int *p = &num;
+        unsigned long dir = (unsigned long)p;
+        printf("Esta ubicado en %lu", dir); // %lu es para unsigned long
+    Conversion + guardado: podemos utilizar sprintf para almacenar en una variable un dato pero convertido
+        int edad = 20;
+        char miEdad[20]; 
+        sprintf(miEdad, "mi edad es %d", edad); // almacena "mi edad es 20" dentro de miEdad
+Memoria dinamica: se trata de asignar memoria en tiempo de ejecusion
+    la memoria dinamica es como una variable pero administrable
+        tiene propiedades locales en sentido de como se crea 
+            se crea en condicionales, en blucles, etc 
+            podemos crearlo tambien suelta 
+        tiene propiedades globales en sentido de permisos y accesos 
+            podemos usarla fuera del bucle o condicional donde se creo 
+            al finalizar el bucle o condicional o funcion, esta sigue siendo accesible 
+        tiene la responsabilidad de ser administrada manualmente
+            esta memoria se reserva como una variable normal 
+            se puede cambiar su tamaño 
+            hay que tener en cuenta de que se puede y se debe liberar el espacio de manera manual 
+            si no liberamos el espacio, esta quedara ocupando tal espacio hasta que acabe el programa 
+            si no se libera el espacio (se elimina esa memoria) el sistema ira mas pesado, lleno, etc 
+    variables: para almacenar un dato que representa el tamaño de la memoria se utiliza size_t 
+        size_t es el tipo de dato que devuelve la funcion sizeof
+        size_t tamaño;
+        aca creamos una variable la cual podra contener un int positivo que representara un espacio en bytes
+    heap: es el espacio de la memoria reservado a memorias dinamicas, es una seccion especifica de la memoria 
+    Uso de memoria dinamica:
+        Crear: 
+            malloc (memory allocation): se utiliza para reservar un espacio de N bytes en el heap pero el contenido no esta inicializado
+                se debe poner malloc() y especificar el tamaño que ocupara 
+                Ejemplo:    
+                    size_t tam = sizeof(int);
+                    int *arr = (int *)malloc(tam * 10); // aca creo un array con espacio dinamico para 10 enteros pero no estan inicializados 
+                *arr vs arr[]:
+                    arr[]: es equivalente a crear una variable y despues asignarle lo sigueinte 
+                        es como comprar casa de barbies de plastico, es estatica, podes meter muñecas dentro y sacarlas pero la casa es asi como viene  
+                    *arr: es equivalente a decir "dame acceso a la memoria" y de ahi vos creas la estructura de la memoria en si 
+                        es como comprar legos, podes armar la casa de barbies a tu gusto, podes modificarla cuando quieras y al momento de dejar de usarla deberas desarmarla 
+            calloc (contigous allocation): crea un espacio dinamico para X cantidad de elementos de Y bytes y los inicializa a todos en 0 (para char se pone como '/0')
+                se pone calloc(cantidad, size_t);
+                Ejemplo:
+                    size_t tamaño = sizeof(int);
+                    int *arr = (int *)calloc(10, tamaño);
+        Modificar:
+            realloc (re-asignation allocation): sirve para redimencionar un blocke de memoria dinamica 
+                se pone realloc(memoria_a_redimenciona, size_t)
+                Ejemplo:
+                    arr = (int *)realloc(arr, sizeof(int) * 30);
+        Eliminar:
+            free: si se necesita liberar la memoria se puede usar free 
+                free(arr) // elimina el contenido de esa direccion
+        Uso: una vez establecido se puede usar como una variable comun 
+            arr[0] = 10;
+    Punteros colgantes: son punteros que aputnaban a una direccion dinamica pero esta direccion ya fue liberada y el puntero en si apunta a una direccion ya invalida
+        para evitar problemas se pone *num = NULL;     
+    Fugas de memoria: es cuando sobreescribimos un puntero que contenia una memoria dinamica o perdemos su contenido, teniendo una memoria dinamica ocupando espacio pero sin poder acceder a esta ni modificarla 
+Arrays y Punteros: un array tiene un nombre, ese nombre es un puntero al primer elemento del array 
+    char arr[5]; 
+    arr == &arr[0]
+    Aritmetica de puntero: permite mover el puntero a travez de bloques de memoria de manera eficiente 
+        Asignacion:
+            int arr[5] = {1, 2, 3, 4, 5} // al crear un array se toma la posicion del primer elemento del mismo 
+            int *pointer = arr; // es lo mismo que arr[0] 
+        Suma:
+            Puntero + Numero: 
+                pointer = arr + 1 // esto mueve el foco de arr[0] a arr[1] y devuelve su posicion
+                pointer = *(arr + 1) // esto devuelve el contenido de arr + 1
+                tambien funciona con arr++ y *(arr++)
+        Resta:
+            Puntero - Numero:
+                pointer = arr - 1 // esto mueve el foco de arr[1] a arr[0] y devuelve su posicion
+                pointer = *(arr - 1) // esto devuelve el contenido de arr - 1
+                tambien funciona con arr-- y *(arr--)
+            Puntero - Puntero:
+                int *pointer1 = &arr[2];
+                int *pointer2 = &arr;
+                pointer = pointer1 - pointer2 // esto me da como resultado 2, porque arr[0] esta a 2 espacios de arr[2] (o mas facil, arr[2 - 0])
+                importante no hacer cuentas que queden en < 0
+        Comparacion:
+            ==: comparamos si dos punteros apuntan a la misma direccion 
+                int *arr = &num;
+                int *arr2 = &num; 
+                arr2 == arr // esto es true (devuelve 1)
+            !=: verificamos si los putneros apuntan a diferentes direcciones
+                arr2 != arr // esto devuelve 0 (false)
+        NULL: podemos verificar si el puntero esta incializado con una verificacion de igualdad 
+            if(arr == NULL){
+                printf("No esta inicializado");
+            } 
+Arrays a funciones: cuando pasas un array a una funcion estas pasando un puntero al primer elemento del array 
+    por lo tanto pasar un array a una funcion puede ser perjudicial porque podrias dañar el array original
+    ademas permite trabajar con arrays de cualquier longitud sin tener que hacer copias para utilizarse en la funcion 
+    Ejemplo:
+        void sumar(int *arr, int tamaño){
+            int res = 0;
+            for(int i = 0; i < tamaño; i++){
+                res += arr[i];
+            }
+            printf("El resultado es %d", res);
+
+            return;
+        }
+
+        int main(){
+            int numeros[] = {5, 3, 6, 3};
+            sumar(numeros, 4);
+            return 0;
+        }
+    Arrays multidimensionales: para pasar un array multidimensional se debe saber el tamaño de cada subarray
+        si tengo arr[x][y]  debos saber el valor de y 
+        Ejemplo:
+            int sumar(int arr[][3], int tamaño) {
+                for(int i = 0; i < tamaño; i++) {
+                    for(j = 0; j < 3; j++) {
+                        printf("Numero %d", arr[i][j]);
+                    }
+                }
+            }
+
+            int main() {
+                int arr[2][3] = {
+                    {1, 2, 3},
+                    {5, 3, 7}
+                }
+
+                sumar(arr, 2);
+            }
+Tecnicas de optimizacion: es requerido para mejorar el funcionamientro, eficiencia y rendimiento del programa 
+    Uso eficiente de arrays: utilizar arrays con tamaños exactos, sin espacios que no seran ocupados
+        de ser necesario utilizar memoria dinamica para crear arrays mas adaptables a los cambios 
+    Uso de memoria dinamica: utilizar memoria dinamica para evitar gastar espacio innecesario 
+    Liberacion de memoria: al acabar de utilizar memoria dinamica eliminar los datos con free asi mantenemos un entorno liviano
+    Optimizacion de datos: 
+        Estructuras adecuadas: utilizar estructuras de datos que se adapten a los requisitos especificos como tablas hash o arboles para busquedas rapidas
+        Tamaños: utilizar tamaños de datos menores en caso de ser posible como uint8_t en vez de int 
+            uint8_t es un numero de 0 a 255
+            uint8_t numero = 90;
+    Minimizar las copias: cuando sea posible pasar punteros en vez de grandes estructuras de datos para evitar realizar copias innecesarias 
+    Uso de memoria en funciones:
+        Evitar V. Globales: cuando sea posible utilizar variables locales para que no saturen el sistema y sean eliminados al finalizar el bloque 
+        Optimizar el alcance de las variables: crear variables en el ambito mas pequeño posible para que sean liberadas cuanto antes posible 
+Punteros y Funciones:
+    Puntero como parametro: podemos pasar punteros como parametros a una funcion pero esto implica que la modificacion del parametro afectara al dato real
+        void mostrar(int *num) {
+            printf("La direccion es %p", (void *)num);
+            return;
+        }
+
+        int main() {
+            int numero = 90;
+
+            mostrar(&numero);
+
+            return 0;
+        }
+    Puntero a funcion: estos punteros en vez de apuntar al espacio donde se almacena una variable, apuntan al espacio donde se almacena una funcion
+        Ejemplo:
+            int suma(int a, int b) {
+                int resultado = a + b;
+                return resultado;
+            }
+
+            int (*ptr_func)(int, int); // creo un puntero para una funcion que devuelve un int y recibe 2 int
+
+            ptr_func = suma; // tmabien podemos poner = &suma 
+            int resultado = ptr_func(5, 3); // es como hacer suma(5, 3)
+    Funcion como parametro de otra funcion: aca se utilzia el puntero a funcion y se le pasa el puntero 
+        int suma(int a, int b) {
+            return a + b;
+        }
+
+        int resta(int a, int b) {
+            return a - b;
+        }
+
+        // Aca recibe un puntero a una funcion, el puntero se almacenara como operacion, este devuelve un int y recibe dos int mas, la funcion operar ademas de por si recibe otros dos int 
+        void operar(int (*operacion)(int, int), int x, int y) {
+            printf("Resultado: %d\n", operacion(x, y));
+        }
+
+        int main() {
+            int (*ptr_func)(int, int); // puntero a funcion tipo int que recibe 2 ints 
+
+            ptr_func = &suma;
+            operar(ptr_func, 10, 5);
+
+            ptr_func = resta;
+            operar(ptr_func, 10, 5);
+
+            return 0;
+        }  
+Punteros a punteros:
+    Puntero a puntero: se trata de un puntero que apunta a otro 
+        Ejemplo: 
+            int a = 0;
+            int *p = &a;
+            int **pp = &p;
+    Puntero a puntero a puntero: es cuando tenemos un puntero que apunta a un puntero que ya apuntaba a otro puntero previo 
+        Ejemplo:
+            int var = 5;
+            int *p = &var;
+            int **pp = &p;
+            int ***ppp = &pp; // puntero a puntero a puntero
+            printf("%d\n", ***ppp);  // Muestra 5
+        Ejemplo: 
+            int **matrix;
+            int rows = 3, cols = 3;
+    
+            // Asignamos memoria para la matriz de punteros
+            matrix = (int **)malloc(rows * sizeof(int *));
+    
+            for (int i = 0; i < rows; i++) {
+                matrix[i] = (int *)malloc(cols * sizeof(int));
+            }   
+    
+            // Llenamos la matriz con valores
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    matrix[i][j] = i * j;
+                }
+            }
+    
+            // Imprimimos la matriz
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    printf("%d ", matrix[i][j]);
+                }
+                printf("\n");
+            }
+
+            // Liberamos la memoria
+            for (int i = 0; i < rows; i++) {
+                free(matrix[i]);
+            }
+            free(matrix);
+        Estas cosas son utiles por ejemplo para crear matrices de memoria dinamica donde cada fila y columna sera creada con un malloc o calloc 
+        Los punteros a punteros sirven para pasar punteros a de memoriaa dinamica a una funcion 
+            en una funcion al recibir un parametro se crea una variable temporal para el parametro 
+            si enviamos una direccion de memoria dinamica la funcion creara una variable de tipo puntero temporal 
+            se modificara el tamaño de la memoria dentro de la funcion y todo como siempre 
+            el problema es que al acabar la funcion esta variable se destruye ya que es local 
+            al destruirse la variable queda una fuga de memoria, la memoria dinamica ya no tiene su contenedor asi que no tenemos su ubicaicon 
+            el contenedor previo ya no sirve debido a que se modifico el tamaño de la memoria dinamica y ya no encaja 
+            para esto se recibe un puntero a puntero, por ejemplo int sum(int **p, int b){} 
+            con esto se recibe un puntero como parametro, pero el puntero entero, en vez de sum(&p, 2) se envia sum(p, 2)
+            al recibir el puntero en si se crea una variable que contiene al puntero, este es el puntero a puntero 
+            al modificar el tamaño de la memoria se puede tambien modificar el puntero en si, adaptando el tamaño al nuevo tamaño de la memoria dinamica 
+            al acabar el programa el puntero a puntero se destruye, pero queda el puntero originaal, el cual tiene el nuevo tamaño de por si y la memoria dinamica ya modificada
+Linea de comandos:
+    a veces vemos en el main que tiene dos parametros:
+        int argc (arguments counter) --> hace referencia a cuantos argumentos se pasan desde la linea de comandos
+        in *argv[] (arguments values) --> hace referencia al contenido de cada argumento que se pasa desde la linea de comandos 
+    Ejemplo:
+        ./mi_programa arg1 arg2 arg3
+        argc == 4 (mi_programa, arg1, arg2 y arg3)
+        argv == ["mi_programa", "arg1", "arg2", "arg3"]
+
+----------------------------------------------------------------------------------------------------
+NIVEL 8: ESTRUCTURAS y UNIONES
+----------------------------------------------------------------------------------------------------
+Estructuras: es un tipo de dato que permite almacenar varios datos de diferentes tipos 
+    es como un tipo de array de datos mixtos
+    este "array" tiene una estructura, un molde 
+    Uso:
+        para usarlo debemos poner la palabra struct
+            Ejemplo:
+                struct Persona {
+                    char nombre[10];
+                    int edad;
+                    float altura;
+                }
+        una vez creado podremos crear datos del tipo persona (porque asi le puse a mi struct)
+        ademas podremos acceder a sus datos especificos mediante el punto 
+            Ejemplo:
+                struct Persona persona1;
+                persona1.edad = 20;
+                persona1.nombre = "Nahuel";
+                persona1.altura = 1.70;
+    Puntero a estructura: 
+        struct Persona *ptr_persona;
+        ptr_persona = persona1;
+        printf("Edad: %d", ptr_persona -> edad);
+    Arrays de estructuras: podemos crear un array de variables de estructuras 
+        Ejemplo 1:
+            struct Persona personas[10]
+            personas[0].edad = 25;
+            strcpy(personas[0].nombre, "Ana");
+        Ejemplo 2: tambien podemos crearlo automaticamente al definir el struct de una 
+            struct Persona {
+                char nombre[10];
+                int edad;
+                float altura;
+            }personas[20];
+Uniones: es similar a una estructura pero todos los datos comparten un mismo espacio en memoria 
+    si se modifica uno se elimina el contenido del otro (mas bien se sobreescribe)
+    es como un tipo de variable dinamica que puede cambiar su tipo de dato 
+    Ejemplo:
+        union Dato {
+            int entero;
+            float flotante;
+            char caracter;
+        }
+
+        union Dato dato;
+        dato.entero = 10;
+        dato.flotante = 20.3; // ahora dato.entero solo contiene basura, se sobreescribio 
+Enums: es un conjunto de constantes numericas 
+    se define y cada elemento de adentro de un numero del 0 en adelante 
+    si se especifica que el primer numero es X entonces los demas seran de X en adelante 
+    Ejemplo: 
+        enum Meses {
+            ENERO,
+            FEBRERO,
+            MARZO,
+            ABRIL
+        }
+
+        // Acan ENERO es 0, FEBRERO es 1 y asi 
+        
+        enum Meses {
+            ENERO = 1,
+            FEBRERO,
+            MARZO,
+            ABRIL
+        }
+
+        // Aca ENERO es 1, FEBRERO es 2 y asi
+
+----------------------------------------------------------------------------------------------------
+NIVEL 9: ESTRUCTURAS DE DATOS DINAMICOS
+----------------------------------------------------------------------------------------------------
+Listas enlazadas: son estructuras las cuales tienen un atributo que apunta a la direccion de la misma estructura 
+    tiene sus respectivos atributos como cualquier lista 
+    Lista enlazada simple:
+        un de sus atributos apunta a un nuevo elemento de esta estructura 
+        Ejemplo:
+            typedef struct Tarea {
+                char descripcion[100];
+                struct Tarea *siguiente; // Puntero al siguiente nodo (struct tarea)
+            }Tarea; // Tarea es el alias que le damos al struct
+        para hacer uso de listas enlazadas debemos usar punteros a punteros
+            Ejemplo;
+                void agregarTarea(Tarea **lista, const char *descripcion){
+                    Tarea *nuevaTarea = (Tarea *)malloc(sizeof(Tarea));
+            
+                    if(nuevaTarea == NULL) {
+                        printf("Error al asignar memoria para la nueva tarea.\n");
+                        return;
+                    }
+
+                    strncpy(nuevaTarea -> descripcion, descripcion, sizeof(nuevaTarea -> descripcion) -1);
+                    nuevaTarea -> descripcion[sizeof(nuevaTarea -> descripcion) - 1] = '\0';
+
+                    // La nueva tarea no apunta a nada, por lo tanto es el ultimo nodo
+                    nuevaTarea -> siguiente = NULL; // Lo ponemos como valor por defecto, si se necesita se modifica en el proceso
+
+                    if(*lista == NULL) {
+                        // Si lista contiene NULL entonces le añadimos la nuevaTarea (la descripcion que creamos)
+                        *lista = nuevaTarea;
+                    }else{
+                        // Creo un punero para almacenar el contenido de lista
+                        Tarea *temp = *lista;
+                        //Mientras que no sea el ultimo nodo vamos a continuar con el bucle
+                        while(temp -> siguiente != NULL) {
+                            // Vamos recorriendo cada nodo hasta encontrar justamente el ultimo (el .siguiente == NULL)
+                            temp = temp -> siguiente;
+                        }
+                        //al encontrarlo le introducimos la nueva tarea la nueva tarea 
+                        temp -> siguiente = nuevaTarea;
+                    }
+                };
+        para modificar los atributos no usamos el ".", usamos el "->"
+            Ejemplo: 
+                int main() {
+                    Tarea* listaTareas = NULL; // Lista de tareas inicialmente vacía
+
+                    // Agregamos algunas tareas
+                    agregarTarea(&listaTareas, "Comprar leche");
+                    agregarTarea(&listaTareas, "Estudiar C");
+                    agregarTarea(&listaTareas, "Hacer ejercicio");
+            
+                    return 0;
+                }
+        basicamente crea un array con arrays
+            Ejemplo: [descripcion: "Comprar leche", [descripcion: "Estudiar C", [descripcion: "Hacer ejercicio", NULL]]];
+    Lista enlazada doble: cada struct tiene tanto un puntero al siguiente struct y uno al struct anterior
+        Ejemplo: 
+            struct NodoDoble {
+                int valor;
+                struct NodoDoble* siguiente;   // Apunta al siguiente nodo
+                struct NodoDoble* anterior;    // Apunta al nodo anterior
+            };
+
+            void insertar(struct NodoDoble** cabeza, int valor) {
+                struct NodoDoble* nuevoNodo = malloc(sizeof(struct NodoDoble));
+                nuevoNodo->valor = valor;
+                nuevoNodo->siguiente = *cabeza;  // El nuevo nodo apunta al primer nodo
+                nuevoNodo->anterior = NULL;      // Al principio, no hay nodo anterior
+
+                if (*cabeza != NULL) {
+                    (*cabeza)->anterior = nuevoNodo;  // El primer nodo ahora apunta atrás al nuevo nodo
+                }
+
+                *cabeza = nuevoNodo;  // El primer nodo es ahora el nuevo nodo
+            }
+Pilas y Colas:
+    Pilas (Stack): se trata de una forma de trabajar con los datos 
+        se trata de una funcion que obtiene, elimina, añade o modifica el ultimo elemento de una lista dinamica 
+        es un concepto que hace referencia a las funciones, es como decir CRUD
+        es una estructura lógica que sigue una metodología LIFO (el ultimmo elemento en entrar es el primero en salir)
+        se basa en 2 operaciones logicas:
+            Push: añade al final de la estructura
+            Pop: elimina el ultimo elemento de la estructura
+            Top: es opcional, a veces se incluye y es para ver el ultimo elemento de la estructura
+        puede funcionar en listas enlazadas o en arrays
+    Colas (Qeues): se trata de una forma de trabajar con los datos, similar al stack 
+        se trata de una funcion que inserta, extrae u oculta un dato de un array o lista enlazada 
+        se insertan datos por un extremo y se eliminan por el otro, esta metodologia se llama FIFO (el primer elemento en entrar sera el primero en salir)
+        se basa en 2 operadores:
+            Enqueue: inserta un elemento en la cola 
+            Dequeue: extrae el primer elemento ingresado 
+            Front: es opcional, podemos agregar una funcion para ver el primer elemento del array 
+Otras estructuras dinamicas:
+    Arboles binarios: son como una red neuronal parada
+        hay un nodo (estructura) raiz
+        del nodo raiz salen 2 nodos, uno mas chico a la izquierda y uno mas grande a la derecha 
+        esto se puede repetir infinitas veces 
+        Partes de los arboles:
+            Raiz: es el nodo principal 
+            Nodos: es cada substruct y cada uno tiene un valor y hasta 2 hijos
+            Hijos: es cada subnodo que sale de otro 
+            Hoja: son los nodos que no tienen hijos 
+            Subarbol: cada nodo con sus descendientes forman un nuevo subnodo
+        Tipos de arboles binarios:
+            Arbol binario completo: todos los niveles estan llenos excepto el ultimo 
+            Arbol binario perfecto: todos los niveles estan completamente llenos y todos tienen exactamente 2 hijos (excepto las hojas finales)
+            Arbol binario balanceado: la diferencia de altura entre subarboles izquierdos y derechos de cada nodo es 1 como mucho 
+            Arbol binario de busqueda (BST): donde todos los nodos y subnodos izquierdos son menores a los padres y todos los nodos y subnodos dere chos sin mayores a los padres
+                 Ejemplo:
+                             10
+                           /    \
+                          5      15
+                         / \    /  \
+                        2   7  12   18
+        Ejemplo:
+            // Creamos el struct Nodo
+            typedef struct Nodo {
+                int valor;
+                struct Nodo* izquierdo;
+                struct Nodo* derecho;
+            } Nodo;
+
+            // Esta funcion crea un nodo / hoja
+            Nodo* crearNodo(int valor) {
+                // Crea un puntero dinamico
+                Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+                // Al nuevoNodo.valor le añade el valor
+                nuevoNodo->valor = valor;
+                // Aca el izquierdo y derecho le mete NULL porque crea una hoja
+                nuevoNodo->izquierdo = NULL;
+                nuevoNodo->derecho = NULL;
+                // Lo devuelve (la direccion en realidad)
+                return nuevoNodo;
+            }
+
+            // Esta funcion es para añadir un nuevo nodo a la red
+            Nodo* insertar(Nodo* nodo, int valor) {
+                // Si el nodo (ubicacion) que recibi es NULL entonces creo una hoja
+                if (nodo == NULL) {
+                    // Al crearse la hoja retorna el valor, por lo tanto vuelve al insertar() previo
+                    // Si estoy en el nodo 5 y es null, crea el nodo y retorna, obteniendolo el nodo 4
+                    return crearNodo(valor);
+                }
+
+                // Aca mismo es donde al retornar se almacena en su respectivo lado
+                if (valor < nodo->valor) {
+                    // Aca si el valor es menor al acutal entonces se manda al izquierdo 
+                    nodo->izquierdo = insertar(nodo->izquierdo, valor);
+                } else if (valor > nodo->valor) {
+                    // Si no al derecho
+                    nodo->derecho = insertar(nodo->derecho, valor);
+                }
+
+                // Al finalizar retorna el nodopara volver al comienzo del arbol para proximos mov.
+                return nodo;
+            }
+
+            // Esta funcion muestra el arbol
+            void enOrden(Nodo* nodo) {
+                // Si el nodo enviado no es NULL entonces contiene datos
+                if (nodo != NULL) {
+                    // Rellamamos al nodo izquierdo 
+                    enOrden(nodo->izquierdo);
+                    // Una vez que llegamos al ultimo izquierdo mostramos el nodo
+                    printf("%d ", nodo->valor);
+                    // Como ya fuimos la izquierdo ahora vamos al derecho 
+                    enOrden(nodo->derecho);
+                }
+
+                // Al ser NULL acaba la funcion actual pasando al proximo paso de la funcion enOrden() anterior
+            }
+
+            int main() {
+                Nodo* raiz = NULL;
+                raiz = insertar(raiz, 10);
+                insertar(raiz, 5);
+                insertar(raiz, 15);
+                insertar(raiz, 2);
+                insertar(raiz, 7);
+                insertar(raiz, 12);
+                insertar(raiz, 18);
+
+                printf("Recorrido en orden: ");
+                enOrden(raiz);
+                printf("\n");
+
+                return 0;
+            }
+    Arboles AVL: es un tipo de arbol binario de busqueda avanzada
+        su objetivo es que cuando hayan arboles disparejos (com decir que de un lado tiene muchos nodos y del otro pocos) se vaya reorganizando para ser mas parejo
+        es como un tipo de sort donde se va mezclando los datos y bloqueando a medida que van completando espacios 
+        Ejemplo (grafico):
+                    30
+                   /  \
+                 20   40
+                /
+              10
+             /
+            5
+            al aplcar el AVL lo reordenamos
+                 20
+                /  \
+               10   30
+              /       \
+             5        40
+        el balanceo sirve para optimizar el funcionamiento y busquedas
+        Ejemplo (codigo):
+            typedef struct Nodo {
+                int valor;
+                struct Nodo* izquierdo;
+                struct Nodo* derecho;
+                int altura; // Tiene un atributo que representara la posicion en el arbol
+            } Nodo;
+
+            // Funcion para crear un nuevo nodo
+            Nodo* crearNodo(int valor) {
+                Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+                nuevoNodo->valor = valor;
+                nuevoNodo->izquierdo = NULL;
+                nuevoNodo->derecho = NULL;
+                nuevoNodo->altura = 1; // Altura inicial del nodo
+                return nuevoNodo;
+            }
+
+            // Funcion para obtener la altura de un nodo
+            int obtenerAltura(Nodo* nodo) {
+                if (nodo == NULL) return 0;
+                return nodo->altura;
+            }
+
+            // Funcion para actualizar la altura de un nodo
+            int max(int a, int b) {
+                return (a > b) ? a : b;
+            }
+
+            // Funcion de balanceo del nodo
+            int obtenerBalance(Nodo* nodo) {
+                if (nodo == NULL) return 0;
+                return obtenerAltura(nodo->izquierdo) - obtenerAltura(nodo->derecho);
+            }
+
+            // Rotacion a la derecha
+            Nodo* rotacionDerecha(Nodo* y) {
+                Nodo* x = y->izquierdo;
+                Nodo* T2 = x->derecho;
+
+                // Realizamos la rotacion
+                x->derecho = y;
+                y->izquierdo = T2;
+
+                // Actualizamos las alturas
+                y->altura = max(obtenerAltura(y->izquierdo), obtenerAltura(y->derecho)) + 1;
+                x->altura = max(obtenerAltura(x->izquierdo), obtenerAltura(x->derecho)) + 1;
+
+                return x; // Retornamos la nueva raíz
+            }
+
+            // Rotacion a la izquierda
+            Nodo* rotacionIzquierda(Nodo* x) {
+                Nodo* y = x->derecho;
+                Nodo* T2 = y->izquierdo;
+
+                // Realizamos la rotacion
+                y->izquierdo = x;
+                x->derecho = T2;
+
+                // Actualizamos las alturas
+                x->altura = max(obtenerAltura(x->izquierdo), obtenerAltura(x->derecho)) + 1;
+                y->altura = max(obtenerAltura(y->izquierdo), obtenerAltura(y->derecho)) + 1;
+
+                return y; // Retornamos la nueva raíz
+            }
+
+            // Funcion para insertar un nodo en el árbol AVL
+            Nodo* insertar(Nodo* nodo, int valor) {
+                // Inserción normal en un árbol binario de búsqueda
+                if (nodo == NULL) return crearNodo(valor);
+                if (valor < nodo->valor)
+                    nodo->izquierdo = insertar(nodo->izquierdo, valor);
+                else if (valor > nodo->valor)
+                    nodo->derecho = insertar(nodo->derecho, valor);
+                else
+                    return nodo; // No se permiten valores duplicados
+
+                // Actualizamos la altura de este nodo
+                nodo->altura = 1 + max(obtenerAltura(nodo->izquierdo), obtenerAltura(nodo->derecho));
+
+                // Obtenemos el factor de balance de este nodo
+                int balance = obtenerBalance(nodo);
+
+                // Rotaciones para balancear el árbol
+
+                // Caso izquierda-izquierda
+                if (balance > 1 && valor < nodo->izquierdo->valor)
+                    return rotacionDerecha(nodo);
+
+                // Caso derecha-derecha
+                if (balance < -1 && valor > nodo->derecho->valor)
+                    return rotacionIzquierda(nodo);
+
+                // Caso izquierda-derecha
+                if (balance > 1 && valor > nodo->izquierdo->valor) {
+                    nodo->izquierdo = rotacionIzquierda(nodo->izquierdo);
+                    return rotacionDerecha(nodo);
+                }
+
+                // Caso derecha-izquierda
+                if (balance < -1 && valor < nodo->derecho->valor) {
+                    nodo->derecho = rotacionDerecha(nodo->derecho);
+                    return rotacionIzquierda(nodo);
+                }
+
+                return nodo; // Retornamos el nodo sin modificaciones si no es necesario balancear
+            }
+
+            // Función para mostrar el árbol en orden
+            void enOrden(Nodo* nodo) {
+                if (nodo != NULL) {
+                    enOrden(nodo->izquierdo);
+                    printf("%d ", nodo->valor);
+                    enOrden(nodo->derecho);
+                }
+            }
+
+            int main() {
+                Nodo* raiz = NULL;
+                raiz = insertar(raiz, 10);
+                raiz = insertar(raiz, 20);
+                raiz = insertar(raiz, 30);
+                raiz = insertar(raiz, 40);
+                raiz = insertar(raiz, 50);
+                raiz = insertar(raiz, 25);
+
+                printf("Recorrido en orden del árbol AVL: ");
+                enOrden(raiz);
+                printf("\n");
+
+                return 0;
+            }
+    Tablas Hash: es una etructura que permite hace busquedas inserciones, eliminaciones de manera veloz 
+        es basicamente un array asociativo
+        en vez de tener indices numericos tenemos indices personalizados
+        se realiza un embedding con cada indice de tipo string que enviamos y de ese modo se le asigna un indice numerico "oculto"
+        el embeddding es basicamente convertir un string en numeros mediante calculos matematicos 
+        Ejemplo:
+            #include <stdio.h>
+            #include <stdlib.h>
+            #include <string.h>
+
+            #define TAM_TABLA 10 // Definimos el tamaño de la tabla
+
+            // Estructura para almacenar cada entrada
+            typedef struct Nodo {
+                char clave[50];  // La clave (por ejemplo, un nombre)
+                int valor;       // El valor asociado (por ejemplo, la edad)
+                struct Nodo* siguiente; // Puntero al siguiente nodo en caso de colisión
+            } Nodo;
+
+            // La tabla hash será un array de punteros a Nodo
+            Nodo* tabla[TAM_TABLA];
+
+            // Función hash simple
+            unsigned int hash(char* clave) {
+                unsigned int hashValue = 0;
+                for (int i = 0; clave[i] != '\0'; i++) {
+                    hashValue = (hashValue * 31 + clave[i]) % TAM_TABLA;
+                }
+                return hashValue;
+            }
+
+            // Función para insertar en la tabla hash
+            void insertar(char* clave, int valor) {
+                unsigned int indice = hash(clave);
+                Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+                strcpy(nuevoNodo->clave, clave);
+                nuevoNodo->valor = valor;
+                nuevoNodo->siguiente = NULL;
+                
+                // Si no hay colisión, lo insertamos directamente
+                if (tabla[indice] == NULL) {
+                    tabla[indice] = nuevoNodo;
+                } else {
+                    // Si hay colisión, lo añadimos al final de la lista enlazada
+                    Nodo* temp = tabla[indice];
+                    while (temp->siguiente != NULL) {
+                        temp = temp->siguiente;
+                    }
+                    temp->siguiente = nuevoNodo;
+                }
+            }
+
+            // Función para buscar un valor dado una clave
+            int buscar(char* clave) {
+                unsigned int indice = hash(clave);
+                Nodo* temp = tabla[indice];
+                
+                while (temp != NULL) {
+                    if (strcmp(temp->clave, clave) == 0) {
+                        return temp->valor;
+                    }
+                    temp = temp->siguiente;
+                }
+                
+                return -1; // Si no se encuentra la clave
+            }
+
+            // Función para liberar memoria
+            void liberarTabla() {
+                for (int i = 0; i < TAM_TABLA; i++) {
+                    Nodo* temp = tabla[i];
+                    while (temp != NULL) {
+                        Nodo* siguiente = temp->siguiente;
+                        free(temp);
+                        temp = siguiente;
+                    }
+                }
+            }
+
+            int main() {
+                // Inicializamos la tabla
+                for (int i = 0; i < TAM_TABLA; i++) {
+                    tabla[i] = NULL;
+                }
+
+                // Insertamos algunos datos
+                insertar("Alice", 25);
+                insertar("Bob", 30);
+                insertar("Charlie", 22);
+
+                // Buscamos y mostramos el valor
+                printf("Edad de Alice: %d\n", buscar("Alice"));
+                printf("Edad de Bob: %d\n", buscar("Bob"));
+                printf("Edad de Charlie: %d\n", buscar("Charlie"));
+                
+                // Buscamos una clave no existente
+                printf("Edad de Dave: %d\n", buscar("Dave")); // Debería devolver -1
+                
+                // Liberamos la memoria
+                liberarTabla();
+                
+                return 0;
+            }
+    Manejo de colisiones:
+        Colision: ser trata de cuando dos keys (indices de string) tienen el mismo esquivalente numerico 
+        hash: es la funcion mediante la cual se calculan los pasajes de string a numeros
+        Encadenamiento (Chaining): se trata de unificar los arrays asociativos que contiene el mismo indice numerico en arrays 
+            por ejemplo 
+                si tenemos "Nahuel", "Lucas", "Pedro" y al hacer embedding los 3 tienen clave 5 entonces tendriamos colicion 
+                podemos hacer un tipo de array hashTable[5] = [(apple, 5), (banana, 7), (orange, 2)];
+                es como un subarray dentro del array con un subembedding
+            Ventajas: las listas son dinamicas y no hay problemas con el tamaño 
+            Desventajas: cuanto mas se agrande la lista mas tardara el proceso de busqueda 
+        Dirección Abierta (Open Addressing): trata de evitar las listas enlazadas en las coliciones
+            Busqueda lineal: si la posicion esta usada entonces intenta con la posicion + 1, si no posicion + 2 y asi sucesivamente hasta encontrar una posicion libre 
+            Busqueda cuadratica: si la posicion esta usada entonces intenta con la posicion + 1 ^ 2, si no posicion + 2 ^ 2 y asi sucesivamente hasta encontrar una posicion libre 
+            Doble Hashing: se aplica un segundo hash
+
+----------------------------------------------------------------------------------------------------
+NIVEL 10: MANEJO DE STRINGS EN PROFUNDIDAD
+----------------------------------------------------------------------------------------------------
+Manipulación Avanzada de Cadenas:
+    char *str VS char str[]:
+        char *str: 
+            aca apunta al espacio de memoria donde se almacenara el string 
+            al introducir el string no se podra mdificar, solo leer 
+            accede a un espacio llenandolo en el momento
+            es como escribir en el momento y reservar solo lo ocupado en el momento 
+        char str[]: 
+            aca apunta al espacio en memoria donde se almacenara el string pero lo reserva 
+            podemos solo reservar el espacio y dejarlo vacio y llenarlo despues 
+            podemos modificar el contenido siempre que no exceda el tamaño reservado 
+            es como reservar un espacio fijo 
+    strstr (string - string): busca un string dentro de otro string 
+        por ejemplo si necesito buscar si la clave contiene abc 
+        devuelve un puntero al primer caracter de donde encontro la coincidencia
+        Ejemplo:
+            char *cadena = "addadasdsabcdjjfd";
+            char *result = strstr(cadena, "abc");
+            // devolvera un puntero a abc 
+        si no encuentra coincidencias devolvera NULL 
+        despues lo podemos mostrar con %s 
+    strchr (string - character): busca la primera aparicion de un caracter dentro de una cadena 
+        Ejemplo:
+            char *str = "Hola Mundo";
+            char *res = strchr(str, 'o'); // Devolvera la direccion de 'o' del Hola
+    strrchr (string - reverse - character): busca la ultima aparicion de un caracter en una cadena
+        Ejemplo:
+            char *str = "Hola Mundo";
+            char *res = strrstr(str, 'o'); // Devolver la direccion de 'o' del Mundo
+    strspn (string - span): toma dos variables y verifica en la primera cuantos caracteres consecutivos desde el comienzo coinciden con la 2da
+        Ejemplo:
+            char *str = "123abc456";
+            char *set = "123456";
+            size_t res = strspn(str, set); // devuelve 3 (porque 123 esta set pero a ya no)
+    strcspn (string - complement - span): toma dos variables y verifica cuantos caracteres del primero no estan en el 2do 
+        Ejemplo:
+            char *str = "123abc456";
+            char *set = "abc";
+            size_t res = strcspn(str, set); // devuelve 3 porque tiene 3 elementos antes de la coincidencia de "abc" 
+    strtok (string - token): fragmenta un string en substrings segun cierto delimitador
+        especificamos el string y el delimitador 
+        va a revisar el string y va a reemplazar cada delimitar especificado por un \0 
+        despues cuando lo mostramos nos muestra cada parte y una vez mostrado todo queda inutilizado
+        Ejemplo:
+            char str[] = "a, b, c";
+            char *token = strtok(str, ','); // aca devuelve hasta la primera ',' y reemplaza ',' por '\0'
+
+            while(token != NULL) {
+                printf("%s", token);
+                // Token contiene la direccion en memoria al token a mostrar, si la direccion era por ejemplo 3, ahora es 4 (porque pasa de a a b) pero es una direccion del mismo string
+                token = strtok() // comienza a mostrar desde el ultimo '\0' que se añadio y continua con el ciclo de reemplazo (muestra primero b y en la siguiente vuelta c)
+            }
+    sprintf (save - print - file): formatea una cadena y la almacena en una variable 
+        Ejemplo:
+            char buffer[50];
+            int x = 10, int y = 20;
+            scanf(buffer, "La suma de %d y %d es %d", x, y, x + y);
+            // Ahora buffer contiene "La suma de 10 y 20 es 30"
+Manejo de Cadenas Dinámicas:
+    Strings Dinamicos: podemos crear strings dinamicos para podes manejar sus dimensiones:
+        es como un string pero se asigna el espacio y de ahi el contenido 
+        Ejemplo: char *cadena = (char *)malloc(50 * sizeof(char));
+    Operaciones de Comparación Avanzada: 
+        strncpm (string - N - compare): permite comparar solo los primeros N caracteres de las cadenas 
+            Ejemplo:
+                char *cadena = "Hola mundo";
+                char *cadena2 = "Hola Mundo";
+
+                // Verifico si "Hola" de cadena 2 coincide con los primeros 4 dijitos de cadena
+                if(strncpm(cadena, cadena2, 4) == 0) {
+                    printf("Las primeras 4 letras coinciden"); 
+                }
+        strcasecmp (string - case - compare): permite comparar dos cadenas sin diferencias mayusuclas y minusculas
+            Ejemplo: 
+                char *cadena = "Hola mundo";
+                char *cadena2 = "Hola Mundo";
+
+                if(strcasecmp(cadena, cadena2) == 0) {
+                    printf("Ambas cadenas coinciden ignorando mayusculas y minusculas");
+                }
+Procesamiento de Texto:
+    Manipulación de Texto Multilínea: se trata de cuando el usuario ingresa texto de varias lienas o el texto viene de un archivo 
+        Fgets: permite leer lineas completas incluyendo espacios hasta un limite de caracteres 
+            Ejemplo:
+                char buffer[256];
+                printf("Introduzca el texto: \n");
+                fgets(buffer, sizeog(buffer), stdin); // leera hasta que se llene el buffer
+    Analisis de texto: se trata de analizar un texto caracter por caracter, se suelen usar expresione regulares para esto
+        Expresiones regulares: son patrones que permiten buscar y modificar patrones en cadenas de texto de un modo facil 
+            de por si C no tiene, pero se puede usar la libreria regex.h
+            una expresion regular se crea con un tipo de dato regex_t 
+                Ejemplo: regex_t *reg; 
+                al "crearla" con regex_t lo que hacemos es crear en memoria un tipo de estructura vacia 
+                esta estructua tiene ciertos metodos, es parecido a una clase
+            regcomp (regular expresion - compile): sirve para compilar una expresion regular
+                basicamente toma la ubicacion del regex_t, le envia un string con la expresion regular y el regex_t crea un tipo de metodo con las instrucciones de la expresion regular 
+                Ejemplo:
+                    regcom(&reg, "^abc", 0); // esto crea un tipo de funcion de expresion regular donde ^abc es la instruccion
+                podemos añadir flags, que son como ajustes
+                    0: significa que no queremos ninguna flag 
+                    REG_EXTENDED: activa una sintaxis mas avanzada con expresiones nuevas
+                    REG_ICASE: no diferencia entre minusuclas y mayusculas
+                    Ejemplo:
+                        regcom(&reg, "^abc", REG_EXTENDED);
+                        regcom(&reg, "^abc", REG_EXTENDED | REG_ICASE); // para separar flags ponemos |
+            regexec (regular expresion - execute): sirve para ejecutar una expresion regular ya compilada 
+                al haber hecho regcomp ya tenemos la funcion de expresion regular lista para usar 
+                al hacer regex le decimos que funcion usaremos y con que patron 
+                Ejemplo:
+                    regex(&reg, "Hola", 0, NULL, 0); // Verifica si "Hola" cumple con las instrucciones de &reg, osea con lo de "^abc" 
+                Flags: 
+                    0 (nmatch): especifica cuantas coincidencias almacenaremos en pmatch 
+                    NULL (pmatch): almacena las coincidencias que especifiquemos
+                         se almacenaria en pmatch[0], pmatch[1], etc
+                    0 (eflags): indica flags para funciones que podrian afectar el comportamiento de la busqueda
+                        REG_NOTBOL: Indica que la búsqueda no debe considerar el inicio de la cadena (sin ^)
+                        REG_NOTEOL: Indica que la búsqueda no debe considerar el final de la cadena (sin $)
+            regfree (regulare expresion - free): sirve para liberar la memoria ocupada por la expresion regular
+                una vez liberado podremos reutilizarla haciendo regcomp de nuevo 
+                basicamente elimina las instrucciones que tenia 
+            Metacaracteres: se trata de los patrones que usamos para compilar la expresion regular 
+                basicamente es una condicion que debe cumplirse como decir "contiene x al principio de la cadena de texto" 
+                Basicos:
+                    .: coincide con cualquier tipo de dato excepto saltos de linea 
+                        Ejemplo: a.b coincide con abb, axb, aob, etc
+                    ^: coincide con el inicio de una cadena 
+                        Ejemplo: ^abc coincide con abcdefg pero no con feedabc
+                    $: coincide con el final de la cadena
+                        Ejemplo: abc$ coincide con djabc pero no con feabcj
+                    []: coincide con cualquiera de los caracteres dentro de los corchetes 
+                        Ejemplo: 
+                            [abc] coincide con a, con b o con c
+                            [a-z] coincidira con cualquier caracter de la a a la z 
+                    [^]: coincide con cualquier caracter que no este entre corchetes
+                        Ejemplo: [^abc] coincide con x, f, e, etc pero no con a, con b o con c
+                Cuantificadores: indican cuantas veces debe repetirse certo o ciertos patrones
+                    *: coincide con cero o mas repeticiones del patron anterior
+                        Ejemplo: a*b coincide con ab, aab, abb, b, etc
+                    +: coincide con una o mas repeticiones del patron anterior (pero minio una)
+                        Ejemplo: a+b coincide con ab, aab, abb, etc pero no con bb, ba, b, etc
+                    ?: coincide con cero o una repeticion del patron anterior pero no mas de 1
+                        Ejemplo: a?b coincide con ab o con b, pero no con aab 
+                    {n}: coincide con n repeticiones del patron anterior 
+                        Ejemplo: a{3} coincide con aaa
+                    {n,}: coincide con al menos n repeticiones del patron anterior 
+                        Ejemplo: b{2} coincide con bb, bbb, bbb, etc pero no con b
+                    {n,m}: coincide con al menos n repeticiones del patron anterior y maximo m
+                        Ejemplo: a{2,5} coincide con aa, aaa, aaaa y aaaaa
+                Caracteres especiales: son caracteres que agrupan varios caracteres 
+                    \d: coincide con un digito (equivalente a [0-9])
+                        Ejemplo: a\db coincide con a0b, a1b, a9b, etc 
+                    \D: coincide con culquier caracter que no sea un numero (osea ![0-9])
+                        Ejemplo: a\Db coincide con acb, a*b, awb, etc
+                    \w: coincide con un caracter alfanumerico (letras, numeros y guiones bajos)
+                        Ejemplo: \w coincide con a, 3, _, 5, 3, x, etc
+                    \W: coincide con cualquier caracter no alfanumerico (ni numero ni letra ni guion bajo)
+                        Ejemplo: \W coincide con ., *, {, etc
+                    \s: coincide con espacios (saltos en linea, espacios, tabulaciones, etc)
+                        Ejemplo: \s coincide con \t, \n, etc
+                    \S: coincide con cualquier cosa que no sea un espacio 
+                        Ejemplo: a\Sb coincide con abb, a4b, a.b, etc pero no con a b, a\tb, etc
+                Agrupacion y opciones: 
+                    (): agrupar varias expresiones en una 
+                        Ejemplo: (ab)+ coincide con ab, abab, ababab, etc (en este caso el ab en conjunto se repite de una a mas veces)
+                    |: representar una alternativa
+                        Ejemplo: a|b coincide con a o con b
+                Anclas de posicion: se trata de posiciones
+                    \b: coincide con un inicio de linea o un fin de line 
+                        Ejemplo: \bx\b coincide con x, pero n con ax, xf, etc (\ indica que ahi si o si debe acabar o empezar)
+                    \B: no esta en el principio ni en el final de la linea
+                        Ejemplo: \ba coincide con avion, a, año, etc pero no con mano, 0a, etc
+                Flags:
+                    REG_ICASE: evitar tomar en cuenta mayusculas y minusculas
+                    REG_EXTENDED: usa una sintaxis mas extendida
+            Ejemplo de expresion regular completa:
+                regex_t mail_pattern;
+                char pattern[] = "^\\w{5,}@[a-zA-Z]{2,}\\.[a-zA-Z]{2,}$";
+                char correo[] = "nahuel@gmail.com";
+                
+                regcomp(&mail_pattern, pattern, REG_EXTENDED);
+                int res = regexec(&mail_pattern, correo, 0, NULL, 0);
+
+                if(res != 0) {
+                    printf("No el un mail valido");
+                }else{
+                    printf("Es un mail valido");
+                }
+
+                regfree(&mail_pattern);
+    Codificación y Decodificación de Texto:
+        Codificacion de texto: se trata de convertir una secuencia de numeros, letras, simbolos, etc en bytes para ser almacenado o transportado 
+            ASCII (American Standar Code Information Interchange): es una de las codificaicones mas antiguas y simples
+                usa 7 bits para represetnar el caracter 
+                permite almacenar 128 caracteres (del 0 al 127)
+                incluye letras, numeros, signos de puntuacion y algunos caracteres de control 
+                no puede representar caracteres de muchos idiomas debido a la capacidad (128 caracteres)
+            UTF-8 (Unicode Transformation Format - 8 bits): es una doficiacion mas moderna que puede reresentar caracteres de todos los idiomas del mundo
+                es un esquema mas variable, algunos digitos pueden necesitar 1 byte mientras otros pueden necesitar 4 bytes, etc 
+                contiene los mismos caracteres ASCII asi que podemos pasar de ASCII a UTF-8 y no se perdera lo previo
+                es ampliamente utilizada en webs y apps
+        Decodificacion: se trata de tomar el conjunto de bits y convertirlo de nuevo en texto legible
+        Conversion en C: podemos usar la libreria iconv.h
+            Ejemplo:
+                // Convertir de UTF-8 a ASCII (o alguna otra codificación)
+                iconv_t cd = iconv_open("ASCII//TRANSLIT", "UTF-8");
+                // Para ASCII a UTF-8: iconv_t cd = iconv_open("UTF-8", "ASCII");
+                
+                char *inbuf = "Texto con acentos: áéíóú";
+                char *outbuf = malloc(100);
+                size_t inbytesleft = strlen(inbuf);
+                size_t outbytesleft = 100;
+
+                iconv(cd, &inbuf, &inbytesleft, &outbuf, &outbytesleft);
+                // outbuf ahora tiene el texto convertido a ASCII
+
+                iconv_close(cd);
+Optimización de Cadenas: 
+    Eficiencia de Memoria: cuando trabajamos con archivos grandes o mucho texto la eficiencia es crucial
+        Algoritmos de Procesamiento de Texto: tenemos calloc, malloc, realloc y free para manejar memoria dinamica 
+            con memoria dinamica podemos liberar memoria y evitar sobrecargas innecesarias 
+            ademas si no sabemos los tamaños del archivo podremos crear espacios dinamicos
+        Estructuras de Datos Adecuadas: podemos usar arrays y cadenas fijas pero no es eficiente 
+            si solo usamos una parte entonces tendremos espacios reservados pero vacios 
+            lo mejor seria usar estructuras dinamicas como listas enlazadas, estructuras, etc
+        Buffers de Tamaño Controlado: podemos reutilizar buffers 
+            por ejemplo si tenemos un archivo leido con memoria dinamica podremos limpiarlo y rellenarlo con algo nuevo
+        Compresión de Datos: si el volumen de datos es muy grande y usa muchas redundancias podemos usar tecnicas de compresion de texto como (LZW o Huffman)
+        Evitar Copias Innecesarias: debemos evitar crear copias que no son requeridas 
+            por ejemplo en una funcion podemos pasar un puntero a puntero si necesitamos modificar el dato directamente
+            si necesitamos una cadena que no se modificara podremos usar const char* en vez de char*
+        Consideraciones extras: las cadenas de texto pueden ser de lo que mas recursos gaste 
+            Utilizar const: 
+                si no se modificara la cadena utilizaremos constantes 
+                esto permite optimizar mejor el programa y evitar modificaciones accidentales
+            Acceso Directo a Elementos de la Cadena: 
+                en vez de copiar y modificar una variable es mejor modificar el dato de una 
+                usar punteros y aritmetica de punteros para una mejor optimizacion de recursos 
+            Evitar strcat y strcpy: 
+                estas dos funciones son algo pesadas si se usan mucho debido al tiempo que toman 
+                estas dos funciones copian toda la cadena, esto toma mas tiempo 
+                en vez de estas utilziar strncpy y sprintf para concatenar partes de cadenas 
+            Buffers para Evitar Fragmentación de Memoria:
+                al realizar multiples operaciones en cadenas de texto grande se puede fragmentar la memoria 
+                podemos usar un bufffer de tamaño fijo para almacenar texto y despues operar sobre el
+    Algoritmos de Procesamiento de Texto: son metodos para realizar operaciones sobre cadenas de texto de manera eficiente
+        Busqueda de patrones: 
+            Algoritmo de Búsqueda de Subcadena: 
+                recorrer una cadena e ir comparando cada subcadena con el patron especificado 
+                otro algoritmo eficiente es el Algoritmo de Knuth-Morris-Pratt (KMP) y el Algoritmo de Boyer-Moore que evitan comparaciones innecesarias 
+            Expresiones regulares: con las regex podemos buscar patrones de manera muy eficiente y veloz 
+        Ordenación de Cadenas:
+            Quicksort o Mergesort: Estos son algoritmos eficientes que puedes usar para ordenar cadenas lexicograficamente (alfabeticamente)
+            Bubble sort: es un ejemplo censillo pero no es muy eficiente para grandes volumenes de datos
+Funciones con cadenas como parametros: las cadenas son manejadas como punteros a caracteres en general
+    al pasar strings debemos pasar el puntero al primer caracter, osea *str
+    Ejemplo: 
+        void saludo(const char *str){
+            printf("%s", str);
+        }
+
+        int main() {
+            const char *txt = "Hola";
+            saludo(txt);
+
+            return 0;
+        }
+
+----------------------------------------------------------------------------------------------------
+NIVEL 11: LIBRERÍAS Y MODULARIDAD
+----------------------------------------------------------------------------------------------------
+Librerias: son basicamente un archivo que contiene codigo de programacion creado por otros 
+    propias: podemos crear las nuestras, por ejemplo creando un archivo que tiene funciones matematicas 
+    de C: C tiene sus propias librerias (librerias estandar) que podemos usar, como string.h, time.h, math.h, etc
+    externas: tambien podemos usar librerias externas, de 3ros
+Uso de Librerías Estándar:
+    #include y Preprocesador:
+        procesador: el procesador es una fase que ocurre antes de la compilacion
+            en el procesador se ejecutan y procesan directivas que empiezan con el # como #define, #include, etc
+        #include: le indica al procesador que inserte una libreria 
+            Ejemplo:
+                #include <stdio.h> // esta libreria incluye funciones preprogramadas para mostrar y recibir datos, como printf, scanf, etc
+                #include <string.h> // esta libreria incluye funciones preprogramadas para mostrar para trabajar con strings, como strcpy, strstr, etc
+        Archivos encabezados: los archivos encabezados son aquellos con extension .h (los que se hacen #include)
+            un archivo .h se conectan a un archivo .c
+            el archivo .c es un archivo con codigo de programacion 
+            el archivo .h contiene declarado aquellas funciones y datos que seran compartidos del archivo .c 
+            Ejemplo:
+                sumas.c
+                    inst suma(int a, int b) {
+                        return a + b;
+                    }
+
+                    inst sumas(int a, int b, int c) {
+                        return a + b + c;
+                    }
+                suma.h
+                    int suma(int a, int b);
+                    int sumas(int a, int b, int c);
+                main.c 
+                    #include "suma.h"
+                    void main() {
+                        int res = suma(2, 4);
+                    }
+            al poner #include en el preprocesador se reemplaza ese include por todo el codigo de la libreria
+    Librerias estandar: son las librerias que vienen incluidas en C y no necesitamos descargarlas ni nada 
+        <stdio.h> (strandar input / output): contiene funciones relacionadas a la entrada y salida de datos 
+            Ejemplo: 
+                printf()
+                scanf()
+                putchar()
+                getchar()
+        <stdlib.h>: contiene funciones relacionadas al manejo de la memoria y conversion de numeros
+            Ejemplo:
+                malloc()
+                calloc()
+                realloc()
+                free()
+                atoi()
+                atof()
+                exit()
+                system()
+        <time.h>: contiene funciones para la manipulacion de fechas y horas
+            Ejemplo:
+                time()
+                clock()
+                defftime()
+        <string.h>: contiene funciones para la manipulacion de cadenas de texto (util para temporizadores)
+            Ejemplo:
+                strstr()
+                strspn()
+                strcpy()
+                strcpm()
+        <math.h>: contiene funciones para operaciones matematicas:
+            Ejemplo:
+                sqrt()
+                pow()
+                sin()
+                cos()
+                tan()
+Creacion de librerias propias:
+    Archivos de cabecera: en los archivos de cabecera (.h) especificamos aquellos datos y funciones que compartiremos de un archivo.c a otro 
+        Declaracion e implementacion:
+            en un archivo.h se declara aquello que queremos compartir 
+                Ejemplo:
+                    // archivo.h
+                    void miFuncion(int a); // es como definir un prototipo de funcion
+            la implementacion completa se realiza en un archivo.c
+        Miltiples llamados: puede suceder que se intente llamar mas de una vez al archivo cabecera y eso traeria problemas 
+            para solucionar esto se usan unas macros especificas:
+                #ifndef (if not defined): especifica que si si no esta definida una macro especifica ya, se define todas las variables y funciones mas la macro
+                #endif: especifica que acabo el conjunto de definiciones que abarca el ifndef
+                Ejemplo:
+                    // archivo.h
+                    #ifndef SUMA_H // si SUMA_H no esta definida entra en el blocke 
+                    #define SUMA_H // aca definimos SUMA_H y en el proximo intento de importacion saldra que ya esta definido
+                    
+                    void miFuncion(int valor);
+
+                    #endif // acabamos el blocke condicional
+    Archivos de implementacion (archivos.c): es donde se escribe el codigo de las funciones declaradas en el archivo de cabecera 
+        Ejemplo:
+            // archivo.c
+            void miFuncion(int valor) {
+                printf("Tu valor es: %d", valor);
+            }
+    Separacion:
+        el archivo.h especifica que elementos se importaran (se usaran de otro archivo)
+        el archivo.c tiene las funciones y logica que el archivo.h incluira en nuestro main.c
+    Ejecucion: para ejecutar multiples archivos C podemos usar gcc 
+        gcc archivo1.c archivo2.c -o miPrograma
+    Info extra:
+        un archivo H sabe que pertenece a un archivo C porque verifica el nombre de las variables 
+        si un archivo h tiene definido void saludo() y hay dos archivos c que contienen void saludo() { ... } habra un error 
+        el archivo h verifica dentro de los archivo c cual tiene la implementacion del prototipo de funcion que le metimos 
+        Ejemplo:
+            // archivo.h
+            void restar();
+
+            // suma.c 
+            void sumar() { ... } 
+
+            // resta.c 
+            void restar() { ... } // la cabecera vera que void restar() pertenece aca y traera esa funcion 
+    Variable externa: es una variable que fue creada en otro archivo 
+        no ocupa un espacio en memoria 
+        Ejemplo:
+            // calculos.c
+            int suma(int a, int b) {
+                return a + b;
+            }
+
+            int numeroSecreto = 42;
+
+            // main.c
+            extern int suma(int a, int b); // Declaración externa de la función suma
+            extern int numeroSecreto; // Declaración externa de la variable numeroSecreto
+
+            int main() {
+                int resultado = suma(5, 3);
+                printf("La suma es: %d\n", resultado);
+                printf("El número secreto es: %d\n", numeroSecreto);
+                return 0;
+            }    
+        sirve para cosas muy especificas 
+        de por si el archivo.h dentrodel #ifndef (o #ifdef) contiene un extern explicito
+            Ejemplo:
+                #ifndef X 
+                #define X 
+
+                int x;
+
+                #endif
+
+                es equivalente a 
+                
+                #ifndef X 
+                #define X 
+
+                extern int x;
+
+                #endif
+        el extern se puede usar si tenemos declaraciones fuera del ifndef debido a que el ifndef se excluira si ya fue incluido en un archivo previo 
+        sirve para cuando necesitamos importar ciertos datos sin importar si se crearon o no en otros archivos previos 
+            Ejemplo:
+                #ifndef X 
+                #define X 
+
+                int x; // solo sera accesible si no se incluyo esta cabecera en algun otro archivo previo
+
+                #endif
+
+                extern int z; // z sera accesible desde cualquier archivo que incluya esta cabecera 
+Modularidad en Programas Grandes: cuando nuestro programa crece se puede volver algo demaciado dificil de administrar 
+    el separar en modulos (diferentes archivos c) permite que tengamos todo seccionado y facil de encontrar 
+    si tenemos un error sabremos mejor por donde viene
+    si tenemos que reutilizar cosas en varios lugares podremos hacerlo de manera optima 
+    si debemos modificar algo sera mas facil de manejar 
+    Separación de Concerns: se trata de separar en modulos especificos para tareas especificas 
+        si debemos realizar muchas tareas se suele crear modulos que solo se encarguen de una tarea especifica como decir calculos matematicos o lectura de textos
+        esto mejora el orden y mantenimiento a largo plazo 
+    Uso de librerias externas: se trata de incluir el codigo de programas de terceros (de otras personas) en tu codigo 
+        estas librerias son archivos h y c que compilamos junto a nuestro proyecto 
+        Como usarlos: 
+            Instalacion: debemos instalar las librerias
+                al ser de terceros no vienen incluidas en C ni las tenemos por defecto en nuestro dispositivo 
+                para instalar una libreria en windows se suele instalar un .zip que contiene archivos dll y lib
+                despues deberemos ubicar estos archivos en ubicaciones donde nuestro programa pueda encontrarlos y usarlos
+                para que sepa donde encontrar los archivos deberemos pasarle rutas al compilar 
+                    Ejemplo:
+                        tengo una liberia llamada arraysAsociativos con lo siguiente:
+                            Un archivo de encabezado: arraysAsociativos.h
+                            Una biblioteca estática: libarraysAsociativos.lib
+                            Una biblioteca dinámica (DLL): arraysAsociativos.dll
+                        ubicaicon de los archivos:
+                            C:\libs\arraysAsociativos\include (donde está arraysAsociativos.h)
+                            C:\libs\arraysAsociativos\lib (donde están libarraysAsociativos.lib y arraysAsociativos.dll)
+                        compilar: 
+                            gcc -I"C:\libs\arraysAsociativos\include" -L"C:\libs\arraysAsociativos\lib" -larraysAsociativos main.c -o main.exe
+                            // -I busca los encabezados (.h)
+                            // -L busca los lib y dll 
+                            // -larraysAsociativos es -l de libreria y el nombre de la libreria en si (arraysAsociativos)
+        Librerias de terceros mas usadas:
+            GLIB: libreria con estructuras de datos y utilidades para el manejo de cadenas de texto, tablas hash, etc
+            libcurl: libreria para solicitudes HTTP, FTP y otros protocolos de red 
+            SQLite: libreria para almacenar datos en un solo archivo
+            OpenSSL: liberia con protocolos de seguridad SSL/TLS para comunicaciones seguras 
+            JSON-C: libreria para utilizar Json
+
+----------------------------------------------------------------------------------------------------
+NIVEL 12: ARCHIVOS Y ENTRADA/SALIDA
+----------------------------------------------------------------------------------------------------
+Entrada salida estandar:
+    Redirección de entrada: podemos especificar que tome un archivo como input de datos en vez del teclado en si 
+        Ejemplo: ./mi_programa < archivo.txt
+            ahora los datos de archivo.txt se tomaran como input en mi_programa.c
+    Redirección de salida: tambien podemos especificar que las salidas se almacenen en un archivo y no mostrarlos en si 
+        Ejemplo: ./mi_programa > salida.txt
+            ahora las salidas de mi programa iran a salida.txt
+Manipulación de Archivos:
+    Abrir un archivo: para abrir archivos usamos fopen 
+        Ejemplo: 
+            FILE *archivo = fopen("datos.txt", "r"); // r viene "read" (leer)
+            FILE *archivo = fopen("datos.txt", "w"); // r viene "write" (escribir datos)
+            FILE *archivo = fopen("datos.txt", "a"); // a viene "add" (añadir datos sin sobreescribir)
+            FILE *archivo = fopen("datos.txt", "r+"); // r + w
+            FILE *archivo = fopen("datos.txt", "w+"); // w + r
+            FILE *archivo = fopen("datos.txt", "a+"); // a + r
+        debemos especificar que permisos tendra tal archivo, por eso se pone r, w, a
+            r: Read --> permite leer el archivo 
+            w: Write --> permite escribir el archivo 
+            a: Add --> permite añadir texto al archivo sin sobreescribir 
+            r+ Read + --> permite leer y escribir el archivo (pero si o si debe existir el archivo previamente)
+            w+: Write + --> permite leer y escribir el archivo (si no existe el archivo lo crea)
+            a+: Add + --> permite leer y añadir texto al archivo sin sobreescribir el contenido
+        si tenemos el archivo en otro directrio (otra carpeta) debemos especificar tal directorio
+            Ejemplo: FILE *archivo = fopen("../archivos/archivo.txt", "r");
+        si el archivo existe devuelve un puntero a tal, de lo contrario devuelve un NULL
+    Leer un archivo: una vez abierto podremos leerlo o modificarlo segun los permisos que le dimos 
+        Ejemplo con fscanf:
+            int numero;
+            fscanf(archivo, "%d", &numero); // lee un entero desde el archivo (es como scanf pero lee del archivo en vez del teclado)
+                %d: lee un entero.
+                %f: lee un número de punto flotante.
+                %s: lee una cadena de texto (hasta el primer espacio).
+                %c: lee un carácter.
+                %lf: lee un doble (número de doble precisión).
+        Ejemplo con fgets:
+            char buffer[100];
+            int tamaño = 100;
+            fgets(buffer, tamaño, archivo);
+        Ejemplo con fgetc: 
+            char caracter = fgetc(archivo); // lee un caracter del archivo 
+    Escribir un archivo:
+        Ejemplo con fprintf:
+            FILE *archivo = fopen("datos.txt", "w"); // si no existe lo crea 
+            int numero = 42;
+
+            fprintf(archivo, "El número es: %d\n", numero);  // Escribe "El numero es 42" en el archivo
+        funciona igual con "a", solo que a añade al final del archivo y "w" sobreescribe el contenido
+        tambien podemos usar fputs, pero no formatea, solo almacena un texto literal
+            Ejemplo: fputs("Este es un mensaje escrito con fputs.\n", archivo);
+        Ejemplo de fputc:
+            fputc('A', archivo); // escribe un caracter en un archivo
+    Cerrar un archivo: para liberar recursos hay que cerrar el archivo 
+        Ejemplo: fclose(archivo);
+Manejo de errores y EOF: 
+    EOF (End Of File): es una constante que indica si es el final de la linea 
+        se puede usar para evitar leer caracteres nulos y obtener errors 
+        Ejemplo:
+            FILE *archivo = fopen("datos.txt", "r");
+            int c;
+            while((c = fgetc(archivo)) != EOF) {
+                putchar(c); // imprime el caracter en pantalla
+            };
+            fclose(archivo);
+    Error de apertura: si fopen falla entonces devolvera NULL 
+        Ejemplo:
+            FILE *archivo = fopen("inexistente.txt", "r");
+            if (archivo == NULL) {
+                printf("Error al abrir archivo");
+            }
+Archivos Binarios VS Archivos de TXT:
+    Archivos de texto: contiene texto legible como un .txt, .csv, etc 
+        se pueden abrir y leer facilmente con un editor de texto 
+    Archivos binarios: almacenan binarios, estan mas compactos como .exe, .dat, etc 
+        para manejarlos se usa b de binario 
+        Ejemplo:
+            FILE *archivo = fopen("inexistente.txt", "rb"); // Read binary
+            FILE *archivo = fopen("inexistente.txt", "wb"); // Write binary
+            FILE *archivo = fopen("inexistente.txt", "ab"); // Add binary
+            FILE *archivo = fopen("inexistente.txt", "rb+"); // Read + Wirte binary
+            FILE *archivo = fopen("inexistente.txt", "wb+"); // Write + Read binary
+            FILE *archivo = fopen("inexistente.txt", "ab+"); // Add + Read binary
+        para la escritura se usa fwrite
+            se especifica:
+                que se escribira (debe ser un puntero a la ubicacion del texto)
+                el tamaño de cada elemento (por ejemplo sizeof(char))
+                cantidad de elementos a escribir (como 5 caracteres)
+                ubicacion a donde escribiremos (osea el archivo al que vamos a escribir)
+            Ejemplo:
+                FILE *archivo = fopen("datos.bin", "wb");
+                int numeros[] = {1, 2, 3, 4, 5};
+                fwrite(numeros, sizeof(int), 5, archivo);  // Escribe el array en binario
+                fclose(archivo);
+        para la lectura se utiliza fread 
+            se especifica:
+                puntero a donde se almacenaran los datos leidos 
+                tamaño de cada elemento a leer 
+                numero de elementos a leer 
+                puntero al archivo desde donde se leera  
+            Ejemplo:
+                FILE *archivo = fopen("datos.bin", "rb");
+                int numeros[5];
+                fread(numeros, sizeof(int), 5, archivo);  // Lee los 5 enteros en el array 'numeros'
+                fclose(archivo);
+
+----------------------------------------------------------------------------------------------------
+NIVEL 13: CONTROL DE FLUJO DE DATOS
+----------------------------------------------------------------------------------------------------
+Retorno de status: se trata de un retorno que indica si el programa acabo bien, acabo con errores o como acabo
+    es usado en el main 
+    sirve para indicar si se acabo bien o mal 
+    Ejemplo:
+        void main() {
+            return 0; // esto indica que acabo correctamente, no hubieron errores
+        }
+        
+        void main() {
+            return 1; // esto indica que hubierons con errores
+        }
+    Tipos de retorno:
+        return 0: indica que todo acabo correectamente sin errores 
+        return 1: indica que hubo un error general pero no se especifico que tipo de error
+        return -1: indica un error critico, algo mas importante que no debe omitirse
+        return EXIT_SUCESS: es quivalente al return 0
+            se suele poner para hacerlo mas legible
+            es parte de stdlib
+        return EXIT_FAILURE: es equivalente al return 1
+            se suele poner para hacerlo mas legible
+            es parte de stdlib
+System: es una funcion para ejecutar comandos del sistema operativo 
+    permite ejecutar comandos como si estuvieras en la terminal 
+    al ejecutar un comando devuelve 0 si no hubo errores y un valor distinto si hubo algun error
+    Ejemplo: system("dir");
+    tambien puede ejecutar programas externos con este comando
+    en windows podemos usar system("pause") para detener el programa hasta que se presione una tecla
+    Limpiar la pantalla:
+        Windows: system("cls");
+        Linux: system("clear");
+Time: es una funcion para obtener el tiempo actual del sistema o el tiempo transcurrido desde una fecha especifica llamada epoch
+    en linux esa fecha especifica es el 1 de enero de 1970
+    en windows es el 1 de enero de 1601
+    time_t es el tipo de dato que almacenaara el retorno de time 
+    Ejemplo:
+        int main() {
+            time_t t;
+            time(&t);  // Obtiene el tiempo actual y lo almacena en t
+            printf("Tiempo actual: %ld segundos desde el epoch\n", t);
+            return 0;
+        }
+Exit: es una funcion para acabar el programa de manera inmediata 
+    no espera a que el main termine, directamente te detiene todo 
+    utiliza los tipos de retorno 
+    Tipo de salidas:
+        exit(0): acabar el programa sin errores
+        exit(1): acabar el programa con errores
+    Ejemplo:
+        int main() {
+            printf("El programa va a terminar\n");
+            exit(0);  // Termina el programa con exito
+            // Este codigo nunca se va a ejecutar
+            printf("Esto no se vera\n");
+            return 0;
+        }
+Sleep: es una funcion de la libreria <windows.h> que permite detener el programa por cierta cantidad de milisegundos
+    Ejemplo:
+        int main() {
+            printf("Pausa de 3 segundos...\n");
+            Sleep(3000);  // Detiene el programa durante 3000 milisegundos (3 segundos)
+            printf("Continuamos \n");
+
+            return 0;
+        }
+
+-------------------------------------------------------
+Funciones donde:
+0 = Error
+1 = Success
+scanf
+
+0: Si no se pudieron leer los datos correctamente.
+1: Si se leyó correctamente un valor (aunque en realidad puede ser mayor a 1 si hay más de un valor leído).
+fread
+
+0: Si no se pudieron leer los datos correctamente.
+1: Si se leyó al menos un elemento con éxito.
+fwrite
+
+0: Si no se pudo escribir ningún dato.
+1: Si se escribió al menos un elemento con éxito.
+remove (borrar un archivo)
+
+0: Éxito, el archivo se ha eliminado.
+1: Error al intentar eliminar el archivo.
+system
+
+0: Éxito en la ejecución del comando.
+1: Error en la ejecución del comando.
+
+-------------------------------------------------------------------------------
+Funciones donde:
+0 = Success
+1 = Error
+exit
+
+0: Salir correctamente del programa (sin errores).
+1 o cualquier otro valor distinto de 0: Indica que el programa terminó con error.
+strcmp
+
+0: Las cadenas son iguales.
+1: Las cadenas no son iguales.
+strncmp
+
+0: Las primeras n letras de las cadenas son iguales.
+1: Las primeras n letras no son iguales.
+strcpy
+
+0: Copia realizada con éxito (en realidad strcpy no tiene valor de retorno, pero se asume que es una operación exitosa si no hay errores).
+1: Error (generalmente por desbordamiento del buffer).
+malloc
+
+0: Error, la memoria no se pudo asignar (devuelve NULL).
+1: Éxito, la memoria se asignó correctamente (devuelve un puntero válido).
+
+-------------------------------------------------------------------------
+Funciones donde se debe verificar el valor de retorno pero no sigue una convención de 0/1 clara:
+fopen
+
+NULL: Error al abrir el archivo.
+Puntero válido: Éxito, archivo abierto con éxito.
+read
+
+0: Se ha alcanzado el final del archivo.
+-1: Error de lectura.
+write
+
+0: Error en la escritura.
+>0: Número de bytes escritos correctamente.
+close
+
+0: Éxito, archivo cerrado correctamente.
+-1: Error al cerrar el archivo.
+fclose
+
+0: Éxito al cerrar el archivo.
+EOF: Error al cerrar el archivo.
+

@@ -1,0 +1,41 @@
+1
+    a) ¿Qué es un array y cómo se declara en C?
+    b) Explica la diferencia entre un array unidimensional y uno multidimensional.
+
+2
+    a) ¿Qué sucede si declaras un array con un tamaño, pero no lo inicializas? ¿Cuál es el contenido de sus elementos?
+    b) ¿Cómo se accede al tercer elemento de un array llamado numeros?
+
+3
+    a) Escribe un fragmento de código en C que declare un array de 5 enteros, lo inicialice con valores y calcule la suma de sus elementos.
+    b) ¿Cómo podrías modificar el valor del cuarto elemento de un array llamado numeros a 10? Escribe el código necesario para hacerlo.
+
+4a) Explica cómo acceder al elemento en la segunda fila y tercera columna de un array bidimensional llamado matriz.
+
+5 
+    a) ¿Qué es una cadena de caracteres en C y cómo se diferencia de un array de caracteres?
+    b) ¿Qué carácter especial se incluye al final de cada cadena de caracteres?
+
+6
+    a) ¿Cuál es la función que se utiliza para determinar la longitud de una cadena de caracteres? Escribe un ejemplo de cómo se usa.
+    b) Explica cómo funciona strcpy y para qué se utiliza.
+
+7
+    a) ¿Qué hace la función strcmp? Explica su uso con un ejemplo.
+    b) ¿Qué valor retorna strcmp si las dos cadenas comparadas son iguales?
+
+8
+    a) Escribe un código en C que tome dos cadenas de caracteres como entrada del usuario y las compare alfabéticamente.
+    b) Escribe un código que concatene dos cadenas utilizando la función strcat.
+
+9
+    a) ¿Cómo podrías cambiar el primer carácter de una cadena llamada saludo a la letra 'H'?
+    b) Si tienes la cadena char nombre[] = "Carlos";, ¿qué sucede si cambias nombre[2] = 'r';?
+
+10
+    a) Explica por qué es importante asegurarse de que el array destino tenga suficiente espacio cuando se usa strcpy.
+    b) ¿Qué posibles errores pueden surgir al manipular cadenas en C?
+
+11
+    a) ¿Cuáles son las ventajas de usar arrays y cadenas de caracteres en C? ¿Y las desventajas?
+    b) Dado un array de caracteres char saludo[] = "Hola Mundo";, escribe un fragmento de código que recorra el array e imprima cada carácter en una nueva línea.

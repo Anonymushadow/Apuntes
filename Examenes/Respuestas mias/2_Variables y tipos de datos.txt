@@ -1,0 +1,23 @@
+1
+    a_Float almacena hasta 7 decimales (osea 7 numeros despues deel punto) y pesa aprox. 4 bits creo, el double creo que era 8bits lo que pesaba, pero el double es mas precido, permite hasta 15 numeros despues deel punto, su principal diferentecia es la presicion peo en una persona comun con el float ya es mas que suficiente
+    b_ unsigned le elimina los valores negativos a un int, osea que no puede tener valores mas bajos que cero
+    c_sizeof
+2
+    a_const es la tipica constante como la de js, una variable inmutable que especificas su tipo de datos y se almacena en memoria, el define es mas bien un tipo de instruccion donde no especificas el dato, pero al momento de procesar el codigo se reemplazan las macro por el valor, osea... no aparece 2 * PI al compilar, aparece 2 * 3,14 ya que no copua espacio xque no existe en cierto modo, no se almacena, es como decir "aca pone esto" y el const es mas como "traeme este valor de aca"
+    b_una variable global es una variable que esta definida fuera de estructuras xomo funciones o bucles, de tal modo que todo el programa tiene acceso a tal, si esta en arhcivos h puede ser global en sentido de poderse acceder desde cualquier parte del proyecto, osea desde cualqueir archivo, una local esta definida dentro de una estructura como bucle, funcion, etc y esta solo existe en esta funcin y subfunciones (funcion, bucle, etc me digo funcion como  una manera de reducir todo a pocas palabras)
+    c_camelCase, snake_case o la que es ocmo camelcase pero empieza tambien con mayuscula
+3
+    a_& comapra dos numeros pero pasados a binarios para devoler uno nueuvo donde cada vez que ambos numeros coincidian en 1 devolvia un 1, su uso mas practico o mas bien util para mi seria el de verificar si un numero es par o impar mediante la obtencion de un uno o un cero
+    b_el << mueve los binarios a la izquierda, los que quedan fuera deel randgo de 8bits se eliminan y los espacios vacios se completan con 0, es equivalente a multiplicar por dos, 3 seria 3 * 2 = 6 osea..... 00000110
+    c_| toma ambos binarios y compara, en que partes al menos uno tiene un 1, devolviendo asi un nuevo binario, el otro lo que hace es comparar de manera que si son diferentes devuelve u uno y si son iguales devuelve un 0, el | puede servir para comparar permisos, donde debe tener un permiso espcifico al menos, el otro puede servir para verificar numeros unicos en listas
+4
+    a_>> es igual al << pero invertido, se mueve todo a la derecha, el sobrante se elimina, el faltante se completa con 0 y se divide por dos en vez de multiplicar, por ejemplo 6 terminaria siendo 3 porque 6 es 00000110 y si lo moves queda 00000011
+    b_la verdad eso si que no lo vi, una mascara de bits, me suena mucho a lo de IA que se usa mascaras para poder realizar busquedas de patrones en imagens y asi hacer reconocimiento de imagenes pero la verdad no se, digo comparando con eso pero no se si es lo mismo
+
+
+NOTA FINAL: 8.5/10
+Tus respuestas son bastante sólidas, pero hay algunos detalles que se podrían afinar, como la diferencia 
+entre float y double en términos de bytes y precisión, y la explicación de #define y const en un contexto 
+más técnico. También, algunos detalles adicionales sobre el uso de bitmasks y la diferencia entre | y ^ 
+podrían haber sido más específicos.
+

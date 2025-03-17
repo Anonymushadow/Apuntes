@@ -1,0 +1,107 @@
+1
+    a) un puntero es la direccion de un dato en la memoria, por ejemplo si tengo int a = 90; el puntero es en que byte de la memoria esta ubicado ese 90, osea a 
+        para obtener el contenido de la direccion almacenada en una variable de tipo puntero ponemos *p y si queremos obtener la direccion en si ponemos el nombre sin *
+        int num = 90;
+        int *p = &num;
+        printf("El contenido del puntero es %d", *p);
+        printf("La direccion almacenada es %p", (void *)p);
+    b) 
+        int num = 90;
+        char *nombre;
+        int *numero = &num;
+    c) El operado & devuelve el puntero de una variable y el * se utiliza para almacenar y para mostrar el contenido 
+        int numero = 90;
+        int *p;
+        p = &num;
+        printf("Direccion: %p", (void *)p);
+        printf("Contenido: %d", *p);
+    d) typedef se pone delante del tipo de dato y despues el alias a usar 
+        typedef int numero // ahora podemos usar tanto int como numero 
+        int num = 90;
+        numero num2 = 90;
+2
+    a) 
+        malloc: se usa para asignar un bloqu de memoria dinamica, lo usaria para casos donde necesito crear un espacio no fijo 
+            int *p = (int *)malloc(sizeof(int) * 1); // cree espacio para un entero 
+        calloc: es como malloc pero al momento de crerse se llena con caracteres nulos, osea '\0' para char y 0 para otros lo usaria si quiero despues hacer verificaciones de completado o no pero si no no sabria bien ahora en que puedo usarlo especificamente
+            char *p = (char *)calloc(10, sizeof(char)); // cree un array dinamico de 10 caracteres 
+        realloc: sirve para modificar el tamaño de un dato dinamico ya creado, lo usaria en casos de requerir mas espacio o que el actual sea demaciado grande para lo necesario, como una variable para almacenar nombres que de repente se reutiliza para almacenar correos electronicos
+            char *p = (char *)malloc(10, sizeof(char));
+            p = (char *)realloc(p, sizeof(char) * 5); // aca redimencione el array de 10 digitos a 5 
+        free: se utiliza para poder liberar memoria y evitar saturacion del sistema, lo usaria para eliminar datos que ya no necesitare pero ocuparian espacio  
+            free(p);
+            p = NULL;
+    b) es cuando por accidente teniendo una memoria dinamica sobreescribis el puntero que tenia su direccion, esto provoca que esa memoria dinamica siga estando ocupada debido a que no se hizo un free pero no hay manera de acceder a esta debido a que no tenemos la direccion 
+        para prevenirlo podriamos no ser brutos, liberar las memorias que no usamos y asignarles NULL para hacer una verificacion del contenido y de ese modo no sobreescribir algo util 
+3
+    a) un array al definirse se esta definiendo el puntero al primer eleemento 
+        int arr[5] = {1, 2, 3, 4, 5}
+        arr = arr[0]
+        para recorrer un array podemos hacerlo con un for que vaya iterando con un arr[n + i] o podemos usar la suma y resta de punteros con la cual es lo mismo, por ejemplo arr[3] + 1 = arr[4] o arr[5] - 3 = arr[2]
+    b) la aritmetica de arrays es basicamente el navegar en los arrays mediante punteros 
+        podemos sumar => arr[0] + 1 = arr[1]
+        podemos restar => arr[5] - 1 = arr[4]
+        podemos restar entre arrays => arr[5] - arr[2] = 3 (basciamente es 5 - 2)
+4 
+    a) se pasan como punteros 
+        int suma(int arr[], tam){
+            int res = 0;
+            for(i = 0; i < tam; i++){
+                res += arr[i];
+            }
+        }
+
+        int main() {
+            int arr[] = {1, 2, 3, 4}
+            sumar(arr, 4);
+            return 0; 
+        }
+    b) 
+        crear arrays justos, no excederse de espacios disponibles 
+        borrar la memoria que no se utilice 
+        utilizar memoria dinamica y cuando sea posible reducir la memoria o eliminarla 
+        utilizar datos chicos como el uint8_t 
+        evitar variables globales para que se eliminen solas 
+        crear las variables en el bloque mas chico posible para que se eliminen lo antes posible 
+5        
+    a)
+        int suma(int *num, int num2) {
+            return *num + num2;
+        }
+
+        int main() {
+            int numero = 90;
+            int res = suma(&numero, 3);
+            printf("El resutlado es %d", res);
+            return 0;
+        }
+    b) es un puntero que en vez de apuntar a la direccion de memoria de una variable apunta a la direccion de una funcion
+        int sumar(int a, int b){
+            return a + b;
+        }
+
+        int main() {
+            int *p = &sum; // coreccion => int (*p)(int, int) = &sum;
+            int res = *p(2, 45); // correccion => int res = p(2, 45);
+            printf("El resultado es %d", res);
+            return 0;
+        }
+    c) en realidad me equivoquqe y puse una funcion que recibe otra funcion pero en cierto modo creo que el ejemplo muestra lo que pedis 
+        int sumar(int a, int b){
+            return a + b;
+        }
+
+        int promedio(int (*sum)(int a, int b), int c) { // Correccion => (*sum)(int, int) --> no hay que poenr el nombre del parametro
+            int res = sum(2, 3);
+            float result = res / c;
+            return result;
+        }
+
+        int main() {
+            float resultado = promedio(sumar, 2);
+            printf("El promedio es %.2f", resultado);
+            return 0;
+        }
+
+NOTA: 8/10
+En general, has hecho un gran trabajo y demuestras un buen entendimiento del nivel 7

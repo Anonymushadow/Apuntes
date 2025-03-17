@@ -1,0 +1,37 @@
+1
+    a_ Dennis Ritchie en la década de los 70
+    b_ Desarrollo de software en general como ciertos lenguajes que se basan en C, IA, backend, y en casos específicos, en robótica, etc
+
+2
+    a_ GCC y el otro menos conocido, pero es como la versión mejorada de GCC. GCC es más usado en Linux y el otro en macOS
+    b_ Te ayuda a encontrar errores, escribir más rápido y cómodo, ejecutar y compilar código, y suelen tener interfaces gráficas
+
+3
+    a_ Un programa que convierte tu código de un lenguaje de programación a un lenguaje binario para que la computadora entienda
+    b_ En el IDE, solo tocas un botón que lo hace todo, mientras que en la terminal escribes un comando como gcc archivo.c -o archivo.exe para compilar. Luego, si todo va bien, puedes ejecutar el archivo con ./archivo.exe
+
+4
+    a_
+        #include <stdio.h>
+
+        void main() {
+            printf("Hello World");
+            return 0;
+        }
+    b_ Permite la entrada y salida de datos (como scanf y printf)
+
+5
+    a_ Porque si no, el compilador no entendería lo que quieres hacer, generando errores o que no funcione correctament 
+    b_ Apertura y cierre de un conjunto de datos. Indica dónde comienza y termina una función, por ejemplo
+
+
+
+NOTA: 8/10
+La mayoría de las respuestas están correctas, pero hay algunos detalles menores que podrían mejorarse, 
+como la función main y la precisión en el uso de const y #define. ¡Buen trabajo!
+
+
+
+
+
+

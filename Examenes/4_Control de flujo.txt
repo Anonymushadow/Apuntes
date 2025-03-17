@@ -1,0 +1,35 @@
+1
+    a) Explica qué es una estructura condicional en C y proporciona un ejemplo de uso del if-else para verificar si un número es positivo, negativo o cero.
+    b) ¿Cómo se puede utilizar el operador ternario en lugar de un if-else para verificar si una variable x es mayor que 10 y mostrar un mensaje adecuado?
+
+2
+    a) ¿Cuál es la diferencia entre un bucle for y un bucle while? Proporciona un ejemplo de cada uno.
+    b) ¿Qué hace el siguiente bucle do-while y cuántas veces se ejecutará si a es inicialmente 5 y b es 3?
+        do {
+            printf("%d", a);
+            a--;
+        } while (a > b);
+    a) Explica cómo funcionan los comandos break y continue dentro de los bucles. Proporciona un ejemplo de uso de cada uno.
+
+3
+    a) Describe cómo funciona una estructura switch en C. ¿Qué ocurre si se omite el break en un case?
+    b) Escribe un switch que imprima el nombre del mes basado en un número del 1 al 12. Incluye un caso default para manejar números fuera de este rango.
+
+4) ¿Qué es el fall-through en una estructura switch y cómo se puede evitar? Proporciona un ejemplo de código que demuestre fall-through y cómo se puede solucionar.
+
+5) Dado el siguiente código, indica el valor de la variable result después de la ejecución del switch y explica por qué:
+    int number = 2;
+    int result;
+    switch (number) {
+        case 1:
+            result = 10;
+        case 2:
+            result = 20;
+            break;
+        case 3:
+            result = 30;
+            break;
+        default:
+            result = 40;
+            break;
+        }

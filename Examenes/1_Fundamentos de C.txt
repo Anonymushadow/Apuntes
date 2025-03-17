@@ -1,0 +1,20 @@
+Examen de Nivel 1: Fundamentos de C
+1. Lenguaje C y Compiladores
+    a) ¿Quién es el creador del lenguaje C y en qué década lo desarrolló?
+    b) ¿Qué papel juega un compilador en el proceso de desarrollo de software?
+
+2. Entorno de Desarrollo
+    a) Menciona dos ejemplos de compiladores y su relación con sistemas operativos específicos.
+    b) ¿Qué ventajas ofrece un IDE sobre el uso exclusivo de un editor de texto para la programación en C?
+
+3. Conceptos Básicos de Programación
+    a) Explica en tus propias palabras qué hace un compilador.
+    b) ¿Cuál es la diferencia entre usar un IDE y usar la línea de comandos para compilar un programa?
+
+4. Código Básico en C
+    a) Escribe un código en C que imprima "Hello World" en la consola.
+    b) Explica la función de #include <stdio.h> en el código anterior.
+
+5. Variables y Tipos de Datos
+    a) ¿Qué es una variable en C y cómo se declara e inicializa una?
+    b) ¿Cuál es la diferencia entre una variable global y una variable local?

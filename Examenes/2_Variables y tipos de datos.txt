@@ -1,0 +1,18 @@
+Mini Examen - Nivel 2: Tipos de Datos y Variables
+1. Tipos de Datos Básicos
+    a) ¿Cuál es la diferencia entre float y double en C?
+    b) ¿Qué hace el modificador unsigned y cómo afecta al rango de valores de una variable?
+    c) ¿Qué función se usa para obtener el tamaño en bytes de una variable en C?
+
+2. Variables y Constantes
+    a) Explica la diferencia entre una constante definida con #define y una constante definida con const.
+    b) ¿Qué es una variable global y cómo se diferencia de una variable local? Proporciona un ejemplo breve en pseudocódigo.
+    c) ¿Cuáles son algunas convenciones comunes para nombrar variables en C?
+
+3. Operadores
+    a) ¿Qué hace el operador & en C y proporciona un ejemplo de uso?
+    b) ¿Cómo se usa el operador << y qué efecto tiene en el valor binario de una variable? Proporciona un ejemplo con el número 3.
+    c) ¿Cuál es la diferencia entre | y ^? Proporciona un ejemplo en el que ambos operadores se utilicen con los números 5 y 3.
+4. Operadores Bitwise
+    a) ¿Cómo se utiliza el operador >> y qué hace en el contexto de operaciones bitwise? Proporciona un ejemplo con el número 8.
+    b) ¿Qué es un "bitmask" y cómo se puede usar para filtrar valores únicos en un conjunto limitado?

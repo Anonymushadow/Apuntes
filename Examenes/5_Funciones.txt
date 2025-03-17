@@ -1,0 +1,17 @@
+1
+    a) Escribe una función llamada multiplicar que tome dos enteros como parámetros, los multiplique, y muestre el resultado. Luego, llama a esta función desde main con los valores 4 y 5.
+    b) Crea una función mostrarNumero que tome un entero como parámetro e imprima "El número es [número]". Llama a esta función desde main con el número 7.
+
+2
+    a) Define una función dividir que tome dos parámetros enteros, numerador y denominador, y devuelva el resultado de la división (como un número de punto flotante). Maneja el caso en que el denominador sea 0 para evitar la división por cero.
+    b) Modifica la función dividir para que devuelva el resultado de la división y llama a la función desde main, almacenando el resultado en una variable y luego imprimiéndolo.
+
+3
+    a) Define una variable global contador e inicialízala en 0. Crea una función incrementarContador que incremente contador en 1 cada vez que se llame. Llama a esta función varias veces desde main y luego imprime el valor de contador.
+    b) Escribe una función contarLlamadas que tenga una variable estática llamadas que se incremente cada vez que se llame a la función. Imprime el número de veces que se ha llamado a la función.
+
+4) Define un prototipo para una función calcularCuadrado que tome un entero como parámetro y devuelva el cuadrado del número. Luego, define la función calcularCuadrado y llámala desde main para calcular el cuadrado del número 6.
+
+5
+    a) Define un prototipo para una función calcularCuadrado que tome un entero como parámetro y devuelva el cuadrado del número. Luego, define la función calcularCuadrado y llámala desde main para calcular el cuadrado del número 6.
+    b) Crea una función recursiva pedirContraseña que pida al usuario una contraseña. Si la contraseña es "1234", muestra "Acceso concedido" y termina la función. Si no es correcta, vuelve a llamar a la función.

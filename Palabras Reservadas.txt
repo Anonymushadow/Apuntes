@@ -1,0 +1,258 @@
+<stio.h>
+<limits.h>
+<string.h>
+
+----------------------------------------------------------------------------------------------------
+PALABRAS RESERVADAS
+----------------------------------------------------------------------------------------------------
+------------------------------------Variables y Tipos de datos--------------------------------------
+int --> representa un entero 
+float --> representa un dedcimal de hasta 7 digitos 
+double --> representa und ecimal de hasta 15 digitos 
+chat --> representa un caracter 
+signed int --> permite que el int pueda tener tanto valores positivos como negativos 
+unsigned int --> evita que el int pueda tener valores negativos 
+short int --> reduce el peso del int 
+long int --> aumenta el rango de numeros soportados por el int 
+CHAR_MIN --> nos devuelve el valor minimo aceptado como char
+CHAR_MAX --> nos devuelve el valor maximo aceptado como char
+INT_MIN --> nos devuelve el valor minimo aceptado como int
+INT_MAX --> nos devuelve el valor maximo aceptado como int
+LONG_MIN --> nos devuelve el valor minimo aceptado como long
+LONG_MAX --> nos devuelve el valor maximo aceptado como long
+FLOAT_MIN --> nos devuelve el valor minimo aceptado como float
+FLOAT_MAX --> nos devuelve el valor maximo aceptado como float
+tipo_de_dato nombre_de_variable --> crear una variable nueva 
+const tipo_de_dato nombre_de_constante = contenido_a_guardar --> crear una constante 
+#define nombre_de_constante contenido_a_guardar --> crear una macro
++ --> sumar
+- --> restar 
+* --> multiplicar 
+/ --> dividir 
+== --> comprobar si son iguales 
+!= --> comprobar si son desiguales 
+> --> comprobar si es mayor
+< --> comprobar si es menor o igual
+>= --> comprobar si es mayor o igual
+<= --> comprobar si es menor
+&& --> verificar si dos o mas condiciones son verdaderas 
+|| --> verificar si al menos una de las condiciones es verdadera 
+! --> verificar que la condicion no sea verdadera 
+nombre_variable = dato_a_guardar --> asignar datos a una variable 
+nombre_variable += numero --> sumarle un numero a la variable y guardar el resultado en la misma 
+nombre_variable -= numero --> restarle un numero a la variable y guardar el resultado en la misma 
+nombre_variable *= numero --> multiplicarle por un numero a la variable y guardar el resultado en la misma 
+nombre_variable /= numero --> dividirle por un numero a la variable y guardar el resultado en la misma 
+nombre_variable++ --> sumarle un numero a la variable y guardar el resultado en la misma 
+nombre_variable-- --> restarle un numero a la variable y guardar el resultado en la misma
+verificacion ? hacer_si_es_true : hacer_si_es_false --> verificar una afirmacion y hacer una u otra cosa al respecto
+dato_numerico & dato_numerico --> combinar los binarios para crear uno en base a las igualdades de 1
+dato_numerico | dato_numerico --> combinar los binarios para crear uno en base a donde hay al menos un 1
+dato_numerico ^ dato_numerico --> combinar los binarios para crear uno en base a donde hay desigualdad 
+~dato_numerico --> invertir el binario del numero 
+dato_numerico << dato_numerico --> correr los binarios hacia la izquierda cuantas veces indique el numero 
+dato_numerico >> dato_numerico --> correr los binarios hacia la derecha cuantas veces indique el numero 
+------------------------------------Entrada/Salida de datos--------------------------------------
+getchar() --> lee un caracter del buffer y lo elimina de ahi 
+putchar() --> muestra un caracter en pantalla 
+gets() --> lee una linea entera de entra de datos, con espacio y todo
+fgets() --> lee una linea entera de entra de datos, pudiendo especificar su tamaño limite y su tipo de entrada 
+puts() --> imprime una cadena de caracteres con un salto de linea final 
+fputs() --> imprime una cadena de caracteres especificando su tipo de salida 
+stdin --> standar input 
+stdout --> standar output
+printf() --> permite escribir texto por pantalla y unir el contenido de variables como parte de tal 
+printf("%i", nombre_variable) --> escribe el contenido de una variable del tipo int
+printf("%d", nombre_variable) --> escribe el contenido de una variable del tipo int
+printf("%f", nombre_variable) --> escribe el contenido de una variable del tipo float
+printf("%.cantidad_decimalesf", nombre_variable) --> escribe el contenido de una variable del tipo float con una cantidad de decimales especificos 
+printf("%c", nombre_variable) --> escribe el contenido de una variable del tipo char
+printf("%s", nombre_variable) --> escribe el contenido de una variable del tipo cadena de texto 
+printf("%x", nombre_variable) --> escribe el contenido de una variable del tipo hexadecimal
+\n --> genera un salto de linea 
+\t --> genera una tabulacion
+\\ --> permite escribir una barra diagonal izquierda en el texto 
+\" --> permite escribir comillas dobles dentro del texto 
+printf("[%cantidad_caracteresd]", nombre_variable) --> especifica cuantos caracteres minimos tendra la impresion (d de int)
+printf("[%cantidad_caracteress]", nombre_variable) --> especifica cuantos caracteres minimos tendra la impresion (s de string)
+printf("[%-cantidad_caracteresd]", nombre_variable) --> especifica cuantos caracteres minimos tendra la impresion y especifica que se alineara a la izquierda 
+scanf() --> almacena un dato introducido por el usuario en una variable
+scanf("%d", &nombre_variable) --> almacenar un numero introducido por el usuario
+scanf("%f", &nombre_variable) --> almacenar un numero flotante introducido por el usuario
+scanf("%lf", &nombre_variable) --> almacenar un numero double introducido por el usuario
+scanf("%c", &nombre_variable) --> almacenar un caracter introducido por el usuario
+scanf("%s", nombre_variable) --> almacenar un string introducido por el usuario hasta el primer espacio
+scanf("%cantidad_limite_de_caracteresd", &nombre_variable) --> limitar la cantidad de caracteres que puede introducir el usuario 
+------------------------------------Flujo de datos--------------------------------------
+if(afirmacion){} --> en caso de que se cumpla la afirmacion hacer tal cosa 
+else {} --> en caso de que no se cumpla la afirmacion ahcer tal otra cosa 
+for(inicializacion; validacion; modificacion_variable){} --> crear un bucle for 
+while(verificacion){} --> crear un bucle while 
+do{} --> realizar una tarea antes de que el while verifique la afirmacion 
+switch(valor_o_variable){} --> incializar un switch 
+case posible_Valor: --> en caso de que el valor o variable sea igual a este entonces se realizara su respectiva accion
+break --> indicar que detenga el switch 
+continue --> no hace nada y saltea a la siguiente iteracion
+default: --> en caso de que no coincida con nigun case hacer lo siguiente  
+------------------------------------Funciones--------------------------------------
+tipo_de_retorno nombre_deE_funcion(){} --> crear una funcion 
+return valor_a_retornar --> retornar algun valor 
+nombre_de_funcion() --> llamar a una funcion
+static tipo_de_dato nombre_de_funcion --> crear una funcion estatica 
+------------------------------------Arrays y Cadenas de Caracteres--------------------------------------
+tipo_de_dato nombre_de_array[cantidad_de_elementos_a_tener] --> crear un array 
+tipo_de_dato nombre_de_array[cantidad_de_elementos_a_tener] = {datos} --> crear un array inicializado 
+tipo_de_dato nombre_de_array[cantidad_de_elementos_a_tener][cantidad_de_elementos_a_tener] = {{datos}} --> crear un array bidireccional 
+tipo_de_dato nombre_de_array[cantidad_de_elementos_a_tener][cantidad_de_elementos_a_tener] --> crear un array bidireccional ya iniciado 
+nombre_array[posicion_a_modificar] = nuevo_valor --> modificar un dato del array 
+nombre_array[posicion_a_mostrar] --> llamar a un elemento del array 
+sizeof(elemento_a_medir) --> permite saber cuanto pesa un dato 
+strlen(string) --> permite saber cuantos caracteres tiene un string antes del \0 
+printf("%zu", nombre_variable) --> mostrar respuesta del sizeof o del strlen
+strcpy(destino_de_copia, variable_a_copiar) --> copiar el string contenido de una variable a otra 
+strncpy(destino_de_copia, variable_a_copiar, cantidad) --> copiar N cantidad de caracteres de un string a otro
+strcmp(dato_a_comparar, dato_a_comparar) --> comparar dos variables string y verificar cual viene primero alfabeticamente 
+strcat(variable_destino, variable_a_concatenar) --> concatenar dos variables string en una sola
+------------------------------------Punteros y Gestion de memoria--------------------------------------
+tipo_de_dato *nombre_del_puntero --> crear un puntero 
+nombre_del_puntero = &variable --> almacenar la direccion de una variable 
+variable = *nombre_puntero --> almacenar el contenido de la direccion almacenada en el puntero 
+nombre_variabe = &variable --> almacenar el puntero en forma entendible (no recomendado)
+typedef tipo_de_dato nuevo_nombre --> crear un alias para un tipo de dato 
+(tipo_de_dato)nombre_variable --> convertir un valor a otro tipo de dato 
+\0 --> caracter nulo en char 
+puntero = (tipo_de_dato *)puntero --> convertir un puntero a uno de otro tipo de dato (como int *p a char *p) 
+size_t nombre_de_variable --> crear una variable de tipo de dato que devuelve un sizeof
+(tipo_de_dato *)malloc(size_t) --> crear una memoria dinamica 
+(tipo_de_dato *)calloc(cantidad, size_t) --> crear un espacio dinamico en memoria de X cantidad de elementos de Y tamaño inciializados con 0 o con '\0'
+(tipo_de_dato *)realloc(memoria_a_redimencionar, size_t) --> redimencionar una memoria dinamica 
+free(memoria_dinamica) --> liberar memoria dinamica
+NULL --> especificar que es un puntero colgante 
+nombre_del_puntero --> obtener la direccion del puntero 
+*nombre_del_puntero --> obtener el contenido dentro de la direccion del puntero
+uint8_t nombre_variable --> crear un tipo de int con valores de 0 a 255
+tipo_de_dato **nombre_de_Variable --> crear un puntero a puntero 
+tipo_de_dato ***nombre_de_Variable --> crear un puntero a puntero a puntero
+argc --> cantidad de parametros del CLI
+*argv[] --> array de parametros del CLI
+------------------------------------Estructuras y Uniones--------------------------------------
+struct nombre_del_struct {} --> crear una estructura de datos 
+struct nombre_del_struct nombre_de_variable --> crear una variable de X estructura 
+struct nombre_del_struct *nombre_de_variable --> crear un puntero de X tipo de estructura 
+nombre_de_variable.nombre_atributo --> acceder a un atributo de la variable 
+nombre_de_puntero_a_estructura -> nombre_atributo --> acceder a un atributo de la variable a la que apunta
+union nombre_de_variable {} --> crear una union
+union nombre_de_union nombre_de_variable --> crear una variable de tipo union 
+nombre_de_variable.atributo --> acceder a un atributo del union 
+enum nombre_variable {} --> crear un enum
+------------------------------------Estructuras de datos dinamicas--------------------------------------
+
+
+------------------------------------Strings profundo--------------------------------------
+char *nombre_de_puntero = string_a_guardar --> almacenar un string fijo en memoria 
+char nombre_de_puntero[] --> reservar un espacio en memoria donde se almacenara un string 
+strstr(variable, string_a_buscar) --> buscar si un string contiene cierto substring
+strchr(variable_string, caracter) --> obtener un puntero a la primera coincidencia del caracter 
+strrchr(variable_string, caracter) --> obtiene un puntero a la ultima coincidencia del caracter 
+strspn(variable_string, set) --> cuenta cuantos caractres consecutivos desde el comienzo del string estan en el set 
+strcspn (variable_string, set) -->  cuenta cuantos caracteres consecutivos desde el comienzo del string no estan en el set
+strtok() --> divide un array en tokens para devolver cada token en cada pedido 
+sprintf() --> formatea un string y lo almacena en un array 
+strncmp(string, string, n_caracteres) --> compara los primeros n_caracteres de dos strings
+strcasecmp(string, string) --> compara dos strings ignorando minusculas y mayusculas
+fgets(ubicacion, tamaño, tipo_de_entrada) --> permite leer varias lineas de entrada de datos
+regex_t nombre_variable --> crear una estructura en memoria que se utilizara para procesar strings convirtiendolos en expresiones regulares
+regcomp(&ubicacion_del_regex_t, patron, flags) --> utiliza el regex_t para procesar un string y convertirlo en una expresion regular utilizando los flags especificados
+regexec(&ubicacion_del_regex_t, string_a_Verificar, nmatch, pmatch[], eflags) --> ejecuta una expresion regular en un string
+regfree(&ubicacion_del_regex_t) --> vacia la expresion regular, deberas volver a llamar regcomp para reusarla
+. --> coincide con cualquier tipo de dato excepto saltos de linea
+^ --> coincide con el inicio de una cadena
+$ --> coincide con el final de la cadena
+[] --> coincide con cualquiera de los caracteres dentro de los corchetes
+[^] --> coincide con cualquier caracter que no este entre corchetes
+* --> coincide con cero o mas repeticiones del patron anterior
++ --> coincide con una o mas repeticiones del patron anterior (pero minio una)
+? --> coincide con cero o una repeticion del patron anterior pero no mas de 1
+{n} --> coincide con n repeticiones del patron anterior
+{n,} --> coincide con al menos n repeticiones del patron anterior
+{n,m} --> coincide con al menos n repeticiones del patron anterior y maximo m
+\d --> coincide con un digito (equivalente a [0-9])
+\D --> coincide con culquier caracter que no sea un numero (osea ![0-9])
+\w --> coincide con un caracter alfanumerico (letras, numeros y guiones bajos)
+\W --> coincide con cualquier caracter no alfanumerico (ni numero ni letra ni guion bajo)
+\s --> coincide con espacios (saltos en linea, espacios, tabulaciones, etc)
+\S --> coincide con cualquier cosa que no sea un espacio
+() --> agrupar varias expresiones en una
+| --> representar una alternativa
+\b --> coincide con un inicio de linea o un fin de line
+\B --> no esta en el principio ni en el final de la linea
+REG_ICASE --> evitar tomar en cuenta mayusculas y minusculas
+REG_EXTENDED --> usa una sintaxis mas extendida
+0 --> sin flags
+iconv_t nombre_variable --> crear una configuracion de codificacion y decodificacion
+iconv(configuracion_iconv, direccion_a_texto_a_convertir, cantidad_a_codificar, direccion_de_almacenaje, cantidad_a_almacenar) --> decodificar y almacenar el codigo
+iconv_close(configuracion_iconv) --> cerrar el codificador
+------------------------------------Librerias y Modulacion--------------------------------------
+#include <nombre_de_encabezado.h> --> incluir una libreria
+#ifndef nombre_de_macro --> verifica si una macro de la cabecera no fue creada y en base a eso continua o saltea la cabecera
+#ifdef nombre_de_macro --> verifica si una macro de la cabecera fue creada y en base a eso continua o saltea la cabecera
+#define nombre_de_macro --> creamos la macro para que en un futuro intento de llamado no se vuelva a crear todo y salte error
+#endif --> acaba el blocke de importacion condicional en caso de que no exista la macro
+extern tipo_de_dato nombre_de_variable --> especifica que un dato viene de otro archivo .c
+------------------------------------Archivos--------------------------------------
+fopen("direccion_del_Archivo", "tipo_de_apertura") --> abrir un archivo 
+r --> permitir leer el archivo 
+w --> permitir sobreescribir el archivo 
+a --> permtir escribir al final del archivo  
+r+ --> permite leer y escribir el archivo si ya existe 
+w+ --> permite escribir y leer el archivo y si no existe lo crea 
+a+ --> permite añadir texto a un archivo sin sobreescribirlo y leerlo
+fscanf(texto_a_leer, archivo) --> leer desde un archivo cierto tipo de datos
+fgets(variable, cantidad_a_leer, archivo) --> leer cierta cantidad de datos del archivo
+fprintf(archivo, texto_a_escribir) --> escribir un texto formateado en un archivo 
+fputs("texto_a_almacenar", ubicacion_archivo) --> escribir un texto literal en el arhivo
+fclose(archivo) --> cerrar un archivo
+rb --> permitir leer el archivo binario
+wb --> permitir sobreescribir el archivo binario
+ab --> permtir escribir al final del archivo binario  
+rb+ --> permite leer y escribir el archivo binario si ya existe 
+wb+ --> permite escribir y leer el archivo binario y si no existe lo crea 
+ab+ --> permite añadir texto a un archivo binario sin sobreescribirlo y leerlo
+fwrite(datos_a_escribir, tamaño_de_cada_elemento_a_escribir, cantidad_a_escribir, archivo); --> escribir en un archivo binario 
+fread(destino_a_guardar, tamaño_de_cada_elemento, cantidad_a_leer, archivo_a_leer) --> leer un archivo binario 
+------------------------------------Control de Flujo de Datos--------------------------------------
+return 0 --> retornar sin errores 
+return 1 --> retornar un error 
+return -1 --> retornar un error critico 
+return EXIT_SUCESS --> retornar sin errores
+return EXIT_FAILURE --> retornar un error 
+system(comando_de_terminal) --> ejecutar un comando de la terminal del so actual
+system("pause") --> detener el programa hasta que se presione una tecla 
+time_t nombre_variable --> crear una variable de tipo time 
+time(&variable) --> obtener la cantidad de segundos que pasaron desde el epoch hasta la fecha actual y almacenarlo en la variable 
+exit(0) --> acabar el programa de manera inmediata sin errores 
+exit(1) --> acabar el programa de manera inmediata con error 
+Sleep(cantidad_de_milisegundos) --> detener el programa por cierta cantidad de milisegundos
+
+------------------------------------Modularidad--------------------------------------
+
+
+------------------------------------Estructuras de datos--------------------------------------
+
+
+------------------------------------Optimizacion--------------------------------------
+
+
+------------------------------------Compilacion y Enlace avanzado--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

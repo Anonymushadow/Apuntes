@@ -1,0 +1,97 @@
+1
+    a) un condicional es una funcion que permite verifica una afirmacion y de este modo hacer una u otra cosa al respecto 
+        Ejemplo:
+            if(numero > 0){
+                printf("Es mayor");
+            }else if(numero < 0){
+                printf("Es negativo");
+            }else{
+                printf("Es 0");
+            }
+    b) numero > 10 ? printf("Es mayor a 10") : printf("No es mayor a 10");
+
+2
+    a) un bucle for se utiliza para iterar sobre array (mayormente), mientras el while es mas para repetir acciones por un determinado tiempo mientra se cumpla una condicion 
+        Ejemplo:
+            for(i = 0; i < 10; i++){
+                printf("Hola alumno %d", i);
+            }
+
+            // 1 haciendo referentcia a true, podria ser una variable con X vallor, etc pero puse como ejemplo mas directo 
+            while(1) {
+                printf("Esto es un bucle");
+            }
+    b) ejecuta un texto en pantalla y le resta 1 a a despeus de verificar, se ejecutaria unas 3 veces
+    a) el break sale del bucle, lo acaba, mientras el continue saltea esa opcion
+        Ejemplo:
+            for(i = 0; i < 20; i++){
+                if(i & 1) { 
+                    printf("%d", i);
+                }else{
+                    continue;
+                }
+            }
+            acalo que hace es verificar si i es impar, si lo es lo muestra, si no lo es lo saltea
+3
+    a) verifica el contenido de una variable, si cumple con una de las opciones que tiene entonces ejecuta su respectivo codigo de consecuencia, si se omite el break este seguira verificando hasta acabar el switch
+    b) 
+        switch(mes) {
+            case 1:
+                printf("Enero");
+                break;
+            case 2:
+                printf("Febrero");
+                break;
+            case 3:
+                printf("Marzo");
+                break;
+            case 4:
+                printf("Abril");
+                break;
+            case 5:
+                printf("Mayo");
+                break;
+            case 6:
+                printf("Junio");
+                break;
+            case 7:
+                printf("Julio");
+                break;
+            case 8:
+                printf("Agosto");
+                break;
+            case 9:
+                printf("Septiembre");
+                break;
+            case 10:
+                printf("octube");
+                break;
+            case 11:
+                printf("Noviembre");
+                break;
+            case 12:
+                printf("Diciembre");
+                break;
+            default:
+                printf("Este mes no existe");
+        }
+
+
+4) es basicamente cuando el switch sigue verificando los cases una vez ya encontrado su correcto, se soluciona con un break 
+    Ejemplo:
+        switch(num){
+            case 1:
+                printf("Uno");
+            case 2:
+                printf("Dos");
+            case 3
+                printf("Tres");
+            default:
+                printf("Defecto");
+        }
+        aca seguira verificando por mas que num sea 1 o 2 o 3, llegara hasta el default 
+5) result = 20; porque number es 2, en case 2 asigna 20 a result y como hay un break no seguira verificando de manera "erronea"
+
+
+NOTA: 9.6/10
+Tu comprensión es muy buena, con solo algunas áreas menores para mejorar

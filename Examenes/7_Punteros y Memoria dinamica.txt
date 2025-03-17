@@ -1,0 +1,23 @@
+1
+    a) Explica qué es un puntero en C y cómo se utiliza para acceder a la memoria.
+    b) ¿Cómo se declara un puntero para un tipo de dato entero? ¿Cómo se inicializa un puntero a la dirección de una variable entera?
+    c) ¿Qué hace el operador & en C? ¿Y el operador *? Proporciona un ejemplo de cómo se usan estos operadores con punteros.
+    d) Explica cómo se usa typedef para simplificar la declaración de punteros. Proporciona un ejemplo.
+    e) ¿Qué es el casting en el contexto de punteros? Proporciona un ejemplo de cómo se realiza la conversión de un puntero de un tipo a otro.
+
+2
+    a) Describe la función de cada una de estas funciones de gestión de memoria en C. ¿Cuándo usarías cada una de ellas? Proporciona ejemplos de cómo se utilizan.
+    b) ¿Qué es una fuga de memoria? ¿Cómo puedes prevenir y detectar fugas de memoria en tu código?
+
+3
+    a) Explica la relación entre punteros y arrays en C. ¿Cómo puedes usar un puntero para recorrer un array?
+    b) ¿Qué es la aritmética de punteros y cómo se utiliza para navegar por un array? Proporciona un ejemplo de código.
+
+4
+    a) ¿Cómo se pasan los arrays a las funciones en C? ¿Cómo se manipulan dentro de la función?
+    b) Menciona algunas técnicas para optimizar el uso de memoria en un programa en C.
+
+5
+    a) ¿Cómo se pasa un puntero como argumento a una función? Proporciona un ejemplo de código.
+    b) Explica qué es un puntero a función y cómo se declara. Proporciona un ejemplo de uso.
+    c) ¿Cómo puedes definir una función que toma un puntero como parámetro? Proporciona un ejemplo que muestre cómo se utiliza este puntero dentro de la función
