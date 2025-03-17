@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------------------
+27_MYSQL
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para testings
+    proporciona herramientas y utilidades específicamente diseñadas para realizar pruebas en código JavaScript.
+    está diseñado para ser fácil de usar y configurar. Proporciona una estructura simple para escribir y ejecutar pruebas sin requerir una configuración extensa
+    es versátil y puede utilizarse con una variedad de proyectos, incluyendo aquellos que utilizan Babel, TypeScript, Node.js, React, Angular, Vue y más. Esto hace que sea adecuado para aplicaciones web modernas y diversos entornos de desarrollo
+    incluye características como ejecución paralela de pruebas para mejorar la velocidad de las pruebas, "snapshot testing" para comparar visualmente los resultados esperados con los resultados actuales, y detección automática de cambios para volver a ejecutar solo las pruebas afectadas
+    es extensible y se puede personalizar según las necesidades del proyecto. Puedes agregar complementos y configuraciones adicionales según sea necesario
+instalar: npm install jest -D
+utilizar: npm jest
+palabras reservadas:
+    

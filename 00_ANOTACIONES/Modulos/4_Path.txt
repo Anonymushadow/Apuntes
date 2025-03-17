@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------------------------
+4_PATH 
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo para manejar el enrutamiento de archiivos
+utilizarlo: const path ? require("path");
+palabras reservadas:
+    path.join() --> crea una ruta con los textos que le proporciones
+    path.resolve() --> mezcla dos rutas
+    path.normalize() --> corregir la ruta escrita
+    path.dirname() --> devuelve el directorio sin el archivo
+    path.basename() --> obtenemos el archivo de una ruta
+    path.extname() --> obtenemos la extencion del archivo de un directorio
+    path.isAbsolute() --> verifica si la ruta es absoluta
+    path.relative() --> verifica si la ruta es relativa
+    path.delimiter --> demuestra en las variables de entorno mediante que simbolos estan divididas las rutas
+    path.parse() --> separar la ruta y convertirla en un objeto
+    path.format() --> convertir un objeto a ruta
+    path.sep --> devuelve el separador de rutas actual

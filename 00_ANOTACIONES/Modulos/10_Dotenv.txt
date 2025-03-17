@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------------------------
+10_DOTENV
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para manejar las variables de entorno
+instalar: npm install dotenv --save
+utilizar: 
+    const dotenv = require("dotenv");
+    import 'dotenv/config';
+palabras reservada:
+    dotenv.config() --> cargar las variables de entorno desde un archivo .env en una aplicación Node.js
+    path: --> indicar la ruta donde se encuentra el .env a importar
+    debug: --> ¿activar el modo de depuracion y ver informacion sobre la importacion?
+    encodign: definir tipo de codificacion (como utf-8)
+    override: --> ¿permitir que las variables de entorno definidas en el archivo .env sobrescriban los valores de las variables de entorno existentes en el entorno de Node.js.?
+    process.env --> trabajar con dotenv
+    process.env.parse() --> definir variables de entorno con clave y valor
+    # --> comentarios dentro del .env
+    processEnv: {}--> cargar variables de entorno desde un objeto

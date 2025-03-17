@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------------------
+25_PASSPORT
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para manejar la autenticacion de usuarios
+instalar:
+    npm install passport passport-local
+    npm install passport-google-oauth
+utilizar: 
+    const passport = require('passport');
+    const LocalStrategy = require('passport-local').Strategy;
+palabras reservadas:
+    passport.initialize() --> configurar Passport para su uso en tu aplicación
+    passport.use() --> permite definir la estrategia de autenticacion
+    local --> autenticación basada en nombre de usuario y contraseña almacenados localmente.
+    jwt --> autenticar a los usuarios mediante tokens JWT
+    google --> autenticar a los usuarios utilizando sus cuentas de Google
+    facebook --> autenticar a los usuarios utilizando sus cuentas de Facebook
+    twitter --> autenticar a los usuarios a través de sus cuentas de Twitter
+    LocalStrategy() --> autenticar a los usuarios utilizando un nombre de usuario y contraseña almacenados en la base de datos de la aplicación
+    JwtStrategy() --> autenticar a los usuarios utilizando un JWT
+    jwtFromRequest: toma un valor que generalmente es una función que recibe la solicitud (req) como argumento y devuelve el token JWT
+    ExtractJwt.fromAuthHeaderAsBearerToken() --> es una forma de extraer un token JWT (JSON Web Token) del encabezado de autorización de una solicitud HTTP y es comúnmente utilizada en las estrategias de autenticación de Passport.js
+    secretOrKey: --> proporcionar la clave secreta que se utiliza para verificar la autenticidad y la integridad del token JWT. Esta clave secreta se utiliza para firmar y verificar los tokens JWT.
+    GoogleStrategy() --> permitir que los usuarios inicien sesión en una aplicación web utilizando sus cuentas de Google
+    clientID: --> ID de Cliente proporcionado por el proveedor de autenticación (en este caso, Google)
+    clientSecret: --> es una clave secreta proporcionada por el proveedor de autenticación (en este caso, Google) junto con el ID de Cliente
+    callbackURL: --> es la URL a la que el proveedor de autenticación redirigirá al usuario después de que este haya iniciado sesión y otorgado permisos
+    BearerStrategy() --> permitir que los usuarios inicien sesión en una aplicación web utilizando tokens de portador
+    done --> indicar el resultado de una operación de autenticación o autorización
+    error --> indicar si ocurrió algún error durante la operación de autenticación o autorización
+    user --> pasar el objeto de usuario autenticado o autorizado
+    info --> proporcionar información adicional sobre el resultado de la operación
+    passport.authenticate() --> autenticar a los usuarios en una ruta específica de una aplicación web
+    successRedirect: --> especificar la URL a la que se redireccionará al usuario después de una autenticación exitosa
+    failureRedirect: --> especificar la URL a la que se redirigirá al usuario si la autenticación falla.
+    failureFlash: --> activar la funcionalidad de mensajes flash
+    req.isAuthenticated() --> verifica si el usuario actual está autenticado.
+    passport.serializeUser() --> convierte los datos de usuario a una version serializada para almacenarla
+    passport.deserializeUser() --> verifica si hay datos serializados almacenados, y si los hay los deserializa
+    passport.session() --> es esencial para que Passport pueda mantener el estado de autenticación de un usuario a lo largo de su sesión en la aplicación web y permitir el acceso a las rutas protegidas solo para usuarios autenticados
+
+Datos Extra:
+    Para usar la GoogleStrategy en Passport.js, generalmente debes seguir estos pasos:
+        Configuración de las Credenciales de Google: Antes de usar la estrategia, debes registrar tu aplicación en el Developer Console de Google y obtener las credenciales de OAuth 2.0 (ID de cliente y secreto de cliente). Estas credenciales son necesarias para que tu aplicación pueda interactuar con Google para autenticar a los usuarios.
+        Instalación de Dependencias: Asegúrate de tener las dependencias necesarias instaladas en tu proyecto. Para usar la GoogleStrategy, debes tener instalado el módulo passport-google-oauth20.
+        Configuración de Passport.js: Configura Passport.js para utilizar la GoogleStrategy. Esto generalmente se hace en el archivo de configuración de tu aplicación:
+        Rutas para Autenticación: Crea las rutas necesarias en tu aplicación para manejar la autenticación a través de Google. Esto generalmente implica una ruta de inicio de sesión que redirige al usuario a la página de inicio de sesión de Google y una ruta de callback que maneja la respuesta de Google después de que el usuario haya iniciado sesión.
+        Página de Inicio de Sesión de Google: En la ruta de inicio de sesión, debes redirigir al usuario a la página de inicio de sesión de Google, que generalmente se encuentra en https://accounts.google.com. Después de iniciar sesión en Google, el usuario será redirigido de nuevo a la ruta de callback que has configurado.
+        Manejo de la Respuesta de Google: En la ruta de callback, Passport.js manejará la respuesta de Google, y la función de devolución de llamada que proporcionaste en la configuración de GoogleStrategy se ejecutará. En esta función, puedes implementar la lógica para crear o autenticar al usuario en tu aplicación.
+        Almacenamiento de Sesión: Para mantener al usuario autenticado entre solicitudes, generalmente se utiliza algún mecanismo de almacenamiento de sesiones, como express-session. Debes configurar y utilizar express-session para administrar las sesiones de usuario.
+    passport.use: se utiliza para configurar y habilitar diferentes estrategias de autenticación. Puedes tener varias estrategias configuradas, por ejemplo, una estrategia local (nombre de usuario y contraseña) y una estrategia de autenticación de Google
+    passport.authenticate: se usa en rutas específicas para indicar a Passport.js qué estrategia de autenticación debe aplicar en esa ruta en particular. Esto te permite utilizar diferentes estrategias en diferentes partes de tu aplicación según sea necesario
+    passport.serialize: Se ejecuta después de que un usuario haya sido autenticado con éxito.
+    passport.deserialize: Se ejecuta en cada solicitud posterior después de la autenticación inicial. Cuando un usuario realiza una solicitud a tu servidor, Passport.js verifica si la sesión contiene datos serializados del usuario. Si los encuentra, Passport.js ejecuta la función de deserialización que has configurado con passport.deserializeUser

@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------------------------
+20_EJS
+---------------------------------------------------------------------------------------------
+¿Que es?: software que se utiliza para generar y renderizar contenido dinámico en páginas web
+instalar: npm install ejs
+utilizar: require("ejs");
+palabras reservadas:
+    res.render() --> renderizar pagina
+    <%= añadir variables del backend %>
+    <% incluir código JavaScript en una plantilla EJS sin imprimir su resultado en el HTML %>
+    <%- permite la interpretación de etiquetas HTML dentro de la variable %>
+    <%_ controlar la eliminación de espacios en blanco alrededor del contenido _%>
+    Includes() --> permite incluir el contenido de una plantilla en otra plantilla
+    <%-- comentarios --%>

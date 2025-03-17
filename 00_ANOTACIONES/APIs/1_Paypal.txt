@@ -1,0 +1,30 @@
+---------------------------------------------------------------------------------------------
+1_PAYPAL
+---------------------------------------------------------------------------------------------
+¿Que es?: es una api para realizar pagos mediante paypal
+palabras reservadas:
+    intent: --> tipo de transaccion
+        AUTHORIZE --> pagar despues de verificar
+        CAPTURE --> pagar de una
+    purchase_units: --> productos por los que se cobraran
+        amount: --> cantidad a cobrar
+            currency_code: --> tipo de moneda
+            value: --> precio 
+    application_context: --> informacion sobre la app que recibe el dinero
+        brand_name: --> nombre de la tienda
+        landing_page: --> a donde reenviar al usuario
+            NO_PREFERENCE --> sin reenvio automatico
+        user_action: --> 
+            PAY_NOW -->
+        return_url: --> a donde redirigir cuando se acepte el pago
+        cancel_url: --> a donde redirigir si se cancela el pago
+
+
+
+
+---------------------------------------------------------------------------------------------
+INFO
+---------------------------------------------------------------------------------------------
+intent: es el tipo de transaccion a realizar
+authorize: Debes realizar una acción separada más adelante para capturar los fondos
+capture: la transacción se completa y los fondos se transfieren a la cuenta del comerciante 

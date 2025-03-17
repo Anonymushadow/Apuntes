@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------
+27_MYSQL
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para conectar la pagina a mysql
+instalar: npm install mysql2
+utilizar: const mysql = require('mysql2');
+palabras reservadas:
+    mysql.createConnection() --> crear un objeto con los datos de la conexion
+    host: --> host donde se ejecuta
+    user: usuario 
+    password: contraseña
+    database: nombre_de_la_base_a_conectar
+    connection.connect() --> conectar a la base
+    connection.query() --> crear una consulta / query
+    connection.end() --> cerrar sesion
+    mysql.createPool() --> crear un pool de datos e iniciar la conexion

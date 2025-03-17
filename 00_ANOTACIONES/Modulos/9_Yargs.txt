@@ -1,0 +1,24 @@
+---------------------------------------------------------------------------------------------
+9_YARGS
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros que sirve para crear apps de lineas de comando (cli) desde node
+instalar: npm install yargs
+utilizar: const yargs = require("yargs");
+palabras reservadas:
+    builder: --> es un objeto que se utiliza para darle configuraciones especificas a un command especifico
+    handler: --> se utiliza para especificar la función que se ejecutará cuando se invoque ese comando en particular
+    yargs.command() --> especificar el nombre del comando, una descripción y una función para ejecutar cuando se invoque ese comando
+    command: --> nombre del comando
+    describe: --> descripcion del comando
+    yargs.options() --> especificar opciones para todos los command de una
+    alias: --> añadir una abreviacion del comando (como decir npm start)
+    description: --> añadir una descripcion para cuando se llame a yarg.help()
+    demandOption: ¿es un parametro obligatorio?
+    yargs.positional() --> definir los parametros en forma ordenada
+    describe: --> añadir descripcion
+    type: --> tipo de dato
+    yargs.usage() --> cadena de texto que describe cómo se debe usar la línea de comandos de tu aplicación de manera breve y concisa
+    yargs.help() --> Agrega automáticamente una opción -h o --help que muestra información de ayuda
+    yargs.version() --> muestra la versión de tu aplicación
+    yargs.epiloge() --> Define un mensaje personalizado al final de la ayuda generada automáticamente
+    yargs.demandOptions() --> Indica que una opción es requerida y mostrará un mensaje de error si no se proporciona

@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------
+26_BCRYPT
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para encriptar contraseñas
+instalar: npm install bcrypt
+utilizar: const bcrypt = require('bcrypt');
+palabras reservadas:
+    bcrypt.hashSync() --> generar un hash seguro a partir de una contraseña en texto plano
+    bcrypt.compareSync() --> verificar si una contraseña en texto plano coincide con un hash almacenado previamente
+    bcrypt.genSaltSync() --> generar una nueva sal aleatoria antes de crear un nuevo hash

@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------------------------
+6_GLOBBY
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para buscar archivos con ciertas caracteristicas con una api mas moderna que glob
+instalarlo: npm install globby
+utilizar: import { globby } from 'globby';
+palabras reservadas:
+    globby() --> realizar una busqueda de archivos
+    absolute: obtener rutas absolutas de los resultados
+    cwd: especificar un directorio para realizar la búsqueda ahi dentro
+    ignore: --> ignorar directorios al momento de buscar
+    dot: --> incluir archivos y directorios ocultos
+    onlyFiles: --> ¿buscar solo archivos?
+    onlyDirectories: --> ¿buscar solo directorios?
+    expandDirectories: --> permite expandir directorios coincidentes para buscar archivos específicos dentro de ellos
+    files: --> que archivos buscar
+    extensions: --> que extension deben tener los archivos
+    globbyStream() --> devuelve un stream de resultados en lugar de una promesa (stream es un conjunto de datos que se reciben de a uno)
+    .isGitIgnored() --> almacenará el resultado de la verificación. Si el archivo o directorio está en la lista de exclusiones del archivo .gitignore (si no esta excluuido = true, si esta excluido = false)
+    ! --> inorar tales archivos

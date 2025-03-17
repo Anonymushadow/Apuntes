@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------------------------
+23_GOT
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros alternativo a fetch y axios
+instalar: npm install got
+utilizar: const got = require('got');
+palabras reservadas:
+    got() --> realizar una peticion
+    got.post() --> realizar peticion post
+    got.put() --> realizar peticion put
+    got.delete() --> realizar peticion delete
+    got.streram() --> una secuencia de respuesta en lugar de una promesa
+    got.extend() --> crear instancia con ajustes
+    got.retry() --> configurar las políticas de reintento para las solicitudes
+    got.paginate() --> manejar las paginaciones

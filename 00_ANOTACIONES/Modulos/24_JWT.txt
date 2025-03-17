@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------
+24_JSON WEB TOKEN
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros utilizado para codificar información en un objeto JSON y firmarlo digitalmente para garantizar que no se haya alterado durante la transmisión
+utilidad: sirve para enviar datos a travez de alguna api desconocido de manera segura, para que cuando llegue el dato verificar si este fue modificado en el proceso
+instalar: npm install jsonwebtoken
+utilizar: const jwt = require('jsonwebtoken');
+palabras reservadas:
+    jwt.sign() --> firmar un JWT
+    jwt.verify() --> verificar si un jwt es valdo o no
+    jwt.decode() --> decodificar un token
+    iat: --> indica el momento en que se emitió el token
+    exp: --> indica la fecha de expiraacion
+    isAdmin: --> indicar si un usuario tiene privilegios de administrador
+    iss: --> Indica quién generó el token
+    algorithm: --> indica qué algoritmo se usó para generar la firma del token

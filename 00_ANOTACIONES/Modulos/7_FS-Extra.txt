@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------------------------
+7_FS-EXTRA
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo de terceros donde se le agrega funcionalidades extra al modulo file system
+instalarlo: npm install fs-extra
+utilizar: const fs = require('fs-extra');
+palabras reservadas:
+    fs.copy() --> copia archivos y directorios de una ubicacion a otra
+    fs.move() --> mueve un directorio o archivo de un lugar a otros
+    fs.remove() --> elimina archivos o directorios con sus contenidos
+    fs.ensureDir() --> verifica si un directorio existe y de no ser asi lo crea
+    fs.ensureFile() --> verifica si un archivo existe y si no lo crea
+    fs.ensureLink() --> verifica si existe un acceso directo
+    fs.readdir() --> devuelve un array con los nombres de los archivos dentro de un directorio
+    fs.readFile() --> lee un archivo y devuelve su contenido
+    fs.writeFile() --> Escribe datos en un archivo
+    fs.appendFile() --> Agrega datos a un archivo existente

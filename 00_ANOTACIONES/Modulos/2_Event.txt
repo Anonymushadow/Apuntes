@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------------------
+2_EVENT
+---------------------------------------------------------------------------------------------
+¿Que es?: es un modulo utilizado para manejar los eventos
+utilizarlo: const EventEmitter = require("events");
+palabras reservadas:
+    new EventEmitter() --> crear un emisor de eventos
+    .emit() --> ejecutar un evento
+    .on() --> hacer algo al detectar un evento
+    .once() --> se utiliza para registrar un manejador de eventos que se ejecutará solo la primera vez que ocurra un evento específico
+    .removeListener() --> eliminar eventos
+    .off() --> eliminar eventos (mas moderno pero igual de funcional)
+    .removeAllListeners() --> eliminar todas las funciones de ese evento

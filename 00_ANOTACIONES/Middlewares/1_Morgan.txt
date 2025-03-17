@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------------------------
+1_MORGAN
+---------------------------------------------------------------------------------------------
+¿Que es?: es un middleware utilizado para registrar información sobre las solicitudes HTTP entrantes en tu aplicación
+instalar: npm install morgan
+utilizar: const morgan = require("morgan");
+palabras reservadas:
+    morgan() --> ver datos de la peticion
+    dev --> :method :url :status :response-time ms - :res[content-length]
+    short --> :remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms
+    tiny --> :method :url :status :res[content-length] - :response-time ms
+    common --> :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length]
+    combined --> :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"
+    .token() --> crear unnuevo tipo de log
+    stream: --> en donde almacenar los logs
+
+
